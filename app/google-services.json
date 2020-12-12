@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "659604538765",
+    "firebase_url": "https://cine-box-195008.firebaseio.com",
+    "project_id": "cine-box-195008",
+    "storage_bucket": "cine-box-195008.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:659604538765:android:b331b0607262564d",
+        "android_client_info": {
+          "package_name": "patil.rahul.cineboxtma"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "659604538765-1jd50kafd7rsalnt9mbbq8e31bjr256p.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "patil.rahul.cineboxtma",
+            "certificate_hash": "dc423cae485ac53485c2579d89ba4908fa4e2a0b"
+          }
+        },
+        {
+          "client_id": "659604538765-dbf4ggp678bv1ce404oggjtchv8qlpn3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyChGV4AdV-GfhTj8gJHsH0f8BIpqjq00yg"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "659604538765-dbf4ggp678bv1ce404oggjtchv8qlpn3.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

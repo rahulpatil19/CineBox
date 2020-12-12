@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:id="@+id/placeSnackBar"
+    android:layout_height="match_parent">
+
+    <androidx.appcompat.widget.SearchView
+        android:id="@+id/people_search_view"
+        style="@style/Widget.AppCompat.SearchView.ActionBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:background="#ffffff"
+        android:focusable="false"
+        app:iconifiedByDefault="false"
+        app:queryHint="@string/people_search_hint" />
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/swipe_refresh"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/people_search_view">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/people_recycler_view"
+            android:layout_width="match_parent"
+            android:background="@color/surfaceColor"
+            android:layout_height="match_parent"
+            android:layout_below="@id/people_search_view" />
+
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/people_search_recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/surfaceColor"
+        android:layout_below="@id/people_search_view"
+        android:visibility="invisible" />
+
+    <ProgressBar
+        android:id="@+id/progress_bar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true" />
+
+    <TextView
+        android:id="@+id/search_results"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:text="@string/no_results_found"
+        android:textAppearance="@style/Base.TextAppearance.AppCompat.Subhead"
+        android:visibility="invisible" />
+
+    <include layout="@layout/error_layout" />
+
+</RelativeLayout>

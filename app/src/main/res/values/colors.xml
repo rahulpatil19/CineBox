@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#ffffff</color>
+    <color name="colorPrimaryDark">#21243A</color>
+    <color name="colorAccent">#0EAE03</color>
+    <color name="textColorPrimary">#212e54</color>
+    <color name="colorSecondary">#545980</color>
+
+    <color name="primaryLight">#bfc0de</color>
+
+    <color name="backgroundColor">#f0f0f0</color>
+    <color name="surfaceColor">#fafafa</color>
+    <color name="placeholderColor">#e0e0e0</color>
+    <color name="light_black">#414141</color>
+
+    <!-- Custom Backgrounds -->
+    <color name="colorAccent2">#293053</color>
+    <color name="colorAccent3">#ff0266</color>
+    <color name="colorAccent4">#21243A</color>
+
+    <!--Bottom Navigation Colors -->
+    <color name="bottomNavActive">#FFDE03</color>
+    <color name="bottomNavBackground">#293053</color>
+
+</resources>

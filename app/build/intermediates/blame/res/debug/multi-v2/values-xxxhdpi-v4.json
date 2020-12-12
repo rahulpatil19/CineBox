@@ -1,0 +1,28 @@
+{
+    "logs": [
+        {
+            "outputFile": "/home/rahul/AndroidStudioProjects/CineBox/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-xxxhdpi-v4/values-xxxhdpi-v4.xml",
+            "map": [
+                {
+                    "source": "/home/rahul/AndroidStudioProjects/CineBox/app/src/main/res/values-xxxhdpi/strings.xml",
+                    "from": {
+                        "startLines": "2,8,14",
+                        "startColumns": "4,4,4",
+                        "startOffsets": "55,206,362",
+                        "endLines": "6,12,14",
+                        "endColumns": "19,19,46",
+                        "endOffsets": "200,356,404"
+                    },
+                    "to": {
+                        "startLines": "2,7,12",
+                        "startColumns": "4,4,4",
+                        "startOffsets": "55,205,360",
+                        "endLines": "6,11,12",
+                        "endColumns": "19,19,46",
+                        "endOffsets": "200,355,402"
+                    }
+                }
+            ]
+        }
+    ]
+}

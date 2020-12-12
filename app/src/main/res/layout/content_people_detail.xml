@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:expandableTextView="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="patil.rahul.cineboxtma.PeopleDetailActivity"
+    tools:showIn="@layout/activity_people_detail">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:id="@+id/title_layout"
+            android:visibility="invisible"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/surfaceColor"
+            android:padding="12dp">
+
+            <com.facebook.drawee.view.SimpleDraweeView
+                android:id="@+id/people_image"
+                android:layout_width="115dp"
+                android:layout_height="155dp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentStart="true"
+                app:placeholderImage="@color/backgroundColor"
+                app:roundedCornerRadius="4dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="16dp"
+                android:layout_toEndOf="@id/people_image"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/people_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:maxLines="1"
+                    android:layout_marginBottom="8dp"
+                    android:ellipsize="end"
+                    style="@style/TextAppearance.CineBox.Toolbar"
+                    tools:text="Justin Bieber" />
+
+                <RelativeLayout
+                    android:layout_marginBottom="8dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:layout_marginEnd="16dp"
+                        android:id="@+id/birth_date_layout"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="3dp"
+                            android:text="@string/birth_date"
+                            android:textStyle="bold"
+                            android:textAppearance="?textAppearanceSubtitle2" />
+
+                        <TextView
+                            android:id="@+id/birth_date"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textStyle="bold"
+                            android:textAppearance="?textAppearanceCaption"
+                            tools:text="29 sep, 1967" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/age_layout"
+                        android:layout_toEndOf="@id/birth_date_layout"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="3dp"
+                            android:text="@string/age"
+                            android:textStyle="bold"
+                            android:textAppearance="?textAppearanceSubtitle2"
+                            />
+
+                        <TextView
+                            android:id="@+id/age"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textStyle="bold"
+                            android:textAppearance="?textAppearanceCaption"
+                            tools:text="29" />
+                    </LinearLayout>
+                </RelativeLayout>
+
+                <TextView
+                    android:id="@+id/birth_place"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:maxLines="3"
+                    android:fontFamily="@font/nunito_semibold"
+                    android:textAppearance="?textAppearanceSubtitle2"
+                    tools:text="Los Angeles, California, USA" />
+
+            </LinearLayout>
+        </RelativeLayout>
+
+        <com.ms.square.android.expandabletextview.ExpandableTextView
+            android:id="@+id/expand_text_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/title_layout"
+            android:background="@color/surfaceColor"
+            android:padding="16dp"
+            expandableTextView:animDuration="200"
+            expandableTextView:maxCollapsedLines="3">
+
+            <TextView
+                android:id="@+id/expandable_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:lineSpacingExtra="3dp"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Body1"
+                tools:text="lnudfsdcjnslsncljsndflkjnsjn" />
+
+            <ImageButton
+                android:contentDescription="@string/icon_expand"
+                android:id="@+id/expand_collapse"
+                style="@style/Widget.AppCompat.Button.Borderless.Colored"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal" />
+
+        </com.ms.square.android.expandabletextview.ExpandableTextView>
+
+        <LinearLayout
+            android:id="@+id/movie_credits_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/expand_text_view"
+            android:background="@color/surfaceColor"
+            android:orientation="vertical"
+            android:paddingBottom="16dp"
+            android:visibility="gone">
+
+            <TextView
+                style="@style/TextAppearance.CineBox.Heading"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="16dp"
+                android:text="@string/title_movie_credits" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/movie_credits_recycler_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clipToPadding="false"
+                android:paddingStart="8dp"
+                android:paddingEnd="8dp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/tv_credits_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/movie_credits_layout"
+            android:background="@color/surfaceColor"
+            android:orientation="vertical"
+            android:paddingBottom="16dp"
+            android:layout_marginBottom="8dp"
+            android:visibility="gone">
+
+            <TextView
+                style="@style/TextAppearance.CineBox.Heading"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="16dp"
+                android:text="@string/title_tv_credits" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/tv_credits_recycler_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clipToPadding="false"
+                android:paddingStart="8dp"
+                android:paddingEnd="8dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/image_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_credits_layout"
+            android:background="@color/surfaceColor"
+            android:orientation="vertical"
+            android:paddingBottom="16dp"
+            android:visibility="gone">
+
+            <TextView
+                style="@style/TextAppearance.CineBox.Heading"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="16dp"
+                android:text="@string/title_image" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/image_recycler_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clipToPadding="false"
+                android:paddingStart="8dp"
+                android:paddingEnd="8dp" />
+        </LinearLayout>
+
+        <ProgressBar
+            android:id="@+id/progress_bar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true" />
+
+        <include
+            layout="@layout/error_layout_detail"
+            android:visibility="invisible" />
+
+    </RelativeLayout>
+</androidx.core.widget.NestedScrollView>

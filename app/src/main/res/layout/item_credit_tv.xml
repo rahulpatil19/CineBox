@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:fresco="http://schemas.android.com/apk/res-auto"
+    android:paddingStart="8dp"
+    android:paddingEnd="8dp"
+    android:orientation="vertical"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <com.facebook.drawee.view.SimpleDraweeView
+        fresco:actualImageScaleType="fitXY"
+        android:id="@+id/tv_poster_image"
+        fresco:placeholderImage="@color/placeholderColor"
+        android:layout_marginBottom="8dp"
+        android:layout_width="110dp"
+        android:layout_height="150dp" />
+
+    <TextView
+        tools:text="Chidafnjd fskfl fdsflks fsdm fdslkmf"
+        android:id="@+id/tv_title"
+        android:textAppearance="?textAppearanceSubtitle2"
+        android:fontFamily="@font/nunito_semibold"
+        android:ellipsize="end"
+        android:layout_marginBottom="3dp"
+        android:maxLines="1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/tv_character"
+        android:layout_width="match_parent"
+        android:textAppearance="@style/Base.TextAppearance.AppCompat.Caption"
+        android:layout_height="wrap_content" />
+
+</LinearLayout>

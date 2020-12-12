@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="pref_image_quality_array">
+        <item>Low</item>
+        <item>Medium</item>
+        <item>High</item>
+    </string-array>
+    <string-array name="pref_image_quality_array_value">
+        <item>w92</item>
+        <item>w154</item>
+        <item>w185</item>
+    </string-array>
+    <string name="backdrop_size">w500</string>
+</resources>

@@ -1,0 +1,126 @@
+<resources>
+    <string name="app_name">CineBox</string>
+
+    <!-- Bottom Navigation title -->
+    <string name="nav_title_home">Home</string>
+    <string name="nav_title_movie">Movies</string>
+    <string name="nav_title_search">Search</string>
+    <string name="nav_title_people">People</string>
+    <string name="nav_title_tvShow">TvShows</string>
+
+
+    <string name="title_movie">Movie</string>
+    <string name="title_tv_show">Tv Show</string>
+    <string name="title_people">People</string>
+
+
+    <!--Category Titles -->
+    <string name="top_rated">Top Rated</string>
+    <string name="popular">Popular</string>
+    <string name="airing_today">Airing Today</string>
+    <string name="in_cinemas">In Cinemas</string>
+    <string name="on_tv">On Tv</string>
+
+
+    <!-- Movie Specific Titles -->
+    <string name="upcoming_movies">Upcoming Movies</string>
+
+    <string name="movie_image_description">Movie Image</string>
+    <string name="directed_by">Directed By</string>
+
+
+    <!-- TvShow Specific Titles -->
+    <string name="tv_shows_airing_today">Tv Shows Airing Today</string>
+
+
+    <!-- People Specific Titles -->
+    <string name="age">Age</string>
+
+
+    <!-- Extra  strings -->
+    <string name="exit">Tap \"BACK\" again to exit</string>
+    <string name="more">More</string>
+    <string name="dots">dots</string>
+    <string name="no_connection">Couldn\'t load, Please try again</string>
+
+
+    <string name="default_search_hint">Search Movie, People, Tv Shows</string>
+    <string name="tv_show_search_hint"><b>Search Tv Shows</b></string>
+    <string name="movie_search_hint"><i>Search Movie</i></string>
+    <string name="people_search_hint">Search People</string>
+    <string name="title_share">Share</string>
+
+    <!-- Menu Strings -->
+    <string name="action_settings">Settings</string>
+
+
+    <string name="error_player">Error occurred</string>
+    <string name="retry">Retry</string>
+    <string name="network_error_subheading">Please check your connection then try again</string>
+    <string name="network_error_heading">Couldn\'t load</string>
+    <string name="no_results_found">No results found</string>
+
+    <!-- Strings related to Settings -->
+    <string name="pref_key_image_quality">image_quality</string>
+    <string name="pref_key_video_mode">video_mode</string>
+    <string name="pref_key_clear_cache">clear_cache</string>
+    <string name="pref_key_share">share_app</string>
+    <string name="pref_key_contact_developer">contact_developer</string>
+    <string name="pref_key_library_used">library_used</string>
+
+
+    <string name="pref_title_library_used">Library Used</string>
+    <string name="pref_title_image_quality">Image Quality</string>
+    <string name="pref_title_video_mode">Fullscreen Videos</string>
+    <string name="pref_title_contact_developer">Contact Developer</string>
+    <string name="pref_title_clear_cache">Clear Cache</string>
+    <string name="pref_title_share">Share</string>
+
+    <string name="pref_image_quality_default_summary">Medium</string>
+    <string name="pref_image_quality_default_value">w500</string>
+    <string name="pref_video_mode_summary">Play videos in full screen mode</string>
+
+
+    <string name="releasing_today_header">Releasing Today</string>
+    <string name="title_videos">Videos</string>
+    <string name="title_cast">Cast</string>
+    <string name="title_crew">Crew</string>
+    <string name="title_recommended_movies">Similar Movies</string>
+    <string name="backdrop_image">Backdrop Image</string>
+    <string name="title_movie_credits">Movie Credits</string>
+    <string name="title_tv_credits">Tv Credits</string>
+    <string name="icon_expand">Expand</string>
+    <string name="no_runtime_min">N/A</string>
+    <string name="title_season">Seasons</string>
+    <string name="title_similar_tvShows">Similar TvShows</string>
+    <string name="title_image">Images</string>
+    <string name="view_on_tmdb">View on TMDb</string>
+    <string name="view_on_imdb">View on IMDb</string>
+    <string name="powered_by">Powered by</string>
+    <string name="cinebox_version">CineBox Version 1.0</string>
+
+
+    <string name="back_to_home">Back to Home</string>
+    <string name="birth_date">Birth Date</string>
+    <string name="btn_explore">Explore</string>
+    <string name="btn_share">Share</string>
+    <string name="placeholder">image</string>
+    <string name="descriptionPlayVideo">Play Video</string>
+    <string name="view_on_facebook">View on Facebook</string>
+    <string name="view_on_instagram">View on Instagram</string>
+    <string name="view_on_twitter">View on Twitter</string>
+
+    <string name="connect_on_facebook">Connect on Facebook</string>
+    <string name="follow_on_instagram">Follow on Instagram</string>
+    <string name="send_feedback">Send Feedback</string>
+    <string name="rahul_patil">Rahul Patil</string>
+
+    <!-- 3rd Party Libraries -->
+
+    <string name="library_fresco"><a href="https://github.com/facebook/fresco">Fresco</a></string>
+    <string name="library_volley"><a href="https://github.com/google/volley">Volley</a></string>
+    <string name="library_expandableText"><a href="https://github.com/Manabu-GT/ExpandableTextView">ExpandableTextView</a></string>
+    <string name="library_circleIndicator"><a href="https://github.com/ongakuer/CircleIndicator">Circle Indicator</a></string>
+    <string name="library_used">Library Used</string>
+
+</resources>

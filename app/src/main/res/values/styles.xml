@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="Theme.CineBox" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:fontFamily">@font/nunito</item>
+    </style>
+
+    <style name="Widget.CineBox.Toolbar" parent="Widget.AppCompat.Toolbar">
+        <item name="android:theme">@style/Theme.CineBox</item>
+        <item name="titleTextAppearance">@style/TextAppearance.CineBox.Toolbar</item>
+        <item name="popupTheme">@style/ThemeOverlay.AppCompat.Light</item>
+    </style>
+
+    <style name="Theme.CineBox.AppBarOverlay" parent="ThemeOverlay.MaterialComponents.Light" />
+
+    <style name="TextAppearance.CineBox.Toolbar" parent="TextAppearance.MaterialComponents.Headline6">
+        <item name="android:textColor">@color/textColorPrimary</item>
+        <item name="fontFamily">@font/nunito_extrabold</item>
+    </style>
+
+    <style name="Widget.CineBox.TextButton" parent="Widget.MaterialComponents.Button.TextButton">
+        <item name="android:fontFamily">@font/nunito_extrabold</item>
+    </style>
+
+    <style name="TextAppearance.CineBox.BigTitle" parent="TextAppearance.MaterialComponents.Headline6">
+        <item name="fontFamily">@font/nunito_semibold</item>
+    </style>
+
+    <style name="TextAppearance.CineBox.Heading" parent="TextAppearance.MaterialComponents.Headline6">
+        <item name="fontFamily">@font/nunito_semibold</item>
+        <item name="android:textSize">18sp</item>
+    </style>
+
+    <style name="TextAppearance.CineBox.Subtitle" parent="TextAppearance.MaterialComponents.Subtitle2">
+        <item name="fontFamily">@font/nunito_semibold</item>
+    </style>
+
+    <style name="Theme.Settings" parent="Theme.MaterialComponents.Light">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:fontFamily">@font/nunito_semibold</item>
+        <item name="preferenceTheme">@style/PreferenceThemeOverlay.v14.Material</item>
+    </style>
+
+    <!-- Detail Activity Theme -->
+    <style name="Theme.Detail" parent="Theme.MaterialComponents.Light.NoActionBar">
+       <item name="colorPrimary">@color/colorPrimaryDark</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:fontFamily">@font/nunito</item>
+        <item name="android:windowBackground">@color/backgroundColor</item>
+    </style>
+
+    <style name="Widget.CineBox.DetailToolbar" parent="Widget.AppCompat.Toolbar">
+        <item name="android:theme">@style/Theme.Detail</item>
+        <item name="popupTheme">@style/ThemeOverlay.MaterialComponents.Light</item>
+    </style>
+
+    <style name="Theme.Detail.AppBarOverlay" parent="ThemeOverlay.MaterialComponents.Dark"/>
+
+</resources>

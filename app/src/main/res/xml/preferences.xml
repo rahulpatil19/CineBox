@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <CheckBoxPreference
+        android:defaultValue="true"
+        android:key="@string/pref_key_video_mode"
+        android:summary="@string/pref_video_mode_summary"
+        android:title="@string/pref_title_video_mode" />
+
+    <ListPreference
+        android:defaultValue="@string/pref_image_quality_default_value"
+        android:entries="@array/pref_image_quality_array"
+        android:entryValues="@array/pref_image_quality_array_value"
+        android:key="@string/pref_key_image_quality"
+        android:summary="@string/pref_image_quality_default_summary"
+        android:title="@string/pref_title_image_quality" />
+
+    <Preference android:title="@string/pref_title_clear_cache"
+        android:key="@string/pref_key_clear_cache"/>
+
+    <PreferenceCategory android:title="CineBox">
+
+        <Preference android:title="@string/pref_title_share"
+            android:key="@string/pref_key_share"/>
+
+        <Preference android:title="Rate on Google Play">
+            <intent
+                android:action="android.intent.action.VIEW"
+                android:data="market://details?id=patil.rahul.cineboxtma" />
+        </Preference>
+
+        <Preference android:title="@string/pref_title_contact_developer"
+            android:key="@string/pref_key_contact_developer"/>
+
+        <PreferenceScreen android:title="@string/pref_title_library_used"
+            android:key="@string/pref_key_library_used">
+
+            <Preference android:title="@string/btn_share"/>
+
+        </PreferenceScreen>
+
+        <Preference android:title="Download Other Apps">
+            <intent
+                android:action="android.intent.action.VIEW"
+                android:data="https://play.google.com/store/apps/dev?id=7856855948322295060" />
+        </Preference>
+
+        <Preference android:title="Privacy Policy">
+            <intent
+                android:action="android.intent.action.VIEW"
+                android:data="https://www.themoviedb.org/privacy-policy" />
+        </Preference>
+
+    </PreferenceCategory>
+
+    <PreferenceCategory>
+        <Preference  android:layout="@layout/pref_layout_powered_by"/>
+    </PreferenceCategory>
+
+</PreferenceScreen>

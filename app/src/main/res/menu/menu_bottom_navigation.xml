@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item android:icon="@drawable/ic_nav_home"
+        android:title="@string/nav_title_home"
+        android:id="@+id/nav_home"/>
+
+    <item
+        android:icon="@drawable/ic_nav_movie"
+        android:title="@string/nav_title_movie"
+        android:id="@+id/nav_movie"/>
+    <item
+        android:icon="@drawable/ic_nav_tv"
+        android:title="@string/nav_title_tvShow"
+        android:id="@+id/nav_tv"/>
+    <item
+        android:icon="@drawable/ic_nav_people"
+        android:title="@string/nav_title_people"
+        android:id="@+id/nav_people"/>
+
+</menu>
