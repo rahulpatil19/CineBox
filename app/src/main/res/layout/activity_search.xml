@@ -9,8 +9,8 @@
 
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:theme="@style/Theme.CineBox.AppBarOverlay">
+        android:background="@color/white"
+        android:layout_height="wrap_content">
 
         <SearchView
             android:id="@+id/search_view"

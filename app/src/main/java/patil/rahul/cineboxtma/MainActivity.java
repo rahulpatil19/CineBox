@@ -1,21 +1,23 @@
 package patil.rahul.cineboxtma;
 
+import static patil.rahul.cineboxtma.utils.Cine.MovieEntry;
+
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
 
-import com.google.android.material.appbar.AppBarLayout;
-import com.google.android.material.bottomnavigation.BottomNavigationView;
-
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.FragmentTransaction;
+
+import com.google.android.material.appbar.AppBarLayout;
+import com.google.android.material.appbar.MaterialToolbar;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+
 import patil.rahul.cineboxtma.bottomnavfragments.HomeFragment;
 import patil.rahul.cineboxtma.bottomnavfragments.MovieFragment;
 import patil.rahul.cineboxtma.bottomnavfragments.PeopleFragment;
@@ -26,10 +28,12 @@ import patil.rahul.cineboxtma.models.TvShows;
 import patil.rahul.cineboxtma.utils.Cine;
 import patil.rahul.cineboxtma.utils.CineListener;
 
-import static patil.rahul.cineboxtma.utils.Cine.MovieEntry;
-
-public class MainActivity extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener,
-        CineListener.OnPeopleClickListener, HomeFragment.OnMoreClickListener, CineListener.OnMovieClickListener, CineListener.OnTvClickListener, BottomNavigationView.OnNavigationItemReselectedListener {
+public class MainActivity extends AppCompatActivity implements BottomNavigationView.OnItemSelectedListener,
+        CineListener.OnPeopleClickListener,
+        HomeFragment.OnMoreClickListener,
+        CineListener.OnMovieClickListener,
+        CineListener.OnTvClickListener,
+        BottomNavigationView.OnItemReselectedListener {
     private HomeFragment mHomeFragment;
     private MovieFragment mMovieFragment;
     private PeopleFragment mPeopleFragment;
@@ -48,12 +52,12 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             mAppBarLayout.setElevation(4);
         }
-        Toolbar toolbar = findViewById(R.id.toolbar);
+        MaterialToolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
         setTitle(R.string.app_name);
-        mBottomNav.setOnNavigationItemSelectedListener(this);
-        mBottomNav.setOnNavigationItemReselectedListener(this);
+        mBottomNav.setOnItemSelectedListener(this);
+        mBottomNav.setOnItemReselectedListener(this);
 
         if (savedInstanceState == null) {
             mHomeFragment = new HomeFragment();
@@ -89,21 +93,23 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
     protected void displayMovieFragment() {
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
 
-        if (mMovieFragment.isAdded()) {
-            transaction.show(mMovieFragment);
-        } else {
-            transaction.add(R.id.fragment, mMovieFragment);
+        if (mMovieFragment != null) {
+            if (mMovieFragment.isAdded()) {
+                transaction.show(mMovieFragment);
+            } else {
+                transaction.add(R.id.fragment, mMovieFragment);
+            }
+            if (mHomeFragment.isAdded()) {
+                transaction.hide(mHomeFragment);
+            }
+            if (mPeopleFragment.isAdded()) {
+                transaction.hide(mPeopleFragment);
+            }
+            if (mTvShowFragment.isAdded()) {
+                transaction.hide(mTvShowFragment);
+            }
+            transaction.commit();
         }
-        if (mHomeFragment.isAdded()) {
-            transaction.hide(mHomeFragment);
-        }
-        if (mPeopleFragment.isAdded()) {
-            transaction.hide(mPeopleFragment);
-        }
-        if (mTvShowFragment.isAdded()) {
-            transaction.hide(mTvShowFragment);
-        }
-        transaction.commit();
     }
 
     protected void displayPersonFragment() {
@@ -209,39 +215,34 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
         int itemId = menuItem.getItemId();
-        switch (itemId) {
-            case R.id.nav_home:
-                setTitle(R.string.app_name);
-                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-                    mAppBarLayout.setElevation(8);
-                }
-                mAppBarLayout.setExpanded(true);
-                displayHomeFragment();
-                break;
-            case R.id.nav_movie:
-                setTitle(R.string.nav_title_movie);
-                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-                    mAppBarLayout.setElevation(0);
-                }
-                mAppBarLayout.setExpanded(true);
-                displayMovieFragment();
-                break;
-            case R.id.nav_tv:
-                setTitle(R.string.nav_title_tvShow);
-                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-                    mAppBarLayout.setElevation(0);
-                }
-                mAppBarLayout.setExpanded(true);
-                displayTvShowFragment();
-                break;
-            case R.id.nav_people:
-                setTitle(R.string.title_people);
-                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-                    mAppBarLayout.setElevation(8);
-                }
-                mAppBarLayout.setExpanded(true);
-                displayPersonFragment();
-                break;
+        if (itemId == R.id.nav_home) {
+            setTitle(R.string.app_name);
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                mAppBarLayout.setElevation(8);
+            }
+            mAppBarLayout.setExpanded(true);
+            displayHomeFragment();
+        } else if (itemId == R.id.nav_movie) {
+            setTitle(R.string.nav_title_movie);
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                mAppBarLayout.setElevation(0);
+            }
+            mAppBarLayout.setExpanded(true);
+            displayMovieFragment();
+        } else if (itemId == R.id.nav_tv) {
+            setTitle(R.string.nav_title_tvShow);
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                mAppBarLayout.setElevation(0);
+            }
+            mAppBarLayout.setExpanded(true);
+            displayTvShowFragment();
+        } else if (itemId == R.id.nav_people) {
+            setTitle(R.string.title_people);
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                mAppBarLayout.setElevation(8);
+            }
+            mAppBarLayout.setExpanded(true);
+            displayPersonFragment();
         }
         return true;
     }
@@ -271,16 +272,12 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
     @Override
     public void onNavigationItemReselected(MenuItem menuItem) {
         int itemId = menuItem.getItemId();
-        switch (itemId) {
-            case R.id.nav_movie:
-                mMovieFragment.refreshFragment();
-                break;
-            case R.id.nav_tv:
-                mTvShowFragment.refreshFragment();
-                break;
-            case R.id.nav_people:
-                mPeopleFragment.refreshPeopleList();
-                break;
+        if (itemId == R.id.nav_movie) {
+            mMovieFragment.refreshFragment();
+        } else if (itemId == R.id.nav_tv) {
+            mTvShowFragment.refreshFragment();
+        } else if (itemId == R.id.nav_people) {
+            mPeopleFragment.refreshPeopleList();
         }
     }
 

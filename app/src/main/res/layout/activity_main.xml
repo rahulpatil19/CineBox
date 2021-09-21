@@ -6,10 +6,11 @@
 
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/appbar"
+        android:background="@color/white"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <androidx.appcompat.widget.Toolbar
+        <com.google.android.material.appbar.MaterialToolbar
             android:id="@+id/toolbar"
             style="@style/Widget.CineBox.Toolbar"
             android:layout_width="match_parent"

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#ffffff</color>
+    <color name="colorPrimary">#21243A</color>
     <color name="colorPrimaryDark">#21243A</color>
     <color name="colorAccent">#0EAE03</color>
     <color name="textColorPrimary">#212e54</color>
@@ -12,6 +12,9 @@
     <color name="surfaceColor">#fafafa</color>
     <color name="placeholderColor">#e0e0e0</color>
     <color name="light_black">#414141</color>
+
+    <color name="white">#ffffff</color>
+    <color name="black">#000000</color>
 
     <!-- Custom Backgrounds -->
     <color name="colorAccent2">#293053</color>

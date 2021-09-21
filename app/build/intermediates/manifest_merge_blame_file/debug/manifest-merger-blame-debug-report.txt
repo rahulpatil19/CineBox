@@ -6,283 +6,125 @@
 6
 7    <uses-sdk
 8        android:minSdkVersion="17"
-8-->/home/rahul/AndroidStudioProjects/CineBox/app/src/main/AndroidManifest.xml
-9        android:targetSdkVersion="28" />
-9-->/home/rahul/AndroidStudioProjects/CineBox/app/src/main/AndroidManifest.xml
+8-->C:\Users\SCEA\AndroidStudioProjects\CineBox\app\src\main\AndroidManifest.xml
+9        android:targetSdkVersion="30" />
+9-->C:\Users\SCEA\AndroidStudioProjects\CineBox\app\src\main\AndroidManifest.xml
 10
 11    <uses-permission android:name="android.permission.INTERNET" />
-11-->/home/rahul/AndroidStudioProjects/CineBox/app/src/main/AndroidManifest.xml:5:5-67
-11-->/home/rahul/AndroidStudioProjects/CineBox/app/src/main/AndroidManifest.xml:5:22-64
+11-->C:\Users\SCEA\AndroidStudioProjects\CineBox\app\src\main\AndroidManifest.xml:5:5-67
+11-->C:\Users\SCEA\AndroidStudioProjects\CineBox\app\src\main\AndroidManifest.xml:5:22-64
 12    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-12-->/home/rahul/AndroidStudioProjects/CineBox/app/src/main/AndroidManifest.xml:6:5-79
-12-->/home/rahul/AndroidStudioProjects/CineBox/app/src/main/AndroidManifest.xml:6:22-76
+12-->C:\Users\SCEA\AndroidStudioProjects\CineBox\app\src\main\AndroidManifest.xml:6:5-79
+12-->C:\Users\SCEA\AndroidStudioProjects\CineBox\app\src\main\AndroidManifest.xml:6:22-76
 13    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-13-->/home/rahul/AndroidStudioProjects/CineBox/app/src/main/AndroidManifest.xml:7:5-80
-13-->/home/rahul/AndroidStudioProjects/CineBox/app/src/main/AndroidManifest.xml:7:22-77
-14    <uses-permission android:name="android.permission.WAKE_LOCK" />
-14-->[com.google.firebase:firebase-measurement-connector-impl:16.0.1] /home/rahul/.gradle/caches/transforms-2/files-2.1/cd9c24713e525d444a19cd897233d235/jetified-firebase-measurement-connector-impl-16.0.1/AndroidManifest.xml:24:5-68
-14-->[com.google.firebase:firebase-measurement-connector-impl:16.0.1] /home/rahul/.gradle/caches/transforms-2/files-2.1/cd9c24713e525d444a19cd897233d235/jetified-firebase-measurement-connector-impl-16.0.1/AndroidManifest.xml:24:22-65
-15    <uses-permission android:name="com.google.android.finsky.permission.BIND_GET_INSTALL_REFERRER_SERVICE" /> <!-- Required by older versions of Google Play services to create IID tokens -->
-15-->[com.google.firebase:firebase-analytics:16.0.1] /home/rahul/.gradle/caches/transforms-2/files-2.1/c5dcd24af0430b736facd197ca1dc2cd/jetified-firebase-analytics-16.0.1/AndroidManifest.xml:26:5-110
-15-->[com.google.firebase:firebase-analytics:16.0.1] /home/rahul/.gradle/caches/transforms-2/files-2.1/c5dcd24af0430b736facd197ca1dc2cd/jetified-firebase-analytics-16.0.1/AndroidManifest.xml:26:22-107
-16    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
-16-->[com.google.firebase:firebase-iid:16.0.0] /home/rahul/.gradle/caches/transforms-2/files-2.1/c6cd5b01f7461f83261911d60b7ce3bf/jetified-firebase-iid-16.0.0/AndroidManifest.xml:26:5-82
-16-->[com.google.firebase:firebase-iid:16.0.0] /home/rahul/.gradle/caches/transforms-2/files-2.1/c6cd5b01f7461f83261911d60b7ce3bf/jetified-firebase-iid-16.0.0/AndroidManifest.xml:26:22-79
-17
-18    <permission
-18-->[com.google.firebase:firebase-iid:16.0.0] /home/rahul/.gradle/caches/transforms-2/files-2.1/c6cd5b01f7461f83261911d60b7ce3bf/jetified-firebase-iid-16.0.0/AndroidManifest.xml:28:5-30:47
-19        android:name="patil.rahul.cineboxtma.permission.C2D_MESSAGE"
-19-->[com.google.firebase:firebase-iid:16.0.0] /home/rahul/.gradle/caches/transforms-2/files-2.1/c6cd5b01f7461f83261911d60b7ce3bf/jetified-firebase-iid-16.0.0/AndroidManifest.xml:29:9-63
-20        android:protectionLevel="signature" />
-20-->[com.google.firebase:firebase-iid:16.0.0] /home/rahul/.gradle/caches/transforms-2/files-2.1/c6cd5b01f7461f83261911d60b7ce3bf/jetified-firebase-iid-16.0.0/AndroidManifest.xml:30:9-44
-21
-22    <uses-permission android:name="patil.rahul.cineboxtma.permission.C2D_MESSAGE" />
-22-->[com.google.firebase:firebase-iid:16.0.0] /home/rahul/.gradle/caches/transforms-2/files-2.1/c6cd5b01f7461f83261911d60b7ce3bf/jetified-firebase-iid-16.0.0/AndroidManifest.xml:32:5-79
-22-->[com.google.firebase:firebase-iid:16.0.0] /home/rahul/.gradle/caches/transforms-2/files-2.1/c6cd5b01f7461f83261911d60b7ce3bf/jetified-firebase-iid-16.0.0/AndroidManifest.xml:32:22-76
-23
-24    <application
-24-->/home/rahul/AndroidStudioProjects/CineBox/app/src/main/AndroidManifest.xml:9:5-62:19
-25        android:name="patil.rahul.cineboxtma.MyApplication"
-25-->/home/rahul/AndroidStudioProjects/CineBox/app/src/main/AndroidManifest.xml:10:9-38
-26        android:allowBackup="true"
-26-->/home/rahul/AndroidStudioProjects/CineBox/app/src/main/AndroidManifest.xml:11:9-35
-27        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
-27-->[androidx.core:core:1.1.0] /home/rahul/.gradle/caches/transforms-2/files-2.1/5b4458cc592765454e6ac30a3ac838fb/core-1.1.0/AndroidManifest.xml:24:18-86
-28        android:debuggable="true"
-29        android:icon="@mipmap/ic_launcher"
-29-->/home/rahul/AndroidStudioProjects/CineBox/app/src/main/AndroidManifest.xml:13:9-43
-30        android:label="@string/app_name"
-30-->/home/rahul/AndroidStudioProjects/CineBox/app/src/main/AndroidManifest.xml:14:9-41
-31        android:largeHeap="true"
-31-->/home/rahul/AndroidStudioProjects/CineBox/app/src/main/AndroidManifest.xml:12:9-33
-32        android:roundIcon="@mipmap/ic_launcher_round"
-32-->/home/rahul/AndroidStudioProjects/CineBox/app/src/main/AndroidManifest.xml:15:9-54
-33        android:supportsRtl="true" >
-33-->/home/rahul/AndroidStudioProjects/CineBox/app/src/main/AndroidManifest.xml:16:9-35
-34        <activity
-34-->/home/rahul/AndroidStudioProjects/CineBox/app/src/main/AndroidManifest.xml:17:9-28:20
-35            android:name="patil.rahul.cineboxtma.MainActivity"
-35-->/home/rahul/AndroidStudioProjects/CineBox/app/src/main/AndroidManifest.xml:18:13-41
-36            android:label="@string/app_name"
-36-->/home/rahul/AndroidStudioProjects/CineBox/app/src/main/AndroidManifest.xml:19:13-45
-37            android:screenOrientation="portrait"
-37-->/home/rahul/AndroidStudioProjects/CineBox/app/src/main/AndroidManifest.xml:20:13-49
-38            android:theme="@style/Theme.CineBox"
-38-->/home/rahul/AndroidStudioProjects/CineBox/app/src/main/AndroidManifest.xml:21:13-49
-39            android:windowSoftInputMode="adjustPan|stateHidden" >
-39-->/home/rahul/AndroidStudioProjects/CineBox/app/src/main/AndroidManifest.xml:22:13-64
-40            <intent-filter>
-40-->/home/rahul/AndroidStudioProjects/CineBox/app/src/main/AndroidManifest.xml:23:13-27:29
-41                <action android:name="android.intent.action.MAIN" />
-41-->/home/rahul/AndroidStudioProjects/CineBox/app/src/main/AndroidManifest.xml:24:17-69
-41-->/home/rahul/AndroidStudioProjects/CineBox/app/src/main/AndroidManifest.xml:24:25-66
-42
-43                <category android:name="android.intent.category.LAUNCHER" />
-43-->/home/rahul/AndroidStudioProjects/CineBox/app/src/main/AndroidManifest.xml:26:17-77
-43-->/home/rahul/AndroidStudioProjects/CineBox/app/src/main/AndroidManifest.xml:26:27-74
-44            </intent-filter>
-45        </activity>
-46        <activity
-46-->/home/rahul/AndroidStudioProjects/CineBox/app/src/main/AndroidManifest.xml:29:9-31:51
-47            android:name="patil.rahul.cineboxtma.MovieDetailActivity"
-47-->/home/rahul/AndroidStudioProjects/CineBox/app/src/main/AndroidManifest.xml:30:13-48
-48            android:theme="@style/Theme.Detail" />
-48-->/home/rahul/AndroidStudioProjects/CineBox/app/src/main/AndroidManifest.xml:31:13-48
-49        <activity
-49-->/home/rahul/AndroidStudioProjects/CineBox/app/src/main/AndroidManifest.xml:32:9-35:51
-50            android:name="patil.rahul.cineboxtma.TvDetailActivity"
-50-->/home/rahul/AndroidStudioProjects/CineBox/app/src/main/AndroidManifest.xml:33:13-45
-51            android:parentActivityName="patil.rahul.cineboxtma.MainActivity"
-51-->/home/rahul/AndroidStudioProjects/CineBox/app/src/main/AndroidManifest.xml:34:13-55
-52            android:theme="@style/Theme.Detail" />
-52-->/home/rahul/AndroidStudioProjects/CineBox/app/src/main/AndroidManifest.xml:35:13-48
-53        <activity
-53-->/home/rahul/AndroidStudioProjects/CineBox/app/src/main/AndroidManifest.xml:36:9-38:51
-54            android:name="patil.rahul.cineboxtma.PeopleDetailActivity"
-54-->/home/rahul/AndroidStudioProjects/CineBox/app/src/main/AndroidManifest.xml:37:13-49
-55            android:theme="@style/Theme.Detail" />
-55-->/home/rahul/AndroidStudioProjects/CineBox/app/src/main/AndroidManifest.xml:38:13-48
-56        <activity
-56-->/home/rahul/AndroidStudioProjects/CineBox/app/src/main/AndroidManifest.xml:39:9-45:20
-57            android:name="patil.rahul.cineboxtma.SearchActivity"
-57-->/home/rahul/AndroidStudioProjects/CineBox/app/src/main/AndroidManifest.xml:40:13-43
-58            android:theme="@style/Theme.CineBox" >
-58-->/home/rahul/AndroidStudioProjects/CineBox/app/src/main/AndroidManifest.xml:41:13-49
-59            <meta-data
-59-->/home/rahul/AndroidStudioProjects/CineBox/app/src/main/AndroidManifest.xml:42:13-44:54
-60                android:name="android.app.searchable"
-60-->/home/rahul/AndroidStudioProjects/CineBox/app/src/main/AndroidManifest.xml:43:17-54
-61                android:resource="@xml/searchable" />
-61-->/home/rahul/AndroidStudioProjects/CineBox/app/src/main/AndroidManifest.xml:44:17-51
-62        </activity>
-63        <activity
-63-->/home/rahul/AndroidStudioProjects/CineBox/app/src/main/AndroidManifest.xml:46:9-48:52
-64            android:name="patil.rahul.cineboxtma.MovieMoreActivity"
-64-->/home/rahul/AndroidStudioProjects/CineBox/app/src/main/AndroidManifest.xml:47:13-46
+13-->C:\Users\SCEA\AndroidStudioProjects\CineBox\app\src\main\AndroidManifest.xml:7:5-80
+13-->C:\Users\SCEA\AndroidStudioProjects\CineBox\app\src\main\AndroidManifest.xml:7:22-77
+14
+15    <application
+15-->C:\Users\SCEA\AndroidStudioProjects\CineBox\app\src\main\AndroidManifest.xml:9:5-62:19
+16        android:name="patil.rahul.cineboxtma.MyApplication"
+16-->C:\Users\SCEA\AndroidStudioProjects\CineBox\app\src\main\AndroidManifest.xml:10:9-38
+17        android:allowBackup="true"
+17-->C:\Users\SCEA\AndroidStudioProjects\CineBox\app\src\main\AndroidManifest.xml:11:9-35
+18        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+18-->[androidx.core:core:1.5.0] C:\Users\SCEA\.gradle\caches\transforms-3\a6ed9dfb3abf7d8541f7a1d01bf1d39b\transformed\core-1.5.0\AndroidManifest.xml:24:18-86
+19        android:debuggable="true"
+20        android:icon="@mipmap/ic_launcher"
+20-->C:\Users\SCEA\AndroidStudioProjects\CineBox\app\src\main\AndroidManifest.xml:13:9-43
+21        android:label="@string/app_name"
+21-->C:\Users\SCEA\AndroidStudioProjects\CineBox\app\src\main\AndroidManifest.xml:14:9-41
+22        android:largeHeap="true"
+22-->C:\Users\SCEA\AndroidStudioProjects\CineBox\app\src\main\AndroidManifest.xml:12:9-33
+23        android:roundIcon="@mipmap/ic_launcher_round"
+23-->C:\Users\SCEA\AndroidStudioProjects\CineBox\app\src\main\AndroidManifest.xml:15:9-54
+24        android:supportsRtl="true"
+24-->C:\Users\SCEA\AndroidStudioProjects\CineBox\app\src\main\AndroidManifest.xml:16:9-35
+25        android:testOnly="true" >
+26        <activity
+26-->C:\Users\SCEA\AndroidStudioProjects\CineBox\app\src\main\AndroidManifest.xml:17:9-28:20
+27            android:name="patil.rahul.cineboxtma.MainActivity"
+27-->C:\Users\SCEA\AndroidStudioProjects\CineBox\app\src\main\AndroidManifest.xml:18:13-41
+28            android:label="@string/app_name"
+28-->C:\Users\SCEA\AndroidStudioProjects\CineBox\app\src\main\AndroidManifest.xml:19:13-45
+29            android:screenOrientation="portrait"
+29-->C:\Users\SCEA\AndroidStudioProjects\CineBox\app\src\main\AndroidManifest.xml:20:13-49
+30            android:theme="@style/Theme.CineBox"
+30-->C:\Users\SCEA\AndroidStudioProjects\CineBox\app\src\main\AndroidManifest.xml:21:13-49
+31            android:windowSoftInputMode="adjustPan|stateHidden" >
+31-->C:\Users\SCEA\AndroidStudioProjects\CineBox\app\src\main\AndroidManifest.xml:22:13-64
+32            <intent-filter>
+32-->C:\Users\SCEA\AndroidStudioProjects\CineBox\app\src\main\AndroidManifest.xml:23:13-27:29
+33                <action android:name="android.intent.action.MAIN" />
+33-->C:\Users\SCEA\AndroidStudioProjects\CineBox\app\src\main\AndroidManifest.xml:24:17-69
+33-->C:\Users\SCEA\AndroidStudioProjects\CineBox\app\src\main\AndroidManifest.xml:24:25-66
+34
+35                <category android:name="android.intent.category.LAUNCHER" />
+35-->C:\Users\SCEA\AndroidStudioProjects\CineBox\app\src\main\AndroidManifest.xml:26:17-77
+35-->C:\Users\SCEA\AndroidStudioProjects\CineBox\app\src\main\AndroidManifest.xml:26:27-74
+36            </intent-filter>
+37        </activity>
+38        <activity
+38-->C:\Users\SCEA\AndroidStudioProjects\CineBox\app\src\main\AndroidManifest.xml:29:9-31:51
+39            android:name="patil.rahul.cineboxtma.MovieDetailActivity"
+39-->C:\Users\SCEA\AndroidStudioProjects\CineBox\app\src\main\AndroidManifest.xml:30:13-48
+40            android:theme="@style/Theme.Detail" />
+40-->C:\Users\SCEA\AndroidStudioProjects\CineBox\app\src\main\AndroidManifest.xml:31:13-48
+41        <activity
+41-->C:\Users\SCEA\AndroidStudioProjects\CineBox\app\src\main\AndroidManifest.xml:32:9-35:51
+42            android:name="patil.rahul.cineboxtma.TvDetailActivity"
+42-->C:\Users\SCEA\AndroidStudioProjects\CineBox\app\src\main\AndroidManifest.xml:33:13-45
+43            android:parentActivityName="patil.rahul.cineboxtma.MainActivity"
+43-->C:\Users\SCEA\AndroidStudioProjects\CineBox\app\src\main\AndroidManifest.xml:34:13-55
+44            android:theme="@style/Theme.Detail" />
+44-->C:\Users\SCEA\AndroidStudioProjects\CineBox\app\src\main\AndroidManifest.xml:35:13-48
+45        <activity
+45-->C:\Users\SCEA\AndroidStudioProjects\CineBox\app\src\main\AndroidManifest.xml:36:9-38:51
+46            android:name="patil.rahul.cineboxtma.PeopleDetailActivity"
+46-->C:\Users\SCEA\AndroidStudioProjects\CineBox\app\src\main\AndroidManifest.xml:37:13-49
+47            android:theme="@style/Theme.Detail" />
+47-->C:\Users\SCEA\AndroidStudioProjects\CineBox\app\src\main\AndroidManifest.xml:38:13-48
+48        <activity
+48-->C:\Users\SCEA\AndroidStudioProjects\CineBox\app\src\main\AndroidManifest.xml:39:9-45:20
+49            android:name="patil.rahul.cineboxtma.SearchActivity"
+49-->C:\Users\SCEA\AndroidStudioProjects\CineBox\app\src\main\AndroidManifest.xml:40:13-43
+50            android:theme="@style/Theme.CineBox" >
+50-->C:\Users\SCEA\AndroidStudioProjects\CineBox\app\src\main\AndroidManifest.xml:41:13-49
+51            <meta-data
+51-->C:\Users\SCEA\AndroidStudioProjects\CineBox\app\src\main\AndroidManifest.xml:42:13-44:54
+52                android:name="android.app.searchable"
+52-->C:\Users\SCEA\AndroidStudioProjects\CineBox\app\src\main\AndroidManifest.xml:43:17-54
+53                android:resource="@xml/searchable" />
+53-->C:\Users\SCEA\AndroidStudioProjects\CineBox\app\src\main\AndroidManifest.xml:44:17-51
+54        </activity>
+55        <activity
+55-->C:\Users\SCEA\AndroidStudioProjects\CineBox\app\src\main\AndroidManifest.xml:46:9-48:52
+56            android:name="patil.rahul.cineboxtma.MovieMoreActivity"
+56-->C:\Users\SCEA\AndroidStudioProjects\CineBox\app\src\main\AndroidManifest.xml:47:13-46
+57            android:theme="@style/Theme.CineBox" />
+57-->C:\Users\SCEA\AndroidStudioProjects\CineBox\app\src\main\AndroidManifest.xml:48:13-49
+58        <activity
+58-->C:\Users\SCEA\AndroidStudioProjects\CineBox\app\src\main\AndroidManifest.xml:49:9-51:52
+59            android:name="patil.rahul.cineboxtma.TvMoreActivity"
+59-->C:\Users\SCEA\AndroidStudioProjects\CineBox\app\src\main\AndroidManifest.xml:50:13-43
+60            android:theme="@style/Theme.CineBox" />
+60-->C:\Users\SCEA\AndroidStudioProjects\CineBox\app\src\main\AndroidManifest.xml:51:13-49
+61        <activity
+61-->C:\Users\SCEA\AndroidStudioProjects\CineBox\app\src\main\AndroidManifest.xml:52:9-56:52
+62            android:name="patil.rahul.cineboxtma.SettingsActivity"
+62-->C:\Users\SCEA\AndroidStudioProjects\CineBox\app\src\main\AndroidManifest.xml:53:13-45
+63            android:label="@string/action_settings"
+63-->C:\Users\SCEA\AndroidStudioProjects\CineBox\app\src\main\AndroidManifest.xml:54:13-52
+64            android:parentActivityName="patil.rahul.cineboxtma.MainActivity"
+64-->C:\Users\SCEA\AndroidStudioProjects\CineBox\app\src\main\AndroidManifest.xml:55:13-55
 65            android:theme="@style/Theme.CineBox" />
-65-->/home/rahul/AndroidStudioProjects/CineBox/app/src/main/AndroidManifest.xml:48:13-49
-66        <activity
-66-->/home/rahul/AndroidStudioProjects/CineBox/app/src/main/AndroidManifest.xml:49:9-51:52
-67            android:name="patil.rahul.cineboxtma.TvMoreActivity"
-67-->/home/rahul/AndroidStudioProjects/CineBox/app/src/main/AndroidManifest.xml:50:13-43
-68            android:theme="@style/Theme.CineBox" />
-68-->/home/rahul/AndroidStudioProjects/CineBox/app/src/main/AndroidManifest.xml:51:13-49
-69        <activity
-69-->/home/rahul/AndroidStudioProjects/CineBox/app/src/main/AndroidManifest.xml:52:9-56:53
-70            android:name="patil.rahul.cineboxtma.SettingsActivity"
-70-->/home/rahul/AndroidStudioProjects/CineBox/app/src/main/AndroidManifest.xml:53:13-45
-71            android:label="@string/action_settings"
-71-->/home/rahul/AndroidStudioProjects/CineBox/app/src/main/AndroidManifest.xml:54:13-52
-72            android:parentActivityName="patil.rahul.cineboxtma.MainActivity"
-72-->/home/rahul/AndroidStudioProjects/CineBox/app/src/main/AndroidManifest.xml:55:13-55
-73            android:theme="@style/Theme.Settings" />
-73-->/home/rahul/AndroidStudioProjects/CineBox/app/src/main/AndroidManifest.xml:56:13-50
-74
-75        <meta-data
-75-->/home/rahul/AndroidStudioProjects/CineBox/app/src/main/AndroidManifest.xml:58:9-60:57
-76            android:name="preloaded_fonts"
-76-->/home/rahul/AndroidStudioProjects/CineBox/app/src/main/AndroidManifest.xml:59:13-43
-77            android:resource="@array/preloaded_fonts" />
-77-->/home/rahul/AndroidStudioProjects/CineBox/app/src/main/AndroidManifest.xml:60:13-54
-78
-79        <provider
-79-->[com.crashlytics.sdk.android:crashlytics:2.9.4] /home/rahul/.gradle/caches/transforms-2/files-2.1/4a25b2138ce3f06cd4a8025f1ff4d6f9/crashlytics-2.9.4/AndroidManifest.xml:12:9-16:39
-80            android:name="com.crashlytics.android.CrashlyticsInitProvider"
-80-->[com.crashlytics.sdk.android:crashlytics:2.9.4] /home/rahul/.gradle/caches/transforms-2/files-2.1/4a25b2138ce3f06cd4a8025f1ff4d6f9/crashlytics-2.9.4/AndroidManifest.xml:13:13-75
-81            android:authorities="patil.rahul.cineboxtma.crashlyticsinitprovider"
-81-->[com.crashlytics.sdk.android:crashlytics:2.9.4] /home/rahul/.gradle/caches/transforms-2/files-2.1/4a25b2138ce3f06cd4a8025f1ff4d6f9/crashlytics-2.9.4/AndroidManifest.xml:14:13-75
-82            android:exported="false"
-82-->[com.crashlytics.sdk.android:crashlytics:2.9.4] /home/rahul/.gradle/caches/transforms-2/files-2.1/4a25b2138ce3f06cd4a8025f1ff4d6f9/crashlytics-2.9.4/AndroidManifest.xml:15:13-37
-83            android:initOrder="100" />
-83-->[com.crashlytics.sdk.android:crashlytics:2.9.4] /home/rahul/.gradle/caches/transforms-2/files-2.1/4a25b2138ce3f06cd4a8025f1ff4d6f9/crashlytics-2.9.4/AndroidManifest.xml:16:13-36
-84
-85        <service android:name="com.google.firebase.components.ComponentDiscoveryService" >
-85-->[com.google.firebase:firebase-measurement-connector-impl:16.0.1] /home/rahul/.gradle/caches/transforms-2/files-2.1/cd9c24713e525d444a19cd897233d235/jetified-firebase-measurement-connector-impl-16.0.1/AndroidManifest.xml:27:9-31:19
-85-->[com.google.firebase:firebase-measurement-connector-impl:16.0.1] /home/rahul/.gradle/caches/transforms-2/files-2.1/cd9c24713e525d444a19cd897233d235/jetified-firebase-measurement-connector-impl-16.0.1/AndroidManifest.xml:27:18-89
-86            <meta-data
-86-->[com.google.firebase:firebase-measurement-connector-impl:16.0.1] /home/rahul/.gradle/caches/transforms-2/files-2.1/cd9c24713e525d444a19cd897233d235/jetified-firebase-measurement-connector-impl-16.0.1/AndroidManifest.xml:28:13-30:85
-87                android:name="com.google.firebase.components:com.google.firebase.analytics.connector.internal.AnalyticsConnectorRegistrar"
-87-->[com.google.firebase:firebase-measurement-connector-impl:16.0.1] /home/rahul/.gradle/caches/transforms-2/files-2.1/cd9c24713e525d444a19cd897233d235/jetified-firebase-measurement-connector-impl-16.0.1/AndroidManifest.xml:29:17-139
-88                android:value="com.google.firebase.components.ComponentRegistrar" />
-88-->[com.google.firebase:firebase-measurement-connector-impl:16.0.1] /home/rahul/.gradle/caches/transforms-2/files-2.1/cd9c24713e525d444a19cd897233d235/jetified-firebase-measurement-connector-impl-16.0.1/AndroidManifest.xml:30:17-82
-89            <meta-data
-89-->[com.google.firebase:firebase-iid:16.0.0] /home/rahul/.gradle/caches/transforms-2/files-2.1/c6cd5b01f7461f83261911d60b7ce3bf/jetified-firebase-iid-16.0.0/AndroidManifest.xml:36:13-38:85
-90                android:name="com.google.firebase.components:com.google.firebase.iid.Registrar"
-90-->[com.google.firebase:firebase-iid:16.0.0] /home/rahul/.gradle/caches/transforms-2/files-2.1/c6cd5b01f7461f83261911d60b7ce3bf/jetified-firebase-iid-16.0.0/AndroidManifest.xml:37:17-96
-91                android:value="com.google.firebase.components.ComponentRegistrar" />
-91-->[com.google.firebase:firebase-iid:16.0.0] /home/rahul/.gradle/caches/transforms-2/files-2.1/c6cd5b01f7461f83261911d60b7ce3bf/jetified-firebase-iid-16.0.0/AndroidManifest.xml:38:17-82
-92        </service>
-93
-94        <receiver
-94-->[com.google.firebase:firebase-analytics:16.0.1] /home/rahul/.gradle/caches/transforms-2/files-2.1/c5dcd24af0430b736facd197ca1dc2cd/jetified-firebase-analytics-16.0.1/AndroidManifest.xml:29:9-33:20
-95            android:name="com.google.android.gms.measurement.AppMeasurementReceiver"
-95-->[com.google.firebase:firebase-analytics:16.0.1] /home/rahul/.gradle/caches/transforms-2/files-2.1/c5dcd24af0430b736facd197ca1dc2cd/jetified-firebase-analytics-16.0.1/AndroidManifest.xml:30:13-85
-96            android:enabled="true"
-96-->[com.google.firebase:firebase-analytics:16.0.1] /home/rahul/.gradle/caches/transforms-2/files-2.1/c5dcd24af0430b736facd197ca1dc2cd/jetified-firebase-analytics-16.0.1/AndroidManifest.xml:31:13-35
-97            android:exported="false" >
-97-->[com.google.firebase:firebase-analytics:16.0.1] /home/rahul/.gradle/caches/transforms-2/files-2.1/c5dcd24af0430b736facd197ca1dc2cd/jetified-firebase-analytics-16.0.1/AndroidManifest.xml:32:13-37
-98        </receiver>
-99        <receiver
-99-->[com.google.firebase:firebase-analytics:16.0.1] /home/rahul/.gradle/caches/transforms-2/files-2.1/c5dcd24af0430b736facd197ca1dc2cd/jetified-firebase-analytics-16.0.1/AndroidManifest.xml:34:9-42:20
-100            android:name="com.google.android.gms.measurement.AppMeasurementInstallReferrerReceiver"
-100-->[com.google.firebase:firebase-analytics:16.0.1] /home/rahul/.gradle/caches/transforms-2/files-2.1/c5dcd24af0430b736facd197ca1dc2cd/jetified-firebase-analytics-16.0.1/AndroidManifest.xml:35:13-100
-101            android:enabled="true"
-101-->[com.google.firebase:firebase-analytics:16.0.1] /home/rahul/.gradle/caches/transforms-2/files-2.1/c5dcd24af0430b736facd197ca1dc2cd/jetified-firebase-analytics-16.0.1/AndroidManifest.xml:36:13-35
-102            android:exported="true"
-102-->[com.google.firebase:firebase-analytics:16.0.1] /home/rahul/.gradle/caches/transforms-2/files-2.1/c5dcd24af0430b736facd197ca1dc2cd/jetified-firebase-analytics-16.0.1/AndroidManifest.xml:37:13-36
-103            android:permission="android.permission.INSTALL_PACKAGES" >
-103-->[com.google.firebase:firebase-analytics:16.0.1] /home/rahul/.gradle/caches/transforms-2/files-2.1/c5dcd24af0430b736facd197ca1dc2cd/jetified-firebase-analytics-16.0.1/AndroidManifest.xml:38:13-69
-104            <intent-filter>
-104-->[com.google.firebase:firebase-analytics:16.0.1] /home/rahul/.gradle/caches/transforms-2/files-2.1/c5dcd24af0430b736facd197ca1dc2cd/jetified-firebase-analytics-16.0.1/AndroidManifest.xml:39:13-41:29
-105                <action android:name="com.android.vending.INSTALL_REFERRER" />
-105-->[com.google.firebase:firebase-analytics:16.0.1] /home/rahul/.gradle/caches/transforms-2/files-2.1/c5dcd24af0430b736facd197ca1dc2cd/jetified-firebase-analytics-16.0.1/AndroidManifest.xml:40:17-79
-105-->[com.google.firebase:firebase-analytics:16.0.1] /home/rahul/.gradle/caches/transforms-2/files-2.1/c5dcd24af0430b736facd197ca1dc2cd/jetified-firebase-analytics-16.0.1/AndroidManifest.xml:40:25-76
-106            </intent-filter>
-107        </receiver>
-108
-109        <service
-109-->[com.google.firebase:firebase-analytics:16.0.1] /home/rahul/.gradle/caches/transforms-2/files-2.1/c5dcd24af0430b736facd197ca1dc2cd/jetified-firebase-analytics-16.0.1/AndroidManifest.xml:44:9-47:40
-110            android:name="com.google.android.gms.measurement.AppMeasurementService"
-110-->[com.google.firebase:firebase-analytics:16.0.1] /home/rahul/.gradle/caches/transforms-2/files-2.1/c5dcd24af0430b736facd197ca1dc2cd/jetified-firebase-analytics-16.0.1/AndroidManifest.xml:45:13-84
-111            android:enabled="true"
-111-->[com.google.firebase:firebase-analytics:16.0.1] /home/rahul/.gradle/caches/transforms-2/files-2.1/c5dcd24af0430b736facd197ca1dc2cd/jetified-firebase-analytics-16.0.1/AndroidManifest.xml:46:13-35
-112            android:exported="false" />
-112-->[com.google.firebase:firebase-analytics:16.0.1] /home/rahul/.gradle/caches/transforms-2/files-2.1/c5dcd24af0430b736facd197ca1dc2cd/jetified-firebase-analytics-16.0.1/AndroidManifest.xml:47:13-37
-113        <service
-113-->[com.google.firebase:firebase-analytics:16.0.1] /home/rahul/.gradle/caches/transforms-2/files-2.1/c5dcd24af0430b736facd197ca1dc2cd/jetified-firebase-analytics-16.0.1/AndroidManifest.xml:48:9-52:72
-114            android:name="com.google.android.gms.measurement.AppMeasurementJobService"
-114-->[com.google.firebase:firebase-analytics:16.0.1] /home/rahul/.gradle/caches/transforms-2/files-2.1/c5dcd24af0430b736facd197ca1dc2cd/jetified-firebase-analytics-16.0.1/AndroidManifest.xml:49:13-87
-115            android:enabled="true"
-115-->[com.google.firebase:firebase-analytics:16.0.1] /home/rahul/.gradle/caches/transforms-2/files-2.1/c5dcd24af0430b736facd197ca1dc2cd/jetified-firebase-analytics-16.0.1/AndroidManifest.xml:50:13-35
-116            android:exported="false"
-116-->[com.google.firebase:firebase-analytics:16.0.1] /home/rahul/.gradle/caches/transforms-2/files-2.1/c5dcd24af0430b736facd197ca1dc2cd/jetified-firebase-analytics-16.0.1/AndroidManifest.xml:51:13-37
-117            android:permission="android.permission.BIND_JOB_SERVICE" />
-117-->[com.google.firebase:firebase-analytics:16.0.1] /home/rahul/.gradle/caches/transforms-2/files-2.1/c5dcd24af0430b736facd197ca1dc2cd/jetified-firebase-analytics-16.0.1/AndroidManifest.xml:52:13-69
-118
-119        <receiver
-119-->[com.google.firebase:firebase-iid:16.0.0] /home/rahul/.gradle/caches/transforms-2/files-2.1/c6cd5b01f7461f83261911d60b7ce3bf/jetified-firebase-iid-16.0.0/AndroidManifest.xml:41:9-50:20
-120            android:name="com.google.firebase.iid.FirebaseInstanceIdReceiver"
-120-->[com.google.firebase:firebase-iid:16.0.0] /home/rahul/.gradle/caches/transforms-2/files-2.1/c6cd5b01f7461f83261911d60b7ce3bf/jetified-firebase-iid-16.0.0/AndroidManifest.xml:42:13-78
-121            android:exported="true"
-121-->[com.google.firebase:firebase-iid:16.0.0] /home/rahul/.gradle/caches/transforms-2/files-2.1/c6cd5b01f7461f83261911d60b7ce3bf/jetified-firebase-iid-16.0.0/AndroidManifest.xml:43:13-36
-122            android:permission="com.google.android.c2dm.permission.SEND" >
-122-->[com.google.firebase:firebase-iid:16.0.0] /home/rahul/.gradle/caches/transforms-2/files-2.1/c6cd5b01f7461f83261911d60b7ce3bf/jetified-firebase-iid-16.0.0/AndroidManifest.xml:44:13-73
-123            <intent-filter>
-123-->[com.google.firebase:firebase-iid:16.0.0] /home/rahul/.gradle/caches/transforms-2/files-2.1/c6cd5b01f7461f83261911d60b7ce3bf/jetified-firebase-iid-16.0.0/AndroidManifest.xml:45:13-49:29
-124                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
-124-->[com.google.firebase:firebase-iid:16.0.0] /home/rahul/.gradle/caches/transforms-2/files-2.1/c6cd5b01f7461f83261911d60b7ce3bf/jetified-firebase-iid-16.0.0/AndroidManifest.xml:46:17-81
-124-->[com.google.firebase:firebase-iid:16.0.0] /home/rahul/.gradle/caches/transforms-2/files-2.1/c6cd5b01f7461f83261911d60b7ce3bf/jetified-firebase-iid-16.0.0/AndroidManifest.xml:46:25-78
-125
-126                <category android:name="patil.rahul.cineboxtma" />
-126-->[com.google.firebase:firebase-iid:16.0.0] /home/rahul/.gradle/caches/transforms-2/files-2.1/c6cd5b01f7461f83261911d60b7ce3bf/jetified-firebase-iid-16.0.0/AndroidManifest.xml:48:17-61
-126-->[com.google.firebase:firebase-iid:16.0.0] /home/rahul/.gradle/caches/transforms-2/files-2.1/c6cd5b01f7461f83261911d60b7ce3bf/jetified-firebase-iid-16.0.0/AndroidManifest.xml:48:27-58
-127            </intent-filter>
-128        </receiver>
-129        <!--
-130             FirebaseInstanceIdService performs security checks at runtime,
-131             no need for explicit permissions despite exported="true"
-132        -->
-133        <service
-133-->[com.google.firebase:firebase-iid:16.0.0] /home/rahul/.gradle/caches/transforms-2/files-2.1/c6cd5b01f7461f83261911d60b7ce3bf/jetified-firebase-iid-16.0.0/AndroidManifest.xml:56:9-62:19
-134            android:name="com.google.firebase.iid.FirebaseInstanceIdService"
-134-->[com.google.firebase:firebase-iid:16.0.0] /home/rahul/.gradle/caches/transforms-2/files-2.1/c6cd5b01f7461f83261911d60b7ce3bf/jetified-firebase-iid-16.0.0/AndroidManifest.xml:57:13-77
-135            android:exported="true" >
-135-->[com.google.firebase:firebase-iid:16.0.0] /home/rahul/.gradle/caches/transforms-2/files-2.1/c6cd5b01f7461f83261911d60b7ce3bf/jetified-firebase-iid-16.0.0/AndroidManifest.xml:58:13-36
-136            <intent-filter android:priority="-500" >
-136-->[com.google.firebase:firebase-iid:16.0.0] /home/rahul/.gradle/caches/transforms-2/files-2.1/c6cd5b01f7461f83261911d60b7ce3bf/jetified-firebase-iid-16.0.0/AndroidManifest.xml:59:13-61:29
-136-->[com.google.firebase:firebase-iid:16.0.0] /home/rahul/.gradle/caches/transforms-2/files-2.1/c6cd5b01f7461f83261911d60b7ce3bf/jetified-firebase-iid-16.0.0/AndroidManifest.xml:59:28-51
-137                <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />
-137-->[com.google.firebase:firebase-iid:16.0.0] /home/rahul/.gradle/caches/transforms-2/files-2.1/c6cd5b01f7461f83261911d60b7ce3bf/jetified-firebase-iid-16.0.0/AndroidManifest.xml:60:17-80
-137-->[com.google.firebase:firebase-iid:16.0.0] /home/rahul/.gradle/caches/transforms-2/files-2.1/c6cd5b01f7461f83261911d60b7ce3bf/jetified-firebase-iid-16.0.0/AndroidManifest.xml:60:25-77
-138            </intent-filter>
-139        </service>
-140
-141        <provider
-141-->[com.google.firebase:firebase-common:16.0.0] /home/rahul/.gradle/caches/transforms-2/files-2.1/730479243df395678655db02fd4a81fe/jetified-firebase-common-16.0.0/AndroidManifest.xml:9:9-13:39
-142            android:name="com.google.firebase.provider.FirebaseInitProvider"
-142-->[com.google.firebase:firebase-common:16.0.0] /home/rahul/.gradle/caches/transforms-2/files-2.1/730479243df395678655db02fd4a81fe/jetified-firebase-common-16.0.0/AndroidManifest.xml:10:13-77
-143            android:authorities="patil.rahul.cineboxtma.firebaseinitprovider"
-143-->[com.google.firebase:firebase-common:16.0.0] /home/rahul/.gradle/caches/transforms-2/files-2.1/730479243df395678655db02fd4a81fe/jetified-firebase-common-16.0.0/AndroidManifest.xml:11:13-72
-144            android:exported="false"
-144-->[com.google.firebase:firebase-common:16.0.0] /home/rahul/.gradle/caches/transforms-2/files-2.1/730479243df395678655db02fd4a81fe/jetified-firebase-common-16.0.0/AndroidManifest.xml:12:13-37
-145            android:initOrder="100" />
-145-->[com.google.firebase:firebase-common:16.0.0] /home/rahul/.gradle/caches/transforms-2/files-2.1/730479243df395678655db02fd4a81fe/jetified-firebase-common-16.0.0/AndroidManifest.xml:13:13-36
-146
-147        <activity
-147-->[com.google.android.gms:play-services-base:15.0.1] /home/rahul/.gradle/caches/transforms-2/files-2.1/1bb271ca4c4c7b2470c5cc9074eff924/jetified-play-services-base-15.0.1/AndroidManifest.xml:23:9-26:75
-148            android:name="com.google.android.gms.common.api.GoogleApiActivity"
-148-->[com.google.android.gms:play-services-base:15.0.1] /home/rahul/.gradle/caches/transforms-2/files-2.1/1bb271ca4c4c7b2470c5cc9074eff924/jetified-play-services-base-15.0.1/AndroidManifest.xml:24:13-79
-149            android:exported="false"
-149-->[com.google.android.gms:play-services-base:15.0.1] /home/rahul/.gradle/caches/transforms-2/files-2.1/1bb271ca4c4c7b2470c5cc9074eff924/jetified-play-services-base-15.0.1/AndroidManifest.xml:25:13-37
-150            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-150-->[com.google.android.gms:play-services-base:15.0.1] /home/rahul/.gradle/caches/transforms-2/files-2.1/1bb271ca4c4c7b2470c5cc9074eff924/jetified-play-services-base-15.0.1/AndroidManifest.xml:26:13-72
-151
-152        <meta-data
-152-->[com.google.android.gms:play-services-basement:15.0.1] /home/rahul/.gradle/caches/transforms-2/files-2.1/1a8a8d219b6016e79bce919811c8a786/jetified-play-services-basement-15.0.1/AndroidManifest.xml:23:9-25:69
-153            android:name="com.google.android.gms.version"
-153-->[com.google.android.gms:play-services-basement:15.0.1] /home/rahul/.gradle/caches/transforms-2/files-2.1/1a8a8d219b6016e79bce919811c8a786/jetified-play-services-basement-15.0.1/AndroidManifest.xml:24:13-58
-154            android:value="@integer/google_play_services_version" />
-154-->[com.google.android.gms:play-services-basement:15.0.1] /home/rahul/.gradle/caches/transforms-2/files-2.1/1a8a8d219b6016e79bce919811c8a786/jetified-play-services-basement-15.0.1/AndroidManifest.xml:25:13-66
-155    </application>
-156
-157</manifest>
+65-->C:\Users\SCEA\AndroidStudioProjects\CineBox\app\src\main\AndroidManifest.xml:56:13-49
+66
+67        <meta-data
+67-->C:\Users\SCEA\AndroidStudioProjects\CineBox\app\src\main\AndroidManifest.xml:58:9-60:57
+68            android:name="preloaded_fonts"
+68-->C:\Users\SCEA\AndroidStudioProjects\CineBox\app\src\main\AndroidManifest.xml:59:13-43
+69            android:resource="@array/preloaded_fonts" />
+69-->C:\Users\SCEA\AndroidStudioProjects\CineBox\app\src\main\AndroidManifest.xml:60:13-54
+70    </application>
+71
+72</manifest>

@@ -1,0 +1,28 @@
+{
+    "logs": [
+        {
+            "outputFile": "C:\\Users\\SCEA\\AndroidStudioProjects\\CineBox\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-mdpi-v4\\values-mdpi-v4.xml",
+            "map": [
+                {
+                    "source": "C:\\Users\\SCEA\\AndroidStudioProjects\\CineBox\\app\\src\\main\\res\\values-mdpi\\strings.xml",
+                    "from": {
+                        "startLines": "3,9,15",
+                        "startColumns": "4,4,4",
+                        "startOffsets": "59,216,378",
+                        "endLines": "7,13,15",
+                        "endColumns": "19,19,46",
+                        "endOffsets": "208,370,420"
+                    },
+                    "to": {
+                        "startLines": "2,7,12",
+                        "startColumns": "4,4,4",
+                        "startOffsets": "55,205,360",
+                        "endLines": "6,11,12",
+                        "endColumns": "19,19,46",
+                        "endOffsets": "200,355,402"
+                    }
+                }
+            ]
+        }
+    ]
+}

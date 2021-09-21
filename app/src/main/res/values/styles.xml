@@ -1,21 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
 
-    <style name="Theme.CineBox" parent="Theme.MaterialComponents.Light.NoActionBar">
+    <style name="Theme.CineBox" parent="Theme.MaterialComponents.Light.NoActionBar.Bridge">
         <!-- Customize your theme here. -->
-        <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorPrimary">@color/colorPrimaryDark</item>
+        <item name="colorPrimaryVariant">@color/colorPrimaryDark</item>
+
         <item name="colorAccent">@color/colorAccent</item>
+        <item name="colorSecondary">@color/colorPrimary</item>
+        <item name="colorOnSecondary">@color/white</item>
         <item name="android:fontFamily">@font/nunito</item>
+        <item name="android:colorBackground">@color/surfaceColor</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <item name="preferenceTheme">@style/PreferenceThemeOverlay.v14.Material</item>
+
+        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
+
     </style>
 
-    <style name="Widget.CineBox.Toolbar" parent="Widget.AppCompat.Toolbar">
-        <item name="android:theme">@style/Theme.CineBox</item>
+    <style name="Widget.CineBox.Toolbar" parent="Widget.MaterialComponents.Toolbar">
         <item name="titleTextAppearance">@style/TextAppearance.CineBox.Toolbar</item>
-        <item name="popupTheme">@style/ThemeOverlay.AppCompat.Light</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="backgroundColor">@color/white</item>
     </style>
 
-    <style name="Theme.CineBox.AppBarOverlay" parent="ThemeOverlay.MaterialComponents.Light" />
 
     <style name="TextAppearance.CineBox.Toolbar" parent="TextAppearance.MaterialComponents.Headline6">
         <item name="android:textColor">@color/textColorPrimary</item>
@@ -41,15 +49,15 @@
 
     <style name="Theme.Settings" parent="Theme.MaterialComponents.Light">
         <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+        <item name="background">@color/white</item>
         <item name="android:fontFamily">@font/nunito_semibold</item>
         <item name="preferenceTheme">@style/PreferenceThemeOverlay.v14.Material</item>
     </style>
 
     <!-- Detail Activity Theme -->
     <style name="Theme.Detail" parent="Theme.MaterialComponents.Light.NoActionBar">
-       <item name="colorPrimary">@color/colorPrimaryDark</item>
+        <item name="colorPrimary">@color/colorPrimaryDark</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
         <item name="android:fontFamily">@font/nunito</item>
@@ -61,6 +69,6 @@
         <item name="popupTheme">@style/ThemeOverlay.MaterialComponents.Light</item>
     </style>
 
-    <style name="Theme.Detail.AppBarOverlay" parent="ThemeOverlay.MaterialComponents.Dark"/>
+    <style name="Theme.Detail.AppBarOverlay" parent="ThemeOverlay.MaterialComponents.Dark" />
 
 </resources>

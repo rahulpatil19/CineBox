@@ -1,0 +1,522 @@
+[
+    {
+        "merged": "C:\\Users\\SCEA\\AndroidStudioProjects\\CineBox\\app\\build\\intermediates\\merged_res\\debug\\layout_fragment_tab.xml.flat",
+        "source": "C:\\Users\\SCEA\\AndroidStudioProjects\\CineBox\\app\\src\\main\\res\\layout\\fragment_tab.xml"
+    },
+    {
+        "merged": "C:\\Users\\SCEA\\AndroidStudioProjects\\CineBox\\app\\build\\intermediates\\merged_res\\debug\\mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "C:\\Users\\SCEA\\AndroidStudioProjects\\CineBox\\app\\src\\main\\res\\mipmap-anydpi-v26\\ic_launcher.xml"
+    },
+    {
+        "merged": "C:\\Users\\SCEA\\AndroidStudioProjects\\CineBox\\app\\build\\intermediates\\merged_res\\debug\\drawable_ic_poweredby_green.xml.flat",
+        "source": "C:\\Users\\SCEA\\AndroidStudioProjects\\CineBox\\app\\src\\main\\res\\drawable\\ic_poweredby_green.xml"
+    },
+    {
+        "merged": "C:\\Users\\SCEA\\AndroidStudioProjects\\CineBox\\app\\build\\intermediates\\merged_res\\debug\\layout_item_home_slide.xml.flat",
+        "source": "C:\\Users\\SCEA\\AndroidStudioProjects\\CineBox\\app\\src\\main\\res\\layout\\item_home_slide.xml"
+    },
+    {
+        "merged": "C:\\Users\\SCEA\\AndroidStudioProjects\\CineBox\\app\\build\\intermediates\\merged_res\\debug\\layout_pref_layout_library_used.xml.flat",
+        "source": "C:\\Users\\SCEA\\AndroidStudioProjects\\CineBox\\app\\src\\main\\res\\layout\\pref_layout_library_used.xml"
+    },
+    {
+        "merged": "C:\\Users\\SCEA\\AndroidStudioProjects\\CineBox\\app\\build\\intermediates\\merged_res\\debug\\drawable-mdpi_ic_arrow_back.png.flat",
+        "source": "C:\\Users\\SCEA\\AndroidStudioProjects\\CineBox\\app\\src\\main\\res\\drawable-mdpi\\ic_arrow_back.png"
+    },
+    {
+        "merged": "C:\\Users\\SCEA\\AndroidStudioProjects\\CineBox\\app\\build\\intermediates\\merged_res\\debug\\layout_activity_movie_detail.xml.flat",
+        "source": "C:\\Users\\SCEA\\AndroidStudioProjects\\CineBox\\app\\src\\main\\res\\layout\\activity_movie_detail.xml"
+    },
+    {
+        "merged": "C:\\Users\\SCEA\\AndroidStudioProjects\\CineBox\\app\\build\\intermediates\\merged_res\\debug\\drawable-hdpi_ic_rating.png.flat",
+        "source": "C:\\Users\\SCEA\\AndroidStudioProjects\\CineBox\\app\\src\\main\\res\\drawable-hdpi\\ic_rating.png"
+    },
+    {
+        "merged": "C:\\Users\\SCEA\\AndroidStudioProjects\\CineBox\\app\\build\\intermediates\\merged_res\\debug\\drawable-xhdpi_ic_nav_tv.png.flat",
+        "source": "C:\\Users\\SCEA\\AndroidStudioProjects\\CineBox\\app\\src\\main\\res\\drawable-xhdpi\\ic_nav_tv.png"
+    },
+    {
+        "merged": "C:\\Users\\SCEA\\AndroidStudioProjects\\CineBox\\app\\build\\intermediates\\merged_res\\debug\\layout_fragment_nav_movie.xml.flat",
+        "source": "C:\\Users\\SCEA\\AndroidStudioProjects\\CineBox\\app\\src\\main\\res\\layout\\fragment_nav_movie.xml"
+    },
+    {
+        "merged": "C:\\Users\\SCEA\\AndroidStudioProjects\\CineBox\\app\\build\\intermediates\\merged_res\\debug\\layout_item_credit_people.xml.flat",
+        "source": "C:\\Users\\SCEA\\AndroidStudioProjects\\CineBox\\app\\src\\main\\res\\layout\\item_credit_people.xml"
+    },
+    {
+        "merged": "C:\\Users\\SCEA\\AndroidStudioProjects\\CineBox\\app\\build\\intermediates\\merged_res\\debug\\drawable-xhdpi_ic_menu_search.png.flat",
+        "source": "C:\\Users\\SCEA\\AndroidStudioProjects\\CineBox\\app\\src\\main\\res\\drawable-xhdpi\\ic_menu_search.png"
+    },
+    {
+        "merged": "C:\\Users\\SCEA\\AndroidStudioProjects\\CineBox\\app\\build\\intermediates\\merged_res\\debug\\mipmap-xxhdpi_ic_launcher_background.png.flat",
+        "source": "C:\\Users\\SCEA\\AndroidStudioProjects\\CineBox\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher_background.png"
+    },
+    {
+        "merged": "C:\\Users\\SCEA\\AndroidStudioProjects\\CineBox\\app\\build\\intermediates\\merged_res\\debug\\drawable-xxxhdpi_ic_nav_tv.png.flat",
+        "source": "C:\\Users\\SCEA\\AndroidStudioProjects\\CineBox\\app\\src\\main\\res\\drawable-xxxhdpi\\ic_nav_tv.png"
+    },
+    {
+        "merged": "C:\\Users\\SCEA\\AndroidStudioProjects\\CineBox\\app\\build\\intermediates\\merged_res\\debug\\drawable-mdpi_ic_arrow_back_black.png.flat",
+        "source": "C:\\Users\\SCEA\\AndroidStudioProjects\\CineBox\\app\\src\\main\\res\\drawable-mdpi\\ic_arrow_back_black.png"
+    },
+    {
+        "merged": "C:\\Users\\SCEA\\AndroidStudioProjects\\CineBox\\app\\build\\intermediates\\merged_res\\debug\\drawable-xxhdpi_ic_nav_movie.png.flat",
+        "source": "C:\\Users\\SCEA\\AndroidStudioProjects\\CineBox\\app\\src\\main\\res\\drawable-xxhdpi\\ic_nav_movie.png"
+    },
+    {
+        "merged": "C:\\Users\\SCEA\\AndroidStudioProjects\\CineBox\\app\\build\\intermediates\\merged_res\\debug\\mipmap-mdpi_ic_launcher_foreground.png.flat",
+        "source": "C:\\Users\\SCEA\\AndroidStudioProjects\\CineBox\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher_foreground.png"
+    },
+    {
+        "merged": "C:\\Users\\SCEA\\AndroidStudioProjects\\CineBox\\app\\build\\intermediates\\merged_res\\debug\\layout_fragment_nav_tvshow.xml.flat",
+        "source": "C:\\Users\\SCEA\\AndroidStudioProjects\\CineBox\\app\\src\\main\\res\\layout\\fragment_nav_tvshow.xml"
+    },
+    {
+        "merged": "C:\\Users\\SCEA\\AndroidStudioProjects\\CineBox\\app\\build\\intermediates\\merged_res\\debug\\layout_activity_more.xml.flat",
+        "source": "C:\\Users\\SCEA\\AndroidStudioProjects\\CineBox\\app\\src\\main\\res\\layout\\activity_more.xml"
+    },
+    {
+        "merged": "C:\\Users\\SCEA\\AndroidStudioProjects\\CineBox\\app\\build\\intermediates\\merged_res\\debug\\menu_menu_movie_detail.xml.flat",
+        "source": "C:\\Users\\SCEA\\AndroidStudioProjects\\CineBox\\app\\src\\main\\res\\menu\\menu_movie_detail.xml"
+    },
+    {
+        "merged": "C:\\Users\\SCEA\\AndroidStudioProjects\\CineBox\\app\\build\\intermediates\\merged_res\\debug\\drawable-hdpi_ic_nav_home.png.flat",
+        "source": "C:\\Users\\SCEA\\AndroidStudioProjects\\CineBox\\app\\src\\main\\res\\drawable-hdpi\\ic_nav_home.png"
+    },
+    {
+        "merged": "C:\\Users\\SCEA\\AndroidStudioProjects\\CineBox\\app\\build\\intermediates\\merged_res\\debug\\mipmap-xxxhdpi_ic_launcher_foreground.png.flat",
+        "source": "C:\\Users\\SCEA\\AndroidStudioProjects\\CineBox\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher_foreground.png"
+    },
+    {
+        "merged": "C:\\Users\\SCEA\\AndroidStudioProjects\\CineBox\\app\\build\\intermediates\\merged_res\\debug\\mipmap-hdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\SCEA\\AndroidStudioProjects\\CineBox\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\Users\\SCEA\\AndroidStudioProjects\\CineBox\\app\\build\\intermediates\\merged_res\\debug\\drawable-hdpi_ic_arrow_back.png.flat",
+        "source": "C:\\Users\\SCEA\\AndroidStudioProjects\\CineBox\\app\\src\\main\\res\\drawable-hdpi\\ic_arrow_back.png"
+    },
+    {
+        "merged": "C:\\Users\\SCEA\\AndroidStudioProjects\\CineBox\\app\\build\\intermediates\\merged_res\\debug\\layout_item_youtube_list.xml.flat",
+        "source": "C:\\Users\\SCEA\\AndroidStudioProjects\\CineBox\\app\\src\\main\\res\\layout\\item_youtube_list.xml"
+    },
+    {
+        "merged": "C:\\Users\\SCEA\\AndroidStudioProjects\\CineBox\\app\\build\\intermediates\\merged_res\\debug\\mipmap-mdpi_ic_launcher_round.png.flat",
+        "source": "C:\\Users\\SCEA\\AndroidStudioProjects\\CineBox\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher_round.png"
+    },
+    {
+        "merged": "C:\\Users\\SCEA\\AndroidStudioProjects\\CineBox\\app\\build\\intermediates\\merged_res\\debug\\drawable-xxxhdpi_ic_arrow_back_black.png.flat",
+        "source": "C:\\Users\\SCEA\\AndroidStudioProjects\\CineBox\\app\\src\\main\\res\\drawable-xxxhdpi\\ic_arrow_back_black.png"
+    },
+    {
+        "merged": "C:\\Users\\SCEA\\AndroidStudioProjects\\CineBox\\app\\build\\intermediates\\merged_res\\debug\\drawable-xhdpi_ic_nav_people.png.flat",
+        "source": "C:\\Users\\SCEA\\AndroidStudioProjects\\CineBox\\app\\src\\main\\res\\drawable-xhdpi\\ic_nav_people.png"
+    },
+    {
+        "merged": "C:\\Users\\SCEA\\AndroidStudioProjects\\CineBox\\app\\build\\intermediates\\merged_res\\debug\\menu_menu_main.xml.flat",
+        "source": "C:\\Users\\SCEA\\AndroidStudioProjects\\CineBox\\app\\src\\main\\res\\menu\\menu_main.xml"
+    },
+    {
+        "merged": "C:\\Users\\SCEA\\AndroidStudioProjects\\CineBox\\app\\build\\intermediates\\merged_res\\debug\\drawable-xxxhdpi_ic_nav_people.png.flat",
+        "source": "C:\\Users\\SCEA\\AndroidStudioProjects\\CineBox\\app\\src\\main\\res\\drawable-xxxhdpi\\ic_nav_people.png"
+    },
+    {
+        "merged": "C:\\Users\\SCEA\\AndroidStudioProjects\\CineBox\\app\\build\\intermediates\\merged_res\\debug\\xml_searchable.xml.flat",
+        "source": "C:\\Users\\SCEA\\AndroidStudioProjects\\CineBox\\app\\src\\main\\res\\xml\\searchable.xml"
+    },
+    {
+        "merged": "C:\\Users\\SCEA\\AndroidStudioProjects\\CineBox\\app\\build\\intermediates\\merged_res\\debug\\drawable-xxxhdpi_ic_menu_search.png.flat",
+        "source": "C:\\Users\\SCEA\\AndroidStudioProjects\\CineBox\\app\\src\\main\\res\\drawable-xxxhdpi\\ic_menu_search.png"
+    },
+    {
+        "merged": "C:\\Users\\SCEA\\AndroidStudioProjects\\CineBox\\app\\build\\intermediates\\merged_res\\debug\\layout_activity_settings.xml.flat",
+        "source": "C:\\Users\\SCEA\\AndroidStudioProjects\\CineBox\\app\\src\\main\\res\\layout\\activity_settings.xml"
+    },
+    {
+        "merged": "C:\\Users\\SCEA\\AndroidStudioProjects\\CineBox\\app\\build\\intermediates\\merged_res\\debug\\menu_menu_people_detail.xml.flat",
+        "source": "C:\\Users\\SCEA\\AndroidStudioProjects\\CineBox\\app\\src\\main\\res\\menu\\menu_people_detail.xml"
+    },
+    {
+        "merged": "C:\\Users\\SCEA\\AndroidStudioProjects\\CineBox\\app\\build\\intermediates\\merged_res\\debug\\drawable-xhdpi_ic_arrow_back_black.png.flat",
+        "source": "C:\\Users\\SCEA\\AndroidStudioProjects\\CineBox\\app\\src\\main\\res\\drawable-xhdpi\\ic_arrow_back_black.png"
+    },
+    {
+        "merged": "C:\\Users\\SCEA\\AndroidStudioProjects\\CineBox\\app\\build\\intermediates\\merged_res\\debug\\drawable-mdpi_ic_nav_home.png.flat",
+        "source": "C:\\Users\\SCEA\\AndroidStudioProjects\\CineBox\\app\\src\\main\\res\\drawable-mdpi\\ic_nav_home.png"
+    },
+    {
+        "merged": "C:\\Users\\SCEA\\AndroidStudioProjects\\CineBox\\app\\build\\intermediates\\merged_res\\debug\\drawable_ic_play_video.xml.flat",
+        "source": "C:\\Users\\SCEA\\AndroidStudioProjects\\CineBox\\app\\src\\main\\res\\drawable\\ic_play_video.xml"
+    },
+    {
+        "merged": "C:\\Users\\SCEA\\AndroidStudioProjects\\CineBox\\app\\build\\intermediates\\merged_res\\debug\\mipmap-xxxhdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\SCEA\\AndroidStudioProjects\\CineBox\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\Users\\SCEA\\AndroidStudioProjects\\CineBox\\app\\build\\intermediates\\merged_res\\debug\\drawable-xxhdpi_ic_menu_home.png.flat",
+        "source": "C:\\Users\\SCEA\\AndroidStudioProjects\\CineBox\\app\\src\\main\\res\\drawable-xxhdpi\\ic_menu_home.png"
+    },
+    {
+        "merged": "C:\\Users\\SCEA\\AndroidStudioProjects\\CineBox\\app\\build\\intermediates\\merged_res\\debug\\layout_activity_tv_detail.xml.flat",
+        "source": "C:\\Users\\SCEA\\AndroidStudioProjects\\CineBox\\app\\src\\main\\res\\layout\\activity_tv_detail.xml"
+    },
+    {
+        "merged": "C:\\Users\\SCEA\\AndroidStudioProjects\\CineBox\\app\\build\\intermediates\\merged_res\\debug\\layout_pref_layout_powered_by.xml.flat",
+        "source": "C:\\Users\\SCEA\\AndroidStudioProjects\\CineBox\\app\\src\\main\\res\\layout\\pref_layout_powered_by.xml"
+    },
+    {
+        "merged": "C:\\Users\\SCEA\\AndroidStudioProjects\\CineBox\\app\\build\\intermediates\\merged_res\\debug\\mipmap-mdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\SCEA\\AndroidStudioProjects\\CineBox\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\Users\\SCEA\\AndroidStudioProjects\\CineBox\\app\\build\\intermediates\\merged_res\\debug\\layout_activity_people_detail.xml.flat",
+        "source": "C:\\Users\\SCEA\\AndroidStudioProjects\\CineBox\\app\\src\\main\\res\\layout\\activity_people_detail.xml"
+    },
+    {
+        "merged": "C:\\Users\\SCEA\\AndroidStudioProjects\\CineBox\\app\\build\\intermediates\\merged_res\\debug\\font_nunito_extrabold.xml.flat",
+        "source": "C:\\Users\\SCEA\\AndroidStudioProjects\\CineBox\\app\\src\\main\\res\\font\\nunito_extrabold.xml"
+    },
+    {
+        "merged": "C:\\Users\\SCEA\\AndroidStudioProjects\\CineBox\\app\\build\\intermediates\\merged_res\\debug\\drawable_ic_launcher_background.xml.flat",
+        "source": "C:\\Users\\SCEA\\AndroidStudioProjects\\CineBox\\app\\src\\main\\res\\drawable\\ic_launcher_background.xml"
+    },
+    {
+        "merged": "C:\\Users\\SCEA\\AndroidStudioProjects\\CineBox\\app\\build\\intermediates\\merged_res\\debug\\drawable-xhdpi_ic_nav_home.png.flat",
+        "source": "C:\\Users\\SCEA\\AndroidStudioProjects\\CineBox\\app\\src\\main\\res\\drawable-xhdpi\\ic_nav_home.png"
+    },
+    {
+        "merged": "C:\\Users\\SCEA\\AndroidStudioProjects\\CineBox\\app\\build\\intermediates\\merged_res\\debug\\drawable-xxxhdpi_ic_menu_settings.png.flat",
+        "source": "C:\\Users\\SCEA\\AndroidStudioProjects\\CineBox\\app\\src\\main\\res\\drawable-xxxhdpi\\ic_menu_settings.png"
+    },
+    {
+        "merged": "C:\\Users\\SCEA\\AndroidStudioProjects\\CineBox\\app\\build\\intermediates\\merged_res\\debug\\drawable_me.jpg.flat",
+        "source": "C:\\Users\\SCEA\\AndroidStudioProjects\\CineBox\\app\\src\\main\\res\\drawable\\me.jpg"
+    },
+    {
+        "merged": "C:\\Users\\SCEA\\AndroidStudioProjects\\CineBox\\app\\build\\intermediates\\merged_res\\debug\\drawable-mdpi_ic_nav_movie.png.flat",
+        "source": "C:\\Users\\SCEA\\AndroidStudioProjects\\CineBox\\app\\src\\main\\res\\drawable-mdpi\\ic_nav_movie.png"
+    },
+    {
+        "merged": "C:\\Users\\SCEA\\AndroidStudioProjects\\CineBox\\app\\build\\intermediates\\merged_res\\debug\\drawable_bottom_nav_item_selector.xml.flat",
+        "source": "C:\\Users\\SCEA\\AndroidStudioProjects\\CineBox\\app\\src\\main\\res\\drawable\\bottom_nav_item_selector.xml"
+    },
+    {
+        "merged": "C:\\Users\\SCEA\\AndroidStudioProjects\\CineBox\\app\\build\\intermediates\\merged_res\\debug\\layout_content_movie_detail.xml.flat",
+        "source": "C:\\Users\\SCEA\\AndroidStudioProjects\\CineBox\\app\\src\\main\\res\\layout\\content_movie_detail.xml"
+    },
+    {
+        "merged": "C:\\Users\\SCEA\\AndroidStudioProjects\\CineBox\\app\\build\\intermediates\\merged_res\\debug\\drawable-hdpi_ic_nav_people.png.flat",
+        "source": "C:\\Users\\SCEA\\AndroidStudioProjects\\CineBox\\app\\src\\main\\res\\drawable-hdpi\\ic_nav_people.png"
+    },
+    {
+        "merged": "C:\\Users\\SCEA\\AndroidStudioProjects\\CineBox\\app\\build\\intermediates\\merged_res\\debug\\drawable_background_genre.xml.flat",
+        "source": "C:\\Users\\SCEA\\AndroidStudioProjects\\CineBox\\app\\src\\main\\res\\drawable\\background_genre.xml"
+    },
+    {
+        "merged": "C:\\Users\\SCEA\\AndroidStudioProjects\\CineBox\\app\\build\\intermediates\\merged_res\\debug\\layout_item_people.xml.flat",
+        "source": "C:\\Users\\SCEA\\AndroidStudioProjects\\CineBox\\app\\src\\main\\res\\layout\\item_people.xml"
+    },
+    {
+        "merged": "C:\\Users\\SCEA\\AndroidStudioProjects\\CineBox\\app\\build\\intermediates\\merged_res\\debug\\layout_fragment_search.xml.flat",
+        "source": "C:\\Users\\SCEA\\AndroidStudioProjects\\CineBox\\app\\src\\main\\res\\layout\\fragment_search.xml"
+    },
+    {
+        "merged": "C:\\Users\\SCEA\\AndroidStudioProjects\\CineBox\\app\\build\\intermediates\\merged_res\\debug\\drawable-mdpi_ic_nav_people.png.flat",
+        "source": "C:\\Users\\SCEA\\AndroidStudioProjects\\CineBox\\app\\src\\main\\res\\drawable-mdpi\\ic_nav_people.png"
+    },
+    {
+        "merged": "C:\\Users\\SCEA\\AndroidStudioProjects\\CineBox\\app\\build\\intermediates\\merged_res\\debug\\mipmap-xxhdpi_ic_launcher_foreground.png.flat",
+        "source": "C:\\Users\\SCEA\\AndroidStudioProjects\\CineBox\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher_foreground.png"
+    },
+    {
+        "merged": "C:\\Users\\SCEA\\AndroidStudioProjects\\CineBox\\app\\build\\intermediates\\merged_res\\debug\\mipmap-mdpi_ic_launcher_background.png.flat",
+        "source": "C:\\Users\\SCEA\\AndroidStudioProjects\\CineBox\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher_background.png"
+    },
+    {
+        "merged": "C:\\Users\\SCEA\\AndroidStudioProjects\\CineBox\\app\\build\\intermediates\\merged_res\\debug\\mipmap-xhdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\SCEA\\AndroidStudioProjects\\CineBox\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\Users\\SCEA\\AndroidStudioProjects\\CineBox\\app\\build\\intermediates\\merged_res\\debug\\mipmap-xxxhdpi_ic_launcher_round.png.flat",
+        "source": "C:\\Users\\SCEA\\AndroidStudioProjects\\CineBox\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher_round.png"
+    },
+    {
+        "merged": "C:\\Users\\SCEA\\AndroidStudioProjects\\CineBox\\app\\build\\intermediates\\merged_res\\debug\\layout_pref_layout_developer.xml.flat",
+        "source": "C:\\Users\\SCEA\\AndroidStudioProjects\\CineBox\\app\\src\\main\\res\\layout\\pref_layout_developer.xml"
+    },
+    {
+        "merged": "C:\\Users\\SCEA\\AndroidStudioProjects\\CineBox\\app\\build\\intermediates\\merged_res\\debug\\drawable-hdpi_ic_nav_tv.png.flat",
+        "source": "C:\\Users\\SCEA\\AndroidStudioProjects\\CineBox\\app\\src\\main\\res\\drawable-hdpi\\ic_nav_tv.png"
+    },
+    {
+        "merged": "C:\\Users\\SCEA\\AndroidStudioProjects\\CineBox\\app\\build\\intermediates\\merged_res\\debug\\drawable-xhdpi_ic_arrow_back.png.flat",
+        "source": "C:\\Users\\SCEA\\AndroidStudioProjects\\CineBox\\app\\src\\main\\res\\drawable-xhdpi\\ic_arrow_back.png"
+    },
+    {
+        "merged": "C:\\Users\\SCEA\\AndroidStudioProjects\\CineBox\\app\\build\\intermediates\\merged_res\\debug\\drawable-hdpi_ic_menu_search.png.flat",
+        "source": "C:\\Users\\SCEA\\AndroidStudioProjects\\CineBox\\app\\src\\main\\res\\drawable-hdpi\\ic_menu_search.png"
+    },
+    {
+        "merged": "C:\\Users\\SCEA\\AndroidStudioProjects\\CineBox\\app\\build\\intermediates\\merged_res\\debug\\layout_item_card_tv.xml.flat",
+        "source": "C:\\Users\\SCEA\\AndroidStudioProjects\\CineBox\\app\\src\\main\\res\\layout\\item_card_tv.xml"
+    },
+    {
+        "merged": "C:\\Users\\SCEA\\AndroidStudioProjects\\CineBox\\app\\build\\intermediates\\merged_res\\debug\\drawable-xhdpi_ic_menu_home.png.flat",
+        "source": "C:\\Users\\SCEA\\AndroidStudioProjects\\CineBox\\app\\src\\main\\res\\drawable-xhdpi\\ic_menu_home.png"
+    },
+    {
+        "merged": "C:\\Users\\SCEA\\AndroidStudioProjects\\CineBox\\app\\build\\intermediates\\merged_res\\debug\\xml_preferences.xml.flat",
+        "source": "C:\\Users\\SCEA\\AndroidStudioProjects\\CineBox\\app\\src\\main\\res\\xml\\preferences.xml"
+    },
+    {
+        "merged": "C:\\Users\\SCEA\\AndroidStudioProjects\\CineBox\\app\\build\\intermediates\\merged_res\\debug\\drawable-xxhdpi_ic_menu_search.png.flat",
+        "source": "C:\\Users\\SCEA\\AndroidStudioProjects\\CineBox\\app\\src\\main\\res\\drawable-xxhdpi\\ic_menu_search.png"
+    },
+    {
+        "merged": "C:\\Users\\SCEA\\AndroidStudioProjects\\CineBox\\app\\build\\intermediates\\merged_res\\debug\\font_nunito_semibold.xml.flat",
+        "source": "C:\\Users\\SCEA\\AndroidStudioProjects\\CineBox\\app\\src\\main\\res\\font\\nunito_semibold.xml"
+    },
+    {
+        "merged": "C:\\Users\\SCEA\\AndroidStudioProjects\\CineBox\\app\\build\\intermediates\\merged_res\\debug\\layout_item_horizontal_movie.xml.flat",
+        "source": "C:\\Users\\SCEA\\AndroidStudioProjects\\CineBox\\app\\src\\main\\res\\layout\\item_horizontal_movie.xml"
+    },
+    {
+        "merged": "C:\\Users\\SCEA\\AndroidStudioProjects\\CineBox\\app\\build\\intermediates\\merged_res\\debug\\drawable-mdpi_ic_menu_search.png.flat",
+        "source": "C:\\Users\\SCEA\\AndroidStudioProjects\\CineBox\\app\\src\\main\\res\\drawable-mdpi\\ic_menu_search.png"
+    },
+    {
+        "merged": "C:\\Users\\SCEA\\AndroidStudioProjects\\CineBox\\app\\build\\intermediates\\merged_res\\debug\\mipmap-xxhdpi_ic_launcher_round.png.flat",
+        "source": "C:\\Users\\SCEA\\AndroidStudioProjects\\CineBox\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher_round.png"
+    },
+    {
+        "merged": "C:\\Users\\SCEA\\AndroidStudioProjects\\CineBox\\app\\build\\intermediates\\merged_res\\debug\\layout_item_image.xml.flat",
+        "source": "C:\\Users\\SCEA\\AndroidStudioProjects\\CineBox\\app\\src\\main\\res\\layout\\item_image.xml"
+    },
+    {
+        "merged": "C:\\Users\\SCEA\\AndroidStudioProjects\\CineBox\\app\\build\\intermediates\\merged_res\\debug\\drawable_background_date.xml.flat",
+        "source": "C:\\Users\\SCEA\\AndroidStudioProjects\\CineBox\\app\\src\\main\\res\\drawable\\background_date.xml"
+    },
+    {
+        "merged": "C:\\Users\\SCEA\\AndroidStudioProjects\\CineBox\\app\\build\\intermediates\\merged_res\\debug\\drawable_ic_fiber.xml.flat",
+        "source": "C:\\Users\\SCEA\\AndroidStudioProjects\\CineBox\\app\\src\\main\\res\\drawable\\ic_fiber.xml"
+    },
+    {
+        "merged": "C:\\Users\\SCEA\\AndroidStudioProjects\\CineBox\\app\\build\\intermediates\\merged_res\\debug\\layout_error_layout.xml.flat",
+        "source": "C:\\Users\\SCEA\\AndroidStudioProjects\\CineBox\\app\\src\\main\\res\\layout\\error_layout.xml"
+    },
+    {
+        "merged": "C:\\Users\\SCEA\\AndroidStudioProjects\\CineBox\\app\\build\\intermediates\\merged_res\\debug\\mipmap-hdpi_ic_launcher_background.png.flat",
+        "source": "C:\\Users\\SCEA\\AndroidStudioProjects\\CineBox\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher_background.png"
+    },
+    {
+        "merged": "C:\\Users\\SCEA\\AndroidStudioProjects\\CineBox\\app\\build\\intermediates\\merged_res\\debug\\drawable-xxhdpi_ic_nav_home.png.flat",
+        "source": "C:\\Users\\SCEA\\AndroidStudioProjects\\CineBox\\app\\src\\main\\res\\drawable-xxhdpi\\ic_nav_home.png"
+    },
+    {
+        "merged": "C:\\Users\\SCEA\\AndroidStudioProjects\\CineBox\\app\\build\\intermediates\\merged_res\\debug\\drawable-xhdpi_ic_nav_movie.png.flat",
+        "source": "C:\\Users\\SCEA\\AndroidStudioProjects\\CineBox\\app\\src\\main\\res\\drawable-xhdpi\\ic_nav_movie.png"
+    },
+    {
+        "merged": "C:\\Users\\SCEA\\AndroidStudioProjects\\CineBox\\app\\build\\intermediates\\merged_res\\debug\\drawable-hdpi_ic_nav_movie.png.flat",
+        "source": "C:\\Users\\SCEA\\AndroidStudioProjects\\CineBox\\app\\src\\main\\res\\drawable-hdpi\\ic_nav_movie.png"
+    },
+    {
+        "merged": "C:\\Users\\SCEA\\AndroidStudioProjects\\CineBox\\app\\build\\intermediates\\merged_res\\debug\\drawable-mdpi_ic_menu_home.png.flat",
+        "source": "C:\\Users\\SCEA\\AndroidStudioProjects\\CineBox\\app\\src\\main\\res\\drawable-mdpi\\ic_menu_home.png"
+    },
+    {
+        "merged": "C:\\Users\\SCEA\\AndroidStudioProjects\\CineBox\\app\\build\\intermediates\\merged_res\\debug\\drawable-hdpi_ic_menu_settings.png.flat",
+        "source": "C:\\Users\\SCEA\\AndroidStudioProjects\\CineBox\\app\\src\\main\\res\\drawable-hdpi\\ic_menu_settings.png"
+    },
+    {
+        "merged": "C:\\Users\\SCEA\\AndroidStudioProjects\\CineBox\\app\\build\\intermediates\\merged_res\\debug\\drawable-xxhdpi_ic_menu_settings.png.flat",
+        "source": "C:\\Users\\SCEA\\AndroidStudioProjects\\CineBox\\app\\src\\main\\res\\drawable-xxhdpi\\ic_menu_settings.png"
+    },
+    {
+        "merged": "C:\\Users\\SCEA\\AndroidStudioProjects\\CineBox\\app\\build\\intermediates\\merged_res\\debug\\mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "C:\\Users\\SCEA\\AndroidStudioProjects\\CineBox\\app\\src\\main\\res\\mipmap-anydpi-v26\\ic_launcher_round.xml"
+    },
+    {
+        "merged": "C:\\Users\\SCEA\\AndroidStudioProjects\\CineBox\\app\\build\\intermediates\\merged_res\\debug\\layout_item_credit_tv.xml.flat",
+        "source": "C:\\Users\\SCEA\\AndroidStudioProjects\\CineBox\\app\\src\\main\\res\\layout\\item_credit_tv.xml"
+    },
+    {
+        "merged": "C:\\Users\\SCEA\\AndroidStudioProjects\\CineBox\\app\\build\\intermediates\\merged_res\\debug\\drawable-xhdpi_ic_menu_settings.png.flat",
+        "source": "C:\\Users\\SCEA\\AndroidStudioProjects\\CineBox\\app\\src\\main\\res\\drawable-xhdpi\\ic_menu_settings.png"
+    },
+    {
+        "merged": "C:\\Users\\SCEA\\AndroidStudioProjects\\CineBox\\app\\build\\intermediates\\merged_res\\debug\\drawable-xxhdpi_ic_nav_people.png.flat",
+        "source": "C:\\Users\\SCEA\\AndroidStudioProjects\\CineBox\\app\\src\\main\\res\\drawable-xxhdpi\\ic_nav_people.png"
+    },
+    {
+        "merged": "C:\\Users\\SCEA\\AndroidStudioProjects\\CineBox\\app\\build\\intermediates\\merged_res\\debug\\drawable-mdpi_ic_rating.png.flat",
+        "source": "C:\\Users\\SCEA\\AndroidStudioProjects\\CineBox\\app\\src\\main\\res\\drawable-mdpi\\ic_rating.png"
+    },
+    {
+        "merged": "C:\\Users\\SCEA\\AndroidStudioProjects\\CineBox\\app\\build\\intermediates\\merged_res\\debug\\drawable-v24_ic_launcher_foreground.xml.flat",
+        "source": "C:\\Users\\SCEA\\AndroidStudioProjects\\CineBox\\app\\src\\main\\res\\drawable-v24\\ic_launcher_foreground.xml"
+    },
+    {
+        "merged": "C:\\Users\\SCEA\\AndroidStudioProjects\\CineBox\\app\\build\\intermediates\\merged_res\\debug\\mipmap-xhdpi_ic_launcher_round.png.flat",
+        "source": "C:\\Users\\SCEA\\AndroidStudioProjects\\CineBox\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher_round.png"
+    },
+    {
+        "merged": "C:\\Users\\SCEA\\AndroidStudioProjects\\CineBox\\app\\build\\intermediates\\merged_res\\debug\\drawable-xhdpi_ic_rating.png.flat",
+        "source": "C:\\Users\\SCEA\\AndroidStudioProjects\\CineBox\\app\\src\\main\\res\\drawable-xhdpi\\ic_rating.png"
+    },
+    {
+        "merged": "C:\\Users\\SCEA\\AndroidStudioProjects\\CineBox\\app\\build\\intermediates\\merged_res\\debug\\drawable-xxhdpi_ic_arrow_back_black.png.flat",
+        "source": "C:\\Users\\SCEA\\AndroidStudioProjects\\CineBox\\app\\src\\main\\res\\drawable-xxhdpi\\ic_arrow_back_black.png"
+    },
+    {
+        "merged": "C:\\Users\\SCEA\\AndroidStudioProjects\\CineBox\\app\\build\\intermediates\\merged_res\\debug\\drawable-xxhdpi_ic_nav_tv.png.flat",
+        "source": "C:\\Users\\SCEA\\AndroidStudioProjects\\CineBox\\app\\src\\main\\res\\drawable-xxhdpi\\ic_nav_tv.png"
+    },
+    {
+        "merged": "C:\\Users\\SCEA\\AndroidStudioProjects\\CineBox\\app\\build\\intermediates\\merged_res\\debug\\menu_menu_bottom_navigation.xml.flat",
+        "source": "C:\\Users\\SCEA\\AndroidStudioProjects\\CineBox\\app\\src\\main\\res\\menu\\menu_bottom_navigation.xml"
+    },
+    {
+        "merged": "C:\\Users\\SCEA\\AndroidStudioProjects\\CineBox\\app\\build\\intermediates\\merged_res\\debug\\layout_content_people_detail.xml.flat",
+        "source": "C:\\Users\\SCEA\\AndroidStudioProjects\\CineBox\\app\\src\\main\\res\\layout\\content_people_detail.xml"
+    },
+    {
+        "merged": "C:\\Users\\SCEA\\AndroidStudioProjects\\CineBox\\app\\build\\intermediates\\merged_res\\debug\\drawable_ic_error.xml.flat",
+        "source": "C:\\Users\\SCEA\\AndroidStudioProjects\\CineBox\\app\\src\\main\\res\\drawable\\ic_error.xml"
+    },
+    {
+        "merged": "C:\\Users\\SCEA\\AndroidStudioProjects\\CineBox\\app\\build\\intermediates\\merged_res\\debug\\layout_item_slide.xml.flat",
+        "source": "C:\\Users\\SCEA\\AndroidStudioProjects\\CineBox\\app\\src\\main\\res\\layout\\item_slide.xml"
+    },
+    {
+        "merged": "C:\\Users\\SCEA\\AndroidStudioProjects\\CineBox\\app\\build\\intermediates\\merged_res\\debug\\drawable_background_retry_btn.xml.flat",
+        "source": "C:\\Users\\SCEA\\AndroidStudioProjects\\CineBox\\app\\src\\main\\res\\drawable\\background_retry_btn.xml"
+    },
+    {
+        "merged": "C:\\Users\\SCEA\\AndroidStudioProjects\\CineBox\\app\\build\\intermediates\\merged_res\\debug\\layout_content_home.xml.flat",
+        "source": "C:\\Users\\SCEA\\AndroidStudioProjects\\CineBox\\app\\src\\main\\res\\layout\\content_home.xml"
+    },
+    {
+        "merged": "C:\\Users\\SCEA\\AndroidStudioProjects\\CineBox\\app\\build\\intermediates\\merged_res\\debug\\drawable-xxxhdpi_ic_arrow_back.png.flat",
+        "source": "C:\\Users\\SCEA\\AndroidStudioProjects\\CineBox\\app\\src\\main\\res\\drawable-xxxhdpi\\ic_arrow_back.png"
+    },
+    {
+        "merged": "C:\\Users\\SCEA\\AndroidStudioProjects\\CineBox\\app\\build\\intermediates\\merged_res\\debug\\mipmap-hdpi_ic_launcher_round.png.flat",
+        "source": "C:\\Users\\SCEA\\AndroidStudioProjects\\CineBox\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher_round.png"
+    },
+    {
+        "merged": "C:\\Users\\SCEA\\AndroidStudioProjects\\CineBox\\app\\build\\intermediates\\merged_res\\debug\\drawable-xxxhdpi_ic_nav_movie.png.flat",
+        "source": "C:\\Users\\SCEA\\AndroidStudioProjects\\CineBox\\app\\src\\main\\res\\drawable-xxxhdpi\\ic_nav_movie.png"
+    },
+    {
+        "merged": "C:\\Users\\SCEA\\AndroidStudioProjects\\CineBox\\app\\build\\intermediates\\merged_res\\debug\\layout_content_tv_detail.xml.flat",
+        "source": "C:\\Users\\SCEA\\AndroidStudioProjects\\CineBox\\app\\src\\main\\res\\layout\\content_tv_detail.xml"
+    },
+    {
+        "merged": "C:\\Users\\SCEA\\AndroidStudioProjects\\CineBox\\app\\build\\intermediates\\merged_res\\debug\\menu_menu_tv_detail.xml.flat",
+        "source": "C:\\Users\\SCEA\\AndroidStudioProjects\\CineBox\\app\\src\\main\\res\\menu\\menu_tv_detail.xml"
+    },
+    {
+        "merged": "C:\\Users\\SCEA\\AndroidStudioProjects\\CineBox\\app\\build\\intermediates\\merged_res\\debug\\mipmap-xhdpi_ic_launcher_background.png.flat",
+        "source": "C:\\Users\\SCEA\\AndroidStudioProjects\\CineBox\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher_background.png"
+    },
+    {
+        "merged": "C:\\Users\\SCEA\\AndroidStudioProjects\\CineBox\\app\\build\\intermediates\\merged_res\\debug\\layout_item_credit_movie.xml.flat",
+        "source": "C:\\Users\\SCEA\\AndroidStudioProjects\\CineBox\\app\\src\\main\\res\\layout\\item_credit_movie.xml"
+    },
+    {
+        "merged": "C:\\Users\\SCEA\\AndroidStudioProjects\\CineBox\\app\\build\\intermediates\\merged_res\\debug\\drawable-xxhdpi_ic_rating.png.flat",
+        "source": "C:\\Users\\SCEA\\AndroidStudioProjects\\CineBox\\app\\src\\main\\res\\drawable-xxhdpi\\ic_rating.png"
+    },
+    {
+        "merged": "C:\\Users\\SCEA\\AndroidStudioProjects\\CineBox\\app\\build\\intermediates\\merged_res\\debug\\drawable-xxxhdpi_ic_nav_home.png.flat",
+        "source": "C:\\Users\\SCEA\\AndroidStudioProjects\\CineBox\\app\\src\\main\\res\\drawable-xxxhdpi\\ic_nav_home.png"
+    },
+    {
+        "merged": "C:\\Users\\SCEA\\AndroidStudioProjects\\CineBox\\app\\build\\intermediates\\merged_res\\debug\\layout_activity_main.xml.flat",
+        "source": "C:\\Users\\SCEA\\AndroidStudioProjects\\CineBox\\app\\src\\main\\res\\layout\\activity_main.xml"
+    },
+    {
+        "merged": "C:\\Users\\SCEA\\AndroidStudioProjects\\CineBox\\app\\build\\intermediates\\merged_res\\debug\\drawable-mdpi_ic_menu_settings.png.flat",
+        "source": "C:\\Users\\SCEA\\AndroidStudioProjects\\CineBox\\app\\src\\main\\res\\drawable-mdpi\\ic_menu_settings.png"
+    },
+    {
+        "merged": "C:\\Users\\SCEA\\AndroidStudioProjects\\CineBox\\app\\build\\intermediates\\merged_res\\debug\\layout_fragment_nav_home.xml.flat",
+        "source": "C:\\Users\\SCEA\\AndroidStudioProjects\\CineBox\\app\\src\\main\\res\\layout\\fragment_nav_home.xml"
+    },
+    {
+        "merged": "C:\\Users\\SCEA\\AndroidStudioProjects\\CineBox\\app\\build\\intermediates\\merged_res\\debug\\drawable-xxxhdpi_ic_menu_home.png.flat",
+        "source": "C:\\Users\\SCEA\\AndroidStudioProjects\\CineBox\\app\\src\\main\\res\\drawable-xxxhdpi\\ic_menu_home.png"
+    },
+    {
+        "merged": "C:\\Users\\SCEA\\AndroidStudioProjects\\CineBox\\app\\build\\intermediates\\merged_res\\debug\\layout_fragment_nav_people.xml.flat",
+        "source": "C:\\Users\\SCEA\\AndroidStudioProjects\\CineBox\\app\\src\\main\\res\\layout\\fragment_nav_people.xml"
+    },
+    {
+        "merged": "C:\\Users\\SCEA\\AndroidStudioProjects\\CineBox\\app\\build\\intermediates\\merged_res\\debug\\drawable-mdpi_ic_nav_tv.png.flat",
+        "source": "C:\\Users\\SCEA\\AndroidStudioProjects\\CineBox\\app\\src\\main\\res\\drawable-mdpi\\ic_nav_tv.png"
+    },
+    {
+        "merged": "C:\\Users\\SCEA\\AndroidStudioProjects\\CineBox\\app\\build\\intermediates\\merged_res\\debug\\mipmap-xxhdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\SCEA\\AndroidStudioProjects\\CineBox\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\Users\\SCEA\\AndroidStudioProjects\\CineBox\\app\\build\\intermediates\\merged_res\\debug\\drawable-xxhdpi_ic_arrow_back.png.flat",
+        "source": "C:\\Users\\SCEA\\AndroidStudioProjects\\CineBox\\app\\src\\main\\res\\drawable-xxhdpi\\ic_arrow_back.png"
+    },
+    {
+        "merged": "C:\\Users\\SCEA\\AndroidStudioProjects\\CineBox\\app\\build\\intermediates\\merged_res\\debug\\font_nunito.xml.flat",
+        "source": "C:\\Users\\SCEA\\AndroidStudioProjects\\CineBox\\app\\src\\main\\res\\font\\nunito.xml"
+    },
+    {
+        "merged": "C:\\Users\\SCEA\\AndroidStudioProjects\\CineBox\\app\\build\\intermediates\\merged_res\\debug\\drawable-hdpi_ic_arrow_back_black.png.flat",
+        "source": "C:\\Users\\SCEA\\AndroidStudioProjects\\CineBox\\app\\src\\main\\res\\drawable-hdpi\\ic_arrow_back_black.png"
+    },
+    {
+        "merged": "C:\\Users\\SCEA\\AndroidStudioProjects\\CineBox\\app\\build\\intermediates\\merged_res\\debug\\layout_activity_search.xml.flat",
+        "source": "C:\\Users\\SCEA\\AndroidStudioProjects\\CineBox\\app\\src\\main\\res\\layout\\activity_search.xml"
+    },
+    {
+        "merged": "C:\\Users\\SCEA\\AndroidStudioProjects\\CineBox\\app\\build\\intermediates\\merged_res\\debug\\layout_item_card_movie.xml.flat",
+        "source": "C:\\Users\\SCEA\\AndroidStudioProjects\\CineBox\\app\\src\\main\\res\\layout\\item_card_movie.xml"
+    },
+    {
+        "merged": "C:\\Users\\SCEA\\AndroidStudioProjects\\CineBox\\app\\build\\intermediates\\merged_res\\debug\\mipmap-xhdpi_ic_launcher_foreground.png.flat",
+        "source": "C:\\Users\\SCEA\\AndroidStudioProjects\\CineBox\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher_foreground.png"
+    },
+    {
+        "merged": "C:\\Users\\SCEA\\AndroidStudioProjects\\CineBox\\app\\build\\intermediates\\merged_res\\debug\\mipmap-hdpi_ic_launcher_foreground.png.flat",
+        "source": "C:\\Users\\SCEA\\AndroidStudioProjects\\CineBox\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher_foreground.png"
+    },
+    {
+        "merged": "C:\\Users\\SCEA\\AndroidStudioProjects\\CineBox\\app\\build\\intermediates\\merged_res\\debug\\layout_item_horizontal_tv.xml.flat",
+        "source": "C:\\Users\\SCEA\\AndroidStudioProjects\\CineBox\\app\\src\\main\\res\\layout\\item_horizontal_tv.xml"
+    },
+    {
+        "merged": "C:\\Users\\SCEA\\AndroidStudioProjects\\CineBox\\app\\build\\intermediates\\merged_res\\debug\\layout_example_constraint.xml.flat",
+        "source": "C:\\Users\\SCEA\\AndroidStudioProjects\\CineBox\\app\\src\\main\\res\\layout\\example_constraint.xml"
+    },
+    {
+        "merged": "C:\\Users\\SCEA\\AndroidStudioProjects\\CineBox\\app\\build\\intermediates\\merged_res\\debug\\layout_item_progress.xml.flat",
+        "source": "C:\\Users\\SCEA\\AndroidStudioProjects\\CineBox\\app\\src\\main\\res\\layout\\item_progress.xml"
+    },
+    {
+        "merged": "C:\\Users\\SCEA\\AndroidStudioProjects\\CineBox\\app\\build\\intermediates\\merged_res\\debug\\layout_item_movie.xml.flat",
+        "source": "C:\\Users\\SCEA\\AndroidStudioProjects\\CineBox\\app\\src\\main\\res\\layout\\item_movie.xml"
+    },
+    {
+        "merged": "C:\\Users\\SCEA\\AndroidStudioProjects\\CineBox\\app\\build\\intermediates\\merged_res\\debug\\mipmap-xxxhdpi_ic_launcher_background.png.flat",
+        "source": "C:\\Users\\SCEA\\AndroidStudioProjects\\CineBox\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher_background.png"
+    },
+    {
+        "merged": "C:\\Users\\SCEA\\AndroidStudioProjects\\CineBox\\app\\build\\intermediates\\merged_res\\debug\\drawable-xxxhdpi_ic_rating.png.flat",
+        "source": "C:\\Users\\SCEA\\AndroidStudioProjects\\CineBox\\app\\src\\main\\res\\drawable-xxxhdpi\\ic_rating.png"
+    },
+    {
+        "merged": "C:\\Users\\SCEA\\AndroidStudioProjects\\CineBox\\app\\build\\intermediates\\merged_res\\debug\\layout_error_layout_detail.xml.flat",
+        "source": "C:\\Users\\SCEA\\AndroidStudioProjects\\CineBox\\app\\src\\main\\res\\layout\\error_layout_detail.xml"
+    },
+    {
+        "merged": "C:\\Users\\SCEA\\AndroidStudioProjects\\CineBox\\app\\build\\intermediates\\merged_res\\debug\\drawable-hdpi_ic_menu_home.png.flat",
+        "source": "C:\\Users\\SCEA\\AndroidStudioProjects\\CineBox\\app\\src\\main\\res\\drawable-hdpi\\ic_menu_home.png"
+    }
+]
