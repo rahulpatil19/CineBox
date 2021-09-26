@@ -25,4 +25,6 @@
     <color name="bottomNavActive">#FFDE03</color>
     <color name="bottomNavBackground">#293053</color>
 
+    <color name="shimmer_background">#dddddd</color>
+
 </resources>

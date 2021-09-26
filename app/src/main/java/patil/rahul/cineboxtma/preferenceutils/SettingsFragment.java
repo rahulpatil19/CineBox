@@ -36,52 +36,54 @@ public class SettingsFragment extends PreferenceFragmentCompat implements Shared
         }
 
         Preference clearCachePreference = findPreference(getString(R.string.pref_key_clear_cache));
-        clearCachePreference.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
-            @Override
-            public boolean onPreferenceClick(Preference preference) {
-                ImagePipeline imagePipeline = Fresco.getImagePipeline();
-                imagePipeline.clearCaches();
-                MySingleton.getInstance(getContext()).getRequestQueue().getCache().clear();
-                Toast.makeText(getContext(), "Cache Cleared", Toast.LENGTH_SHORT).show();
-                return true;
-            }
-        });
+        if (clearCachePreference != null) {
+            clearCachePreference.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
+                @Override
+                public boolean onPreferenceClick(Preference preference) {
+                    ImagePipeline imagePipeline = Fresco.getImagePipeline();
+                    imagePipeline.clearCaches();
+                    MySingleton.getInstance(getContext()).getRequestQueue().getCache().clear();
+                    Toast.makeText(getContext(), "Cache Cleared", Toast.LENGTH_SHORT).show();
+                    return true;
+                }
+            });
+        }
 
         Preference shareAppPreference = findPreference(getString(R.string.pref_key_share));
-        shareAppPreference.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
-            @Override
-            public boolean onPreferenceClick(Preference preference) {
-                Uri uri = Uri.parse("https://play.google.com/store/apps/details?id=patil.rahul.cineboxtma");
-                String mimeType = "text/plane";
-                String textToShare = "Checkout CineBox app on Google Play Store. Download it today from " + uri;
-                String title = "Complete action using";
-                ShareCompat.IntentBuilder.from(getActivity()).setType(mimeType)
-                        .setChooserTitle(title)
-                        .setText(textToShare)
-                        .startChooser();
-                return false;
-            }
-        });
+        if (shareAppPreference != null) {
+            shareAppPreference.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
+                @Override
+                public boolean onPreferenceClick(Preference preference) {
+                    Uri uri = Uri.parse("https://play.google.com/store/apps/details?id=patil.rahul.cineboxtma");
+                    String mimeType = "text/plane";
+                    String textToShare = "Checkout CineBox app on Google Play Store. Download it today from " + uri;
+                    String title = "Complete action using";
+                    ShareCompat.IntentBuilder.from(getActivity()).setType(mimeType)
+                            .setChooserTitle(title)
+                            .setText(textToShare)
+                            .startChooser();
+                    return false;
+                }
+            });
+        }
 
         Preference libraryPreference = findPreference(getString(R.string.pref_key_library_used));
-        libraryPreference.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
-            @Override
-            public boolean onPreferenceClick(Preference preference) {
+        if (libraryPreference != null) {
+            libraryPreference.setOnPreferenceClickListener(preference -> {
                 DialogFragment dialogFragment = new LibraryUsedFragment();
-                dialogFragment.show(getFragmentManager(), "library_used");
+                dialogFragment.show(getChildFragmentManager(), "library_used");
                 return true;
-            }
-        });
+            });
+        }
 
         Preference contactDeveloperPreference = findPreference(getString(R.string.pref_key_contact_developer));
-        contactDeveloperPreference.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
-            @Override
-            public boolean onPreferenceClick(Preference preference) {
+        if (contactDeveloperPreference != null) {
+            contactDeveloperPreference.setOnPreferenceClickListener(preference -> {
                 DialogFragment developerFragment = new DeveloperFragment();
-                developerFragment.show(getFragmentManager(), "contact_developer");
+                developerFragment.show(getChildFragmentManager(), "contact_developer");
                 return true;
-            }
-        });
+            });
+        }
     }
 
     @Override

@@ -777,6 +777,7 @@ attr navigationRailStyle
 attr navigationViewStyle
 attr negativeButtonText
 attr nestedScrollFlags
+attr nestedScrollViewStyle
 attr nestedScrollable
 attr number
 attr numericModifiers
@@ -854,6 +855,7 @@ attr quantizeMotionPhase
 attr quantizeMotionSteps
 attr queryBackground
 attr queryHint
+attr queryPatterns
 attr radioButtonStyle
 attr rangeFillColor
 attr ratingBarStyle
@@ -911,6 +913,27 @@ attr shapeAppearanceLargeComponent
 attr shapeAppearanceMediumComponent
 attr shapeAppearanceOverlay
 attr shapeAppearanceSmallComponent
+attr shimmer_auto_start
+attr shimmer_base_alpha
+attr shimmer_base_color
+attr shimmer_clip_to_children
+attr shimmer_colored
+attr shimmer_direction
+attr shimmer_dropoff
+attr shimmer_duration
+attr shimmer_fixed_height
+attr shimmer_fixed_width
+attr shimmer_height_ratio
+attr shimmer_highlight_alpha
+attr shimmer_highlight_color
+attr shimmer_intensity
+attr shimmer_repeat_count
+attr shimmer_repeat_delay
+attr shimmer_repeat_mode
+attr shimmer_shape
+attr shimmer_tilt
+attr shimmer_width_ratio
+attr shortcutMatchRequired
 attr shouldDisableView
 attr showAnimationBehavior
 attr showAsAction
@@ -1372,6 +1395,7 @@ color secondary_text_default_material_dark
 color secondary_text_default_material_light
 color secondary_text_disabled_material_dark
 color secondary_text_disabled_material_light
+color shimmer_background
 color surfaceColor
 color switch_thumb_disabled_material_dark
 color switch_thumb_disabled_material_light
@@ -1900,6 +1924,7 @@ drawable avd_show_password
 drawable background_date
 drawable background_genre
 drawable background_retry_btn
+drawable bg_people_image
 drawable bottom_nav_item_selector
 drawable btn_checkbox_checked_mtrl
 drawable btn_checkbox_checked_to_unchecked_mtrl_animation
@@ -1917,6 +1942,15 @@ drawable design_snackbar_background
 drawable ic_arrow_back
 drawable ic_arrow_back_black
 drawable ic_arrow_down_24dp
+drawable ic_baseline_clear_24
+drawable ic_baseline_code_24
+drawable ic_baseline_collections_24
+drawable ic_baseline_get_app_24
+drawable ic_baseline_mail_24
+drawable ic_baseline_rate_review_24
+drawable ic_baseline_security_24
+drawable ic_baseline_share_24
+drawable ic_baseline_video_settings_24
 drawable ic_clock_black_24dp
 drawable ic_collapse_holo_light
 drawable ic_collapse_large_holo_light
@@ -2068,7 +2102,6 @@ id add
 id age
 id age_layout
 id airing_today_more_btn
-id airing_today_progress_bar
 id airing_today_recycler_view
 id airing_today_retry_btn
 id airing_today_title
@@ -2100,6 +2133,7 @@ id birth_place
 id blocking
 id bottom
 id bottom_navigation
+id bottom_to_top
 id bounce
 id bounceBoth
 id bounceEnd
@@ -2264,6 +2298,7 @@ id labeled
 id layout
 id left
 id leftToRight
+id left_to_right
 id legacy
 id library_circleIndicator
 id library_expandableTextView
@@ -2368,7 +2403,6 @@ id notification_main_column
 id notification_main_column_container
 id off
 id on
-id open_movieBtn
 id open_tvBtn
 id outline
 id outward
@@ -2400,6 +2434,7 @@ id postLayout
 id progress_bar
 id progress_circular
 id progress_horizontal
+id radial
 id radio
 id rating_view
 id ratio
@@ -2407,16 +2442,18 @@ id rectangles
 id recycler_view
 id recycler_view_activity_more
 id relativeLayout
-id releasing_today_progress_bar
 id releasing_today_recycler_view
 id releasing_today_retry_btn
 id releasing_today_title
+id restart
 id retry_btn
+id reverse
 id reverseSawtooth
 id right
 id rightToLeft
 id right_icon
 id right_side
+id right_to_left
 id rounded
 id row_index_key
 id save_non_transition_alpha
@@ -2457,6 +2494,10 @@ id settings_fragment
 id share_btn
 id sharedValueSet
 id sharedValueUnset
+id shimmer_layout
+id shimmer_layout_airing_today
+id shimmer_layout_releasing_today
+id shimmer_layout_upcoming
 id shortcut
 id showCustom
 id showHome
@@ -2556,6 +2597,7 @@ id toggle
 id toolbar
 id top
 id topPanel
+id top_to_bottom
 id touch_outside
 id transitionToEnd
 id transitionToStart
@@ -2580,7 +2622,6 @@ id uniform
 id unlabeled
 id up
 id upcoming_movies_more_btn
-id upcoming_movies_progress_bar
 id upcoming_movies_recycler_view
 id upcoming_movies_retry_btn
 id upcoming_movies_title
@@ -2708,12 +2749,16 @@ layout error_layout
 layout error_layout_detail
 layout example_constraint
 layout expand_button
+layout fragment_movie_cinemas
+layout fragment_movie_popular
+layout fragment_movie_toprated
 layout fragment_nav_home
 layout fragment_nav_movie
 layout fragment_nav_people
 layout fragment_nav_tvshow
 layout fragment_search
-layout fragment_tab
+layout fragment_tv_popular
+layout fragment_tv_toprated
 layout image_frame
 layout item_card_movie
 layout item_card_tv
@@ -2729,6 +2774,7 @@ layout item_people
 layout item_progress
 layout item_slide
 layout item_youtube_list
+layout layout_shimmer_home
 layout material_chip_input_combo
 layout material_clock_display
 layout material_clock_display_divider
@@ -2800,6 +2846,12 @@ layout preference_widget_switch_compat
 layout select_dialog_item_material
 layout select_dialog_multichoice_material
 layout select_dialog_singlechoice_material
+layout shimmer_layout_card_list
+layout shimmer_layout_home_airing_today
+layout shimmer_layout_home_releasing_today
+layout shimmer_layout_home_upcoming
+layout shimmer_layout_people
+layout shimmer_layout_popular_movie
 layout support_simple_spinner_dropdown_item
 layout test_action_chip
 layout test_chip_zero_corner_radius
@@ -3818,6 +3870,7 @@ styleable BottomAppBar backgroundTint elevation fabAlignmentMode fabAnimationMod
 styleable BottomNavigationView itemHorizontalTranslationEnabled
 styleable BottomSheetBehavior_Layout android_maxWidth android_elevation backgroundTint behavior_draggable behavior_expandedOffset behavior_fitToContents behavior_halfExpandedRatio behavior_hideable behavior_peekHeight behavior_saveFlags behavior_skipCollapsed gestureInsetBottomIgnored paddingBottomSystemWindowInsets paddingLeftSystemWindowInsets paddingRightSystemWindowInsets paddingTopSystemWindowInsets shapeAppearance shapeAppearanceOverlay
 styleable ButtonBarLayout allowStacking
+styleable Capability queryPatterns shortcutMatchRequired
 styleable CardView android_minWidth android_minHeight cardBackgroundColor cardCornerRadius cardElevation cardMaxElevation cardPreventCornerOverlap cardUseCompatPadding contentPadding contentPaddingBottom contentPaddingLeft contentPaddingRight contentPaddingTop
 styleable Carousel carousel_backwardTransition carousel_emptyViewsBehavior carousel_firstView carousel_forwardTransition carousel_infinite carousel_nextState carousel_previousState carousel_touchUpMode carousel_touchUp_dampeningFactor carousel_touchUp_velocityThreshold
 styleable CheckBoxPreference android_summaryOn android_summaryOff android_disableDependentsState disableDependentsState summaryOff summaryOn
@@ -3924,6 +3977,7 @@ styleable SearchView android_focusable android_maxWidth android_inputType androi
 styleable SeekBarPreference android_layout android_max adjustable min seekBarIncrement showSeekBarValue updatesContinuously
 styleable ShapeAppearance cornerFamily cornerFamilyBottomLeft cornerFamilyBottomRight cornerFamilyTopLeft cornerFamilyTopRight cornerSize cornerSizeBottomLeft cornerSizeBottomRight cornerSizeTopLeft cornerSizeTopRight
 styleable ShapeableImageView contentPadding contentPaddingBottom contentPaddingEnd contentPaddingLeft contentPaddingRight contentPaddingStart contentPaddingTop shapeAppearance shapeAppearanceOverlay strokeColor strokeWidth
+styleable ShimmerFrameLayout shimmer_auto_start shimmer_base_alpha shimmer_base_color shimmer_clip_to_children shimmer_colored shimmer_direction shimmer_dropoff shimmer_duration shimmer_fixed_height shimmer_fixed_width shimmer_height_ratio shimmer_highlight_alpha shimmer_highlight_color shimmer_intensity shimmer_repeat_count shimmer_repeat_delay shimmer_repeat_mode shimmer_shape shimmer_tilt shimmer_width_ratio
 styleable SimpleDraweeView actualImageResource actualImageScaleType actualImageUri backgroundImage fadeDuration failureImage failureImageScaleType overlayImage placeholderImage placeholderImageScaleType pressedStateOverlayImage progressBarAutoRotateInterval progressBarImage progressBarImageScaleType retryImage retryImageScaleType roundAsCircle roundBottomEnd roundBottomLeft roundBottomRight roundBottomStart roundTopEnd roundTopLeft roundTopRight roundTopStart roundWithOverlayColor roundedCornerRadius roundingBorderColor roundingBorderPadding roundingBorderWidth viewAspectRatio
 styleable Slider android_enabled android_value android_stepSize android_valueFrom android_valueTo haloColor haloRadius labelBehavior labelStyle thumbColor thumbElevation thumbRadius thumbStrokeColor thumbStrokeWidth tickColor tickColorActive tickColorInactive tickVisible trackColor trackColorActive trackColorInactive trackHeight
 styleable Snackbar snackbarButtonStyle snackbarStyle snackbarTextViewStyle

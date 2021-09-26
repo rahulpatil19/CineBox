@@ -4,9 +4,10 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentStatePagerAdapter;
 import androidx.viewpager.widget.ViewPager;
-import patil.rahul.cineboxtma.tabfragment.CardMovieTabFragment;
-import patil.rahul.cineboxtma.tabfragment.MovieTabFragment;
-import patil.rahul.cineboxtma.utils.CineUrl;
+
+import patil.rahul.cineboxtma.tabfragment.movie.InCinemasMovieFragment;
+import patil.rahul.cineboxtma.tabfragment.movie.PopularMovieFragment;
+import patil.rahul.cineboxtma.tabfragment.movie.TopRatedMovieFragment;
 
 /**
  * Created by rahul on 20/2/18.
@@ -14,9 +15,9 @@ import patil.rahul.cineboxtma.utils.CineUrl;
 
 public class MoviePagerAdapter extends FragmentStatePagerAdapter {
 
-    private CardMovieTabFragment nowShowingFragment = CardMovieTabFragment.newInstance(CineUrl.CATEGORY_NOW_PLAYING);
-    private MovieTabFragment popularFragment = MovieTabFragment.newInstance(CineUrl.CATEGORY_POPULAR);
-    private MovieTabFragment topRatedFragment = MovieTabFragment.newInstance(CineUrl.CATEGORY_TOP_RATED);
+    private InCinemasMovieFragment nowShowingFragment = new InCinemasMovieFragment();
+    private PopularMovieFragment popularFragment = new PopularMovieFragment();
+    private TopRatedMovieFragment topRatedFragment = new TopRatedMovieFragment();
 
     public MoviePagerAdapter(FragmentManager fm) {
         super(fm);
@@ -26,9 +27,9 @@ public class MoviePagerAdapter extends FragmentStatePagerAdapter {
     public Fragment getItem(int position) {
 
         if (position == 0) {
-            return nowShowingFragment;
+            return popularFragment ;
         } else if (position == 1) {
-            return popularFragment;
+            return nowShowingFragment;
         } else {
             return topRatedFragment;
         }
@@ -42,9 +43,9 @@ public class MoviePagerAdapter extends FragmentStatePagerAdapter {
     public void refreshTab(ViewPager viewPager) {
         int position = viewPager.getCurrentItem();
         if (position == 0) {
-            nowShowingFragment.refreshMovieFragment();
-        } else if (position == 1) {
             popularFragment.refreshMovieFragment();
+        } else if (position == 1) {
+            nowShowingFragment.refreshMovieFragment();
         } else {
             topRatedFragment.refreshMovieFragment();
         }

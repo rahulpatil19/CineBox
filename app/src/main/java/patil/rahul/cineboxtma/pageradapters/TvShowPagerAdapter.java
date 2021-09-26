@@ -1,20 +1,24 @@
 package patil.rahul.cineboxtma.pageradapters;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentStatePagerAdapter;
 import androidx.viewpager.widget.ViewPager;
-import patil.rahul.cineboxtma.tabfragment.TvTabFragment;
+
+import patil.rahul.cineboxtma.tabfragment.tv.PopularTvFragment;
+import patil.rahul.cineboxtma.tabfragment.tv.TopRatedTvFragment;
 
 public class TvShowPagerAdapter extends FragmentStatePagerAdapter {
 
-    private TvTabFragment popularTabFragment = TvTabFragment.newInstance("popular");
-    private TvTabFragment topRatedFragment = TvTabFragment.newInstance("top_rated");
+    private PopularTvFragment popularTabFragment = new PopularTvFragment();
+    private TopRatedTvFragment topRatedFragment = new TopRatedTvFragment();
 
     public TvShowPagerAdapter(FragmentManager fm) {
         super(fm);
     }
 
+    @NonNull
     @Override
     public Fragment getItem(int position) {
         if (position == 0) {

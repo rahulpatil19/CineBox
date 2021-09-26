@@ -21,13 +21,13 @@
 13-->C:\Users\SCEA\AndroidStudioProjects\CineBox\app\src\main\AndroidManifest.xml:7:22-77
 14
 15    <application
-15-->C:\Users\SCEA\AndroidStudioProjects\CineBox\app\src\main\AndroidManifest.xml:9:5-62:19
+15-->C:\Users\SCEA\AndroidStudioProjects\CineBox\app\src\main\AndroidManifest.xml:9:5-63:19
 16        android:name="patil.rahul.cineboxtma.MyApplication"
 16-->C:\Users\SCEA\AndroidStudioProjects\CineBox\app\src\main\AndroidManifest.xml:10:9-38
 17        android:allowBackup="true"
 17-->C:\Users\SCEA\AndroidStudioProjects\CineBox\app\src\main\AndroidManifest.xml:11:9-35
 18        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
-18-->[androidx.core:core:1.5.0] C:\Users\SCEA\.gradle\caches\transforms-3\a6ed9dfb3abf7d8541f7a1d01bf1d39b\transformed\core-1.5.0\AndroidManifest.xml:24:18-86
+18-->[androidx.core:core:1.6.0] C:\Users\SCEA\.gradle\caches\transforms-3\0fb28b93cdd2362b7036e156f61a3e2e\transformed\core-1.6.0\AndroidManifest.xml:24:18-86
 19        android:debuggable="true"
 20        android:icon="@mipmap/ic_launcher"
 20-->C:\Users\SCEA\AndroidStudioProjects\CineBox\app\src\main\AndroidManifest.xml:13:9-43
@@ -41,90 +41,92 @@
 24-->C:\Users\SCEA\AndroidStudioProjects\CineBox\app\src\main\AndroidManifest.xml:16:9-35
 25        android:testOnly="true" >
 26        <activity
-26-->C:\Users\SCEA\AndroidStudioProjects\CineBox\app\src\main\AndroidManifest.xml:17:9-28:20
+26-->C:\Users\SCEA\AndroidStudioProjects\CineBox\app\src\main\AndroidManifest.xml:17:9-29:20
 27            android:name="patil.rahul.cineboxtma.MainActivity"
 27-->C:\Users\SCEA\AndroidStudioProjects\CineBox\app\src\main\AndroidManifest.xml:18:13-41
-28            android:label="@string/app_name"
-28-->C:\Users\SCEA\AndroidStudioProjects\CineBox\app\src\main\AndroidManifest.xml:19:13-45
-29            android:screenOrientation="portrait"
-29-->C:\Users\SCEA\AndroidStudioProjects\CineBox\app\src\main\AndroidManifest.xml:20:13-49
-30            android:theme="@style/Theme.CineBox"
+28            android:exported="true"
+28-->C:\Users\SCEA\AndroidStudioProjects\CineBox\app\src\main\AndroidManifest.xml:20:13-36
+29            android:label="@string/app_name"
+29-->C:\Users\SCEA\AndroidStudioProjects\CineBox\app\src\main\AndroidManifest.xml:19:13-45
+30            android:screenOrientation="portrait"
 30-->C:\Users\SCEA\AndroidStudioProjects\CineBox\app\src\main\AndroidManifest.xml:21:13-49
-31            android:windowSoftInputMode="adjustPan|stateHidden" >
-31-->C:\Users\SCEA\AndroidStudioProjects\CineBox\app\src\main\AndroidManifest.xml:22:13-64
-32            <intent-filter>
-32-->C:\Users\SCEA\AndroidStudioProjects\CineBox\app\src\main\AndroidManifest.xml:23:13-27:29
-33                <action android:name="android.intent.action.MAIN" />
-33-->C:\Users\SCEA\AndroidStudioProjects\CineBox\app\src\main\AndroidManifest.xml:24:17-69
-33-->C:\Users\SCEA\AndroidStudioProjects\CineBox\app\src\main\AndroidManifest.xml:24:25-66
-34
-35                <category android:name="android.intent.category.LAUNCHER" />
-35-->C:\Users\SCEA\AndroidStudioProjects\CineBox\app\src\main\AndroidManifest.xml:26:17-77
-35-->C:\Users\SCEA\AndroidStudioProjects\CineBox\app\src\main\AndroidManifest.xml:26:27-74
-36            </intent-filter>
-37        </activity>
-38        <activity
-38-->C:\Users\SCEA\AndroidStudioProjects\CineBox\app\src\main\AndroidManifest.xml:29:9-31:51
-39            android:name="patil.rahul.cineboxtma.MovieDetailActivity"
-39-->C:\Users\SCEA\AndroidStudioProjects\CineBox\app\src\main\AndroidManifest.xml:30:13-48
-40            android:theme="@style/Theme.Detail" />
+31            android:theme="@style/Theme.CineBox"
+31-->C:\Users\SCEA\AndroidStudioProjects\CineBox\app\src\main\AndroidManifest.xml:22:13-49
+32            android:windowSoftInputMode="adjustPan|stateHidden" >
+32-->C:\Users\SCEA\AndroidStudioProjects\CineBox\app\src\main\AndroidManifest.xml:23:13-64
+33            <intent-filter>
+33-->C:\Users\SCEA\AndroidStudioProjects\CineBox\app\src\main\AndroidManifest.xml:24:13-28:29
+34                <action android:name="android.intent.action.MAIN" />
+34-->C:\Users\SCEA\AndroidStudioProjects\CineBox\app\src\main\AndroidManifest.xml:25:17-69
+34-->C:\Users\SCEA\AndroidStudioProjects\CineBox\app\src\main\AndroidManifest.xml:25:25-66
+35
+36                <category android:name="android.intent.category.LAUNCHER" />
+36-->C:\Users\SCEA\AndroidStudioProjects\CineBox\app\src\main\AndroidManifest.xml:27:17-77
+36-->C:\Users\SCEA\AndroidStudioProjects\CineBox\app\src\main\AndroidManifest.xml:27:27-74
+37            </intent-filter>
+38        </activity>
+39        <activity
+39-->C:\Users\SCEA\AndroidStudioProjects\CineBox\app\src\main\AndroidManifest.xml:30:9-32:51
+40            android:name="patil.rahul.cineboxtma.MovieDetailActivity"
 40-->C:\Users\SCEA\AndroidStudioProjects\CineBox\app\src\main\AndroidManifest.xml:31:13-48
-41        <activity
-41-->C:\Users\SCEA\AndroidStudioProjects\CineBox\app\src\main\AndroidManifest.xml:32:9-35:51
-42            android:name="patil.rahul.cineboxtma.TvDetailActivity"
-42-->C:\Users\SCEA\AndroidStudioProjects\CineBox\app\src\main\AndroidManifest.xml:33:13-45
-43            android:parentActivityName="patil.rahul.cineboxtma.MainActivity"
-43-->C:\Users\SCEA\AndroidStudioProjects\CineBox\app\src\main\AndroidManifest.xml:34:13-55
-44            android:theme="@style/Theme.Detail" />
-44-->C:\Users\SCEA\AndroidStudioProjects\CineBox\app\src\main\AndroidManifest.xml:35:13-48
-45        <activity
-45-->C:\Users\SCEA\AndroidStudioProjects\CineBox\app\src\main\AndroidManifest.xml:36:9-38:51
-46            android:name="patil.rahul.cineboxtma.PeopleDetailActivity"
-46-->C:\Users\SCEA\AndroidStudioProjects\CineBox\app\src\main\AndroidManifest.xml:37:13-49
-47            android:theme="@style/Theme.Detail" />
-47-->C:\Users\SCEA\AndroidStudioProjects\CineBox\app\src\main\AndroidManifest.xml:38:13-48
-48        <activity
-48-->C:\Users\SCEA\AndroidStudioProjects\CineBox\app\src\main\AndroidManifest.xml:39:9-45:20
-49            android:name="patil.rahul.cineboxtma.SearchActivity"
-49-->C:\Users\SCEA\AndroidStudioProjects\CineBox\app\src\main\AndroidManifest.xml:40:13-43
-50            android:theme="@style/Theme.CineBox" >
-50-->C:\Users\SCEA\AndroidStudioProjects\CineBox\app\src\main\AndroidManifest.xml:41:13-49
-51            <meta-data
-51-->C:\Users\SCEA\AndroidStudioProjects\CineBox\app\src\main\AndroidManifest.xml:42:13-44:54
-52                android:name="android.app.searchable"
-52-->C:\Users\SCEA\AndroidStudioProjects\CineBox\app\src\main\AndroidManifest.xml:43:17-54
-53                android:resource="@xml/searchable" />
-53-->C:\Users\SCEA\AndroidStudioProjects\CineBox\app\src\main\AndroidManifest.xml:44:17-51
-54        </activity>
-55        <activity
-55-->C:\Users\SCEA\AndroidStudioProjects\CineBox\app\src\main\AndroidManifest.xml:46:9-48:52
-56            android:name="patil.rahul.cineboxtma.MovieMoreActivity"
-56-->C:\Users\SCEA\AndroidStudioProjects\CineBox\app\src\main\AndroidManifest.xml:47:13-46
-57            android:theme="@style/Theme.CineBox" />
-57-->C:\Users\SCEA\AndroidStudioProjects\CineBox\app\src\main\AndroidManifest.xml:48:13-49
-58        <activity
-58-->C:\Users\SCEA\AndroidStudioProjects\CineBox\app\src\main\AndroidManifest.xml:49:9-51:52
-59            android:name="patil.rahul.cineboxtma.TvMoreActivity"
-59-->C:\Users\SCEA\AndroidStudioProjects\CineBox\app\src\main\AndroidManifest.xml:50:13-43
-60            android:theme="@style/Theme.CineBox" />
-60-->C:\Users\SCEA\AndroidStudioProjects\CineBox\app\src\main\AndroidManifest.xml:51:13-49
-61        <activity
-61-->C:\Users\SCEA\AndroidStudioProjects\CineBox\app\src\main\AndroidManifest.xml:52:9-56:52
-62            android:name="patil.rahul.cineboxtma.SettingsActivity"
-62-->C:\Users\SCEA\AndroidStudioProjects\CineBox\app\src\main\AndroidManifest.xml:53:13-45
-63            android:label="@string/action_settings"
-63-->C:\Users\SCEA\AndroidStudioProjects\CineBox\app\src\main\AndroidManifest.xml:54:13-52
-64            android:parentActivityName="patil.rahul.cineboxtma.MainActivity"
-64-->C:\Users\SCEA\AndroidStudioProjects\CineBox\app\src\main\AndroidManifest.xml:55:13-55
-65            android:theme="@style/Theme.CineBox" />
-65-->C:\Users\SCEA\AndroidStudioProjects\CineBox\app\src\main\AndroidManifest.xml:56:13-49
-66
-67        <meta-data
-67-->C:\Users\SCEA\AndroidStudioProjects\CineBox\app\src\main\AndroidManifest.xml:58:9-60:57
-68            android:name="preloaded_fonts"
-68-->C:\Users\SCEA\AndroidStudioProjects\CineBox\app\src\main\AndroidManifest.xml:59:13-43
-69            android:resource="@array/preloaded_fonts" />
-69-->C:\Users\SCEA\AndroidStudioProjects\CineBox\app\src\main\AndroidManifest.xml:60:13-54
-70    </application>
-71
-72</manifest>
+41            android:theme="@style/Theme.Detail" />
+41-->C:\Users\SCEA\AndroidStudioProjects\CineBox\app\src\main\AndroidManifest.xml:32:13-48
+42        <activity
+42-->C:\Users\SCEA\AndroidStudioProjects\CineBox\app\src\main\AndroidManifest.xml:33:9-36:51
+43            android:name="patil.rahul.cineboxtma.TvDetailActivity"
+43-->C:\Users\SCEA\AndroidStudioProjects\CineBox\app\src\main\AndroidManifest.xml:34:13-45
+44            android:parentActivityName="patil.rahul.cineboxtma.MainActivity"
+44-->C:\Users\SCEA\AndroidStudioProjects\CineBox\app\src\main\AndroidManifest.xml:35:13-55
+45            android:theme="@style/Theme.Detail" />
+45-->C:\Users\SCEA\AndroidStudioProjects\CineBox\app\src\main\AndroidManifest.xml:36:13-48
+46        <activity
+46-->C:\Users\SCEA\AndroidStudioProjects\CineBox\app\src\main\AndroidManifest.xml:37:9-39:51
+47            android:name="patil.rahul.cineboxtma.PeopleDetailActivity"
+47-->C:\Users\SCEA\AndroidStudioProjects\CineBox\app\src\main\AndroidManifest.xml:38:13-49
+48            android:theme="@style/Theme.Detail" />
+48-->C:\Users\SCEA\AndroidStudioProjects\CineBox\app\src\main\AndroidManifest.xml:39:13-48
+49        <activity
+49-->C:\Users\SCEA\AndroidStudioProjects\CineBox\app\src\main\AndroidManifest.xml:40:9-46:20
+50            android:name="patil.rahul.cineboxtma.SearchActivity"
+50-->C:\Users\SCEA\AndroidStudioProjects\CineBox\app\src\main\AndroidManifest.xml:41:13-43
+51            android:theme="@style/Theme.CineBox" >
+51-->C:\Users\SCEA\AndroidStudioProjects\CineBox\app\src\main\AndroidManifest.xml:42:13-49
+52            <meta-data
+52-->C:\Users\SCEA\AndroidStudioProjects\CineBox\app\src\main\AndroidManifest.xml:43:13-45:54
+53                android:name="android.app.searchable"
+53-->C:\Users\SCEA\AndroidStudioProjects\CineBox\app\src\main\AndroidManifest.xml:44:17-54
+54                android:resource="@xml/searchable" />
+54-->C:\Users\SCEA\AndroidStudioProjects\CineBox\app\src\main\AndroidManifest.xml:45:17-51
+55        </activity>
+56        <activity
+56-->C:\Users\SCEA\AndroidStudioProjects\CineBox\app\src\main\AndroidManifest.xml:47:9-49:52
+57            android:name="patil.rahul.cineboxtma.MovieMoreActivity"
+57-->C:\Users\SCEA\AndroidStudioProjects\CineBox\app\src\main\AndroidManifest.xml:48:13-46
+58            android:theme="@style/Theme.CineBox" />
+58-->C:\Users\SCEA\AndroidStudioProjects\CineBox\app\src\main\AndroidManifest.xml:49:13-49
+59        <activity
+59-->C:\Users\SCEA\AndroidStudioProjects\CineBox\app\src\main\AndroidManifest.xml:50:9-52:52
+60            android:name="patil.rahul.cineboxtma.TvMoreActivity"
+60-->C:\Users\SCEA\AndroidStudioProjects\CineBox\app\src\main\AndroidManifest.xml:51:13-43
+61            android:theme="@style/Theme.CineBox" />
+61-->C:\Users\SCEA\AndroidStudioProjects\CineBox\app\src\main\AndroidManifest.xml:52:13-49
+62        <activity
+62-->C:\Users\SCEA\AndroidStudioProjects\CineBox\app\src\main\AndroidManifest.xml:53:9-57:52
+63            android:name="patil.rahul.cineboxtma.SettingsActivity"
+63-->C:\Users\SCEA\AndroidStudioProjects\CineBox\app\src\main\AndroidManifest.xml:54:13-45
+64            android:label="@string/action_settings"
+64-->C:\Users\SCEA\AndroidStudioProjects\CineBox\app\src\main\AndroidManifest.xml:55:13-52
+65            android:parentActivityName="patil.rahul.cineboxtma.MainActivity"
+65-->C:\Users\SCEA\AndroidStudioProjects\CineBox\app\src\main\AndroidManifest.xml:56:13-55
+66            android:theme="@style/Theme.CineBox" />
+66-->C:\Users\SCEA\AndroidStudioProjects\CineBox\app\src\main\AndroidManifest.xml:57:13-49
+67
+68        <meta-data
+68-->C:\Users\SCEA\AndroidStudioProjects\CineBox\app\src\main\AndroidManifest.xml:59:9-61:57
+69            android:name="preloaded_fonts"
+69-->C:\Users\SCEA\AndroidStudioProjects\CineBox\app\src\main\AndroidManifest.xml:60:13-43
+70            android:resource="@array/preloaded_fonts" />
+70-->C:\Users\SCEA\AndroidStudioProjects\CineBox\app\src\main\AndroidManifest.xml:61:13-54
+71    </application>
+72
+73</manifest>

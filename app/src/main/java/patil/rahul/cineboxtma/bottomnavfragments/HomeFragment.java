@@ -14,6 +14,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
+import com.facebook.shimmer.ShimmerFrameLayout;
 import com.google.android.material.button.MaterialButton;
 
 import org.json.JSONArray;
@@ -28,6 +29,7 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
 import patil.rahul.cineboxtma.R;
 import patil.rahul.cineboxtma.adapters.MovieHorizontalAdapter;
 import patil.rahul.cineboxtma.adapters.TvHorizontalAdapter;
@@ -47,7 +49,9 @@ public class HomeFragment extends Fragment implements
     public HomeFragment() {
     }
 
-    private ProgressBar mAiringTodayProgressBar, mUpcomingMoviesProgressBar, mReleasingTodayProgressBar;
+    private ShimmerFrameLayout shimmerReleasingTodayLayout, shimmerAiringTodayLayout,
+            shimmerUpcomingLayout;
+
     private RecyclerView mUpcomingMoviesRecyclerView;
     private RecyclerView mAiringTodayRecyclerView;
     private RecyclerView mReleasingTodayRecyclerView;
@@ -97,6 +101,18 @@ public class HomeFragment extends Fragment implements
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_nav_home, container, false);
 
+
+        shimmerReleasingTodayLayout = view.findViewById(R.id.shimmer_layout_releasing_today);
+        shimmerAiringTodayLayout = view.findViewById(R.id.shimmer_layout_airing_today);
+        shimmerUpcomingLayout = view.findViewById(R.id.shimmer_layout_upcoming);
+
+
+        startAiringTodayShimmer();
+        startReleasingTodayShimmer();
+        startUpcomingShimmer();
+
+        shimmerReleasingTodayLayout = view.findViewById(R.id.shimmer_layout_releasing_today);
+
         MaterialButton airingTodayMoreBtn = view.findViewById(R.id.airing_today_more_btn);
         MaterialButton upcomingMovieMoreBtn = view.findViewById(R.id.upcoming_movies_more_btn);
         setupViews(view);
@@ -121,7 +137,8 @@ public class HomeFragment extends Fragment implements
             @Override
             public void onClick(View view) {
                 mReleasingTodayRetryBtn.setVisibility(View.GONE);
-                mReleasingTodayProgressBar.setVisibility(View.VISIBLE);
+                startReleasingTodayShimmer();
+                // mReleasingTodayProgressBar.setVisibility(View.VISIBLE);
                 fetchReleasingTodayMovies();
             }
         });
@@ -130,7 +147,8 @@ public class HomeFragment extends Fragment implements
             @Override
             public void onClick(View view) {
                 mAiringTodayRetryBtn.setVisibility(View.GONE);
-                mAiringTodayProgressBar.setVisibility(View.VISIBLE);
+                startAiringTodayShimmer();
+                //   mAiringTodayProgressBar.setVisibility(View.VISIBLE);
                 fetchAiringToday();
             }
         });
@@ -139,7 +157,8 @@ public class HomeFragment extends Fragment implements
             @Override
             public void onClick(View view) {
                 mUpcomingMoviesRetryBtn.setVisibility(View.GONE);
-                mUpcomingMoviesProgressBar.setVisibility(View.VISIBLE);
+                startUpcomingShimmer();
+                //  mUpcomingMoviesProgressBar.setVisibility(View.VISIBLE);
                 fetchUpcomingMovies();
             }
         });
@@ -168,24 +187,26 @@ public class HomeFragment extends Fragment implements
                         }
 
                         mReleasingTodayAdapter.addData(releasingTodayList);
-                        mReleasingTodayProgressBar.setVisibility(View.INVISIBLE);
+                        stopRealisingTodayShimmer();
+                        //mReleasingTodayProgressBar.setVisibility(View.INVISIBLE);
                         mReleasingTodayAdapter.notifyDataSetChanged();
-                    }
-                    else {
+                    } else {
                         mReleasingTodayTitle.setVisibility(View.GONE);
+                        stopRealisingTodayShimmer();
                         mReleasingTodayRecyclerView.setVisibility(View.GONE);
-                        mReleasingTodayProgressBar.setVisibility(View.GONE);
+                        //  mReleasingTodayProgressBar.setVisibility(View.GONE);
                         mReleasingTodayRetryBtn.setVisibility(View.GONE);
                     }
-                    } catch (JSONException e) {
+                } catch (JSONException e) {
                     e.printStackTrace();
                 }
             }
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-                mReleasingTodayProgressBar.setVisibility(View.INVISIBLE);
+                // mReleasingTodayProgressBar.setVisibility(View.INVISIBLE);
                 mReleasingTodayRetryBtn.setVisibility(View.VISIBLE);
+                stopRealisingTodayShimmer();
             }
         });
         releasingTodayRequest.setTag(CineTag.RELEASING_TODAY);
@@ -209,7 +230,8 @@ public class HomeFragment extends Fragment implements
                         mTvShowList.add(new TvShows(id, name, posterPath, firstAirDate));
                     }
                     mAiringTodayAdapter.addData(mTvShowList);
-                    mAiringTodayProgressBar.setVisibility(View.INVISIBLE);
+                    // mAiringTodayProgressBar.setVisibility(View.INVISIBLE);
+                    stopAiringTodayShimmer();
                     mAiringTodayAdapter.notifyDataSetChanged();
                 } catch (JSONException e) {
                     e.printStackTrace();
@@ -218,7 +240,8 @@ public class HomeFragment extends Fragment implements
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-                mAiringTodayProgressBar.setVisibility(View.INVISIBLE);
+                // mAiringTodayProgressBar.setVisibility(View.INVISIBLE);
+                stopAiringTodayShimmer();
                 mAiringTodayRetryBtn.setVisibility(View.VISIBLE);
             }
         });
@@ -241,7 +264,8 @@ public class HomeFragment extends Fragment implements
                         String releaseDate = currentMovie.getString("release_date");
                         mUpcomingMovieList.add(new Movie(id, movieTitle, posterPath, releaseDate, true));
                     }
-                    mUpcomingMoviesProgressBar.setVisibility(View.INVISIBLE);
+                    // mUpcomingMoviesProgressBar.setVisibility(View.INVISIBLE);
+                    stopUpcomingShimmer();
                     mUpcomingAdapter.addData(mUpcomingMovieList);
                     mUpcomingAdapter.notifyDataSetChanged();
 
@@ -252,7 +276,8 @@ public class HomeFragment extends Fragment implements
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-                mUpcomingMoviesProgressBar.setVisibility(View.INVISIBLE);
+                stopUpcomingShimmer();
+                //   mUpcomingMoviesProgressBar.setVisibility(View.INVISIBLE);
                 mUpcomingMoviesRetryBtn.setVisibility(View.VISIBLE);
             }
         });
@@ -289,9 +314,6 @@ public class HomeFragment extends Fragment implements
         mReleasingTodayRecyclerView.setNestedScrollingEnabled(false);
         mAiringTodayRecyclerView.setNestedScrollingEnabled(false);
         mUpcomingMoviesRecyclerView.setNestedScrollingEnabled(false);
-        mAiringTodayProgressBar = view.findViewById(R.id.airing_today_progress_bar);
-        mUpcomingMoviesProgressBar = view.findViewById(R.id.upcoming_movies_progress_bar);
-        mReleasingTodayProgressBar = view.findViewById(R.id.releasing_today_progress_bar);
 
         mReleasingTodayRetryBtn = view.findViewById(R.id.releasing_today_retry_btn);
         mAiringTodayRetryBtn = view.findViewById(R.id.airing_today_retry_btn);
@@ -305,5 +327,35 @@ public class HomeFragment extends Fragment implements
         mUpcomingMoviesRecyclerView.setNestedScrollingEnabled(false);
         mAiringTodayRecyclerView.setNestedScrollingEnabled(false);
 
+    }
+
+    private void startReleasingTodayShimmer(){
+        shimmerReleasingTodayLayout.startShimmer();
+        shimmerReleasingTodayLayout.setVisibility(View.VISIBLE);
+    }
+
+    private void startAiringTodayShimmer(){
+        shimmerAiringTodayLayout.startShimmer();
+        shimmerAiringTodayLayout.setVisibility(View.VISIBLE);
+    }
+
+    private void startUpcomingShimmer(){
+        shimmerUpcomingLayout.startShimmer();
+        shimmerUpcomingLayout.setVisibility(View.VISIBLE);
+    }
+
+    private void stopRealisingTodayShimmer() {
+        shimmerReleasingTodayLayout.stopShimmer();
+        shimmerReleasingTodayLayout.setVisibility(View.INVISIBLE);
+    }
+
+    private void stopAiringTodayShimmer() {
+        shimmerAiringTodayLayout.stopShimmer();
+        shimmerAiringTodayLayout.setVisibility(View.INVISIBLE);
+    }
+
+    private void stopUpcomingShimmer() {
+        shimmerUpcomingLayout.stopShimmer();
+        shimmerUpcomingLayout.setVisibility(View.INVISIBLE);
     }
 }

@@ -3,11 +3,13 @@
 
     <CheckBoxPreference
         android:defaultValue="true"
+        android:icon="@drawable/ic_baseline_video_settings_24"
         android:key="@string/pref_key_video_mode"
         android:summary="@string/pref_video_mode_summary"
         android:title="@string/pref_title_video_mode" />
 
     <ListPreference
+        android:icon="@drawable/ic_baseline_collections_24"
         android:defaultValue="@string/pref_image_quality_default_value"
         android:entries="@array/pref_image_quality_array"
         android:entryValues="@array/pref_image_quality_array_value"
@@ -16,36 +18,43 @@
         android:title="@string/pref_title_image_quality" />
 
     <Preference android:title="@string/pref_title_clear_cache"
+        android:icon="@drawable/ic_baseline_clear_24"
         android:key="@string/pref_key_clear_cache"/>
 
     <PreferenceCategory android:title="CineBox">
 
         <Preference android:title="@string/pref_title_share"
+            android:icon="@drawable/ic_baseline_share_24"
             android:key="@string/pref_key_share"/>
 
-        <Preference android:title="Rate on Google Play">
+        <Preference android:title="Rate on Google Play"
+            android:icon="@drawable/ic_baseline_rate_review_24">
             <intent
                 android:action="android.intent.action.VIEW"
                 android:data="market://details?id=patil.rahul.cineboxtma" />
         </Preference>
 
         <Preference android:title="@string/pref_title_contact_developer"
-            android:key="@string/pref_key_contact_developer"/>
+            android:key="@string/pref_key_contact_developer"
+            android:icon="@drawable/ic_baseline_mail_24"/>
 
         <PreferenceScreen android:title="@string/pref_title_library_used"
+            android:icon="@drawable/ic_baseline_code_24"
             android:key="@string/pref_key_library_used">
 
             <Preference android:title="@string/btn_share"/>
 
         </PreferenceScreen>
 
-        <Preference android:title="Download Other Apps">
+        <Preference android:title="Download Other Apps"
+            android:icon="@drawable/ic_baseline_get_app_24">
             <intent
                 android:action="android.intent.action.VIEW"
                 android:data="https://play.google.com/store/apps/dev?id=7856855948322295060" />
         </Preference>
 
-        <Preference android:title="Privacy Policy">
+        <Preference android:title="Privacy Policy"
+            android:icon="@drawable/ic_baseline_security_24">
             <intent
                 android:action="android.intent.action.VIEW"
                 android:data="https://www.themoviedb.org/privacy-policy" />

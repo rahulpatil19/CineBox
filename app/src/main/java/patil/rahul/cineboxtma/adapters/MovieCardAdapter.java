@@ -3,31 +3,30 @@ package patil.rahul.cineboxtma.adapters;
 import android.app.Activity;
 import android.content.Context;
 import android.net.Uri;
-import androidx.core.app.ShareCompat;
-import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.facebook.drawee.view.SimpleDraweeView;
 
 import java.util.List;
 
 import patil.rahul.cineboxtma.R;
+import patil.rahul.cineboxtma.models.Movie;
 import patil.rahul.cineboxtma.utils.CineDateFormat;
 import patil.rahul.cineboxtma.utils.CineGenre;
 import patil.rahul.cineboxtma.utils.CineListener;
-import patil.rahul.cineboxtma.models.Movie;
 import patil.rahul.cineboxtma.utils.CineUrl;
 
 /**
  * Created by rahul on 6/2/18.
  */
 
-public class MovieCardAdapter extends RecyclerView.Adapter {
+public class MovieCardAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
     private static final int TYPE_MOVIE = 0;
     private static final int TYPE_LOADING = 1;
@@ -47,7 +46,6 @@ public class MovieCardAdapter extends RecyclerView.Adapter {
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         LayoutInflater inflater = LayoutInflater.from(mContext);
-
         if (viewType == TYPE_MOVIE) {
             return new MovieHolder(inflater.inflate(R.layout.item_card_movie, parent, false));
         } else {
@@ -83,7 +81,8 @@ public class MovieCardAdapter extends RecyclerView.Adapter {
                 }
                 movieHolder.mMovieGenres.setText(builder.toString());
             }
-            movieHolder.mShareBtn.setOnClickListener(new View.OnClickListener() {
+        /* Share button removed from layout
+           movieHolder.mShareBtn.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
                     Uri uri = CineUrl.createTMDbWebUri(movie.getId(), "movie");
@@ -96,7 +95,7 @@ public class MovieCardAdapter extends RecyclerView.Adapter {
                             .setText(textToShare)
                             .startChooser();
                 }
-            });
+            });*/
         }
 
         else if (holder instanceof LoadingHolder) {
@@ -127,8 +126,6 @@ public class MovieCardAdapter extends RecyclerView.Adapter {
     private class MovieHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
 
         private TextView mMovieGenres;
-        private Button mOpenMovieBtn;
-        private Button mShareBtn;
         private SimpleDraweeView mMovieImage;
         private TextView mMovieTitle;
         private TextView mMovieVoteAverage;
@@ -143,10 +140,8 @@ public class MovieCardAdapter extends RecyclerView.Adapter {
             mMovieVoteAverage = itemView.findViewById(R.id.movie_voteAverage);
             mMovieGenres = itemView.findViewById(R.id.movie_genres);
             mMovieOverview = itemView.findViewById(R.id.movie_overview);
-            mOpenMovieBtn = itemView.findViewById(R.id.open_movieBtn);
-            mShareBtn = itemView.findViewById(R.id.share_btn);
 
-            mOpenMovieBtn.setOnClickListener(this);
+            itemView.setOnClickListener(this);
         }
 
         @Override
@@ -156,7 +151,7 @@ public class MovieCardAdapter extends RecyclerView.Adapter {
         }
     }
 
-    class LoadingHolder extends RecyclerView.ViewHolder {
+    static class LoadingHolder extends RecyclerView.ViewHolder {
         private ProgressBar mProgressBar;
 
         LoadingHolder(View itemView) {

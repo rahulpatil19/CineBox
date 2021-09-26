@@ -39,12 +39,6 @@
         android:layout_below="@id/people_search_view"
         android:visibility="invisible" />
 
-    <ProgressBar
-        android:id="@+id/progress_bar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerInParent="true" />
-
     <TextView
         android:id="@+id/search_results"
         android:layout_width="wrap_content"
@@ -55,5 +49,27 @@
         android:visibility="invisible" />
 
     <include layout="@layout/error_layout" />
+
+    <com.facebook.shimmer.ShimmerFrameLayout
+        android:id="@+id/shimmer_layout"
+        android:layout_below="@id/people_search_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <include layout="@layout/shimmer_layout_people"/>
+            <include layout="@layout/shimmer_layout_people"/>
+            <include layout="@layout/shimmer_layout_people"/>
+            <include layout="@layout/shimmer_layout_people"/>
+            <include layout="@layout/shimmer_layout_people"/>
+            <include layout="@layout/shimmer_layout_people"/>
+
+        </LinearLayout>
+
+    </com.facebook.shimmer.ShimmerFrameLayout>
 
 </RelativeLayout>

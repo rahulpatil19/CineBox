@@ -15,6 +15,7 @@ import com.android.volley.Request;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
+import com.facebook.shimmer.ShimmerFrameLayout;
 import com.google.android.material.snackbar.Snackbar;
 
 import org.json.JSONArray;
@@ -31,6 +32,7 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
+
 import patil.rahul.cineboxtma.R;
 import patil.rahul.cineboxtma.adapters.PeopleAdapter;
 import patil.rahul.cineboxtma.models.People;
@@ -47,12 +49,12 @@ import patil.rahul.cineboxtma.utils.MySingleton;
 public class PeopleFragment extends Fragment implements CineListener.OnPeopleClickListener,
         SwipeRefreshLayout.OnRefreshListener, SearchView.OnQueryTextListener {
 
+    private ShimmerFrameLayout shimmerFrameLayout;
     private RelativeLayout mPlaceSnackBar;
     private RecyclerView mPeopleRecyclerView;
     private RecyclerView mSearchRecyclerView;
     private PeopleAdapter mPeopleAdapter, mSearchAdapter;
     private SearchView mSearchView;
-    private ProgressBar mProgressBar;
     private LinearLayout mErrorLayout;
     private TextView mSearchErrorTextView;
     private Button mRetryBtn;
@@ -82,9 +84,12 @@ public class PeopleFragment extends Fragment implements CineListener.OnPeopleCli
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_nav_people, container, false);
+
+        shimmerFrameLayout = view.findViewById(R.id.shimmer_layout);
+        startShimmer();
+
         mPlaceSnackBar = view.findViewById(R.id.placeSnackBar);
         mPeopleRecyclerView = view.findViewById(R.id.people_recycler_view);
-        mProgressBar = view.findViewById(R.id.progress_bar);
         mErrorLayout = view.findViewById(R.id.error_layout);
         mRetryBtn = view.findViewById(R.id.retry_btn);
         mSearchErrorTextView = view.findViewById(R.id.search_results);
@@ -166,7 +171,7 @@ public class PeopleFragment extends Fragment implements CineListener.OnPeopleCli
                                 mPeopleList.add(new People(id, name, profile_path));
                             }
                             mErrorLayout.setVisibility(View.GONE);
-                            mProgressBar.setVisibility(View.INVISIBLE);
+                            stopShimmer();
                             mPeopleAdapter.addData(mPeopleList);
                             mPeopleRecyclerView.setVisibility(View.VISIBLE);
                             mSwipeRefreshLayout.setRefreshing(false);
@@ -174,9 +179,7 @@ public class PeopleFragment extends Fragment implements CineListener.OnPeopleCli
                             mPeopleAdapter.notifyItemRangeInserted(currentSize, mPeopleList.size() - 1);
                             isFirstLoad = false;
                             isEndOfPage = true;
-                        }
-
-                        else if (peopleArray.length() == 0 && mPeopleList.size() > 0) {
+                        } else if (peopleArray.length() == 0 && mPeopleList.size() > 0) {
                             mPeopleList.remove(mPeopleList.size() - 1);
                             mPeopleAdapter.notifyItemRemoved(mPeopleList.size());
                             isEndOfPage = true;
@@ -188,7 +191,7 @@ public class PeopleFragment extends Fragment implements CineListener.OnPeopleCli
             }, new Response.ErrorListener() {
                 @Override
                 public void onErrorResponse(VolleyError error) {
-                    mProgressBar.setVisibility(View.GONE);
+                    stopShimmer();
                     mSwipeRefreshLayout.setRefreshing(false);
 
                     if (mPeopleList.size() > 0) {
@@ -219,7 +222,7 @@ public class PeopleFragment extends Fragment implements CineListener.OnPeopleCli
     private void searchPeople(String query) {
         final List<String> knownForList = new ArrayList<>();
         mSearchErrorTextView.setVisibility(View.INVISIBLE);
-        mProgressBar.setVisibility(View.VISIBLE);
+        startShimmer();
         String url = createSearchUrl(query);
         final JsonObjectRequest peopleSearchRequest = new JsonObjectRequest(Request.Method.GET, url, null, new Response.Listener<JSONObject>() {
             @Override
@@ -238,12 +241,12 @@ public class PeopleFragment extends Fragment implements CineListener.OnPeopleCli
 
                             mSearchList.add(new People(id, name, poster_path));
                         }
-                        mProgressBar.setVisibility(View.GONE);
+                        stopShimmer();
                         mSearchRecyclerView.setVisibility(View.VISIBLE);
                         mSearchAdapter.addData(mSearchList);
                         mSearchAdapter.notifyDataSetChanged();
                     } else {
-                        mProgressBar.setVisibility(View.GONE);
+                        stopShimmer();
                         mSearchRecyclerView.setVisibility(View.INVISIBLE);
                         mSearchErrorTextView.setText(R.string.no_results_found);
                         mSearchErrorTextView.setVisibility(View.VISIBLE);
@@ -255,7 +258,7 @@ public class PeopleFragment extends Fragment implements CineListener.OnPeopleCli
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-                mProgressBar.setVisibility(View.GONE);
+                stopShimmer();
                 mSearchErrorTextView.setVisibility(View.VISIBLE);
                 mSearchRecyclerView.setVisibility(View.INVISIBLE);
                 mSearchErrorTextView.setText(getString(R.string.no_connection));
@@ -292,13 +295,13 @@ public class PeopleFragment extends Fragment implements CineListener.OnPeopleCli
         } else if (mQueryLength <= 3) {
             hideSearchRecyclerView();
             if (mPeopleList.size() > 0) {
-                mProgressBar.setVisibility(View.INVISIBLE);
+                stopShimmer();
                 mPeopleRecyclerView.setVisibility(View.VISIBLE);
             } else if (mErrorLayout.getVisibility() == View.VISIBLE) {
-                mProgressBar.setVisibility(View.INVISIBLE);
+                stopShimmer();
                 mPeopleRecyclerView.setVisibility(View.INVISIBLE);
             } else {
-                mProgressBar.setVisibility(View.VISIBLE);
+                startShimmer();
                 mPeopleRecyclerView.setVisibility(View.INVISIBLE);
                 isEndOfPage = true;
                 fetchPeople();
@@ -325,7 +328,7 @@ public class PeopleFragment extends Fragment implements CineListener.OnPeopleCli
     @Override
     public void onRefresh() {
         if (mSearchRecyclerView.getVisibility() == View.VISIBLE || mSearchErrorTextView.getVisibility() == View.VISIBLE
-                || mProgressBar.getVisibility() == View.VISIBLE) {
+                || shimmerFrameLayout.getVisibility() == View.VISIBLE) {
             mSwipeRefreshLayout.setRefreshing(false);
         } else {
             if (mPeopleList.size() > 0) {
@@ -343,14 +346,13 @@ public class PeopleFragment extends Fragment implements CineListener.OnPeopleCli
     private void retryFetching() {
         if (mPeopleList.size() > 0) {
             mSwipeRefreshLayout.setRefreshing(true);
-            fetchPeople();
         } else {
             resetAllState();
             mErrorLayout.setVisibility(View.INVISIBLE);
-            mProgressBar.setVisibility(View.VISIBLE);
+            startShimmer();
             mSwipeRefreshLayout.setRefreshing(false);
-            fetchPeople();
         }
+        fetchPeople();
     }
 
     private void resetAllState() {
@@ -374,7 +376,7 @@ public class PeopleFragment extends Fragment implements CineListener.OnPeopleCli
     public void onAttach(Context context) {
         super.onAttach(context);
         try {
-           onPeopleClickListener = (CineListener.OnPeopleClickListener) context;
+            onPeopleClickListener = (CineListener.OnPeopleClickListener) context;
         } catch (ClassCastException e) {
             throw new ClassCastException(context.toString() + "Must implement OnPeopleClickListener");
         }
@@ -388,8 +390,8 @@ public class PeopleFragment extends Fragment implements CineListener.OnPeopleCli
         return CineUrl.createSearchUrl("person", query);
     }
 
-    public void refreshPeopleList(){
-        if (mPeopleList.size() > 0){
+    public void refreshPeopleList() {
+        if (mPeopleList.size() > 0) {
             mPeopleRecyclerView.smoothScrollToPosition(0);
         }
     }
@@ -397,5 +399,15 @@ public class PeopleFragment extends Fragment implements CineListener.OnPeopleCli
     @Override
     public void onPeopleClick(People people) {
         onPeopleClickListener.onPeopleClick(people);
+    }
+
+    private void startShimmer() {
+        shimmerFrameLayout.startShimmer();
+        shimmerFrameLayout.setVisibility(View.VISIBLE);
+    }
+
+    private void stopShimmer() {
+        shimmerFrameLayout.stopShimmer();
+        shimmerFrameLayout.setVisibility(View.INVISIBLE);
     }
 }

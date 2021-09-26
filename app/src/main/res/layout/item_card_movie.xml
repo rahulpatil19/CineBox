@@ -90,6 +90,7 @@
             android:layout_marginStart="12dp"
             android:layout_marginTop="6dp"
             android:layout_marginEnd="12dp"
+            android:paddingBottom="16dp"
             android:ellipsize="end"
             android:maxLines="3"
             android:textAppearance="@style/TextAppearance.MaterialComponents.Body2"
@@ -97,29 +98,6 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/movie_image"
             tools:text="sdfsdf,sdf fksjdjsd fsdkjfsd fskjfvfs skjnvkjs vsfjnvkjsn vsjnv" />
-
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/share_btn"
-            style="@style/Widget.MaterialComponents.Button.TextButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="8dp"
-            android:text="@string/btn_share"
-            app:layout_constraintBaseline_toBaselineOf="@id/open_movieBtn"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/open_movieBtn"
-            app:layout_constraintTop_toBottomOf="@id/movie_overview" />
-
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/open_movieBtn"
-            android:layout_width="wrap_content"
-            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-            android:layout_height="wrap_content"
-            android:layout_margin="8dp"
-            android:text="@string/btn_explore"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/movie_overview" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </com.google.android.material.card.MaterialCardView>

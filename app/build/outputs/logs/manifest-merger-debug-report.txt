@@ -1,69 +1,71 @@
 -- Merging decision tree log ---
 manifest
-ADDED from C:\Users\SCEA\AndroidStudioProjects\CineBox\app\src\main\AndroidManifest.xml:2:1-64:12
-INJECTED from C:\Users\SCEA\AndroidStudioProjects\CineBox\app\src\main\AndroidManifest.xml:2:1-64:12
-INJECTED from C:\Users\SCEA\AndroidStudioProjects\CineBox\app\src\main\AndroidManifest.xml:2:1-64:12
-INJECTED from C:\Users\SCEA\AndroidStudioProjects\CineBox\app\src\main\AndroidManifest.xml:2:1-64:12
-MERGED from [com.google.android.material:material:1.4.0] C:\Users\SCEA\.gradle\caches\transforms-3\a4db12b072650e13bc36a4fc9443bd47\transformed\material-1.4.0\AndroidManifest.xml:17:1-24:12
-MERGED from [androidx.preference:preference:1.1.1] C:\Users\SCEA\.gradle\caches\transforms-3\64bd047e2433c4cfee38848b9cdc316c\transformed\preference-1.1.1\AndroidManifest.xml:17:1-24:12
-MERGED from [androidx.constraintlayout:constraintlayout:2.1.0] C:\Users\SCEA\.gradle\caches\transforms-3\fb168b44b05705a805528f1c42f7e2f6\transformed\constraintlayout-2.1.0\AndroidManifest.xml:2:1-11:12
-MERGED from [androidx.appcompat:appcompat:1.3.1] C:\Users\SCEA\.gradle\caches\transforms-3\2fb21fbcddcb4a1a19c9cd01cfb49ddb\transformed\appcompat-1.3.1\AndroidManifest.xml:17:1-24:12
-MERGED from [androidx.viewpager2:viewpager2:1.0.0] C:\Users\SCEA\.gradle\caches\transforms-3\11108c40f6b4b45114902fb5915eea42\transformed\jetified-viewpager2-1.0.0\AndroidManifest.xml:17:1-24:12
-MERGED from [androidx.recyclerview:recyclerview:1.2.1] C:\Users\SCEA\.gradle\caches\transforms-3\0cb6f782f4aa16784e68141bc8b7b9fa\transformed\recyclerview-1.2.1\AndroidManifest.xml:17:1-24:12
-MERGED from [androidx.cardview:cardview:1.0.0] C:\Users\SCEA\.gradle\caches\transforms-3\73024ad51a4df5238a90a9d634a365dd\transformed\cardview-1.0.0\AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.appcompat:appcompat-resources:1.3.1] C:\Users\SCEA\.gradle\caches\transforms-3\fb82cd814d6b88b1ca417815991711ed\transformed\jetified-appcompat-resources-1.3.1\AndroidManifest.xml:17:1-24:12
-MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] C:\Users\SCEA\.gradle\caches\transforms-3\fdd32f901d4bb1d5d33bddeb84a905c7\transformed\vectordrawable-animated-1.1.0\AndroidManifest.xml:17:1-24:12
-MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] C:\Users\SCEA\.gradle\caches\transforms-3\29de5575f9927728f2259ca80dea1987\transformed\vectordrawable-1.1.0\AndroidManifest.xml:17:1-24:12
-MERGED from [com.android.volley:volley:1.2.1] C:\Users\SCEA\.gradle\caches\transforms-3\99d9888cad562a4ce412d70986bf1c38\transformed\jetified-volley-1.2.1\AndroidManifest.xml:2:1-7:12
-MERGED from [com.facebook.fresco:fresco:1.10.0] C:\Users\SCEA\.gradle\caches\transforms-3\1315b63fcf0385ed6d92ff2c3d26e3e4\transformed\jetified-fresco-1.10.0\AndroidManifest.xml:2:1-9:12
-MERGED from [com.ms-square:expandableTextView:0.1.4] C:\Users\SCEA\.gradle\caches\transforms-3\af0567390881b41c13d5af177dfc35e4\transformed\jetified-expandableTextView-0.1.4\AndroidManifest.xml:2:1-11:12
-MERGED from [me.relex:circleindicator:1.2.2] C:\Users\SCEA\.gradle\caches\transforms-3\215ff16779e9efa5eebc26aeb80b2926\transformed\jetified-circleindicator-1.2.2\AndroidManifest.xml:2:1-12:12
-MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.1.0] C:\Users\SCEA\.gradle\caches\transforms-3\3ed9b19727dcc8305eba5960db213fe3\transformed\swiperefreshlayout-1.1.0\AndroidManifest.xml:17:1-24:12
-MERGED from [androidx.fragment:fragment:1.3.6] C:\Users\SCEA\.gradle\caches\transforms-3\65d1d73e580ba527f5c80b9f2f30e9eb\transformed\fragment-1.3.6\AndroidManifest.xml:17:1-24:12
-MERGED from [androidx.activity:activity:1.2.4] C:\Users\SCEA\.gradle\caches\transforms-3\f0727e18754303d1e3315ddda5dbdbda\transformed\jetified-activity-1.2.4\AndroidManifest.xml:17:1-24:12
-MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] C:\Users\SCEA\.gradle\caches\transforms-3\6677abf4b9f59fe19070d1e82b772f47\transformed\drawerlayout-1.0.0\AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.1.0] C:\Users\SCEA\.gradle\caches\transforms-3\429829a900074ab331793515e7b0d630\transformed\coordinatorlayout-1.1.0\AndroidManifest.xml:17:1-24:12
-MERGED from [androidx.dynamicanimation:dynamicanimation:1.0.0] C:\Users\SCEA\.gradle\caches\transforms-3\366d65d445297f8fde8f73cd755ab914\transformed\dynamicanimation-1.0.0\AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.transition:transition:1.2.0] C:\Users\SCEA\.gradle\caches\transforms-3\06e956728079b62473f9071c0ed43744\transformed\transition-1.2.0\AndroidManifest.xml:17:1-24:12
-MERGED from [androidx.viewpager:viewpager:1.0.0] C:\Users\SCEA\.gradle\caches\transforms-3\5b6087d2a888dc8cd66652dafdfd98d8\transformed\viewpager-1.0.0\AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.customview:customview:1.0.0] C:\Users\SCEA\.gradle\caches\transforms-3\bd33b12c49278f934d4edec5459af236\transformed\customview-1.0.0\AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] C:\Users\SCEA\.gradle\caches\transforms-3\dbc66d810aadfcbae204aa9f2c96beac\transformed\legacy-support-core-utils-1.0.0\AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.loader:loader:1.0.0] C:\Users\SCEA\.gradle\caches\transforms-3\2f7c01c10d3d7134859f80fe1123d2f3\transformed\loader-1.0.0\AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.core:core:1.5.0] C:\Users\SCEA\.gradle\caches\transforms-3\a6ed9dfb3abf7d8541f7a1d01bf1d39b\transformed\core-1.5.0\AndroidManifest.xml:17:1-26:12
-MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] C:\Users\SCEA\.gradle\caches\transforms-3\048a965a9baba68ce9534c35414bd90c\transformed\cursoradapter-1.0.0\AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.3.1] C:\Users\SCEA\.gradle\caches\transforms-3\a99a6a3ef3fca7f75c17b47439ee7e66\transformed\jetified-lifecycle-viewmodel-savedstate-2.3.1\AndroidManifest.xml:17:1-24:12
-MERGED from [androidx.savedstate:savedstate:1.1.0] C:\Users\SCEA\.gradle\caches\transforms-3\90d7d96226831d3e0023a5953d8ff3fd\transformed\jetified-savedstate-1.1.0\AndroidManifest.xml:17:1-24:12
-MERGED from [androidx.lifecycle:lifecycle-runtime:2.3.1] C:\Users\SCEA\.gradle\caches\transforms-3\dc586ffb92118e9bf45ac9249032d001\transformed\lifecycle-runtime-2.3.1\AndroidManifest.xml:17:1-24:12
-MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.3.1] C:\Users\SCEA\.gradle\caches\transforms-3\83ef5a2163392347fc8488b35f811353\transformed\lifecycle-viewmodel-2.3.1\AndroidManifest.xml:17:1-24:12
-MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\SCEA\.gradle\caches\transforms-3\c11d12a2baf277b837d8806c6f87fc44\transformed\versionedparcelable-1.1.1\AndroidManifest.xml:17:1-27:12
-MERGED from [androidx.interpolator:interpolator:1.0.0] C:\Users\SCEA\.gradle\caches\transforms-3\d29c7a8a10622f03cba94cde485782f1\transformed\interpolator-1.0.0\AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.tracing:tracing:1.0.0] C:\Users\SCEA\.gradle\caches\transforms-3\e8ef85e514fc42cbbad75b9b3a8e6cfc\transformed\jetified-tracing-1.0.0\AndroidManifest.xml:17:1-24:12
-MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] C:\Users\SCEA\.gradle\caches\transforms-3\353f40e5d33d4a82de3f263c7f387564\transformed\lifecycle-livedata-2.0.0\AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.3.1] C:\Users\SCEA\.gradle\caches\transforms-3\d2e0dab81ac4ce61a6a5b8e8d3d5f158\transformed\lifecycle-livedata-core-2.3.1\AndroidManifest.xml:17:1-24:12
-MERGED from [androidx.arch.core:core-runtime:2.1.0] C:\Users\SCEA\.gradle\caches\transforms-3\4fc344dd16f2c32b18557242fa2f903e\transformed\core-runtime-2.1.0\AndroidManifest.xml:17:1-24:12
-MERGED from [androidx.documentfile:documentfile:1.0.0] C:\Users\SCEA\.gradle\caches\transforms-3\607ff11b516ddc96487249f810d47dc2\transformed\documentfile-1.0.0\AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] C:\Users\SCEA\.gradle\caches\transforms-3\11a446e7d11d9332c5acc6192805398e\transformed\localbroadcastmanager-1.0.0\AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.print:print:1.0.0] C:\Users\SCEA\.gradle\caches\transforms-3\e0704842989cea6c82cf2a91963d9437\transformed\print-1.0.0\AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.annotation:annotation-experimental:1.0.0] C:\Users\SCEA\.gradle\caches\transforms-3\bcde78bc88dd626eb99fc345b357b7d4\transformed\jetified-annotation-experimental-1.0.0\AndroidManifest.xml:17:1-24:12
-MERGED from [com.facebook.fresco:drawee:1.10.0] C:\Users\SCEA\.gradle\caches\transforms-3\d5485272cae4dff1157b89440b27de3c\transformed\jetified-drawee-1.10.0\AndroidManifest.xml:2:1-9:12
-MERGED from [com.facebook.fresco:imagepipeline:1.10.0] C:\Users\SCEA\.gradle\caches\transforms-3\5c09337acf55e416ae4997efe061ac45\transformed\jetified-imagepipeline-1.10.0\AndroidManifest.xml:2:1-9:12
-MERGED from [com.facebook.fresco:imagepipeline-base:1.10.0] C:\Users\SCEA\.gradle\caches\transforms-3\61dbebac78a8a3d190a673717aeb2ca1\transformed\jetified-imagepipeline-base-1.10.0\AndroidManifest.xml:2:1-9:12
-MERGED from [com.facebook.fresco:fbcore:1.10.0] C:\Users\SCEA\.gradle\caches\transforms-3\88d18e31a06cd12e68eb76b94611e007\transformed\jetified-fbcore-1.10.0\AndroidManifest.xml:2:1-9:12
-MERGED from [com.facebook.soloader:soloader:0.5.0] C:\Users\SCEA\.gradle\caches\transforms-3\b652a588c29d52acaaa2f649b1f2e2d0\transformed\jetified-soloader-0.5.0\AndroidManifest.xml:2:1-13:12
-INJECTED from C:\Users\SCEA\AndroidStudioProjects\CineBox\app\src\main\AndroidManifest.xml:2:1-64:12
-INJECTED from C:\Users\SCEA\AndroidStudioProjects\CineBox\app\src\main\AndroidManifest.xml:2:1-64:12
-INJECTED from C:\Users\SCEA\AndroidStudioProjects\CineBox\app\src\main\AndroidManifest.xml:2:1-64:12
+ADDED from C:\Users\SCEA\AndroidStudioProjects\CineBox\app\src\main\AndroidManifest.xml:2:1-65:12
+INJECTED from C:\Users\SCEA\AndroidStudioProjects\CineBox\app\src\main\AndroidManifest.xml:2:1-65:12
+INJECTED from C:\Users\SCEA\AndroidStudioProjects\CineBox\app\src\main\AndroidManifest.xml:2:1-65:12
+INJECTED from C:\Users\SCEA\AndroidStudioProjects\CineBox\app\src\main\AndroidManifest.xml:2:1-65:12
+MERGED from [com.google.android.material:material:1.4.0] C:\Users\SCEA\.gradle\caches\transforms-3\e501c28d41736a4c3f0eb49f6971a4db\transformed\material-1.4.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.preference:preference:1.1.1] C:\Users\SCEA\.gradle\caches\transforms-3\062e9de9cac94420db61d499b8355a01\transformed\preference-1.1.1\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.constraintlayout:constraintlayout:2.1.0] C:\Users\SCEA\.gradle\caches\transforms-3\c8e67cbcc1e2309de06c821e4d243599\transformed\constraintlayout-2.1.0\AndroidManifest.xml:2:1-11:12
+MERGED from [androidx.appcompat:appcompat:1.3.1] C:\Users\SCEA\.gradle\caches\transforms-3\7f63247bc0f9a3dc72c522b5747aaf8d\transformed\appcompat-1.3.1\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.viewpager2:viewpager2:1.0.0] C:\Users\SCEA\.gradle\caches\transforms-3\40677814d82ad95890456e197fc2ab3f\transformed\jetified-viewpager2-1.0.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.recyclerview:recyclerview:1.2.1] C:\Users\SCEA\.gradle\caches\transforms-3\8d315e161afac78f670990599c77ccd8\transformed\recyclerview-1.2.1\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.cardview:cardview:1.0.0] C:\Users\SCEA\.gradle\caches\transforms-3\4948c19ee873c3932be05ecd9d28feac\transformed\cardview-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.appcompat:appcompat-resources:1.3.1] C:\Users\SCEA\.gradle\caches\transforms-3\bf25644bd457870bb9fce3909ce43808\transformed\jetified-appcompat-resources-1.3.1\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] C:\Users\SCEA\.gradle\caches\transforms-3\510877eceedcc6d71f9d145f227bcbf9\transformed\vectordrawable-animated-1.1.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] C:\Users\SCEA\.gradle\caches\transforms-3\4fd6300b2f75afedfc41273c0d248102\transformed\vectordrawable-1.1.0\AndroidManifest.xml:17:1-24:12
+MERGED from [com.android.volley:volley:1.2.1] C:\Users\SCEA\.gradle\caches\transforms-3\72543bb1776b2c6bcbbe502118e187db\transformed\jetified-volley-1.2.1\AndroidManifest.xml:2:1-7:12
+MERGED from [com.facebook.fresco:fresco:1.10.0] C:\Users\SCEA\.gradle\caches\transforms-3\c7f0bd3f39ac0c9c6e5ccd16c5f25ac6\transformed\jetified-fresco-1.10.0\AndroidManifest.xml:2:1-9:12
+MERGED from [com.ms-square:expandableTextView:0.1.4] C:\Users\SCEA\.gradle\caches\transforms-3\ab5a51cdecb52dc87c9ed19dff3e53f1\transformed\jetified-expandableTextView-0.1.4\AndroidManifest.xml:2:1-11:12
+MERGED from [me.relex:circleindicator:1.2.2] C:\Users\SCEA\.gradle\caches\transforms-3\e82041eedcad00329603ecd00f511b29\transformed\jetified-circleindicator-1.2.2\AndroidManifest.xml:2:1-12:12
+MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.1.0] C:\Users\SCEA\.gradle\caches\transforms-3\6912a9f98d7dd890a9a595da2eeaffe7\transformed\swiperefreshlayout-1.1.0\AndroidManifest.xml:17:1-24:12
+MERGED from [com.facebook.shimmer:shimmer:0.5.0] C:\Users\SCEA\.gradle\caches\transforms-3\36cb89c28d2a7e11592a99e79368894c\transformed\jetified-shimmer-0.5.0\AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.core:core-ktx:1.6.0] C:\Users\SCEA\.gradle\caches\transforms-3\72ab64958058ca6e46981eaec59ecfea\transformed\jetified-core-ktx-1.6.0\AndroidManifest.xml:2:1-9:12
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] C:\Users\SCEA\.gradle\caches\transforms-3\f8e869aaf8065a4a3d314905480967e1\transformed\cursoradapter-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.fragment:fragment:1.3.6] C:\Users\SCEA\.gradle\caches\transforms-3\fc526671f6435ee80543e37984b7e679\transformed\fragment-1.3.6\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.activity:activity:1.2.4] C:\Users\SCEA\.gradle\caches\transforms-3\a6600f72399ff41d344e06b3151b675f\transformed\jetified-activity-1.2.4\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] C:\Users\SCEA\.gradle\caches\transforms-3\a2b8729e5eba569eef481f6f0d9c150b\transformed\drawerlayout-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.3.1] C:\Users\SCEA\.gradle\caches\transforms-3\f1be2302bdf1360703a617b6153383ca\transformed\jetified-lifecycle-viewmodel-savedstate-2.3.1\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.savedstate:savedstate:1.1.0] C:\Users\SCEA\.gradle\caches\transforms-3\9cb48fee7045e6f408e4ae4f975a6b9a\transformed\jetified-savedstate-1.1.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.1.0] C:\Users\SCEA\.gradle\caches\transforms-3\1dedb56300b805239199b3970786ffef\transformed\coordinatorlayout-1.1.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.dynamicanimation:dynamicanimation:1.0.0] C:\Users\SCEA\.gradle\caches\transforms-3\8aff8085d1a86c6635e02d7d3254bccc\transformed\dynamicanimation-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.transition:transition:1.2.0] C:\Users\SCEA\.gradle\caches\transforms-3\0f89720845c1c06621b26547172b6d86\transformed\transition-1.2.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.viewpager:viewpager:1.0.0] C:\Users\SCEA\.gradle\caches\transforms-3\6aa76f2c7ae2b0e1a931653a710d2ea4\transformed\viewpager-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.customview:customview:1.0.0] C:\Users\SCEA\.gradle\caches\transforms-3\ca76f785ac4556c2d773df0788d223b9\transformed\customview-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] C:\Users\SCEA\.gradle\caches\transforms-3\22d969c0ce7e338bb4ba7643a13be35e\transformed\legacy-support-core-utils-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.loader:loader:1.0.0] C:\Users\SCEA\.gradle\caches\transforms-3\0a6f3787d5a0f4413f8d49f24aab8c46\transformed\loader-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.core:core:1.6.0] C:\Users\SCEA\.gradle\caches\transforms-3\0fb28b93cdd2362b7036e156f61a3e2e\transformed\core-1.6.0\AndroidManifest.xml:17:1-26:12
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.3.1] C:\Users\SCEA\.gradle\caches\transforms-3\7d433a068e83fab398b627b0de29f0a1\transformed\lifecycle-runtime-2.3.1\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.3.1] C:\Users\SCEA\.gradle\caches\transforms-3\20e3ef5c7801635d6272892ce318b678\transformed\lifecycle-viewmodel-2.3.1\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\SCEA\.gradle\caches\transforms-3\5e75c95fbd87e2036c0683640df27d8c\transformed\versionedparcelable-1.1.1\AndroidManifest.xml:17:1-27:12
+MERGED from [androidx.interpolator:interpolator:1.0.0] C:\Users\SCEA\.gradle\caches\transforms-3\130d2c52bcc87916d65bf5e7d9930dfb\transformed\interpolator-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.tracing:tracing:1.0.0] C:\Users\SCEA\.gradle\caches\transforms-3\bea33a3bf358c43629c7e7b41d4496e5\transformed\jetified-tracing-1.0.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] C:\Users\SCEA\.gradle\caches\transforms-3\4ec414c760139ca46a20598fb57f3ba5\transformed\lifecycle-livedata-2.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.3.1] C:\Users\SCEA\.gradle\caches\transforms-3\25adbb7d3861091f77cfaa3cb863345e\transformed\lifecycle-livedata-core-2.3.1\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.arch.core:core-runtime:2.1.0] C:\Users\SCEA\.gradle\caches\transforms-3\32a216f86a9b0bf7d6930e0cc31bd20b\transformed\core-runtime-2.1.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.documentfile:documentfile:1.0.0] C:\Users\SCEA\.gradle\caches\transforms-3\67202d35feae929a7e33538bbd2f0d6b\transformed\documentfile-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] C:\Users\SCEA\.gradle\caches\transforms-3\2fec19b6be01c75f5993938432c14a6e\transformed\localbroadcastmanager-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.print:print:1.0.0] C:\Users\SCEA\.gradle\caches\transforms-3\147d8dbca76eeb5b7b66cf8f98f7378f\transformed\print-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.annotation:annotation-experimental:1.1.0] C:\Users\SCEA\.gradle\caches\transforms-3\bcf5c1f17478e046adae4395fcbdcac8\transformed\jetified-annotation-experimental-1.1.0\AndroidManifest.xml:17:1-24:12
+MERGED from [com.facebook.fresco:drawee:1.10.0] C:\Users\SCEA\.gradle\caches\transforms-3\e3f71d5aaf12e6f7dd9328fa3fdece22\transformed\jetified-drawee-1.10.0\AndroidManifest.xml:2:1-9:12
+MERGED from [com.facebook.fresco:imagepipeline:1.10.0] C:\Users\SCEA\.gradle\caches\transforms-3\9152d0778556985b05c22eaa0a8c73fb\transformed\jetified-imagepipeline-1.10.0\AndroidManifest.xml:2:1-9:12
+MERGED from [com.facebook.fresco:imagepipeline-base:1.10.0] C:\Users\SCEA\.gradle\caches\transforms-3\88264683860681e310005685318642f5\transformed\jetified-imagepipeline-base-1.10.0\AndroidManifest.xml:2:1-9:12
+MERGED from [com.facebook.fresco:fbcore:1.10.0] C:\Users\SCEA\.gradle\caches\transforms-3\fdec3fdde36d5340d2765e8329e67de2\transformed\jetified-fbcore-1.10.0\AndroidManifest.xml:2:1-9:12
+MERGED from [com.facebook.soloader:soloader:0.5.0] C:\Users\SCEA\.gradle\caches\transforms-3\5e68b56703b580d57cab494d96e1ccb5\transformed\jetified-soloader-0.5.0\AndroidManifest.xml:2:1-13:12
+INJECTED from C:\Users\SCEA\AndroidStudioProjects\CineBox\app\src\main\AndroidManifest.xml:2:1-65:12
+INJECTED from C:\Users\SCEA\AndroidStudioProjects\CineBox\app\src\main\AndroidManifest.xml:2:1-65:12
+INJECTED from C:\Users\SCEA\AndroidStudioProjects\CineBox\app\src\main\AndroidManifest.xml:2:1-65:12
 	package
 		ADDED from C:\Users\SCEA\AndroidStudioProjects\CineBox\app\src\main\AndroidManifest.xml:3:5-37
 		INJECTED from C:\Users\SCEA\AndroidStudioProjects\CineBox\app\src\main\AndroidManifest.xml
 		INJECTED from C:\Users\SCEA\AndroidStudioProjects\CineBox\app\src\main\AndroidManifest.xml
 	android:versionName
 		INJECTED from C:\Users\SCEA\AndroidStudioProjects\CineBox\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\SCEA\AndroidStudioProjects\CineBox\app\src\main\AndroidManifest.xml:2:1-64:12
+		ADDED from C:\Users\SCEA\AndroidStudioProjects\CineBox\app\src\main\AndroidManifest.xml:2:1-65:12
 		INJECTED from C:\Users\SCEA\AndroidStudioProjects\CineBox\app\src\main\AndroidManifest.xml
 	android:versionCode
 		INJECTED from C:\Users\SCEA\AndroidStudioProjects\CineBox\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\SCEA\AndroidStudioProjects\CineBox\app\src\main\AndroidManifest.xml:2:1-64:12
+		ADDED from C:\Users\SCEA\AndroidStudioProjects\CineBox\app\src\main\AndroidManifest.xml:2:1-65:12
 		INJECTED from C:\Users\SCEA\AndroidStudioProjects\CineBox\app\src\main\AndroidManifest.xml
 	xmlns:android
 		ADDED from C:\Users\SCEA\AndroidStudioProjects\CineBox\app\src\main\AndroidManifest.xml:2:11-69
@@ -80,21 +82,21 @@ ADDED from C:\Users\SCEA\AndroidStudioProjects\CineBox\app\src\main\AndroidManif
 	android:name
 		ADDED from C:\Users\SCEA\AndroidStudioProjects\CineBox\app\src\main\AndroidManifest.xml:7:22-77
 application
-ADDED from C:\Users\SCEA\AndroidStudioProjects\CineBox\app\src\main\AndroidManifest.xml:9:5-62:19
-MERGED from [com.google.android.material:material:1.4.0] C:\Users\SCEA\.gradle\caches\transforms-3\a4db12b072650e13bc36a4fc9443bd47\transformed\material-1.4.0\AndroidManifest.xml:22:5-20
-MERGED from [com.google.android.material:material:1.4.0] C:\Users\SCEA\.gradle\caches\transforms-3\a4db12b072650e13bc36a4fc9443bd47\transformed\material-1.4.0\AndroidManifest.xml:22:5-20
-MERGED from [androidx.constraintlayout:constraintlayout:2.1.0] C:\Users\SCEA\.gradle\caches\transforms-3\fb168b44b05705a805528f1c42f7e2f6\transformed\constraintlayout-2.1.0\AndroidManifest.xml:9:5-20
-MERGED from [androidx.constraintlayout:constraintlayout:2.1.0] C:\Users\SCEA\.gradle\caches\transforms-3\fb168b44b05705a805528f1c42f7e2f6\transformed\constraintlayout-2.1.0\AndroidManifest.xml:9:5-20
-MERGED from [com.ms-square:expandableTextView:0.1.4] C:\Users\SCEA\.gradle\caches\transforms-3\af0567390881b41c13d5af177dfc35e4\transformed\jetified-expandableTextView-0.1.4\AndroidManifest.xml:9:5-20
-MERGED from [com.ms-square:expandableTextView:0.1.4] C:\Users\SCEA\.gradle\caches\transforms-3\af0567390881b41c13d5af177dfc35e4\transformed\jetified-expandableTextView-0.1.4\AndroidManifest.xml:9:5-20
-MERGED from [androidx.core:core:1.5.0] C:\Users\SCEA\.gradle\caches\transforms-3\a6ed9dfb3abf7d8541f7a1d01bf1d39b\transformed\core-1.5.0\AndroidManifest.xml:24:5-89
-MERGED from [androidx.core:core:1.5.0] C:\Users\SCEA\.gradle\caches\transforms-3\a6ed9dfb3abf7d8541f7a1d01bf1d39b\transformed\core-1.5.0\AndroidManifest.xml:24:5-89
-MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\SCEA\.gradle\caches\transforms-3\c11d12a2baf277b837d8806c6f87fc44\transformed\versionedparcelable-1.1.1\AndroidManifest.xml:24:5-25:19
-MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\SCEA\.gradle\caches\transforms-3\c11d12a2baf277b837d8806c6f87fc44\transformed\versionedparcelable-1.1.1\AndroidManifest.xml:24:5-25:19
-MERGED from [com.facebook.soloader:soloader:0.5.0] C:\Users\SCEA\.gradle\caches\transforms-3\b652a588c29d52acaaa2f649b1f2e2d0\transformed\jetified-soloader-0.5.0\AndroidManifest.xml:11:5-20
-MERGED from [com.facebook.soloader:soloader:0.5.0] C:\Users\SCEA\.gradle\caches\transforms-3\b652a588c29d52acaaa2f649b1f2e2d0\transformed\jetified-soloader-0.5.0\AndroidManifest.xml:11:5-20
+ADDED from C:\Users\SCEA\AndroidStudioProjects\CineBox\app\src\main\AndroidManifest.xml:9:5-63:19
+MERGED from [com.google.android.material:material:1.4.0] C:\Users\SCEA\.gradle\caches\transforms-3\e501c28d41736a4c3f0eb49f6971a4db\transformed\material-1.4.0\AndroidManifest.xml:22:5-20
+MERGED from [com.google.android.material:material:1.4.0] C:\Users\SCEA\.gradle\caches\transforms-3\e501c28d41736a4c3f0eb49f6971a4db\transformed\material-1.4.0\AndroidManifest.xml:22:5-20
+MERGED from [androidx.constraintlayout:constraintlayout:2.1.0] C:\Users\SCEA\.gradle\caches\transforms-3\c8e67cbcc1e2309de06c821e4d243599\transformed\constraintlayout-2.1.0\AndroidManifest.xml:9:5-20
+MERGED from [androidx.constraintlayout:constraintlayout:2.1.0] C:\Users\SCEA\.gradle\caches\transforms-3\c8e67cbcc1e2309de06c821e4d243599\transformed\constraintlayout-2.1.0\AndroidManifest.xml:9:5-20
+MERGED from [com.ms-square:expandableTextView:0.1.4] C:\Users\SCEA\.gradle\caches\transforms-3\ab5a51cdecb52dc87c9ed19dff3e53f1\transformed\jetified-expandableTextView-0.1.4\AndroidManifest.xml:9:5-20
+MERGED from [com.ms-square:expandableTextView:0.1.4] C:\Users\SCEA\.gradle\caches\transforms-3\ab5a51cdecb52dc87c9ed19dff3e53f1\transformed\jetified-expandableTextView-0.1.4\AndroidManifest.xml:9:5-20
+MERGED from [androidx.core:core:1.6.0] C:\Users\SCEA\.gradle\caches\transforms-3\0fb28b93cdd2362b7036e156f61a3e2e\transformed\core-1.6.0\AndroidManifest.xml:24:5-89
+MERGED from [androidx.core:core:1.6.0] C:\Users\SCEA\.gradle\caches\transforms-3\0fb28b93cdd2362b7036e156f61a3e2e\transformed\core-1.6.0\AndroidManifest.xml:24:5-89
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\SCEA\.gradle\caches\transforms-3\5e75c95fbd87e2036c0683640df27d8c\transformed\versionedparcelable-1.1.1\AndroidManifest.xml:24:5-25:19
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\SCEA\.gradle\caches\transforms-3\5e75c95fbd87e2036c0683640df27d8c\transformed\versionedparcelable-1.1.1\AndroidManifest.xml:24:5-25:19
+MERGED from [com.facebook.soloader:soloader:0.5.0] C:\Users\SCEA\.gradle\caches\transforms-3\5e68b56703b580d57cab494d96e1ccb5\transformed\jetified-soloader-0.5.0\AndroidManifest.xml:11:5-20
+MERGED from [com.facebook.soloader:soloader:0.5.0] C:\Users\SCEA\.gradle\caches\transforms-3\5e68b56703b580d57cab494d96e1ccb5\transformed\jetified-soloader-0.5.0\AndroidManifest.xml:11:5-20
 	android:appComponentFactory
-		ADDED from [androidx.core:core:1.5.0] C:\Users\SCEA\.gradle\caches\transforms-3\a6ed9dfb3abf7d8541f7a1d01bf1d39b\transformed\core-1.5.0\AndroidManifest.xml:24:18-86
+		ADDED from [androidx.core:core:1.6.0] C:\Users\SCEA\.gradle\caches\transforms-3\0fb28b93cdd2362b7036e156f61a3e2e\transformed\core-1.6.0\AndroidManifest.xml:24:18-86
 	android:supportsRtl
 		ADDED from C:\Users\SCEA\AndroidStudioProjects\CineBox\app\src\main\AndroidManifest.xml:16:9-35
 	android:label
@@ -110,183 +112,189 @@ MERGED from [com.facebook.soloader:soloader:0.5.0] C:\Users\SCEA\.gradle\caches\
 	android:name
 		ADDED from C:\Users\SCEA\AndroidStudioProjects\CineBox\app\src\main\AndroidManifest.xml:10:9-38
 activity#patil.rahul.cineboxtma.MainActivity
-ADDED from C:\Users\SCEA\AndroidStudioProjects\CineBox\app\src\main\AndroidManifest.xml:17:9-28:20
+ADDED from C:\Users\SCEA\AndroidStudioProjects\CineBox\app\src\main\AndroidManifest.xml:17:9-29:20
 	android:screenOrientation
-		ADDED from C:\Users\SCEA\AndroidStudioProjects\CineBox\app\src\main\AndroidManifest.xml:20:13-49
+		ADDED from C:\Users\SCEA\AndroidStudioProjects\CineBox\app\src\main\AndroidManifest.xml:21:13-49
 	android:label
 		ADDED from C:\Users\SCEA\AndroidStudioProjects\CineBox\app\src\main\AndroidManifest.xml:19:13-45
 	android:windowSoftInputMode
-		ADDED from C:\Users\SCEA\AndroidStudioProjects\CineBox\app\src\main\AndroidManifest.xml:22:13-64
+		ADDED from C:\Users\SCEA\AndroidStudioProjects\CineBox\app\src\main\AndroidManifest.xml:23:13-64
+	android:exported
+		ADDED from C:\Users\SCEA\AndroidStudioProjects\CineBox\app\src\main\AndroidManifest.xml:20:13-36
 	android:theme
-		ADDED from C:\Users\SCEA\AndroidStudioProjects\CineBox\app\src\main\AndroidManifest.xml:21:13-49
+		ADDED from C:\Users\SCEA\AndroidStudioProjects\CineBox\app\src\main\AndroidManifest.xml:22:13-49
 	android:name
 		ADDED from C:\Users\SCEA\AndroidStudioProjects\CineBox\app\src\main\AndroidManifest.xml:18:13-41
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from C:\Users\SCEA\AndroidStudioProjects\CineBox\app\src\main\AndroidManifest.xml:23:13-27:29
+ADDED from C:\Users\SCEA\AndroidStudioProjects\CineBox\app\src\main\AndroidManifest.xml:24:13-28:29
 action#android.intent.action.MAIN
-ADDED from C:\Users\SCEA\AndroidStudioProjects\CineBox\app\src\main\AndroidManifest.xml:24:17-69
+ADDED from C:\Users\SCEA\AndroidStudioProjects\CineBox\app\src\main\AndroidManifest.xml:25:17-69
 	android:name
-		ADDED from C:\Users\SCEA\AndroidStudioProjects\CineBox\app\src\main\AndroidManifest.xml:24:25-66
+		ADDED from C:\Users\SCEA\AndroidStudioProjects\CineBox\app\src\main\AndroidManifest.xml:25:25-66
 category#android.intent.category.LAUNCHER
-ADDED from C:\Users\SCEA\AndroidStudioProjects\CineBox\app\src\main\AndroidManifest.xml:26:17-77
+ADDED from C:\Users\SCEA\AndroidStudioProjects\CineBox\app\src\main\AndroidManifest.xml:27:17-77
 	android:name
-		ADDED from C:\Users\SCEA\AndroidStudioProjects\CineBox\app\src\main\AndroidManifest.xml:26:27-74
+		ADDED from C:\Users\SCEA\AndroidStudioProjects\CineBox\app\src\main\AndroidManifest.xml:27:27-74
 activity#patil.rahul.cineboxtma.MovieDetailActivity
-ADDED from C:\Users\SCEA\AndroidStudioProjects\CineBox\app\src\main\AndroidManifest.xml:29:9-31:51
+ADDED from C:\Users\SCEA\AndroidStudioProjects\CineBox\app\src\main\AndroidManifest.xml:30:9-32:51
 	android:theme
+		ADDED from C:\Users\SCEA\AndroidStudioProjects\CineBox\app\src\main\AndroidManifest.xml:32:13-48
+	android:name
 		ADDED from C:\Users\SCEA\AndroidStudioProjects\CineBox\app\src\main\AndroidManifest.xml:31:13-48
-	android:name
-		ADDED from C:\Users\SCEA\AndroidStudioProjects\CineBox\app\src\main\AndroidManifest.xml:30:13-48
 activity#patil.rahul.cineboxtma.TvDetailActivity
-ADDED from C:\Users\SCEA\AndroidStudioProjects\CineBox\app\src\main\AndroidManifest.xml:32:9-35:51
+ADDED from C:\Users\SCEA\AndroidStudioProjects\CineBox\app\src\main\AndroidManifest.xml:33:9-36:51
 	android:parentActivityName
-		ADDED from C:\Users\SCEA\AndroidStudioProjects\CineBox\app\src\main\AndroidManifest.xml:34:13-55
+		ADDED from C:\Users\SCEA\AndroidStudioProjects\CineBox\app\src\main\AndroidManifest.xml:35:13-55
 	android:theme
-		ADDED from C:\Users\SCEA\AndroidStudioProjects\CineBox\app\src\main\AndroidManifest.xml:35:13-48
+		ADDED from C:\Users\SCEA\AndroidStudioProjects\CineBox\app\src\main\AndroidManifest.xml:36:13-48
 	android:name
-		ADDED from C:\Users\SCEA\AndroidStudioProjects\CineBox\app\src\main\AndroidManifest.xml:33:13-45
+		ADDED from C:\Users\SCEA\AndroidStudioProjects\CineBox\app\src\main\AndroidManifest.xml:34:13-45
 activity#patil.rahul.cineboxtma.PeopleDetailActivity
-ADDED from C:\Users\SCEA\AndroidStudioProjects\CineBox\app\src\main\AndroidManifest.xml:36:9-38:51
+ADDED from C:\Users\SCEA\AndroidStudioProjects\CineBox\app\src\main\AndroidManifest.xml:37:9-39:51
 	android:theme
-		ADDED from C:\Users\SCEA\AndroidStudioProjects\CineBox\app\src\main\AndroidManifest.xml:38:13-48
+		ADDED from C:\Users\SCEA\AndroidStudioProjects\CineBox\app\src\main\AndroidManifest.xml:39:13-48
 	android:name
-		ADDED from C:\Users\SCEA\AndroidStudioProjects\CineBox\app\src\main\AndroidManifest.xml:37:13-49
+		ADDED from C:\Users\SCEA\AndroidStudioProjects\CineBox\app\src\main\AndroidManifest.xml:38:13-49
 activity#patil.rahul.cineboxtma.SearchActivity
-ADDED from C:\Users\SCEA\AndroidStudioProjects\CineBox\app\src\main\AndroidManifest.xml:39:9-45:20
+ADDED from C:\Users\SCEA\AndroidStudioProjects\CineBox\app\src\main\AndroidManifest.xml:40:9-46:20
 	android:theme
-		ADDED from C:\Users\SCEA\AndroidStudioProjects\CineBox\app\src\main\AndroidManifest.xml:41:13-49
+		ADDED from C:\Users\SCEA\AndroidStudioProjects\CineBox\app\src\main\AndroidManifest.xml:42:13-49
 	android:name
-		ADDED from C:\Users\SCEA\AndroidStudioProjects\CineBox\app\src\main\AndroidManifest.xml:40:13-43
+		ADDED from C:\Users\SCEA\AndroidStudioProjects\CineBox\app\src\main\AndroidManifest.xml:41:13-43
 meta-data#android.app.searchable
-ADDED from C:\Users\SCEA\AndroidStudioProjects\CineBox\app\src\main\AndroidManifest.xml:42:13-44:54
+ADDED from C:\Users\SCEA\AndroidStudioProjects\CineBox\app\src\main\AndroidManifest.xml:43:13-45:54
 	android:resource
-		ADDED from C:\Users\SCEA\AndroidStudioProjects\CineBox\app\src\main\AndroidManifest.xml:44:17-51
+		ADDED from C:\Users\SCEA\AndroidStudioProjects\CineBox\app\src\main\AndroidManifest.xml:45:17-51
 	android:name
-		ADDED from C:\Users\SCEA\AndroidStudioProjects\CineBox\app\src\main\AndroidManifest.xml:43:17-54
+		ADDED from C:\Users\SCEA\AndroidStudioProjects\CineBox\app\src\main\AndroidManifest.xml:44:17-54
 activity#patil.rahul.cineboxtma.MovieMoreActivity
-ADDED from C:\Users\SCEA\AndroidStudioProjects\CineBox\app\src\main\AndroidManifest.xml:46:9-48:52
+ADDED from C:\Users\SCEA\AndroidStudioProjects\CineBox\app\src\main\AndroidManifest.xml:47:9-49:52
 	android:theme
-		ADDED from C:\Users\SCEA\AndroidStudioProjects\CineBox\app\src\main\AndroidManifest.xml:48:13-49
+		ADDED from C:\Users\SCEA\AndroidStudioProjects\CineBox\app\src\main\AndroidManifest.xml:49:13-49
 	android:name
-		ADDED from C:\Users\SCEA\AndroidStudioProjects\CineBox\app\src\main\AndroidManifest.xml:47:13-46
+		ADDED from C:\Users\SCEA\AndroidStudioProjects\CineBox\app\src\main\AndroidManifest.xml:48:13-46
 activity#patil.rahul.cineboxtma.TvMoreActivity
-ADDED from C:\Users\SCEA\AndroidStudioProjects\CineBox\app\src\main\AndroidManifest.xml:49:9-51:52
+ADDED from C:\Users\SCEA\AndroidStudioProjects\CineBox\app\src\main\AndroidManifest.xml:50:9-52:52
 	android:theme
-		ADDED from C:\Users\SCEA\AndroidStudioProjects\CineBox\app\src\main\AndroidManifest.xml:51:13-49
+		ADDED from C:\Users\SCEA\AndroidStudioProjects\CineBox\app\src\main\AndroidManifest.xml:52:13-49
 	android:name
-		ADDED from C:\Users\SCEA\AndroidStudioProjects\CineBox\app\src\main\AndroidManifest.xml:50:13-43
+		ADDED from C:\Users\SCEA\AndroidStudioProjects\CineBox\app\src\main\AndroidManifest.xml:51:13-43
 activity#patil.rahul.cineboxtma.SettingsActivity
-ADDED from C:\Users\SCEA\AndroidStudioProjects\CineBox\app\src\main\AndroidManifest.xml:52:9-56:52
+ADDED from C:\Users\SCEA\AndroidStudioProjects\CineBox\app\src\main\AndroidManifest.xml:53:9-57:52
 	android:parentActivityName
-		ADDED from C:\Users\SCEA\AndroidStudioProjects\CineBox\app\src\main\AndroidManifest.xml:55:13-55
+		ADDED from C:\Users\SCEA\AndroidStudioProjects\CineBox\app\src\main\AndroidManifest.xml:56:13-55
 	android:label
-		ADDED from C:\Users\SCEA\AndroidStudioProjects\CineBox\app\src\main\AndroidManifest.xml:54:13-52
+		ADDED from C:\Users\SCEA\AndroidStudioProjects\CineBox\app\src\main\AndroidManifest.xml:55:13-52
 	android:theme
-		ADDED from C:\Users\SCEA\AndroidStudioProjects\CineBox\app\src\main\AndroidManifest.xml:56:13-49
+		ADDED from C:\Users\SCEA\AndroidStudioProjects\CineBox\app\src\main\AndroidManifest.xml:57:13-49
 	android:name
-		ADDED from C:\Users\SCEA\AndroidStudioProjects\CineBox\app\src\main\AndroidManifest.xml:53:13-45
+		ADDED from C:\Users\SCEA\AndroidStudioProjects\CineBox\app\src\main\AndroidManifest.xml:54:13-45
 meta-data#preloaded_fonts
-ADDED from C:\Users\SCEA\AndroidStudioProjects\CineBox\app\src\main\AndroidManifest.xml:58:9-60:57
+ADDED from C:\Users\SCEA\AndroidStudioProjects\CineBox\app\src\main\AndroidManifest.xml:59:9-61:57
 	android:resource
-		ADDED from C:\Users\SCEA\AndroidStudioProjects\CineBox\app\src\main\AndroidManifest.xml:60:13-54
+		ADDED from C:\Users\SCEA\AndroidStudioProjects\CineBox\app\src\main\AndroidManifest.xml:61:13-54
 	android:name
-		ADDED from C:\Users\SCEA\AndroidStudioProjects\CineBox\app\src\main\AndroidManifest.xml:59:13-43
+		ADDED from C:\Users\SCEA\AndroidStudioProjects\CineBox\app\src\main\AndroidManifest.xml:60:13-43
 uses-sdk
 INJECTED from C:\Users\SCEA\AndroidStudioProjects\CineBox\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from C:\Users\SCEA\AndroidStudioProjects\CineBox\app\src\main\AndroidManifest.xml
 INJECTED from C:\Users\SCEA\AndroidStudioProjects\CineBox\app\src\main\AndroidManifest.xml
-MERGED from [com.google.android.material:material:1.4.0] C:\Users\SCEA\.gradle\caches\transforms-3\a4db12b072650e13bc36a4fc9443bd47\transformed\material-1.4.0\AndroidManifest.xml:20:5-44
-MERGED from [com.google.android.material:material:1.4.0] C:\Users\SCEA\.gradle\caches\transforms-3\a4db12b072650e13bc36a4fc9443bd47\transformed\material-1.4.0\AndroidManifest.xml:20:5-44
-MERGED from [androidx.preference:preference:1.1.1] C:\Users\SCEA\.gradle\caches\transforms-3\64bd047e2433c4cfee38848b9cdc316c\transformed\preference-1.1.1\AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.preference:preference:1.1.1] C:\Users\SCEA\.gradle\caches\transforms-3\64bd047e2433c4cfee38848b9cdc316c\transformed\preference-1.1.1\AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.constraintlayout:constraintlayout:2.1.0] C:\Users\SCEA\.gradle\caches\transforms-3\fb168b44b05705a805528f1c42f7e2f6\transformed\constraintlayout-2.1.0\AndroidManifest.xml:5:5-7:41
-MERGED from [androidx.constraintlayout:constraintlayout:2.1.0] C:\Users\SCEA\.gradle\caches\transforms-3\fb168b44b05705a805528f1c42f7e2f6\transformed\constraintlayout-2.1.0\AndroidManifest.xml:5:5-7:41
-MERGED from [androidx.appcompat:appcompat:1.3.1] C:\Users\SCEA\.gradle\caches\transforms-3\2fb21fbcddcb4a1a19c9cd01cfb49ddb\transformed\appcompat-1.3.1\AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.appcompat:appcompat:1.3.1] C:\Users\SCEA\.gradle\caches\transforms-3\2fb21fbcddcb4a1a19c9cd01cfb49ddb\transformed\appcompat-1.3.1\AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.viewpager2:viewpager2:1.0.0] C:\Users\SCEA\.gradle\caches\transforms-3\11108c40f6b4b45114902fb5915eea42\transformed\jetified-viewpager2-1.0.0\AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.viewpager2:viewpager2:1.0.0] C:\Users\SCEA\.gradle\caches\transforms-3\11108c40f6b4b45114902fb5915eea42\transformed\jetified-viewpager2-1.0.0\AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.recyclerview:recyclerview:1.2.1] C:\Users\SCEA\.gradle\caches\transforms-3\0cb6f782f4aa16784e68141bc8b7b9fa\transformed\recyclerview-1.2.1\AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.recyclerview:recyclerview:1.2.1] C:\Users\SCEA\.gradle\caches\transforms-3\0cb6f782f4aa16784e68141bc8b7b9fa\transformed\recyclerview-1.2.1\AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.cardview:cardview:1.0.0] C:\Users\SCEA\.gradle\caches\transforms-3\73024ad51a4df5238a90a9d634a365dd\transformed\cardview-1.0.0\AndroidManifest.xml:20:5-44
-MERGED from [androidx.cardview:cardview:1.0.0] C:\Users\SCEA\.gradle\caches\transforms-3\73024ad51a4df5238a90a9d634a365dd\transformed\cardview-1.0.0\AndroidManifest.xml:20:5-44
-MERGED from [androidx.appcompat:appcompat-resources:1.3.1] C:\Users\SCEA\.gradle\caches\transforms-3\fb82cd814d6b88b1ca417815991711ed\transformed\jetified-appcompat-resources-1.3.1\AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.appcompat:appcompat-resources:1.3.1] C:\Users\SCEA\.gradle\caches\transforms-3\fb82cd814d6b88b1ca417815991711ed\transformed\jetified-appcompat-resources-1.3.1\AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] C:\Users\SCEA\.gradle\caches\transforms-3\fdd32f901d4bb1d5d33bddeb84a905c7\transformed\vectordrawable-animated-1.1.0\AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] C:\Users\SCEA\.gradle\caches\transforms-3\fdd32f901d4bb1d5d33bddeb84a905c7\transformed\vectordrawable-animated-1.1.0\AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] C:\Users\SCEA\.gradle\caches\transforms-3\29de5575f9927728f2259ca80dea1987\transformed\vectordrawable-1.1.0\AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] C:\Users\SCEA\.gradle\caches\transforms-3\29de5575f9927728f2259ca80dea1987\transformed\vectordrawable-1.1.0\AndroidManifest.xml:20:5-22:41
-MERGED from [com.android.volley:volley:1.2.1] C:\Users\SCEA\.gradle\caches\transforms-3\99d9888cad562a4ce412d70986bf1c38\transformed\jetified-volley-1.2.1\AndroidManifest.xml:5:5-43
-MERGED from [com.android.volley:volley:1.2.1] C:\Users\SCEA\.gradle\caches\transforms-3\99d9888cad562a4ce412d70986bf1c38\transformed\jetified-volley-1.2.1\AndroidManifest.xml:5:5-43
-MERGED from [com.facebook.fresco:fresco:1.10.0] C:\Users\SCEA\.gradle\caches\transforms-3\1315b63fcf0385ed6d92ff2c3d26e3e4\transformed\jetified-fresco-1.10.0\AndroidManifest.xml:5:5-7:41
-MERGED from [com.facebook.fresco:fresco:1.10.0] C:\Users\SCEA\.gradle\caches\transforms-3\1315b63fcf0385ed6d92ff2c3d26e3e4\transformed\jetified-fresco-1.10.0\AndroidManifest.xml:5:5-7:41
-MERGED from [com.ms-square:expandableTextView:0.1.4] C:\Users\SCEA\.gradle\caches\transforms-3\af0567390881b41c13d5af177dfc35e4\transformed\jetified-expandableTextView-0.1.4\AndroidManifest.xml:5:5-7:41
-MERGED from [com.ms-square:expandableTextView:0.1.4] C:\Users\SCEA\.gradle\caches\transforms-3\af0567390881b41c13d5af177dfc35e4\transformed\jetified-expandableTextView-0.1.4\AndroidManifest.xml:5:5-7:41
-MERGED from [me.relex:circleindicator:1.2.2] C:\Users\SCEA\.gradle\caches\transforms-3\215ff16779e9efa5eebc26aeb80b2926\transformed\jetified-circleindicator-1.2.2\AndroidManifest.xml:8:5-10:41
-MERGED from [me.relex:circleindicator:1.2.2] C:\Users\SCEA\.gradle\caches\transforms-3\215ff16779e9efa5eebc26aeb80b2926\transformed\jetified-circleindicator-1.2.2\AndroidManifest.xml:8:5-10:41
-MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.1.0] C:\Users\SCEA\.gradle\caches\transforms-3\3ed9b19727dcc8305eba5960db213fe3\transformed\swiperefreshlayout-1.1.0\AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.1.0] C:\Users\SCEA\.gradle\caches\transforms-3\3ed9b19727dcc8305eba5960db213fe3\transformed\swiperefreshlayout-1.1.0\AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.fragment:fragment:1.3.6] C:\Users\SCEA\.gradle\caches\transforms-3\65d1d73e580ba527f5c80b9f2f30e9eb\transformed\fragment-1.3.6\AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.fragment:fragment:1.3.6] C:\Users\SCEA\.gradle\caches\transforms-3\65d1d73e580ba527f5c80b9f2f30e9eb\transformed\fragment-1.3.6\AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.activity:activity:1.2.4] C:\Users\SCEA\.gradle\caches\transforms-3\f0727e18754303d1e3315ddda5dbdbda\transformed\jetified-activity-1.2.4\AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.activity:activity:1.2.4] C:\Users\SCEA\.gradle\caches\transforms-3\f0727e18754303d1e3315ddda5dbdbda\transformed\jetified-activity-1.2.4\AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] C:\Users\SCEA\.gradle\caches\transforms-3\6677abf4b9f59fe19070d1e82b772f47\transformed\drawerlayout-1.0.0\AndroidManifest.xml:20:5-44
-MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] C:\Users\SCEA\.gradle\caches\transforms-3\6677abf4b9f59fe19070d1e82b772f47\transformed\drawerlayout-1.0.0\AndroidManifest.xml:20:5-44
-MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.1.0] C:\Users\SCEA\.gradle\caches\transforms-3\429829a900074ab331793515e7b0d630\transformed\coordinatorlayout-1.1.0\AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.1.0] C:\Users\SCEA\.gradle\caches\transforms-3\429829a900074ab331793515e7b0d630\transformed\coordinatorlayout-1.1.0\AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.dynamicanimation:dynamicanimation:1.0.0] C:\Users\SCEA\.gradle\caches\transforms-3\366d65d445297f8fde8f73cd755ab914\transformed\dynamicanimation-1.0.0\AndroidManifest.xml:20:5-44
-MERGED from [androidx.dynamicanimation:dynamicanimation:1.0.0] C:\Users\SCEA\.gradle\caches\transforms-3\366d65d445297f8fde8f73cd755ab914\transformed\dynamicanimation-1.0.0\AndroidManifest.xml:20:5-44
-MERGED from [androidx.transition:transition:1.2.0] C:\Users\SCEA\.gradle\caches\transforms-3\06e956728079b62473f9071c0ed43744\transformed\transition-1.2.0\AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.transition:transition:1.2.0] C:\Users\SCEA\.gradle\caches\transforms-3\06e956728079b62473f9071c0ed43744\transformed\transition-1.2.0\AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.viewpager:viewpager:1.0.0] C:\Users\SCEA\.gradle\caches\transforms-3\5b6087d2a888dc8cd66652dafdfd98d8\transformed\viewpager-1.0.0\AndroidManifest.xml:20:5-44
-MERGED from [androidx.viewpager:viewpager:1.0.0] C:\Users\SCEA\.gradle\caches\transforms-3\5b6087d2a888dc8cd66652dafdfd98d8\transformed\viewpager-1.0.0\AndroidManifest.xml:20:5-44
-MERGED from [androidx.customview:customview:1.0.0] C:\Users\SCEA\.gradle\caches\transforms-3\bd33b12c49278f934d4edec5459af236\transformed\customview-1.0.0\AndroidManifest.xml:20:5-44
-MERGED from [androidx.customview:customview:1.0.0] C:\Users\SCEA\.gradle\caches\transforms-3\bd33b12c49278f934d4edec5459af236\transformed\customview-1.0.0\AndroidManifest.xml:20:5-44
-MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] C:\Users\SCEA\.gradle\caches\transforms-3\dbc66d810aadfcbae204aa9f2c96beac\transformed\legacy-support-core-utils-1.0.0\AndroidManifest.xml:20:5-44
-MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] C:\Users\SCEA\.gradle\caches\transforms-3\dbc66d810aadfcbae204aa9f2c96beac\transformed\legacy-support-core-utils-1.0.0\AndroidManifest.xml:20:5-44
-MERGED from [androidx.loader:loader:1.0.0] C:\Users\SCEA\.gradle\caches\transforms-3\2f7c01c10d3d7134859f80fe1123d2f3\transformed\loader-1.0.0\AndroidManifest.xml:20:5-44
-MERGED from [androidx.loader:loader:1.0.0] C:\Users\SCEA\.gradle\caches\transforms-3\2f7c01c10d3d7134859f80fe1123d2f3\transformed\loader-1.0.0\AndroidManifest.xml:20:5-44
-MERGED from [androidx.core:core:1.5.0] C:\Users\SCEA\.gradle\caches\transforms-3\a6ed9dfb3abf7d8541f7a1d01bf1d39b\transformed\core-1.5.0\AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.core:core:1.5.0] C:\Users\SCEA\.gradle\caches\transforms-3\a6ed9dfb3abf7d8541f7a1d01bf1d39b\transformed\core-1.5.0\AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] C:\Users\SCEA\.gradle\caches\transforms-3\048a965a9baba68ce9534c35414bd90c\transformed\cursoradapter-1.0.0\AndroidManifest.xml:20:5-44
-MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] C:\Users\SCEA\.gradle\caches\transforms-3\048a965a9baba68ce9534c35414bd90c\transformed\cursoradapter-1.0.0\AndroidManifest.xml:20:5-44
-MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.3.1] C:\Users\SCEA\.gradle\caches\transforms-3\a99a6a3ef3fca7f75c17b47439ee7e66\transformed\jetified-lifecycle-viewmodel-savedstate-2.3.1\AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.3.1] C:\Users\SCEA\.gradle\caches\transforms-3\a99a6a3ef3fca7f75c17b47439ee7e66\transformed\jetified-lifecycle-viewmodel-savedstate-2.3.1\AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.savedstate:savedstate:1.1.0] C:\Users\SCEA\.gradle\caches\transforms-3\90d7d96226831d3e0023a5953d8ff3fd\transformed\jetified-savedstate-1.1.0\AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.savedstate:savedstate:1.1.0] C:\Users\SCEA\.gradle\caches\transforms-3\90d7d96226831d3e0023a5953d8ff3fd\transformed\jetified-savedstate-1.1.0\AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.lifecycle:lifecycle-runtime:2.3.1] C:\Users\SCEA\.gradle\caches\transforms-3\dc586ffb92118e9bf45ac9249032d001\transformed\lifecycle-runtime-2.3.1\AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.lifecycle:lifecycle-runtime:2.3.1] C:\Users\SCEA\.gradle\caches\transforms-3\dc586ffb92118e9bf45ac9249032d001\transformed\lifecycle-runtime-2.3.1\AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.3.1] C:\Users\SCEA\.gradle\caches\transforms-3\83ef5a2163392347fc8488b35f811353\transformed\lifecycle-viewmodel-2.3.1\AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.3.1] C:\Users\SCEA\.gradle\caches\transforms-3\83ef5a2163392347fc8488b35f811353\transformed\lifecycle-viewmodel-2.3.1\AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\SCEA\.gradle\caches\transforms-3\c11d12a2baf277b837d8806c6f87fc44\transformed\versionedparcelable-1.1.1\AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\SCEA\.gradle\caches\transforms-3\c11d12a2baf277b837d8806c6f87fc44\transformed\versionedparcelable-1.1.1\AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.interpolator:interpolator:1.0.0] C:\Users\SCEA\.gradle\caches\transforms-3\d29c7a8a10622f03cba94cde485782f1\transformed\interpolator-1.0.0\AndroidManifest.xml:20:5-44
-MERGED from [androidx.interpolator:interpolator:1.0.0] C:\Users\SCEA\.gradle\caches\transforms-3\d29c7a8a10622f03cba94cde485782f1\transformed\interpolator-1.0.0\AndroidManifest.xml:20:5-44
-MERGED from [androidx.tracing:tracing:1.0.0] C:\Users\SCEA\.gradle\caches\transforms-3\e8ef85e514fc42cbbad75b9b3a8e6cfc\transformed\jetified-tracing-1.0.0\AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.tracing:tracing:1.0.0] C:\Users\SCEA\.gradle\caches\transforms-3\e8ef85e514fc42cbbad75b9b3a8e6cfc\transformed\jetified-tracing-1.0.0\AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] C:\Users\SCEA\.gradle\caches\transforms-3\353f40e5d33d4a82de3f263c7f387564\transformed\lifecycle-livedata-2.0.0\AndroidManifest.xml:20:5-44
-MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] C:\Users\SCEA\.gradle\caches\transforms-3\353f40e5d33d4a82de3f263c7f387564\transformed\lifecycle-livedata-2.0.0\AndroidManifest.xml:20:5-44
-MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.3.1] C:\Users\SCEA\.gradle\caches\transforms-3\d2e0dab81ac4ce61a6a5b8e8d3d5f158\transformed\lifecycle-livedata-core-2.3.1\AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.3.1] C:\Users\SCEA\.gradle\caches\transforms-3\d2e0dab81ac4ce61a6a5b8e8d3d5f158\transformed\lifecycle-livedata-core-2.3.1\AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.arch.core:core-runtime:2.1.0] C:\Users\SCEA\.gradle\caches\transforms-3\4fc344dd16f2c32b18557242fa2f903e\transformed\core-runtime-2.1.0\AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.arch.core:core-runtime:2.1.0] C:\Users\SCEA\.gradle\caches\transforms-3\4fc344dd16f2c32b18557242fa2f903e\transformed\core-runtime-2.1.0\AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.documentfile:documentfile:1.0.0] C:\Users\SCEA\.gradle\caches\transforms-3\607ff11b516ddc96487249f810d47dc2\transformed\documentfile-1.0.0\AndroidManifest.xml:20:5-44
-MERGED from [androidx.documentfile:documentfile:1.0.0] C:\Users\SCEA\.gradle\caches\transforms-3\607ff11b516ddc96487249f810d47dc2\transformed\documentfile-1.0.0\AndroidManifest.xml:20:5-44
-MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] C:\Users\SCEA\.gradle\caches\transforms-3\11a446e7d11d9332c5acc6192805398e\transformed\localbroadcastmanager-1.0.0\AndroidManifest.xml:20:5-44
-MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] C:\Users\SCEA\.gradle\caches\transforms-3\11a446e7d11d9332c5acc6192805398e\transformed\localbroadcastmanager-1.0.0\AndroidManifest.xml:20:5-44
-MERGED from [androidx.print:print:1.0.0] C:\Users\SCEA\.gradle\caches\transforms-3\e0704842989cea6c82cf2a91963d9437\transformed\print-1.0.0\AndroidManifest.xml:20:5-44
-MERGED from [androidx.print:print:1.0.0] C:\Users\SCEA\.gradle\caches\transforms-3\e0704842989cea6c82cf2a91963d9437\transformed\print-1.0.0\AndroidManifest.xml:20:5-44
-MERGED from [androidx.annotation:annotation-experimental:1.0.0] C:\Users\SCEA\.gradle\caches\transforms-3\bcde78bc88dd626eb99fc345b357b7d4\transformed\jetified-annotation-experimental-1.0.0\AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.annotation:annotation-experimental:1.0.0] C:\Users\SCEA\.gradle\caches\transforms-3\bcde78bc88dd626eb99fc345b357b7d4\transformed\jetified-annotation-experimental-1.0.0\AndroidManifest.xml:20:5-22:41
-MERGED from [com.facebook.fresco:drawee:1.10.0] C:\Users\SCEA\.gradle\caches\transforms-3\d5485272cae4dff1157b89440b27de3c\transformed\jetified-drawee-1.10.0\AndroidManifest.xml:5:5-7:41
-MERGED from [com.facebook.fresco:drawee:1.10.0] C:\Users\SCEA\.gradle\caches\transforms-3\d5485272cae4dff1157b89440b27de3c\transformed\jetified-drawee-1.10.0\AndroidManifest.xml:5:5-7:41
-MERGED from [com.facebook.fresco:imagepipeline:1.10.0] C:\Users\SCEA\.gradle\caches\transforms-3\5c09337acf55e416ae4997efe061ac45\transformed\jetified-imagepipeline-1.10.0\AndroidManifest.xml:5:5-7:41
-MERGED from [com.facebook.fresco:imagepipeline:1.10.0] C:\Users\SCEA\.gradle\caches\transforms-3\5c09337acf55e416ae4997efe061ac45\transformed\jetified-imagepipeline-1.10.0\AndroidManifest.xml:5:5-7:41
-MERGED from [com.facebook.fresco:imagepipeline-base:1.10.0] C:\Users\SCEA\.gradle\caches\transforms-3\61dbebac78a8a3d190a673717aeb2ca1\transformed\jetified-imagepipeline-base-1.10.0\AndroidManifest.xml:5:5-7:41
-MERGED from [com.facebook.fresco:imagepipeline-base:1.10.0] C:\Users\SCEA\.gradle\caches\transforms-3\61dbebac78a8a3d190a673717aeb2ca1\transformed\jetified-imagepipeline-base-1.10.0\AndroidManifest.xml:5:5-7:41
-MERGED from [com.facebook.fresco:fbcore:1.10.0] C:\Users\SCEA\.gradle\caches\transforms-3\88d18e31a06cd12e68eb76b94611e007\transformed\jetified-fbcore-1.10.0\AndroidManifest.xml:5:5-7:41
-MERGED from [com.facebook.fresco:fbcore:1.10.0] C:\Users\SCEA\.gradle\caches\transforms-3\88d18e31a06cd12e68eb76b94611e007\transformed\jetified-fbcore-1.10.0\AndroidManifest.xml:5:5-7:41
-MERGED from [com.facebook.soloader:soloader:0.5.0] C:\Users\SCEA\.gradle\caches\transforms-3\b652a588c29d52acaaa2f649b1f2e2d0\transformed\jetified-soloader-0.5.0\AndroidManifest.xml:7:5-9:41
-MERGED from [com.facebook.soloader:soloader:0.5.0] C:\Users\SCEA\.gradle\caches\transforms-3\b652a588c29d52acaaa2f649b1f2e2d0\transformed\jetified-soloader-0.5.0\AndroidManifest.xml:7:5-9:41
+MERGED from [com.google.android.material:material:1.4.0] C:\Users\SCEA\.gradle\caches\transforms-3\e501c28d41736a4c3f0eb49f6971a4db\transformed\material-1.4.0\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.material:material:1.4.0] C:\Users\SCEA\.gradle\caches\transforms-3\e501c28d41736a4c3f0eb49f6971a4db\transformed\material-1.4.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.preference:preference:1.1.1] C:\Users\SCEA\.gradle\caches\transforms-3\062e9de9cac94420db61d499b8355a01\transformed\preference-1.1.1\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.preference:preference:1.1.1] C:\Users\SCEA\.gradle\caches\transforms-3\062e9de9cac94420db61d499b8355a01\transformed\preference-1.1.1\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.constraintlayout:constraintlayout:2.1.0] C:\Users\SCEA\.gradle\caches\transforms-3\c8e67cbcc1e2309de06c821e4d243599\transformed\constraintlayout-2.1.0\AndroidManifest.xml:5:5-7:41
+MERGED from [androidx.constraintlayout:constraintlayout:2.1.0] C:\Users\SCEA\.gradle\caches\transforms-3\c8e67cbcc1e2309de06c821e4d243599\transformed\constraintlayout-2.1.0\AndroidManifest.xml:5:5-7:41
+MERGED from [androidx.appcompat:appcompat:1.3.1] C:\Users\SCEA\.gradle\caches\transforms-3\7f63247bc0f9a3dc72c522b5747aaf8d\transformed\appcompat-1.3.1\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.appcompat:appcompat:1.3.1] C:\Users\SCEA\.gradle\caches\transforms-3\7f63247bc0f9a3dc72c522b5747aaf8d\transformed\appcompat-1.3.1\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.viewpager2:viewpager2:1.0.0] C:\Users\SCEA\.gradle\caches\transforms-3\40677814d82ad95890456e197fc2ab3f\transformed\jetified-viewpager2-1.0.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.viewpager2:viewpager2:1.0.0] C:\Users\SCEA\.gradle\caches\transforms-3\40677814d82ad95890456e197fc2ab3f\transformed\jetified-viewpager2-1.0.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.recyclerview:recyclerview:1.2.1] C:\Users\SCEA\.gradle\caches\transforms-3\8d315e161afac78f670990599c77ccd8\transformed\recyclerview-1.2.1\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.recyclerview:recyclerview:1.2.1] C:\Users\SCEA\.gradle\caches\transforms-3\8d315e161afac78f670990599c77ccd8\transformed\recyclerview-1.2.1\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.cardview:cardview:1.0.0] C:\Users\SCEA\.gradle\caches\transforms-3\4948c19ee873c3932be05ecd9d28feac\transformed\cardview-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.cardview:cardview:1.0.0] C:\Users\SCEA\.gradle\caches\transforms-3\4948c19ee873c3932be05ecd9d28feac\transformed\cardview-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.appcompat:appcompat-resources:1.3.1] C:\Users\SCEA\.gradle\caches\transforms-3\bf25644bd457870bb9fce3909ce43808\transformed\jetified-appcompat-resources-1.3.1\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.appcompat:appcompat-resources:1.3.1] C:\Users\SCEA\.gradle\caches\transforms-3\bf25644bd457870bb9fce3909ce43808\transformed\jetified-appcompat-resources-1.3.1\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] C:\Users\SCEA\.gradle\caches\transforms-3\510877eceedcc6d71f9d145f227bcbf9\transformed\vectordrawable-animated-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] C:\Users\SCEA\.gradle\caches\transforms-3\510877eceedcc6d71f9d145f227bcbf9\transformed\vectordrawable-animated-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] C:\Users\SCEA\.gradle\caches\transforms-3\4fd6300b2f75afedfc41273c0d248102\transformed\vectordrawable-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] C:\Users\SCEA\.gradle\caches\transforms-3\4fd6300b2f75afedfc41273c0d248102\transformed\vectordrawable-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [com.android.volley:volley:1.2.1] C:\Users\SCEA\.gradle\caches\transforms-3\72543bb1776b2c6bcbbe502118e187db\transformed\jetified-volley-1.2.1\AndroidManifest.xml:5:5-43
+MERGED from [com.android.volley:volley:1.2.1] C:\Users\SCEA\.gradle\caches\transforms-3\72543bb1776b2c6bcbbe502118e187db\transformed\jetified-volley-1.2.1\AndroidManifest.xml:5:5-43
+MERGED from [com.facebook.fresco:fresco:1.10.0] C:\Users\SCEA\.gradle\caches\transforms-3\c7f0bd3f39ac0c9c6e5ccd16c5f25ac6\transformed\jetified-fresco-1.10.0\AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:fresco:1.10.0] C:\Users\SCEA\.gradle\caches\transforms-3\c7f0bd3f39ac0c9c6e5ccd16c5f25ac6\transformed\jetified-fresco-1.10.0\AndroidManifest.xml:5:5-7:41
+MERGED from [com.ms-square:expandableTextView:0.1.4] C:\Users\SCEA\.gradle\caches\transforms-3\ab5a51cdecb52dc87c9ed19dff3e53f1\transformed\jetified-expandableTextView-0.1.4\AndroidManifest.xml:5:5-7:41
+MERGED from [com.ms-square:expandableTextView:0.1.4] C:\Users\SCEA\.gradle\caches\transforms-3\ab5a51cdecb52dc87c9ed19dff3e53f1\transformed\jetified-expandableTextView-0.1.4\AndroidManifest.xml:5:5-7:41
+MERGED from [me.relex:circleindicator:1.2.2] C:\Users\SCEA\.gradle\caches\transforms-3\e82041eedcad00329603ecd00f511b29\transformed\jetified-circleindicator-1.2.2\AndroidManifest.xml:8:5-10:41
+MERGED from [me.relex:circleindicator:1.2.2] C:\Users\SCEA\.gradle\caches\transforms-3\e82041eedcad00329603ecd00f511b29\transformed\jetified-circleindicator-1.2.2\AndroidManifest.xml:8:5-10:41
+MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.1.0] C:\Users\SCEA\.gradle\caches\transforms-3\6912a9f98d7dd890a9a595da2eeaffe7\transformed\swiperefreshlayout-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.1.0] C:\Users\SCEA\.gradle\caches\transforms-3\6912a9f98d7dd890a9a595da2eeaffe7\transformed\swiperefreshlayout-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [com.facebook.shimmer:shimmer:0.5.0] C:\Users\SCEA\.gradle\caches\transforms-3\36cb89c28d2a7e11592a99e79368894c\transformed\jetified-shimmer-0.5.0\AndroidManifest.xml:5:5-44
+MERGED from [com.facebook.shimmer:shimmer:0.5.0] C:\Users\SCEA\.gradle\caches\transforms-3\36cb89c28d2a7e11592a99e79368894c\transformed\jetified-shimmer-0.5.0\AndroidManifest.xml:5:5-44
+MERGED from [androidx.core:core-ktx:1.6.0] C:\Users\SCEA\.gradle\caches\transforms-3\72ab64958058ca6e46981eaec59ecfea\transformed\jetified-core-ktx-1.6.0\AndroidManifest.xml:5:5-7:41
+MERGED from [androidx.core:core-ktx:1.6.0] C:\Users\SCEA\.gradle\caches\transforms-3\72ab64958058ca6e46981eaec59ecfea\transformed\jetified-core-ktx-1.6.0\AndroidManifest.xml:5:5-7:41
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] C:\Users\SCEA\.gradle\caches\transforms-3\f8e869aaf8065a4a3d314905480967e1\transformed\cursoradapter-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] C:\Users\SCEA\.gradle\caches\transforms-3\f8e869aaf8065a4a3d314905480967e1\transformed\cursoradapter-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.fragment:fragment:1.3.6] C:\Users\SCEA\.gradle\caches\transforms-3\fc526671f6435ee80543e37984b7e679\transformed\fragment-1.3.6\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.fragment:fragment:1.3.6] C:\Users\SCEA\.gradle\caches\transforms-3\fc526671f6435ee80543e37984b7e679\transformed\fragment-1.3.6\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.activity:activity:1.2.4] C:\Users\SCEA\.gradle\caches\transforms-3\a6600f72399ff41d344e06b3151b675f\transformed\jetified-activity-1.2.4\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.activity:activity:1.2.4] C:\Users\SCEA\.gradle\caches\transforms-3\a6600f72399ff41d344e06b3151b675f\transformed\jetified-activity-1.2.4\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] C:\Users\SCEA\.gradle\caches\transforms-3\a2b8729e5eba569eef481f6f0d9c150b\transformed\drawerlayout-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] C:\Users\SCEA\.gradle\caches\transforms-3\a2b8729e5eba569eef481f6f0d9c150b\transformed\drawerlayout-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.3.1] C:\Users\SCEA\.gradle\caches\transforms-3\f1be2302bdf1360703a617b6153383ca\transformed\jetified-lifecycle-viewmodel-savedstate-2.3.1\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.3.1] C:\Users\SCEA\.gradle\caches\transforms-3\f1be2302bdf1360703a617b6153383ca\transformed\jetified-lifecycle-viewmodel-savedstate-2.3.1\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.savedstate:savedstate:1.1.0] C:\Users\SCEA\.gradle\caches\transforms-3\9cb48fee7045e6f408e4ae4f975a6b9a\transformed\jetified-savedstate-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.savedstate:savedstate:1.1.0] C:\Users\SCEA\.gradle\caches\transforms-3\9cb48fee7045e6f408e4ae4f975a6b9a\transformed\jetified-savedstate-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.1.0] C:\Users\SCEA\.gradle\caches\transforms-3\1dedb56300b805239199b3970786ffef\transformed\coordinatorlayout-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.1.0] C:\Users\SCEA\.gradle\caches\transforms-3\1dedb56300b805239199b3970786ffef\transformed\coordinatorlayout-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.dynamicanimation:dynamicanimation:1.0.0] C:\Users\SCEA\.gradle\caches\transforms-3\8aff8085d1a86c6635e02d7d3254bccc\transformed\dynamicanimation-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.dynamicanimation:dynamicanimation:1.0.0] C:\Users\SCEA\.gradle\caches\transforms-3\8aff8085d1a86c6635e02d7d3254bccc\transformed\dynamicanimation-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.transition:transition:1.2.0] C:\Users\SCEA\.gradle\caches\transforms-3\0f89720845c1c06621b26547172b6d86\transformed\transition-1.2.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.transition:transition:1.2.0] C:\Users\SCEA\.gradle\caches\transforms-3\0f89720845c1c06621b26547172b6d86\transformed\transition-1.2.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.viewpager:viewpager:1.0.0] C:\Users\SCEA\.gradle\caches\transforms-3\6aa76f2c7ae2b0e1a931653a710d2ea4\transformed\viewpager-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.viewpager:viewpager:1.0.0] C:\Users\SCEA\.gradle\caches\transforms-3\6aa76f2c7ae2b0e1a931653a710d2ea4\transformed\viewpager-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.customview:customview:1.0.0] C:\Users\SCEA\.gradle\caches\transforms-3\ca76f785ac4556c2d773df0788d223b9\transformed\customview-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.customview:customview:1.0.0] C:\Users\SCEA\.gradle\caches\transforms-3\ca76f785ac4556c2d773df0788d223b9\transformed\customview-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] C:\Users\SCEA\.gradle\caches\transforms-3\22d969c0ce7e338bb4ba7643a13be35e\transformed\legacy-support-core-utils-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] C:\Users\SCEA\.gradle\caches\transforms-3\22d969c0ce7e338bb4ba7643a13be35e\transformed\legacy-support-core-utils-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.loader:loader:1.0.0] C:\Users\SCEA\.gradle\caches\transforms-3\0a6f3787d5a0f4413f8d49f24aab8c46\transformed\loader-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.loader:loader:1.0.0] C:\Users\SCEA\.gradle\caches\transforms-3\0a6f3787d5a0f4413f8d49f24aab8c46\transformed\loader-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.core:core:1.6.0] C:\Users\SCEA\.gradle\caches\transforms-3\0fb28b93cdd2362b7036e156f61a3e2e\transformed\core-1.6.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.core:core:1.6.0] C:\Users\SCEA\.gradle\caches\transforms-3\0fb28b93cdd2362b7036e156f61a3e2e\transformed\core-1.6.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.3.1] C:\Users\SCEA\.gradle\caches\transforms-3\7d433a068e83fab398b627b0de29f0a1\transformed\lifecycle-runtime-2.3.1\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.3.1] C:\Users\SCEA\.gradle\caches\transforms-3\7d433a068e83fab398b627b0de29f0a1\transformed\lifecycle-runtime-2.3.1\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.3.1] C:\Users\SCEA\.gradle\caches\transforms-3\20e3ef5c7801635d6272892ce318b678\transformed\lifecycle-viewmodel-2.3.1\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.3.1] C:\Users\SCEA\.gradle\caches\transforms-3\20e3ef5c7801635d6272892ce318b678\transformed\lifecycle-viewmodel-2.3.1\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\SCEA\.gradle\caches\transforms-3\5e75c95fbd87e2036c0683640df27d8c\transformed\versionedparcelable-1.1.1\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\SCEA\.gradle\caches\transforms-3\5e75c95fbd87e2036c0683640df27d8c\transformed\versionedparcelable-1.1.1\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.interpolator:interpolator:1.0.0] C:\Users\SCEA\.gradle\caches\transforms-3\130d2c52bcc87916d65bf5e7d9930dfb\transformed\interpolator-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.interpolator:interpolator:1.0.0] C:\Users\SCEA\.gradle\caches\transforms-3\130d2c52bcc87916d65bf5e7d9930dfb\transformed\interpolator-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.tracing:tracing:1.0.0] C:\Users\SCEA\.gradle\caches\transforms-3\bea33a3bf358c43629c7e7b41d4496e5\transformed\jetified-tracing-1.0.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.tracing:tracing:1.0.0] C:\Users\SCEA\.gradle\caches\transforms-3\bea33a3bf358c43629c7e7b41d4496e5\transformed\jetified-tracing-1.0.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] C:\Users\SCEA\.gradle\caches\transforms-3\4ec414c760139ca46a20598fb57f3ba5\transformed\lifecycle-livedata-2.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] C:\Users\SCEA\.gradle\caches\transforms-3\4ec414c760139ca46a20598fb57f3ba5\transformed\lifecycle-livedata-2.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.3.1] C:\Users\SCEA\.gradle\caches\transforms-3\25adbb7d3861091f77cfaa3cb863345e\transformed\lifecycle-livedata-core-2.3.1\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.3.1] C:\Users\SCEA\.gradle\caches\transforms-3\25adbb7d3861091f77cfaa3cb863345e\transformed\lifecycle-livedata-core-2.3.1\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.arch.core:core-runtime:2.1.0] C:\Users\SCEA\.gradle\caches\transforms-3\32a216f86a9b0bf7d6930e0cc31bd20b\transformed\core-runtime-2.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.arch.core:core-runtime:2.1.0] C:\Users\SCEA\.gradle\caches\transforms-3\32a216f86a9b0bf7d6930e0cc31bd20b\transformed\core-runtime-2.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.documentfile:documentfile:1.0.0] C:\Users\SCEA\.gradle\caches\transforms-3\67202d35feae929a7e33538bbd2f0d6b\transformed\documentfile-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.documentfile:documentfile:1.0.0] C:\Users\SCEA\.gradle\caches\transforms-3\67202d35feae929a7e33538bbd2f0d6b\transformed\documentfile-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] C:\Users\SCEA\.gradle\caches\transforms-3\2fec19b6be01c75f5993938432c14a6e\transformed\localbroadcastmanager-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] C:\Users\SCEA\.gradle\caches\transforms-3\2fec19b6be01c75f5993938432c14a6e\transformed\localbroadcastmanager-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.print:print:1.0.0] C:\Users\SCEA\.gradle\caches\transforms-3\147d8dbca76eeb5b7b66cf8f98f7378f\transformed\print-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.print:print:1.0.0] C:\Users\SCEA\.gradle\caches\transforms-3\147d8dbca76eeb5b7b66cf8f98f7378f\transformed\print-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.annotation:annotation-experimental:1.1.0] C:\Users\SCEA\.gradle\caches\transforms-3\bcf5c1f17478e046adae4395fcbdcac8\transformed\jetified-annotation-experimental-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.annotation:annotation-experimental:1.1.0] C:\Users\SCEA\.gradle\caches\transforms-3\bcf5c1f17478e046adae4395fcbdcac8\transformed\jetified-annotation-experimental-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [com.facebook.fresco:drawee:1.10.0] C:\Users\SCEA\.gradle\caches\transforms-3\e3f71d5aaf12e6f7dd9328fa3fdece22\transformed\jetified-drawee-1.10.0\AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:drawee:1.10.0] C:\Users\SCEA\.gradle\caches\transforms-3\e3f71d5aaf12e6f7dd9328fa3fdece22\transformed\jetified-drawee-1.10.0\AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:imagepipeline:1.10.0] C:\Users\SCEA\.gradle\caches\transforms-3\9152d0778556985b05c22eaa0a8c73fb\transformed\jetified-imagepipeline-1.10.0\AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:imagepipeline:1.10.0] C:\Users\SCEA\.gradle\caches\transforms-3\9152d0778556985b05c22eaa0a8c73fb\transformed\jetified-imagepipeline-1.10.0\AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:imagepipeline-base:1.10.0] C:\Users\SCEA\.gradle\caches\transforms-3\88264683860681e310005685318642f5\transformed\jetified-imagepipeline-base-1.10.0\AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:imagepipeline-base:1.10.0] C:\Users\SCEA\.gradle\caches\transforms-3\88264683860681e310005685318642f5\transformed\jetified-imagepipeline-base-1.10.0\AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:fbcore:1.10.0] C:\Users\SCEA\.gradle\caches\transforms-3\fdec3fdde36d5340d2765e8329e67de2\transformed\jetified-fbcore-1.10.0\AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:fbcore:1.10.0] C:\Users\SCEA\.gradle\caches\transforms-3\fdec3fdde36d5340d2765e8329e67de2\transformed\jetified-fbcore-1.10.0\AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.soloader:soloader:0.5.0] C:\Users\SCEA\.gradle\caches\transforms-3\5e68b56703b580d57cab494d96e1ccb5\transformed\jetified-soloader-0.5.0\AndroidManifest.xml:7:5-9:41
+MERGED from [com.facebook.soloader:soloader:0.5.0] C:\Users\SCEA\.gradle\caches\transforms-3\5e68b56703b580d57cab494d96e1ccb5\transformed\jetified-soloader-0.5.0\AndroidManifest.xml:7:5-9:41
 INJECTED from C:\Users\SCEA\AndroidStudioProjects\CineBox\app\src\main\AndroidManifest.xml
 INJECTED from C:\Users\SCEA\AndroidStudioProjects\CineBox\app\src\main\AndroidManifest.xml
 	android:targetSdkVersion

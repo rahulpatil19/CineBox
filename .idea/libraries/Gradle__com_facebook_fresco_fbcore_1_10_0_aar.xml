@@ -2,7 +2,7 @@
   <library name="Gradle: com.facebook.fresco:fbcore:1.10.0@aar">
     <ANNOTATIONS>
       <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/3426cdc46079c6b838fd7ef35263a70a/jetified-fbcore-1.10.0/annotations.zip!/" />
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/88d18e31a06cd12e68eb76b94611e007/transformed/jetified-fbcore-1.10.0/annotations.zip!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/fdec3fdde36d5340d2765e8329e67de2/transformed/jetified-fbcore-1.10.0/annotations.zip!/" />
     </ANNOTATIONS>
     <CLASSES>
       <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/3426cdc46079c6b838fd7ef35263a70a/jetified-fbcore-1.10.0/AndroidManifest.xml" />
@@ -12,8 +12,9 @@
       <root url="file://$USER_HOME$/.gradle/caches/transforms-3/618043c1db36e882e53244addf92e06b/transformed/jetified-fbcore-1.10.0/res" />
       <root url="file://$USER_HOME$/.gradle/caches/transforms-3/e181cbbdf5f63aca67c1e0cb6afd86db/transformed/jetified-fbcore-1.10.0/res" />
       <root url="file://$USER_HOME$/.gradle/caches/transforms-3/88d18e31a06cd12e68eb76b94611e007/transformed/jetified-fbcore-1.10.0/res" />
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/88d18e31a06cd12e68eb76b94611e007/transformed/jetified-fbcore-1.10.0/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/88d18e31a06cd12e68eb76b94611e007/transformed/jetified-fbcore-1.10.0/AndroidManifest.xml" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/fdec3fdde36d5340d2765e8329e67de2/transformed/jetified-fbcore-1.10.0/AndroidManifest.xml" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/fdec3fdde36d5340d2765e8329e67de2/transformed/jetified-fbcore-1.10.0/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/fdec3fdde36d5340d2765e8329e67de2/transformed/jetified-fbcore-1.10.0/res" />
     </CLASSES>
     <JAVADOC>
       <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.facebook.fresco/fbcore/1.10.0/2443e6e87e3b7a61d296a88b287fa62dfe9a3ab2/fbcore-1.10.0-javadoc.jar!/" />
