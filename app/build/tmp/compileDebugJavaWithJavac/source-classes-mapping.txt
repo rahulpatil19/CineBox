@@ -43,7 +43,6 @@ patil/rahul/cineboxtma/PeopleDetailActivity.java
  patil.rahul.cineboxtma.PeopleDetailActivity$1
  patil.rahul.cineboxtma.PeopleDetailActivity$2
  patil.rahul.cineboxtma.PeopleDetailActivity$3
- patil.rahul.cineboxtma.PeopleDetailActivity$4
 patil/rahul/cineboxtma/bottomnavfragments/TvShowFragment.java
  patil.rahul.cineboxtma.bottomnavfragments.TvShowFragment
 patil/rahul/cineboxtma/TvMoreActivity.java
@@ -58,8 +57,6 @@ patil/rahul/cineboxtma/preferenceutils/SettingsFragment.java
  patil.rahul.cineboxtma.preferenceutils.SettingsFragment
  patil.rahul.cineboxtma.preferenceutils.SettingsFragment$1
  patil.rahul.cineboxtma.preferenceutils.SettingsFragment$2
- patil.rahul.cineboxtma.preferenceutils.SettingsFragment$3
- patil.rahul.cineboxtma.preferenceutils.SettingsFragment$4
 patil/rahul/cineboxtma/adapters/TvAdapter.java
  patil.rahul.cineboxtma.adapters.TvAdapter
  patil.rahul.cineboxtma.adapters.TvAdapter$1
@@ -81,6 +78,7 @@ patil/rahul/cineboxtma/MovieDetailActivity.java
  patil.rahul.cineboxtma.MovieDetailActivity$2
  patil.rahul.cineboxtma.MovieDetailActivity$3
  patil.rahul.cineboxtma.MovieDetailActivity$4
+ patil.rahul.cineboxtma.MovieDetailActivity$5
 patil/rahul/cineboxtma/tabfragment/movie/TopRatedMovieFragment.java
  patil.rahul.cineboxtma.tabfragment.movie.TopRatedMovieFragment
  patil.rahul.cineboxtma.tabfragment.movie.TopRatedMovieFragment$1
@@ -132,8 +130,6 @@ patil/rahul/cineboxtma/tabfragment/tv/TopRatedTvFragment.java
 patil/rahul/cineboxtma/preferenceutils/DeveloperFragment.java
  patil.rahul.cineboxtma.preferenceutils.DeveloperFragment
  patil.rahul.cineboxtma.preferenceutils.DeveloperFragment$1
- patil.rahul.cineboxtma.preferenceutils.DeveloperFragment$2
- patil.rahul.cineboxtma.preferenceutils.DeveloperFragment$3
 patil/rahul/cineboxtma/TvDetailActivity.java
  patil.rahul.cineboxtma.TvDetailActivity
  patil.rahul.cineboxtma.TvDetailActivity$1
@@ -142,6 +138,7 @@ patil/rahul/cineboxtma/TvDetailActivity.java
  patil.rahul.cineboxtma.TvDetailActivity$4
  patil.rahul.cineboxtma.TvDetailActivity$5
  patil.rahul.cineboxtma.TvDetailActivity$6
+ patil.rahul.cineboxtma.TvDetailActivity$7
 patil/rahul/cineboxtma/bottomnavfragments/PeopleFragment.java
  patil.rahul.cineboxtma.bottomnavfragments.PeopleFragment
  patil.rahul.cineboxtma.bottomnavfragments.PeopleFragment$1

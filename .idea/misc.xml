@@ -3,12 +3,24 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/SCEA/AndroidStudioProjects/CineBox/app/src/main/res/drawable/background_retry_btn.xml" value="0.1" />
+        <entry key="..\:/Users/SCEA/AndroidStudioProjects/CineBox/app/src/main/res/drawable/bg_gradient_logo.xml" value="0.19895833333333332" />
         <entry key="..\:/Users/SCEA/AndroidStudioProjects/CineBox/app/src/main/res/drawable/bg_people_image.xml" value="0.19895833333333332" />
+        <entry key="..\:/Users/SCEA/AndroidStudioProjects/CineBox/app/src/main/res/drawable/bottom_nav_item_selector.xml" value="0.16296296296296298" />
+        <entry key="..\:/Users/SCEA/AndroidStudioProjects/CineBox/app/src/main/res/drawable/ic_launcher_background.xml" value="0.19895833333333332" />
+        <entry key="..\:/Users/SCEA/AndroidStudioProjects/CineBox/app/src/main/res/drawable/ic_launcher_foreground.xml" value="0.19895833333333332" />
+        <entry key="..\:/Users/SCEA/AndroidStudioProjects/CineBox/app/src/main/res/font/nunito.xml" value="0.21297242083758938" />
         <entry key="..\:/Users/SCEA/AndroidStudioProjects/CineBox/app/src/main/res/layout/activity_main.xml" value="0.1" />
         <entry key="..\:/Users/SCEA/AndroidStudioProjects/CineBox/app/src/main/res/layout/activity_more.xml" value="0.17864583333333334" />
-        <entry key="..\:/Users/SCEA/AndroidStudioProjects/CineBox/app/src/main/res/layout/activity_settings.xml" value="0.1" />
+        <entry key="..\:/Users/SCEA/AndroidStudioProjects/CineBox/app/src/main/res/layout/activity_movie_detail.xml" value="0.17864583333333334" />
+        <entry key="..\:/Users/SCEA/AndroidStudioProjects/CineBox/app/src/main/res/layout/activity_search.xml" value="0.17864583333333334" />
+        <entry key="..\:/Users/SCEA/AndroidStudioProjects/CineBox/app/src/main/res/layout/activity_settings.xml" value="0.15" />
+        <entry key="..\:/Users/SCEA/AndroidStudioProjects/CineBox/app/src/main/res/layout/activity_tv_detail.xml" value="0.17864583333333334" />
         <entry key="..\:/Users/SCEA/AndroidStudioProjects/CineBox/app/src/main/res/layout/content_home.xml" value="0.17864583333333334" />
+        <entry key="..\:/Users/SCEA/AndroidStudioProjects/CineBox/app/src/main/res/layout/content_movie_detail.xml" value="0.17864583333333334" />
+        <entry key="..\:/Users/SCEA/AndroidStudioProjects/CineBox/app/src/main/res/layout/content_tv_detail.xml" value="0.17864583333333334" />
         <entry key="..\:/Users/SCEA/AndroidStudioProjects/CineBox/app/src/main/res/layout/error_layout.xml" value="0.17864583333333334" />
+        <entry key="..\:/Users/SCEA/AndroidStudioProjects/CineBox/app/src/main/res/layout/error_layout_detail.xml" value="0.17864583333333334" />
         <entry key="..\:/Users/SCEA/AndroidStudioProjects/CineBox/app/src/main/res/layout/fragment_movie_cinemas.xml" value="0.17864583333333334" />
         <entry key="..\:/Users/SCEA/AndroidStudioProjects/CineBox/app/src/main/res/layout/fragment_movie_popular.xml" value="0.17864583333333334" />
         <entry key="..\:/Users/SCEA/AndroidStudioProjects/CineBox/app/src/main/res/layout/fragment_movie_toprated.xml" value="0.17864583333333334" />
@@ -39,6 +51,7 @@
         <entry key="..\:/Users/SCEA/AndroidStudioProjects/CineBox/app/src/main/res/layout/shimmer_layout_home_upcoming.xml" value="0.17864583333333334" />
         <entry key="..\:/Users/SCEA/AndroidStudioProjects/CineBox/app/src/main/res/layout/shimmer_layout_people.xml" value="0.17864583333333334" />
         <entry key="..\:/Users/SCEA/AndroidStudioProjects/CineBox/app/src/main/res/layout/shimmer_layout_popular_movie.xml" value="0.17864583333333334" />
+        <entry key="..\:/Users/SCEA/AndroidStudioProjects/CineBox/app/src/main/res/menu/menu_main.xml" value="0.17864583333333334" />
         <entry key="..\:/Users/SCEA/AndroidStudioProjects/CineBox/app/src/main/res/xml/preferences.xml" value="0.17864583333333334" />
       </map>
     </option>

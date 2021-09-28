@@ -1,5 +1,6 @@
 package patil.rahul.cineboxtma;
 
+import android.content.ActivityNotFoundException;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -319,13 +320,10 @@ public class PeopleDetailActivity extends AppCompatActivity implements CineListe
                     e.printStackTrace();
                 }
             }
-        }, new Response.ErrorListener() {
-            @Override
-            public void onErrorResponse(VolleyError error) {
-                mSlidingProgressBar.setVisibility(View.INVISIBLE);
-                mProgressBar.setVisibility(View.INVISIBLE);
-                mErrorLayout.setVisibility(View.VISIBLE);
-            }
+        }, error -> {
+            mSlidingProgressBar.setVisibility(View.INVISIBLE);
+            mProgressBar.setVisibility(View.INVISIBLE);
+            mErrorLayout.setVisibility(View.VISIBLE);
         });
         personDetailRequest.setTag(CineTag.PEOPLE_DETAIL_TAG);
         MySingleton.getInstance(this).getRequestQueue().add(personDetailRequest);
@@ -371,45 +369,44 @@ public class PeopleDetailActivity extends AppCompatActivity implements CineListe
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         int itemId = item.getItemId();
-        switch (itemId) {
-            case android.R.id.home:
-                onBackPressed();
-                break;
-
-            case R.id.action_go_home:
-                Intent intent = new Intent(this, MainActivity.class);
-                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                startActivity(intent);
-                break;
-
-            case R.id.action_view_on_imdb:
-                Uri imdbUri = CineUrl.createIMDbPersonUri(mIMDbId);
-                Intent imdbIntent = new Intent(Intent.ACTION_VIEW, imdbUri);
-                if (imdbIntent.resolveActivity(getPackageManager()) != null) {
-                    startActivity(imdbIntent);
-                }
-                break;
-            case R.id.action_view_facebook:
-                Uri facebookUri = CineUrl.createExternalWebUri("facebook", mFacebookId);
-                Intent facebookIntent = new Intent(Intent.ACTION_VIEW, facebookUri);
-                if (facebookIntent.resolveActivity(getPackageManager()) != null) {
-                    startActivity(facebookIntent);
-                }
-                break;
-            case R.id.action_view_instagram:
-                Uri instagramUri = CineUrl.createExternalWebUri("instagram", mInstagramId);
-                Intent instagramIntent = new Intent(Intent.ACTION_VIEW, instagramUri);
-                if (instagramIntent.resolveActivity(getPackageManager()) != null) {
-                    startActivity(instagramIntent);
-                }
-                break;
-            case R.id.action_view_twitter:
-                Uri twitterUri = CineUrl.createExternalWebUri("twitter", mTwitterId);
-                Intent twitterIntent = new Intent(Intent.ACTION_VIEW, twitterUri);
-                if (twitterIntent.resolveActivity(getPackageManager()) != null) {
-                    startActivity(twitterIntent);
-                }
-                break;
+        if (itemId == android.R.id.home) {
+            onBackPressed();
+        } else if (itemId == R.id.action_go_home) {
+            Intent intent = new Intent(this, MainActivity.class);
+            intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+            startActivity(intent);
+        } else if (itemId == R.id.action_view_on_imdb) {
+            Uri imdbUri = CineUrl.createIMDbPersonUri(mIMDbId);
+            Intent imdbIntent = new Intent(Intent.ACTION_VIEW, imdbUri);
+            try {
+                startActivity(imdbIntent);
+            } catch (ActivityNotFoundException e) {
+                // Define what your app should do if no activity can handle the intent.
+            }
+        } else if (itemId == R.id.action_view_facebook) {
+            Uri facebookUri = CineUrl.createExternalWebUri("facebook", mFacebookId);
+            Intent facebookIntent = new Intent(Intent.ACTION_VIEW, facebookUri);
+            try {
+                startActivity(facebookIntent);
+            } catch (ActivityNotFoundException e) {
+                // Define what your app should do if no activity can handle the intent.
+            }
+        } else if (itemId == R.id.action_view_instagram) {
+            Uri instagramUri = CineUrl.createExternalWebUri("instagram", mInstagramId);
+            Intent instagramIntent = new Intent(Intent.ACTION_VIEW, instagramUri);
+            try {
+                startActivity(instagramIntent);
+            } catch (ActivityNotFoundException e) {
+                // Define what your app should do if no activity can handle the intent.
+            }
+        } else if (itemId == R.id.action_view_twitter) {
+            Uri twitterUri = CineUrl.createExternalWebUri("twitter", mTwitterId);
+            Intent twitterIntent = new Intent(Intent.ACTION_VIEW, twitterUri);
+            try {
+                startActivity(twitterIntent);
+            } catch (ActivityNotFoundException e) {
+                // Define what your app should do if no activity can handle the intent.
+            }
         }
         return super.onOptionsItemSelected(item);
     }

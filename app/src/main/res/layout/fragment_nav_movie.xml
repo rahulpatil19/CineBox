@@ -15,10 +15,12 @@
             android:id="@+id/tabs"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="@drawable/bg_gradient_logo"
             android:elevation="8dp"
-            app:tabIndicatorColor="@color/colorAccent"
+            app:tabIndicatorColor="@color/white"
             app:tabMode="fixed"
-            app:tabSelectedTextColor="@color/colorAccent">
+            app:tabTextColor="@color/gray"
+            app:tabSelectedTextColor="@color/white">
 
 
             <com.google.android.material.tabs.TabItem

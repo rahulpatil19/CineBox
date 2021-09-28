@@ -17,7 +17,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:visibility="invisible">
+            android:visibility="visible">
 
             <LinearLayout
                 android:id="@+id/title_layout"
@@ -107,6 +107,15 @@
                     android:paddingStart="8dp"
                     android:paddingEnd="8dp" />
             </LinearLayout>
+
+            <com.google.android.ads.nativetemplates.TemplateView
+                android:id="@+id/ad_template_tv"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="16dp"
+                android:visibility="gone"
+                app:gnt_template_type="@layout/gnt_small_template_view" />
+
 
             <LinearLayout
                 android:id="@+id/video_layout"

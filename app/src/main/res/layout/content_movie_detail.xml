@@ -13,10 +13,10 @@
 
         <LinearLayout
             android:id="@+id/main_layout"
-            android:visibility="invisible"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:visibility="gone">
 
             <RelativeLayout
                 android:layout_width="match_parent"
@@ -33,18 +33,18 @@
                     android:layout_alignParentTop="true"
                     android:layout_toStartOf="@id/rating_view"
                     android:orientation="vertical"
-                    android:paddingEnd="16dp"
                     android:paddingStart="16dp"
+                    android:paddingEnd="16dp"
                     android:paddingBottom="12dp">
 
                     <TextView
                         android:id="@+id/movie_title"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:textStyle="bold"
                         android:layout_marginBottom="12dp"
-                        android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
                         android:fontFamily="@font/nunito_extrabold"
+                        android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
+                        android:textStyle="bold"
                         tools:text="Jumanji Welcome to the jungle" />
 
                     <LinearLayout
@@ -56,15 +56,15 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="@string/directed_by"
-                            android:textStyle="bold"
-                            android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
+                            android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                            android:textStyle="bold" />
 
                         <TextView
                             android:id="@+id/movie_director"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            tools:text="Disney Pictures"
-                            android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
+                            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                            tools:text="Disney Pictures" />
                     </LinearLayout>
                 </LinearLayout>
 
@@ -73,17 +73,17 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentEnd="true"
-                    android:paddingEnd="16dp"
+                    android:orientation="vertical"
                     android:paddingStart="16dp"
-                    android:orientation="vertical">
+                    android:paddingEnd="16dp">
 
                     <TextView
                         android:id="@+id/movie_voteAverage"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_horizontal"
-                        android:drawablePadding="4dp"
                         android:drawableStart="@drawable/ic_rating"
+                        android:drawablePadding="4dp"
                         android:textColor="@android:color/black"
                         android:textSize="16sp"
                         tools:text="5.3" />
@@ -102,8 +102,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_below="@id/header_view"
-                    android:paddingEnd="16dp"
                     android:paddingStart="16dp"
+                    android:paddingEnd="16dp"
                     android:paddingBottom="8dp">
 
                     <TextView
@@ -117,8 +117,8 @@
                         android:layout_width="6dp"
                         android:layout_height="6dp"
                         android:layout_gravity="center"
-                        android:layout_marginEnd="8dp"
                         android:layout_marginStart="8dp"
+                        android:layout_marginEnd="8dp"
                         android:contentDescription="@string/dots"
                         app:srcCompat="@drawable/ic_fiber" />
 
@@ -136,9 +136,9 @@
                     android:id="@+id/break_line"
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
+                    android:layout_below="@id/sub_view"
                     android:layout_marginStart="16dp"
                     android:layout_marginEnd="16dp"
-                    android:layout_below="@id/sub_view"
                     android:layout_marginBottom="8dp"
                     android:background="#e0e0e0" />
 
@@ -146,11 +146,11 @@
                     android:id="@+id/expand_text_view"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_alignParentStart="true"
                     android:layout_below="@id/break_line"
+                    android:layout_alignParentStart="true"
+                    android:paddingStart="16dp"
                     android:paddingEnd="16dp"
                     android:paddingBottom="16dp"
-                    android:paddingStart="16dp"
                     expandableTextView:animDuration="200"
                     expandableTextView:maxCollapsedLines="3">
 
@@ -161,133 +161,146 @@
                         android:ellipsize="end"
                         android:lineSpacingExtra="4dp"
                         android:textAppearance="@style/Base.TextAppearance.AppCompat.Body1"
-                        tools:text="fmsdmskfmvckmskdfmmcsfsfcdfjdlkjfsjdf ldsfjsjsjfjshfrsmfsjfjfksadkfjsdkmfdsnuhsdfnjdfsdncjsalnudfsdcjnslsncljsndflkjnsjn" />
+                        tools:text="Description of a movie" />
 
                     <ImageButton
-                        android:contentDescription="@string/icon_expand"
                         android:id="@+id/expand_collapse"
                         style="@style/Widget.AppCompat.Button.Borderless.Colored"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="center_horizontal" />
+                        android:layout_gravity="center_horizontal"
+                        android:contentDescription="@string/icon_expand" />
 
                 </com.ms.square.android.expandabletextview.ExpandableTextView>
 
+
+                <!-- this attribute determines which template is used. The other option is
+        @layout/gnt_medium_template_view -->
+
                 <LinearLayout
                     android:id="@+id/video_layout"
-                    android:layout_below="@id/expand_text_view"
                     android:layout_width="match_parent"
-                    android:layout_alignParentBottom="true"
                     android:layout_height="wrap_content"
-                    android:paddingBottom="16dp"
-                    android:visibility="gone"
+                    android:paddingBottom="8dp"
+                    android:layout_below="@id/expand_text_view"
                     android:background="@color/surfaceColor"
-                    android:orientation="vertical">
+                    android:orientation="vertical"
+                    android:visibility="gone">
 
                     <TextView
+                        style="@style/TextAppearance.CineBox.Heading"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:paddingBottom="16dp"
                         android:paddingStart="16dp"
                         android:paddingEnd="16dp"
-                        android:text="@string/title_videos"
-                        style="@style/TextAppearance.CineBox.Heading" />
+                        android:paddingBottom="16dp"
+                        android:text="@string/title_videos" />
 
                     <androidx.recyclerview.widget.RecyclerView
-                        android:paddingStart="8dp"
-                        android:paddingEnd="8dp"
-                        android:clipToPadding="false"
                         android:id="@+id/video_recycler_view"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content" />
+                        android:layout_height="wrap_content"
+                        android:clipToPadding="false"
+                        android:paddingStart="8dp"
+                        android:paddingEnd="8dp" />
                 </LinearLayout>
+
+
+                <com.google.android.ads.nativetemplates.TemplateView
+                    android:id="@+id/ad_template_movie"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_below="@id/video_layout"
+                    android:layout_margin="16dp"
+                    android:visibility="gone"
+                    app:gnt_template_type="@layout/gnt_small_template_view" />
+
 
             </RelativeLayout>
 
             <LinearLayout
                 android:id="@+id/cast_layout"
-                android:visibility="gone"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@color/surfaceColor"
                 android:orientation="vertical"
+                android:paddingTop="16dp"
                 android:paddingBottom="16dp"
-                android:paddingTop="16dp">
+                android:visibility="gone">
 
                 <TextView
+                    style="@style/TextAppearance.CineBox.Heading"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:paddingBottom="16dp"
-                    android:paddingEnd="16dp"
                     android:paddingStart="16dp"
-                    android:text="@string/title_cast"
-                    style="@style/TextAppearance.CineBox.Heading" />
+                    android:paddingEnd="16dp"
+                    android:paddingBottom="16dp"
+                    android:text="@string/title_cast" />
 
                 <androidx.recyclerview.widget.RecyclerView
-                    android:paddingStart="8dp"
-                    android:clipToPadding="false"
-                    android:paddingEnd="8dp"
                     android:id="@+id/cast_recycler_view"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:clipToPadding="false"
+                    android:paddingStart="8dp"
+                    android:paddingEnd="8dp" />
 
             </LinearLayout>
 
             <LinearLayout
-                android:visibility="gone"
-                android:paddingTop="16dp"
-                android:paddingBottom="16dp"
                 android:id="@+id/crew_layout"
-                android:background="@color/surfaceColor"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical">
+                android:background="@color/surfaceColor"
+                android:orientation="vertical"
+                android:paddingTop="16dp"
+                android:paddingBottom="16dp"
+                android:visibility="gone">
 
                 <TextView
+                    style="@style/TextAppearance.CineBox.Heading"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:paddingBottom="16dp"
-                    android:paddingEnd="16dp"
                     android:paddingStart="16dp"
-                    android:text="@string/title_crew"
-                    style="@style/TextAppearance.CineBox.Heading" />
+                    android:paddingEnd="16dp"
+                    android:paddingBottom="16dp"
+                    android:text="@string/title_crew" />
 
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/crew_recycler_view"
-                    android:paddingStart="8dp"
-                    android:paddingEnd="8dp"
-                    android:clipToPadding="false"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:clipToPadding="false"
+                    android:paddingStart="8dp"
+                    android:paddingEnd="8dp" />
             </LinearLayout>
 
             <LinearLayout
-                android:paddingTop="16dp"
-                android:paddingBottom="16dp"
-                android:visibility="gone"
                 android:id="@+id/similar_movies_layout"
-                android:background="@color/surfaceColor"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical">
+                android:background="@color/surfaceColor"
+                android:orientation="vertical"
+                android:paddingTop="16dp"
+                android:paddingBottom="16dp"
+                android:visibility="gone">
 
                 <TextView
+                    style="@style/TextAppearance.CineBox.Heading"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:paddingBottom="16dp"
-                    android:paddingEnd="16dp"
                     android:paddingStart="16dp"
-                    android:text="@string/title_recommended_movies"
-                    style="@style/TextAppearance.CineBox.Heading"
-                    />
+                    android:paddingEnd="16dp"
+                    android:paddingBottom="16dp"
+                    android:text="@string/title_recommended_movies" />
 
                 <androidx.recyclerview.widget.RecyclerView
-                    android:paddingStart="8dp"
-                    android:paddingEnd="8dp"
-                    android:clipToPadding="false"
                     android:id="@+id/similar_movies_recycler_view"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:clipToPadding="false"
+                    android:paddingStart="8dp"
+                    android:paddingEnd="8dp" />
             </LinearLayout>
         </LinearLayout>
 
@@ -297,7 +310,9 @@
             android:layout_height="wrap_content"
             android:layout_centerInParent="true" />
 
-        <include layout="@layout/error_layout_detail" android:visibility="invisible"/>
+        <include
+            layout="@layout/error_layout_detail"
+            android:visibility="invisible" />
 
     </RelativeLayout>
 

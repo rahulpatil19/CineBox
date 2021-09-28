@@ -1,7 +1,7 @@
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:visibility="invisible"
+    android:visibility="gone"
     android:id="@+id/error_layout"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
@@ -29,11 +29,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/retry_btn"
         android:layout_width="wrap_content"
+        android:backgroundTint="@color/colorAccent"
         android:layout_height="wrap_content"
-        android:background="@drawable/background_retry_btn"
         android:text="@string/retry"
         android:textColor="@android:color/white" />
 

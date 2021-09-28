@@ -9,15 +9,15 @@
     <application
         android:name=".MyApplication"
         android:allowBackup="true"
-        android:largeHeap="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
+        android:largeHeap="true"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true">
         <activity
             android:name=".MainActivity"
-            android:label="@string/app_name"
             android:exported="true"
+            android:label="@string/app_name"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.CineBox"
             android:windowSoftInputMode="adjustPan|stateHidden">
@@ -60,6 +60,22 @@
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
 
+        <!-- Sample AdMob App ID: ca-app-pub-3940256099942544~3347511713 -->
+        <meta-data
+            android:name="com.google.android.gms.ads.APPLICATION_ID"
+            android:value="ca-app-pub-9660112888704846~8600336400" />
+
     </application>
+
+    <queries>
+        <intent>
+            <action android:name="com.google.android.youtube.api.service.START" />
+        </intent>
+
+        <intent>
+            <action android:name="android.intent.action.VIEW" />
+        </intent>
+
+    </queries>
 
 </manifest>

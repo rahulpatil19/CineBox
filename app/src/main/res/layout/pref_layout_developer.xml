@@ -54,7 +54,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/follow_gmail"
-        android:background="@color/light_black" />
+        android:background="@color/black_light" />
 
     <TextView
         android:id="@+id/follow_instagram"

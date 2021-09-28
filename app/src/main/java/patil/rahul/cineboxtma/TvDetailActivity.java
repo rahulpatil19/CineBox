@@ -1,7 +1,10 @@
 package patil.rahul.cineboxtma;
 
+import android.app.Activity;
+import android.content.ActivityNotFoundException;
 import android.content.Intent;
 import android.content.pm.ResolveInfo;
+import android.graphics.drawable.ColorDrawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.Menu;
@@ -17,6 +20,12 @@ import com.android.volley.Request;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
+import com.google.android.ads.nativetemplates.NativeTemplateStyle;
+import com.google.android.ads.nativetemplates.TemplateView;
+import com.google.android.gms.ads.AdListener;
+import com.google.android.gms.ads.AdLoader;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.LoadAdError;
 import com.google.android.material.appbar.AppBarLayout;
 import com.google.android.material.appbar.CollapsingToolbarLayout;
 import com.google.android.youtube.player.YouTubeInitializationResult;
@@ -30,12 +39,16 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.List;
 
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.app.ShareCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager.widget.ViewPager;
+
 import me.relex.circleindicator.CircleIndicator;
 import patil.rahul.cineboxtma.adapters.PeopleCreditAdapter;
 import patil.rahul.cineboxtma.adapters.SeasonAdapter;
@@ -88,6 +101,8 @@ public class TvDetailActivity extends AppCompatActivity implements YoutubeListAd
     private List<People> mCastList = new ArrayList<>();
     private List<People> mCrewList = new ArrayList<>();
 
+    private TemplateView templateView;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -101,6 +116,41 @@ public class TvDetailActivity extends AppCompatActivity implements YoutubeListAd
         boolean isVideoPrefChecked = CinePreferences.getVideoMode(this);
 
         mLightModeBox = !isVideoPrefChecked;
+
+        AdLoader adLoader = new AdLoader.Builder(this, "ca-app-pub-9660112888704846/7876629286")
+                .forNativeAd(nativeAd -> {
+                    NativeTemplateStyle styles = new
+                            NativeTemplateStyle.Builder()
+                            .withCallToActionBackgroundColor(new ColorDrawable(getResources().getColor(R.color.primary)))
+                            .withMainBackgroundColor(new ColorDrawable(getResources().getColor(R.color.surfaceColor)))
+                            .build();
+                    templateView = findViewById(R.id.ad_template_tv);
+                    templateView.setStyles(styles);
+                    templateView.setNativeAd(nativeAd);
+                })
+                .withAdListener(new AdListener() {
+                    @Override
+                    public void onAdClosed() {
+                        super.onAdClosed();
+                        templateView.setVisibility(View.GONE);
+                    }
+
+                    @Override
+                    public void onAdLoaded() {
+                        super.onAdLoaded();
+                        templateView.setVisibility(View.VISIBLE);
+                    }
+
+                    @Override
+                    public void onAdFailedToLoad(@NonNull LoadAdError loadAdError) {
+                        super.onAdFailedToLoad(loadAdError);
+                        templateView.setVisibility(View.GONE);
+                    }
+
+                })
+                .build();
+
+        adLoader.loadAd(new AdRequest.Builder().build());
 
         mSlidingViewPager = findViewById(R.id.slidingViewPager);
         mPagerIndicator = findViewById(R.id.pager_indicator);
@@ -432,9 +482,7 @@ public class TvDetailActivity extends AppCompatActivity implements YoutubeListAd
         Intent intent;
         intent = YouTubeStandalonePlayer.createVideoIntent(this, DeveloperKey.DEVELOPER_KEY, videoKey, 0, true, mLightModeBox);
         if (intent != null) {
-            if (canResolveIntent(intent)) {
-                startActivityForResult(intent, REQ_START_STANDALONE_PLAYER);
-            }
+            someActivityResultLauncher.launch(intent);
         } else {
             YouTubeInitializationResult.SERVICE_MISSING.getErrorDialog(this, REQ_RESOLVE_SERVICE_MISSING).show();
         }
@@ -475,36 +523,30 @@ public class TvDetailActivity extends AppCompatActivity implements YoutubeListAd
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         int itemId = item.getItemId();
-        switch (itemId) {
-            case android.R.id.home:
-                onBackPressed();
-                break;
-
-            case R.id.action_go_home:
-                Intent intent = new Intent(this, MainActivity.class);
-                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                startActivity(intent);
-                break;
-
-            case R.id.action_share:
-                shareTvShow();
-                break;
-
-            case R.id.action_view_on_imdb:
-                Uri imdbUri = CineUrl.createExternalWebUri("IMDb", mImdbId);
-                Intent imdbIntent = new Intent(Intent.ACTION_VIEW, imdbUri);
-                if (imdbIntent.resolveActivity(getPackageManager()) != null) {
-                    startActivity(imdbIntent);
-                }
-                break;
-
-            case R.id.action_view_on_tmdb:
-                Uri tmdbUri = CineUrl.createTMDbWebUri(mId, "tv");
-                Intent tmdbIntent = new Intent(Intent.ACTION_VIEW, tmdbUri);
-                if (tmdbIntent.resolveActivity(getPackageManager()) != null) {
-                    startActivity(tmdbIntent);
-                }
-                break;
+        if (itemId == android.R.id.home) {
+            onBackPressed();
+        } else if (itemId == R.id.action_go_home) {
+            Intent intent = new Intent(this, MainActivity.class);
+            intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+            startActivity(intent);
+        } else if (itemId == R.id.action_share) {
+            shareTvShow();
+        } else if (itemId == R.id.action_view_on_imdb) {
+            Uri imdbUri = CineUrl.createExternalWebUri("IMDb", mImdbId);
+            Intent imdbIntent = new Intent(Intent.ACTION_VIEW, imdbUri);
+            try {
+                startActivity(imdbIntent);
+            } catch (ActivityNotFoundException e) {
+                // Define what your app should do if no activity can handle the intent.
+            }
+        } else if (itemId == R.id.action_view_on_tmdb) {
+            Uri tmdbUri = CineUrl.createTMDbWebUri(mId, "tv");
+            Intent tmdbIntent = new Intent(Intent.ACTION_VIEW, tmdbUri);
+            try {
+                startActivity(tmdbIntent);
+            } catch (ActivityNotFoundException e) {
+                // Define what your app should do if no activity can handle the intent.
+            }
         }
         return super.onOptionsItemSelected(item);
     }
@@ -514,9 +556,26 @@ public class TvDetailActivity extends AppCompatActivity implements YoutubeListAd
         String mimeType = "text/plane";
         String textToShare = String.valueOf(uri);
         String title = "Complete action using";
-        ShareCompat.IntentBuilder.from(this).setType(mimeType)
-                .setChooserTitle(title)
-                .setText(textToShare)
-                .startChooser();
+
+        ShareCompat.IntentBuilder builder = new ShareCompat.IntentBuilder(TvDetailActivity.this);
+        builder.setType(mimeType).setChooserTitle(title).setText(textToShare).startChooser();
     }
+
+    // You can do the assignment inside onAttach or onCreate, i.e, before the activity is displayed
+    ActivityResultLauncher<Intent> someActivityResultLauncher = registerForActivityResult(
+            new ActivityResultContracts.StartActivityForResult(),
+            result -> {
+                if (result.getResultCode() == Activity.RESULT_OK) {
+                    // There are no request codes
+                } else {
+                    YouTubeInitializationResult errorReason = YouTubeStandalonePlayer.getReturnedInitializationResult(result.getData());
+                    if (errorReason.isUserRecoverableError()) {
+                        errorReason.getErrorDialog(TvDetailActivity.this, 0).show();
+                    } else {
+                        String errorMessage = getString(R.string.error_player) + errorReason.toString();
+                        Toast.makeText(TvDetailActivity.this, errorMessage, Toast.LENGTH_SHORT).show();
+                    }
+                }
+            });
+
 }

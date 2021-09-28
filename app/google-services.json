@@ -1,52 +1,44 @@
 {
   "project_info": {
-    "project_number": "659604538765",
-    "firebase_url": "https://cine-box-195008.firebaseio.com",
-    "project_id": "cine-box-195008",
-    "storage_bucket": "cine-box-195008.appspot.com"
+    "project_number": "1084387111970",
+    "project_id": "cinebox-dd1ef",
+    "storage_bucket": "cinebox-dd1ef.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:659604538765:android:b331b0607262564d",
+        "mobilesdk_app_id": "1:1084387111970:android:2fb35e561460ab9919067b",
         "android_client_info": {
           "package_name": "patil.rahul.cineboxtma"
         }
       },
       "oauth_client": [
         {
-          "client_id": "659604538765-1jd50kafd7rsalnt9mbbq8e31bjr256p.apps.googleusercontent.com",
+          "client_id": "1084387111970-8iv14e7e5gs1a4jklsoflq70gj6nj031.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "patil.rahul.cineboxtma",
-            "certificate_hash": "dc423cae485ac53485c2579d89ba4908fa4e2a0b"
+            "certificate_hash": "8c1363e44ac32d113f0da1ab5c677ec36177fdd7"
           }
         },
         {
-          "client_id": "659604538765-dbf4ggp678bv1ce404oggjtchv8qlpn3.apps.googleusercontent.com",
+          "client_id": "1084387111970-m9tfa29cnamckuvd7lo7vt7q31jmq30a.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyChGV4AdV-GfhTj8gJHsH0f8BIpqjq00yg"
+          "current_key": "AIzaSyBneR7RG2Ez5VRS5N__rJw3rDo1eJvXi5g"
         }
       ],
       "services": {
-        "analytics_service": {
-          "status": 1
-        },
         "appinvite_service": {
-          "status": 2,
           "other_platform_oauth_client": [
             {
-              "client_id": "659604538765-dbf4ggp678bv1ce404oggjtchv8qlpn3.apps.googleusercontent.com",
+              "client_id": "1084387111970-m9tfa29cnamckuvd7lo7vt7q31jmq30a.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
-        },
-        "ads_service": {
-          "status": 2
         }
       }
     }

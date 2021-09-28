@@ -64,7 +64,7 @@ public class TvAdapter extends RecyclerView.Adapter {
 
             TvViewHolder tvViewHolder = (TvViewHolder) viewHolder;
 
-            Uri uri = CineUrl.createImageUri(imageQuality, tvShows.getBackdropPath());
+            Uri uri = CineUrl.createImageUri(mContext.getString(R.string.backdrop_size), tvShows.getBackdropPath());
             tvViewHolder.mBackdropImage.setImageURI(uri);
             tvViewHolder.mTitle.setText(tvShows.getName());
             tvViewHolder.mFirstAirDate.setText(CineDateFormat.formatDate(tvShows.getFirstAirDate()));

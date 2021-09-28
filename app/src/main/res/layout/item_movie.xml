@@ -59,7 +59,7 @@
         android:layout_marginEnd="8dp"
         android:ellipsize="end"
         android:maxLines="1"
-        android:textColor="@color/light_black"
+        android:textColor="@color/black_light"
         android:textAppearance="?attr/textAppearanceCaption"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/movie_image"

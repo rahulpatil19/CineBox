@@ -1,4 +1,5 @@
 package patil.rahul.cineboxtma.preferenceutils;
+
 import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
@@ -14,14 +15,15 @@ import androidx.preference.ListPreference;
 import androidx.preference.Preference;
 import androidx.preference.PreferenceFragmentCompat;
 import androidx.preference.PreferenceScreen;
+
 import patil.rahul.cineboxtma.R;
 import patil.rahul.cineboxtma.utils.MySingleton;
 
-public class SettingsFragment extends PreferenceFragmentCompat implements SharedPreferences.OnSharedPreferenceChangeListener{
+public class SettingsFragment extends PreferenceFragmentCompat implements SharedPreferences.OnSharedPreferenceChangeListener {
 
     @Override
     public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
-        setPreferencesFromResource(R.xml.preferences,rootKey);
+        setPreferencesFromResource(R.xml.preferences, rootKey);
 
         SharedPreferences sharedPreferences = getPreferenceScreen().getSharedPreferences();
         PreferenceScreen preferenceScreen = getPreferenceScreen();
@@ -31,7 +33,9 @@ public class SettingsFragment extends PreferenceFragmentCompat implements Shared
             Preference preference = preferenceScreen.getPreference(i);
             if (!(preference instanceof CheckBoxPreference)) {
                 String value = sharedPreferences.getString(preference.getKey(), "");
-                setPreferenceSummary(preference, value);
+                if (value != null) {
+                    setPreferenceSummary(preference, value);
+                }
             }
         }
 
@@ -58,10 +62,14 @@ public class SettingsFragment extends PreferenceFragmentCompat implements Shared
                     String mimeType = "text/plane";
                     String textToShare = "Checkout CineBox app on Google Play Store. Download it today from " + uri;
                     String title = "Complete action using";
-                    ShareCompat.IntentBuilder.from(getActivity()).setType(mimeType)
+
+                    ShareCompat.IntentBuilder builder = new ShareCompat.IntentBuilder(requireContext());
+                    builder.setType(mimeType).setChooserTitle(title).setText(textToShare).startChooser();
+
+                 /*   ShareCompat.IntentBuilder.from(getActivity()).setType(mimeType)
                             .setChooserTitle(title)
                             .setText(textToShare)
-                            .startChooser();
+                            .startChooser();*/
                     return false;
                 }
             });

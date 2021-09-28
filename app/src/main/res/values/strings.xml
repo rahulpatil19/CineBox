@@ -1,6 +1,20 @@
 <resources>
     <string name="app_name">CineBox</string>
 
+    <string-array name="pref_image_quality_array">
+        <item>Low</item>
+        <item>Medium</item>
+        <item>High</item>
+    </string-array>
+
+    <string-array name="pref_image_quality_array_value">
+        <item>w154</item>
+        <item>w185</item>
+        <item>w342</item>
+    </string-array>
+
+    <string name="backdrop_size">w500</string>
+
     <!-- Bottom Navigation title -->
     <string name="nav_title_home">Home</string>
     <string name="nav_title_movie">Movies</string>
@@ -77,7 +91,7 @@
     <string name="pref_title_share">Share</string>
 
     <string name="pref_image_quality_default_summary">Medium</string>
-    <string name="pref_image_quality_default_value">w500</string>
+    <string name="pref_image_quality_default_value">w342</string>
     <string name="pref_video_mode_summary">Play videos in full screen mode</string>
 
 

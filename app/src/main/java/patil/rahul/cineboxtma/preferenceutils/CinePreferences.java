@@ -10,7 +10,7 @@ public class CinePreferences {
 
     private static final boolean PREF_VIDEO_MODE_DEFAULT_VALUE = true;
 
-    private static final String PREF_IMAGE_QUALITY_DEFAULT_VALUE = "w500";
+    private static final String PREF_IMAGE_QUALITY_DEFAULT_VALUE = "w342";
 
     public static boolean getVideoMode(Context context) {
         SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(context);

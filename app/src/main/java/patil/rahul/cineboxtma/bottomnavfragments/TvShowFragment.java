@@ -24,7 +24,7 @@ public class TvShowFragment extends Fragment {
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        mPagerAdapter = new TvShowPagerAdapter(getFragmentManager());
+        mPagerAdapter = new TvShowPagerAdapter(getParentFragmentManager());
     }
 
     @Nullable

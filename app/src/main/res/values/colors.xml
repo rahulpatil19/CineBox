@@ -1,29 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#21243A</color>
-    <color name="colorPrimaryDark">#21243A</color>
+    <color name="primary_dark">#0A2553</color>
+    <color name="primary">#0F4F65</color>
+    <color name="primary_light">#147777</color>
+
+    <color name="colorPrimaryDark">#0A2553</color>
     <color name="colorAccent">#0EAE03</color>
-    <color name="textColorPrimary">#212e54</color>
+    <color name="textColorPrimary">#0A2553</color>
     <color name="colorSecondary">#545980</color>
 
-    <color name="primaryLight">#bfc0de</color>
+    <color name="gradient_start_color">#0A2553</color>
+    <color name="gradient_center_color">#0F4F65</color>
+    <color name="gradient_end_color">#147777</color>
+
 
     <color name="backgroundColor">#f0f0f0</color>
     <color name="surfaceColor">#fafafa</color>
     <color name="placeholderColor">#e0e0e0</color>
-    <color name="light_black">#414141</color>
+    <color name="black_light">#414141</color>
 
     <color name="white">#ffffff</color>
     <color name="black">#000000</color>
-
-    <!-- Custom Backgrounds -->
-    <color name="colorAccent2">#293053</color>
-    <color name="colorAccent3">#ff0266</color>
-    <color name="colorAccent4">#21243A</color>
-
-    <!--Bottom Navigation Colors -->
-    <color name="bottomNavActive">#FFDE03</color>
-    <color name="bottomNavBackground">#293053</color>
+    <color name="gray">#9F9E9E</color>
 
     <color name="shimmer_background">#dddddd</color>
 

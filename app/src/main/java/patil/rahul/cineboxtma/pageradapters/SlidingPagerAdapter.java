@@ -57,7 +57,7 @@ public class SlidingPagerAdapter extends PagerAdapter {
         View view = layoutInflater.inflate(R.layout.item_slide, container, false);
         SimpleDraweeView imageView = view.findViewById(R.id.sliding_image);
         String imagePath = imagePathList.get(position);
-        Uri uri = CineUrl.createImageUri("w780", imagePath);
+        Uri uri = CineUrl.createImageUri(mContext.getString(R.string.backdrop_size), imagePath);
         imageView.setImageURI(uri);
         container.addView(view);
         return view;

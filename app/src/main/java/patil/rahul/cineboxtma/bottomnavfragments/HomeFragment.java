@@ -2,6 +2,7 @@ package patil.rahul.cineboxtma.bottomnavfragments;
 
 import android.content.Context;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -181,6 +182,7 @@ public class HomeFragment extends Fragment implements
                             JSONObject currentMovie = carouselArray.getJSONObject(i);
                             int id = currentMovie.getInt("id");
                             String posterPath = currentMovie.getString("poster_path");
+                            Log.d("POSTERPATH", posterPath);
                             String title = currentMovie.getString("title");
                             String release_date = currentMovie.getString("release_date");
                             releasingTodayList.add(new Movie(id, title, posterPath, release_date, false));

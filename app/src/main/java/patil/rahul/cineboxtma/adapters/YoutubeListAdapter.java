@@ -4,6 +4,8 @@ import android.content.Context;
 import android.net.Uri;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -44,7 +46,10 @@ public class YoutubeListAdapter extends RecyclerView.Adapter<YoutubeListAdapter.
     @Override
     public void onBindViewHolder(@NonNull YoutubeViewHolder holder, int position) {
         VideoEntry entry = entries.get(position);
-        String thumbnailUrl = "http://img.youtube.com/vi/"+entry.getVideoId()+"/0.jpg";
+        String thumbnailUrl = "https://img.youtube.com/vi/"+entry.getVideoId()+"/sddefault.jpg";
+
+        Log.d("YOUTUBE_IMAGE", thumbnailUrl);
+
         Uri uri = Uri.parse(thumbnailUrl);
         holder.videoThumbnail.setImageURI(uri);
     }
