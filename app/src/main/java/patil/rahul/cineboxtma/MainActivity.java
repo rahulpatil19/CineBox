@@ -8,10 +8,18 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.view.WindowInsets;
 import android.widget.Toast;
 
+import androidx.activity.EdgeToEdge;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.coordinatorlayout.widget.CoordinatorLayout;
+import androidx.core.graphics.Insets;
+import androidx.core.view.OnApplyWindowInsetsListener;
+import androidx.core.view.ViewCompat;
+import androidx.core.view.WindowInsetsCompat;
 import androidx.fragment.app.FragmentTransaction;
 
 import com.google.android.material.appbar.AppBarLayout;
@@ -39,6 +47,7 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
     private PeopleFragment mPeopleFragment;
     private TvShowFragment mTvShowFragment;
 
+    private CoordinatorLayout root;
     private AppBarLayout mAppBarLayout;
     private boolean doubleBackToExitPressedOnce = false;
     public static final String MEDIA_TYPE = "media_type";
@@ -46,12 +55,30 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main);
+
+        root = findViewById(R.id.root);
+        // 2. Listen for window insets to apply padding
+        ViewCompat.setOnApplyWindowInsetsListener(root, (v, windowInsets) -> {
+            Insets insets = windowInsets.getInsets(WindowInsetsCompat.Type.systemBars());
+
+            // 3. Apply the insets correctly using the Insets object 'insets'
+            v.setPadding(
+                    insets.left,
+                    insets.top,
+                    insets.right,
+                    insets.bottom
+            );
+
+            // Return CONSUMED to stop the insets from propagating further
+            return WindowInsetsCompat.CONSUMED;
+        });
+
         BottomNavigationView mBottomNav = findViewById(R.id.bottom_navigation);
         mAppBarLayout = findViewById(R.id.appbar);
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            mAppBarLayout.setElevation(4);
-        }
+        mAppBarLayout.setElevation(4);
         MaterialToolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
