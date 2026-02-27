@@ -170,12 +170,18 @@ public class CineUrl {
         return uri.toString();
     }
 
-
     public static Uri createImageUri(String imageQuality, String imagePath) {
+
+        if (imagePath != null && imagePath.startsWith("/")) {
+            imagePath = imagePath.substring(1);
+        }
+
         return Uri.parse(IMAGE_BASE_URL).buildUpon()
-                .appendPath(imageQuality).appendEncodedPath(imagePath)
+                .appendPath(imageQuality)
+                .appendPath(imagePath)
                 .build();
     }
+
 
 
     /* Web Urls  */

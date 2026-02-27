@@ -4,6 +4,8 @@ import android.content.Context;
 import android.net.Uri;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -63,6 +65,8 @@ public class MovieHorizontalAdapter extends RecyclerView.Adapter {
             boolean showReleaseDate = movie.isShowReleaseDate();
 
             Uri posterUrl = CineUrl.createImageUri(mImageQuality, movie.getPosterPath());
+            Log.d("IMAGE_URL", posterUrl.toString());
+
             holder.mMovieImage.setImageURI(posterUrl);
             holder.mMovieTitle.setText(movie.getTitle());
 
