@@ -4,7 +4,6 @@ import android.content.ActivityNotFoundException;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -14,41 +13,36 @@ import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import com.android.volley.Request;
-import com.android.volley.Response;
-import com.android.volley.VolleyError;
-import com.android.volley.toolbox.JsonObjectRequest;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+import androidx.lifecycle.ViewModelProvider;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+import androidx.viewpager.widget.ViewPager;
+
 import com.facebook.drawee.view.SimpleDraweeView;
 import com.google.android.material.appbar.AppBarLayout;
 import com.google.android.material.appbar.CollapsingToolbarLayout;
 import com.ms.square.android.expandabletextview.ExpandableTextView;
 
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
-
 import java.util.ArrayList;
 import java.util.List;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-import androidx.viewpager.widget.ViewPager;
 import me.relex.circleindicator.CircleIndicator;
 import patil.rahul.cineboxtma.adapters.MovieCreditAdapter;
 import patil.rahul.cineboxtma.adapters.PeopleImageAdapter;
 import patil.rahul.cineboxtma.adapters.TvCreditAdapter;
 import patil.rahul.cineboxtma.models.Movie;
+import patil.rahul.cineboxtma.models.People;
+import patil.rahul.cineboxtma.models.PeopleDetailResponse;
 import patil.rahul.cineboxtma.models.TvShows;
 import patil.rahul.cineboxtma.pageradapters.SlidingPagerAdapter;
+import patil.rahul.cineboxtma.preferenceutils.CinePreferences;
 import patil.rahul.cineboxtma.utils.Cine;
 import patil.rahul.cineboxtma.utils.CineDateFormat;
 import patil.rahul.cineboxtma.utils.CineListener;
-import patil.rahul.cineboxtma.preferenceutils.CinePreferences;
-import patil.rahul.cineboxtma.utils.CineTag;
 import patil.rahul.cineboxtma.utils.CineUrl;
-import patil.rahul.cineboxtma.utils.MySingleton;
+import patil.rahul.cineboxtma.viewmodels.PeopleDetailViewModel;
 
 public class PeopleDetailActivity extends AppCompatActivity implements CineListener.OnMovieClickListener,
         CineListener.OnTvClickListener {
@@ -74,12 +68,12 @@ public class PeopleDetailActivity extends AppCompatActivity implements CineListe
     private List<String> mSidingList = new ArrayList<>();
     private List<String> mImageList = new ArrayList<>();
 
-    private String urlPersonDetail;
     private int personId;
     private String mIMDbId;
     private String mFacebookId;
     private String mInstagramId;
     private String mTwitterId;
+    private PeopleDetailViewModel viewModel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -88,6 +82,8 @@ public class PeopleDetailActivity extends AppCompatActivity implements CineListe
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         toolbar.setNavigationIcon(R.drawable.ic_arrow_back);
+
+        viewModel = new ViewModelProvider(this).get(PeopleDetailViewModel.class);
 
         final CollapsingToolbarLayout collapsingToolbarLayout = findViewById(R.id.collapsing_toolbar);
         AppBarLayout appBarLayout = findViewById(R.id.appbar);
@@ -99,7 +95,6 @@ public class PeopleDetailActivity extends AppCompatActivity implements CineListe
             personId = intent.getExtras().getInt(Cine.PersonEntry.ID);
             final String personName = intent.getExtras().getString(Cine.PersonEntry.NAME);
 
-            urlPersonDetail = CineUrl.createPersonDetailUrl(personId);
             appBarLayout.addOnOffsetChangedListener(new AppBarLayout.OnOffsetChangedListener() {
                 boolean isShow = true;
                 int scrollRange = -1;
@@ -113,7 +108,7 @@ public class PeopleDetailActivity extends AppCompatActivity implements CineListe
                         collapsingToolbarLayout.setTitle(personName);
                         isShow = true;
                     } else if (isShow) {
-                        collapsingToolbarLayout.setTitle(" "); //careful there should a space between double quote otherwise it wont work
+                        collapsingToolbarLayout.setTitle(" "); 
                         isShow = false;
                     }
                 }
@@ -126,207 +121,131 @@ public class PeopleDetailActivity extends AppCompatActivity implements CineListe
                     LinearLayoutManager.HORIZONTAL, false));
             mTvCreditsRecyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL,
                     false));
-
             mImageRecyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
 
             mMovieCreditsRecyclerView.setAdapter(mMovieCreditAdapter);
             mTvCreditsRecyclerView.setAdapter(mTvCreditAdapter);
             mImageRecyclerView.setAdapter(mImageAdapter);
 
-            mMovieCreditsRecyclerView.setNestedScrollingEnabled(false);
-            mTvCreditsRecyclerView.setNestedScrollingEnabled(false);
-            mImageRecyclerView.setNestedScrollingEnabled(false);
             fetchPersonDetail();
 
-            mRetryBtn.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    mErrorLayout.setVisibility(View.GONE);
-                    mProgressBar.setVisibility(View.VISIBLE);
-                    fetchPersonDetail();
-                }
+            mRetryBtn.setOnClickListener(view -> {
+                mErrorLayout.setVisibility(View.GONE);
+                mProgressBar.setVisibility(View.VISIBLE);
+                fetchPersonDetail();
             });
         }
     }
 
 
     private void fetchPersonDetail() {
-        final JsonObjectRequest personDetailRequest = new JsonObjectRequest(Request.Method.GET, urlPersonDetail, null, new Response.Listener<JSONObject>() {
-            @Override
-            public void onResponse(JSONObject response) {
-                try {
-
-                    String name = response.getString("name");
-                    String profilePath = response.getString("profile_path");
-                    String biography = response.getString("biography");
-
-                    Uri uri = CineUrl.createImageUri("w185", profilePath);
-
-                    mPeopleImageView.setImageURI(uri);
-                    mProgressBar.setVisibility(View.INVISIBLE);
-                    mTitleLayout.setVisibility(View.VISIBLE);
-                    mPeopleNameTextView.setText(name);
-                    mBiographyTextView.setText(biography);
-
-                    if (response.has("birthday")) {
-                        String birthday = response.getString("birthday");
-                        mBirthDateTextView.setText(CineDateFormat.formatDate(birthday));
-                        mAgeTextView.setText(CineDateFormat.calculateAge(birthday));
-                    } else {
-                        mBirthDateTextView.setText("N/A");
-                        mAgeTextView.setText("N/A");
-                    }
-
-                    if (response.has("place_of_birth")) {
-                        String placeOfBirth = response.getString("place_of_birth");
-                        if (placeOfBirth.equals("null")) {
-                            mBirthPlaceTextView.setVisibility(View.INVISIBLE);
-                        } else {
-                            mBirthPlaceTextView.setText(placeOfBirth);
-                        }
-                    } else {
-                        mBirthPlaceTextView.setText("N/A");
-                    }
-
-                    JSONObject externalIdsObject = response.getJSONObject("external_ids");
-                    mIMDbId = externalIdsObject.getString("imdb_id");
-                    mInstagramId = externalIdsObject.getString("instagram_id");
-                    mTwitterId = externalIdsObject.getString("twitter_id");
-                    mFacebookId = externalIdsObject.getString("facebook_id");
-
-                    JSONObject combinedCreditObject = response.getJSONObject("combined_credits");
-                    JSONArray castCombinedArray = combinedCreditObject.getJSONArray("cast");
-                    JSONArray crewCombinedArray = combinedCreditObject.getJSONArray("crew");
-
-                    if (castCombinedArray.length() > 0) {
-                        for (int i = 0; i < castCombinedArray.length(); i++) {
-                            JSONObject currentObject = castCombinedArray.getJSONObject(i);
-
-                            String mediaType = currentObject.getString("media_type");
-                            if (mediaType.equals("movie")) {
-                                int id = currentObject.getInt("id");
-                                String backdrop_path = currentObject.getString("backdrop_path");
-                                String releaseDate;
-                                if (currentObject.has("release_date")) {
-                                    releaseDate = currentObject.getString("release_date");
-                                } else {
-                                    releaseDate = "-";
-                                }
-                                Log.e("PeopleActivity", String.valueOf(releaseDate));
-                                String title = currentObject.getString("title");
-                                String character = currentObject.getString("character");
-                                String posterPath = currentObject.getString("poster_path");
-                                mSidingList.add(backdrop_path);
-                                movieCreditList.add(new Movie(id, title, posterPath, releaseDate, character, true));
-                            } else if (mediaType.equals("tv")) {
-                                int id = currentObject.getInt("id");
-                                String backdrop_path = currentObject.getString("backdrop_path");
-                                String firstAirDate;
-                                if (currentObject.has("first_air_date")) {
-                                    firstAirDate = currentObject.getString("first_air_date");
-                                } else {
-                                    firstAirDate = null;
-                                }
-                                String tvName = currentObject.getString("name");
-                                String character = currentObject.getString("character");
-                                String posterPath = currentObject.getString("poster_path");
-                                mSidingList.add(backdrop_path);
-                                tvCreditList.add(new TvShows(id, tvName, posterPath, firstAirDate, character, true));
-                            }
-                        }
-                    }
-
-                    if (crewCombinedArray.length() > 0) {
-                        for (int i = 0; i < crewCombinedArray.length(); i++) {
-                            JSONObject currentObject = crewCombinedArray.getJSONObject(i);
-
-                            String mediaType = currentObject.getString("media_type");
-                            if (mediaType.equals("movie")) {
-                                int movieCastId = currentObject.getInt("id");
-                                String backdrop_path = currentObject.getString("backdrop_path");
-                                String movieCastReleaseDate;
-                                if (currentObject.has("release_date")) {
-                                    movieCastReleaseDate = currentObject.getString("release_date");
-                                } else {
-                                    movieCastReleaseDate = "-";
-                                }
-                                String movieCastTitle = currentObject.getString("title");
-                                String movieCastCharacter = currentObject.getString("job");
-                                String movieCastPosterPath = currentObject.getString("poster_path");
-                                mSidingList.add(backdrop_path);
-                                movieCreditList.add(new Movie(movieCastId, movieCastTitle, movieCastPosterPath, movieCastReleaseDate, movieCastCharacter, false));
-                            } else if (mediaType.equals("tv")) {
-                                int id = currentObject.getInt("id");
-                                String backdrop_path = currentObject.getString("backdrop_path");
-                                String firstAirDate;
-                                if (currentObject.has("first_air_date")) {
-                                    firstAirDate = currentObject.getString("first_air_date");
-                                } else {
-                                    firstAirDate = null;
-                                }
-                                String tvName = currentObject.getString("name");
-                                String job = currentObject.getString("job");
-                                String posterPath = currentObject.getString("poster_path");
-                                mSidingList.add(backdrop_path);
-                                tvCreditList.add(new TvShows(id, tvName, posterPath, firstAirDate, job, false));
-                            }
-                        }
-                    }
-
-                    if (movieCreditList.size() > 0) {
-                        mMovieCreditsLayout.setVisibility(View.VISIBLE);
-                        mMovieCreditAdapter.addData(movieCreditList);
-                        mMovieCreditAdapter.notifyDataSetChanged();
-                    }
-
-                    if (tvCreditList.size() > 0) {
-                        mTvCreditsLayout.setVisibility(View.VISIBLE);
-                        mTvCreditAdapter.addData(tvCreditList);
-                        mTvCreditAdapter.notifyDataSetChanged();
-                    }
-
-                    if (mSidingList.size() > 0) {
-                        mSlidingPagerAdapter = new SlidingPagerAdapter(getApplicationContext(), mSidingList);
-                        mSlidingViewPager.setAdapter(mSlidingPagerAdapter);
-                        mPagerIndicator.setViewPager(mSlidingViewPager);
-                        mSlidingProgressBar.setVisibility(View.INVISIBLE);
-                        mSlidingPagerAdapter.notifyDataSetChanged();
-                    } else {
-                        mPagerIndicator.setVisibility(View.INVISIBLE);
-                        mSidingList.add(profilePath);
-                        mSlidingPagerAdapter = new SlidingPagerAdapter(getApplicationContext(), mSidingList);
-                        mSlidingViewPager.setAdapter(mSlidingPagerAdapter);
-                        mPagerIndicator.setViewPager(mSlidingViewPager);
-                        mSlidingProgressBar.setVisibility(View.INVISIBLE);
-                        mSlidingPagerAdapter.notifyDataSetChanged();
-                    }
-
-                    JSONObject imageObject = response.getJSONObject("images");
-                    JSONArray imagesArray = imageObject.getJSONArray("profiles");
-                    for (int i = 0; i < imagesArray.length(); i++) {
-                        JSONObject currentObject = imagesArray.getJSONObject(i);
-                        String imagePath = currentObject.getString("file_path");
-                        mImageList.add(imagePath);
-                    }
-                    if (mImageList.size() > 0) {
-                        mImageLayout.setVisibility(View.VISIBLE);
-                        mImageAdapter.addImages(mImageList);
-                        mImageAdapter.notifyDataSetChanged();
-                    } else {
-                        mImageLayout.setVisibility(View.GONE);
-                    }
-
-                } catch (JSONException e) {
-                    e.printStackTrace();
-                }
+        viewModel.getPersonDetail(personId).observe(this, response -> {
+            if (response != null) {
+                updateUI(response);
+            } else {
+                mSlidingProgressBar.setVisibility(View.INVISIBLE);
+                mProgressBar.setVisibility(View.INVISIBLE);
+                mErrorLayout.setVisibility(View.VISIBLE);
             }
-        }, error -> {
-            mSlidingProgressBar.setVisibility(View.INVISIBLE);
-            mProgressBar.setVisibility(View.INVISIBLE);
-            mErrorLayout.setVisibility(View.VISIBLE);
         });
-        personDetailRequest.setTag(CineTag.PEOPLE_DETAIL_TAG);
-        MySingleton.getInstance(this).getRequestQueue().add(personDetailRequest);
+    }
+
+    private void updateUI(PeopleDetailResponse response) {
+        mPeopleImageView.setImageURI(CineUrl.createImageUri("w185", response.getProfilePath()));
+        mProgressBar.setVisibility(View.INVISIBLE);
+        mTitleLayout.setVisibility(View.VISIBLE);
+        mPeopleNameTextView.setText(response.getName());
+        mBiographyTextView.setText(response.getBiography());
+
+        if (response.getBirthday() != null) {
+            mBirthDateTextView.setText(CineDateFormat.formatDate(response.getBirthday()));
+            mAgeTextView.setText(CineDateFormat.calculateAge(response.getBirthday()));
+        } else {
+            mBirthDateTextView.setText("N/A");
+            mAgeTextView.setText("N/A");
+        }
+
+        if (response.getPlaceOfBirth() != null && !response.getPlaceOfBirth().equals("null")) {
+            mBirthPlaceTextView.setText(response.getPlaceOfBirth());
+        } else {
+            mBirthPlaceTextView.setVisibility(View.INVISIBLE);
+        }
+
+        if (response.getExternalIds() != null) {
+            mIMDbId = response.getExternalIds().getImdbId();
+            mInstagramId = response.getExternalIds().getInstagramId();
+            mTwitterId = response.getExternalIds().getTwitterId();
+            mFacebookId = response.getExternalIds().getFacebookId();
+        }
+
+        movieCreditList.clear();
+        tvCreditList.clear();
+        mSidingList.clear();
+
+        if (response.getCombinedCredits() != null) {
+            processCredits(response.getCombinedCredits().getCast(), true);
+            processCredits(response.getCombinedCredits().getCrew(), false);
+        }
+
+        if (!movieCreditList.isEmpty()) {
+            mMovieCreditsLayout.setVisibility(View.VISIBLE);
+            mMovieCreditAdapter.addData(movieCreditList);
+            mMovieCreditAdapter.notifyDataSetChanged();
+        }
+
+        if (!tvCreditList.isEmpty()) {
+            mTvCreditsLayout.setVisibility(View.VISIBLE);
+            mTvCreditAdapter.addData(tvCreditList);
+            mTvCreditAdapter.notifyDataSetChanged();
+        }
+
+        if (!mSidingList.isEmpty()) {
+            mSlidingPagerAdapter = new SlidingPagerAdapter(getApplicationContext(), mSidingList);
+            mSlidingViewPager.setAdapter(mSlidingPagerAdapter);
+            mPagerIndicator.setViewPager(mSlidingViewPager);
+            mSlidingProgressBar.setVisibility(View.INVISIBLE);
+            if (mSidingList.size() <= 1) {
+                mPagerIndicator.setVisibility(View.INVISIBLE);
+            }
+        } else {
+            mSidingList.add(response.getProfilePath());
+            mSlidingPagerAdapter = new SlidingPagerAdapter(getApplicationContext(), mSidingList);
+            mSlidingViewPager.setAdapter(mSlidingPagerAdapter);
+            mPagerIndicator.setViewPager(mSlidingViewPager);
+            mSlidingProgressBar.setVisibility(View.INVISIBLE);
+            mPagerIndicator.setVisibility(View.INVISIBLE);
+        }
+
+        mImageList.clear();
+        if (response.getImages() != null && response.getImages().getProfiles() != null) {
+            for (PeopleDetailResponse.Images.Profile profile : response.getImages().getProfiles()) {
+                mImageList.add(profile.getFilePath());
+            }
+        }
+
+        if (!mImageList.isEmpty()) {
+            mImageLayout.setVisibility(View.VISIBLE);
+            mImageAdapter.addImages(mImageList);
+            mImageAdapter.notifyDataSetChanged();
+        } else {
+            mImageLayout.setVisibility(View.GONE);
+        }
+    }
+
+    private void processCredits(List<PeopleDetailResponse.Credit> credits, boolean isCast) {
+        if (credits == null) return;
+        for (PeopleDetailResponse.Credit credit : credits) {
+            if ("movie".equals(credit.getMediaType())) {
+                mSidingList.add(credit.getBackdropPath());
+                movieCreditList.add(new Movie(credit.getId(), credit.getTitle(), credit.getPosterPath(), 
+                        credit.getReleaseDate() != null ? credit.getReleaseDate() : "-", 
+                        isCast ? credit.getCharacter() : credit.getJob(), isCast));
+            } else if ("tv".equals(credit.getMediaType())) {
+                mSidingList.add(credit.getBackdropPath());
+                tvCreditList.add(new TvShows(credit.getId(), credit.getName(), credit.getPosterPath(), 
+                        credit.getFirstAirDate(), isCast ? credit.getCharacter() : credit.getJob(), isCast));
+            }
+        }
     }
 
     private void setupViews() {
@@ -355,12 +274,6 @@ public class PeopleDetailActivity extends AppCompatActivity implements CineListe
     }
 
     @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        MySingleton.getInstance(this).getRequestQueue().cancelAll(CineTag.PEOPLE_DETAIL_TAG);
-    }
-
-    @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu_people_detail, menu);
         return super.onCreateOptionsMenu(menu);
@@ -381,7 +294,6 @@ public class PeopleDetailActivity extends AppCompatActivity implements CineListe
             try {
                 startActivity(imdbIntent);
             } catch (ActivityNotFoundException e) {
-                // Define what your app should do if no activity can handle the intent.
             }
         } else if (itemId == R.id.action_view_facebook) {
             Uri facebookUri = CineUrl.createExternalWebUri("facebook", mFacebookId);
@@ -389,7 +301,6 @@ public class PeopleDetailActivity extends AppCompatActivity implements CineListe
             try {
                 startActivity(facebookIntent);
             } catch (ActivityNotFoundException e) {
-                // Define what your app should do if no activity can handle the intent.
             }
         } else if (itemId == R.id.action_view_instagram) {
             Uri instagramUri = CineUrl.createExternalWebUri("instagram", mInstagramId);
@@ -397,7 +308,6 @@ public class PeopleDetailActivity extends AppCompatActivity implements CineListe
             try {
                 startActivity(instagramIntent);
             } catch (ActivityNotFoundException e) {
-                // Define what your app should do if no activity can handle the intent.
             }
         } else if (itemId == R.id.action_view_twitter) {
             Uri twitterUri = CineUrl.createExternalWebUri("twitter", mTwitterId);
@@ -405,7 +315,6 @@ public class PeopleDetailActivity extends AppCompatActivity implements CineListe
             try {
                 startActivity(twitterIntent);
             } catch (ActivityNotFoundException e) {
-                // Define what your app should do if no activity can handle the intent.
             }
         }
         return super.onOptionsItemSelected(item);

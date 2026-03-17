@@ -8,6 +8,8 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.Locale;
 
+import patil.rahul.cineboxtma.BuildConfig;
+
 /**
  * Created by rahul on 6/2/18.
  */
@@ -24,7 +26,7 @@ public class CineUrl {
     private static final String QUERY = "query";
     private static final String SORT_BY = "sort_by";
     private static final String APPEND_TO_RESPONSE = "append_to_response";
-    private static final String VALUE_API_KEY = "4491464d1c866d233cd6e2ef3d1b80b3";
+    private static final String VALUE_API_KEY = BuildConfig.TMDB_API_KEY;
     private static final String PRIMARY_RELEASE_DATE_GTE = "primary_release_date.gte";
     private static final String PRIMARY_RELEASE_DATE_LTE = "primary_release_date.lte";
 

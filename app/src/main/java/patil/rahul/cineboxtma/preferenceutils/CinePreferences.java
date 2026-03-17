@@ -23,4 +23,8 @@ public class CinePreferences {
         String prefKeyImageQuality = context.getString(R.string.pref_key_image_quality);
         return sharedPreferences.getString(prefKeyImageQuality, PREF_IMAGE_QUALITY_DEFAULT_VALUE);
     }
+
+    public static boolean isLightModeEnabled(Context context) {
+        return false; // Default implementation or retrieve from preferences if available
+    }
 }

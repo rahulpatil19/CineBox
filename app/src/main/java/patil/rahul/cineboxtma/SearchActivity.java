@@ -4,13 +4,18 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.widget.SearchView;
 
-import com.google.android.material.tabs.TabLayout;
-
+import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.graphics.Insets;
+import androidx.core.view.ViewCompat;
+import androidx.core.view.WindowInsetsCompat;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
 import androidx.viewpager.widget.ViewPager;
+
+import com.google.android.material.tabs.TabLayout;
+
 import patil.rahul.cineboxtma.models.Movie;
 import patil.rahul.cineboxtma.models.People;
 import patil.rahul.cineboxtma.models.TvShows;
@@ -34,7 +39,15 @@ public class SearchActivity extends AppCompatActivity implements SearchView.OnQu
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        EdgeToEdge.enable(this);
         setContentView(R.layout.activity_search);
+
+        ViewCompat.setOnApplyWindowInsetsListener(findViewById(android.R.id.content), (v, insets) -> {
+            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
+            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
+            return insets;
+        });
+
         mSearchView = findViewById(R.id.search_view);
         TabLayout mTabLayout = findViewById(R.id.search_tabLayout);
         mViewPager = findViewById(R.id.search_viewPager);

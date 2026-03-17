@@ -3,7 +3,6 @@ package patil.rahul.cineboxtma;
 import android.app.Activity;
 import android.content.ActivityNotFoundException;
 import android.content.Intent;
-import android.content.pm.ResolveInfo;
 import android.graphics.drawable.ColorDrawable;
 import android.net.Uri;
 import android.os.Bundle;
@@ -16,90 +15,74 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.android.volley.Request;
-import com.android.volley.Response;
-import com.android.volley.VolleyError;
-import com.android.volley.toolbox.JsonObjectRequest;
-import com.google.android.ads.nativetemplates.NativeTemplateStyle;
-import com.google.android.ads.nativetemplates.TemplateView;
-import com.google.android.gms.ads.AdListener;
-import com.google.android.gms.ads.AdLoader;
-import com.google.android.gms.ads.AdRequest;
-import com.google.android.gms.ads.LoadAdError;
-import com.google.android.gms.ads.nativead.NativeAd;
-import com.google.android.material.appbar.AppBarLayout;
-import com.google.android.material.appbar.CollapsingToolbarLayout;
-import com.google.android.youtube.player.YouTubeInitializationResult;
-import com.google.android.youtube.player.YouTubeStandalonePlayer;
-import com.ms.square.android.expandabletextview.ExpandableTextView;
-
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
-
-import java.util.ArrayList;
-import java.util.List;
-
-import androidx.activity.result.ActivityResult;
-import androidx.activity.result.ActivityResultCallback;
 import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.app.ShareCompat;
+import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager.widget.ViewPager;
+
+import com.google.android.ads.nativetemplates.NativeTemplateStyle;
+import com.google.android.ads.nativetemplates.TemplateView;
+import com.google.android.gms.ads.AdListener;
+import com.google.android.gms.ads.AdLoader;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.LoadAdError;
+import com.google.android.material.appbar.AppBarLayout;
+import com.google.android.material.appbar.CollapsingToolbarLayout;
+import com.google.android.youtube.player.YouTubeInitializationResult;
+import com.google.android.youtube.player.YouTubeStandalonePlayer;
+import com.ms.square.android.expandabletextview.ExpandableTextView;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import me.relex.circleindicator.CircleIndicator;
 import patil.rahul.cineboxtma.adapters.MovieHorizontalAdapter;
 import patil.rahul.cineboxtma.adapters.PeopleCreditAdapter;
 import patil.rahul.cineboxtma.adapters.YoutubeListAdapter;
 import patil.rahul.cineboxtma.models.Movie;
+import patil.rahul.cineboxtma.models.MovieDetailResponse;
 import patil.rahul.cineboxtma.models.People;
 import patil.rahul.cineboxtma.models.VideoEntry;
 import patil.rahul.cineboxtma.pageradapters.SlidingPagerAdapter;
+import patil.rahul.cineboxtma.preferenceutils.CinePreferences;
 import patil.rahul.cineboxtma.utils.Cine;
-import patil.rahul.cineboxtma.utils.Cine.MovieEntry;
 import patil.rahul.cineboxtma.utils.CineDateFormat;
 import patil.rahul.cineboxtma.utils.CineListener;
-import patil.rahul.cineboxtma.preferenceutils.CinePreferences;
-import patil.rahul.cineboxtma.utils.CineTag;
 import patil.rahul.cineboxtma.utils.CineUrl;
 import patil.rahul.cineboxtma.utils.DeveloperKey;
-import patil.rahul.cineboxtma.utils.MySingleton;
+import patil.rahul.cineboxtma.viewmodels.MovieDetailViewModel;
 
-public class MovieDetailActivity extends AppCompatActivity implements CineListener.OnPeopleClickListener,
-        YoutubeListAdapter.OnYoutubeItemClickListener, CineListener.OnMovieClickListener {
+public class MovieDetailActivity extends AppCompatActivity implements YoutubeListAdapter.OnYoutubeItemClickListener,
+        CineListener.OnPeopleClickListener, CineListener.OnMovieClickListener {
 
-    private static final int REQ_START_STANDALONE_PLAYER = 1;
+    private static final String TAG = MovieDetailActivity.class.getSimpleName();
     private static final int REQ_RESOLVE_SERVICE_MISSING = 2;
 
-    private CircleIndicator mPagerIndicator;
-    private SlidingPagerAdapter mSlidingAdapter;
-    private ViewPager mSlidingViewPager;
-    private ProgressBar mSlidingProgressBar;
-    private List<String> slidingList = new ArrayList<>();
-
+    private int mId;
+    private String mTitle;
     private String videoKey;
     private boolean mLightModeBox;
 
-    private int mId;
-    private PeopleCreditAdapter mCastAdapter, mCrewAdapter;
-    private MovieHorizontalAdapter mSimilarMovieAdapter;
+    private MovieDetailViewModel mViewModel;
     private YoutubeListAdapter mYoutubeAdapter;
-    private RecyclerView mCastRecyclerView, mCrewRecyclerView, mVideoRecyclerView, mSimilarMovieRecyclerView;
-    private LinearLayout mMainLayout, mVideoLayout, mCastLayout, mCrewLayout, mSimilarMoviesLayout, mErrorLayout;
-    private LinearLayout mRatingLayout;
-    private ProgressBar mProgressBar;
-    private Button mRetryBtn;
-    private TextView titleView, releaseDateView, runtimeView, directorView, genresView, voteAverageView, voteCountView;
-    private ExpandableTextView overView;
+    private PeopleCreditAdapter mCastAdapter, mCrewAdapter;
+    private MovieHorizontalAdapter mSimilarAdapter;
+    private SlidingPagerAdapter mSlidingPagerAdapter;
 
+    private TextView mTitleTextView, mReleaseDateTextView, mRuntimeTextView, mRatingTextView, mVoteCountTextView, mGenreTextView, mTaglineTextView, mDirectorTextView;
+    private ExpandableTextView mOverviewTextView;
+    private ProgressBar mProgressBar, mSlidingProgressBar;
+    private LinearLayout mDetailLayout, mVideoLayout, mCastLayout, mCrewLayout, mSimilarMoviesLayout, mRatingLayout;
+    private ViewPager mViewPager;
+    private CircleIndicator mIndicator;
     private String mImdbId;
-
-    private TemplateView templateView;
+    private TemplateView mAdTemplateView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -107,317 +90,224 @@ public class MovieDetailActivity extends AppCompatActivity implements CineListen
         setContentView(R.layout.activity_movie_detail);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        toolbar.setNavigationIcon(R.drawable.ic_arrow_back);
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        }
 
-        boolean isVideoPrefChecked = CinePreferences.getVideoMode(this);
+        Intent intent = getIntent();
+        if (intent != null && intent.hasExtra(Cine.MovieEntry.ID)) {
+            mId = intent.getIntExtra(Cine.MovieEntry.ID, 0);
+            mTitle = intent.getStringExtra(Cine.MovieEntry.TITLE);
+        }
 
-        mLightModeBox = !isVideoPrefChecked;
+        final CollapsingToolbarLayout collapsingToolbarLayout = findViewById(R.id.collapsing_toolbar);
+        AppBarLayout appBarLayout = findViewById(R.id.appbar);
+        appBarLayout.addOnOffsetChangedListener(new AppBarLayout.OnOffsetChangedListener() {
+            boolean isShow = true;
+            int scrollRange = -1;
 
-        AdLoader adLoader = new AdLoader.Builder(this, "ca-app-pub-9660112888704846/4555836530")
-                .forNativeAd(nativeAd -> {
-                    NativeTemplateStyle styles = new
-                            NativeTemplateStyle.Builder()
-                            .withCallToActionBackgroundColor(new ColorDrawable(getResources().getColor(R.color.primary)))
-                            .withMainBackgroundColor(new ColorDrawable(getResources().getColor(R.color.surfaceColor)))
-                            .build();
-                    templateView = findViewById(R.id.ad_template_movie);
-                    templateView.setStyles(styles);
-                    templateView.setNativeAd(nativeAd);
-                })
-                .withAdListener(new AdListener() {
-                    @Override
-                    public void onAdClosed() {
-                        super.onAdClosed();
-                        templateView.setVisibility(View.GONE);
-                    }
+            @Override
+            public void onOffsetChanged(AppBarLayout appBarLayout, int verticalOffset) {
+                if (scrollRange == -1) {
+                    scrollRange = appBarLayout.getTotalScrollRange();
+                }
+                if (scrollRange + verticalOffset == 0) {
+                    collapsingToolbarLayout.setTitle(mTitle);
+                    isShow = true;
+                } else if (isShow) {
+                    collapsingToolbarLayout.setTitle(" ");
+                    isShow = false;
+                }
+            }
+        });
 
-                    @Override
-                    public void onAdLoaded() {
-                        super.onAdLoaded();
-                        templateView.setVisibility(View.VISIBLE);
-                    }
-
-                    @Override
-                    public void onAdFailedToLoad(@NonNull LoadAdError loadAdError) {
-                        super.onAdFailedToLoad(loadAdError);
-                        templateView.setVisibility(View.GONE);
-                    }
-
-                })
-                .build();
-
-        adLoader.loadAd(new AdRequest.Builder().build());
-
-        mSlidingViewPager = findViewById(R.id.slidingViewPager);
-        mPagerIndicator = findViewById(R.id.pager_indicator);
+        mTitleTextView = findViewById(R.id.movie_title);
+        mReleaseDateTextView = findViewById(R.id.movie_release_date);
+        mRuntimeTextView = findViewById(R.id.movie_runtime);
+        mRatingTextView = findViewById(R.id.movie_voteAverage);
+        mVoteCountTextView = findViewById(R.id.movie_voteCount);
+        mGenreTextView = findViewById(R.id.movie_genres);
+        mTaglineTextView = findViewById(R.id.tv_detail_tagline);
+        mDirectorTextView = findViewById(R.id.movie_director);
+        mOverviewTextView = findViewById(R.id.expand_text_view);
+        mProgressBar = findViewById(R.id.progress_bar);
         mSlidingProgressBar = findViewById(R.id.sliding_progress_bar);
-        mMainLayout = findViewById(R.id.main_layout);
+        mDetailLayout = findViewById(R.id.main_layout);
         mRatingLayout = findViewById(R.id.rating_view);
         mVideoLayout = findViewById(R.id.video_layout);
         mCastLayout = findViewById(R.id.cast_layout);
         mCrewLayout = findViewById(R.id.crew_layout);
         mSimilarMoviesLayout = findViewById(R.id.similar_movies_layout);
-        mErrorLayout = findViewById(R.id.detail_error_layout);
-        mRetryBtn = findViewById(R.id.retry_btn);
+        mViewPager = findViewById(R.id.slidingViewPager);
+        mIndicator = findViewById(R.id.pager_indicator);
+        mAdTemplateView = findViewById(R.id.ad_template_movie);
 
-        mProgressBar = findViewById(R.id.progress_bar);
-        mCastRecyclerView = findViewById(R.id.cast_recycler_view);
-        mCrewRecyclerView = findViewById(R.id.crew_recycler_view);
-        mVideoRecyclerView = findViewById(R.id.video_recycler_view);
-        mSimilarMovieRecyclerView = findViewById(R.id.similar_movies_recycler_view);
+        RecyclerView youtubeRecyclerView = findViewById(R.id.video_recycler_view);
+        youtubeRecyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
+        mYoutubeAdapter = new YoutubeListAdapter(this, this);
+        youtubeRecyclerView.setAdapter(mYoutubeAdapter);
 
-        titleView = findViewById(R.id.movie_title);
-        releaseDateView = findViewById(R.id.movie_release_date);
-        runtimeView = findViewById(R.id.movie_runtime);
-        voteAverageView = findViewById(R.id.movie_voteAverage);
-        voteCountView = findViewById(R.id.movie_voteCount);
-        directorView = findViewById(R.id.movie_director);
-        genresView = findViewById(R.id.movie_genres);
-        overView = findViewById(R.id.expand_text_view);
+        RecyclerView castRecyclerView = findViewById(R.id.cast_recycler_view);
+        castRecyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
+        mCastAdapter = new PeopleCreditAdapter(this, this);
+        castRecyclerView.setAdapter(mCastAdapter);
 
-        final Bundle intent = getIntent().getExtras();
-        if (intent != null) {
-            mId = intent.getInt(MovieEntry.ID);
-            final String title = intent.getString(MovieEntry.TITLE);
+        RecyclerView crewRecyclerView = findViewById(R.id.crew_recycler_view);
+        crewRecyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
+        mCrewAdapter = new PeopleCreditAdapter(this, this);
+        crewRecyclerView.setAdapter(mCrewAdapter);
 
-            final CollapsingToolbarLayout collapsingToolbarLayout = findViewById(R.id.collapsing_toolbar);
-            AppBarLayout appBarLayout = findViewById(R.id.appbar);
-            appBarLayout.addOnOffsetChangedListener(new AppBarLayout.OnOffsetChangedListener() {
-                boolean isShow = true;
-                int scrollRange = -1;
+        RecyclerView similarRecyclerView = findViewById(R.id.similar_movies_recycler_view);
+        similarRecyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
+        mSimilarAdapter = new MovieHorizontalAdapter(this, this, CinePreferences.getImageQualityValue(this));
+        similarRecyclerView.setAdapter(mSimilarAdapter);
 
-                @Override
-                public void onOffsetChanged(AppBarLayout appBarLayout, int verticalOffset) {
-                    if (scrollRange == -1) {
-                        scrollRange = appBarLayout.getTotalScrollRange();
-                    }
-                    if (scrollRange + verticalOffset == 0) {
-                        collapsingToolbarLayout.setTitle(title);
-                        isShow = true;
-                    } else if (isShow) {
-                        collapsingToolbarLayout.setTitle(" "); //careful there should a space between double quote otherwise it wont work
-                        isShow = false;
+        mLightModeBox = !CinePreferences.getVideoMode(this);
+
+        mViewModel = new ViewModelProvider(this).get(MovieDetailViewModel.class);
+        mViewModel.getMovieDetail(mId).observe(this, this::setupUI);
+
+        loadNativeAd();
+    }
+
+    private void setupUI(MovieDetailResponse movieDetail) {
+        mProgressBar.setVisibility(View.GONE);
+        if (movieDetail != null) {
+            mDetailLayout.setVisibility(View.VISIBLE);
+            mTitleTextView.setText(movieDetail.getTitle());
+            mReleaseDateTextView.setText(CineDateFormat.formatDate(movieDetail.getReleaseDate()));
+            mReleaseDateTextView.setVisibility(View.VISIBLE);
+
+            if (movieDetail.getRuntime() != null && !movieDetail.getRuntime().equals("null")) {
+                mRuntimeTextView.setText(String.format("%s min", movieDetail.getRuntime()));
+            } else {
+                mRuntimeTextView.setText(R.string.no_runtime_min);
+            }
+
+            if (movieDetail.getVoteCount() > 10) {
+                mRatingTextView.setText(String.valueOf(movieDetail.getVoteAverage()));
+                mVoteCountTextView.setText(String.format("%s votes", movieDetail.getVoteCount()));
+            } else {
+                mRatingLayout.setVisibility(View.GONE);
+            }
+
+            StringBuilder genres = new StringBuilder();
+            if (movieDetail.getGenres() != null) {
+                for (int i = 0; i < movieDetail.getGenres().size(); i++) {
+                    genres.append(movieDetail.getGenres().get(i).getName());
+                    if (i != movieDetail.getGenres().size() - 1) {
+                        genres.append(", ");
                     }
                 }
-            });
+            }
+            mGenreTextView.setText(genres.toString());
+            mTaglineTextView.setText(movieDetail.getTagline());
+            mOverviewTextView.setText(movieDetail.getOverview());
 
-            mCastAdapter = new PeopleCreditAdapter(this, this);
-            mCrewAdapter = new PeopleCreditAdapter(this, this);
-            mYoutubeAdapter = new YoutubeListAdapter(this, this);
-            mSimilarMovieAdapter = new MovieHorizontalAdapter(this, this, CinePreferences.getImageQualityValue(this));
+            if (movieDetail.getExternalIds() != null) {
+                mImdbId = movieDetail.getExternalIds().getImdbId();
+            }
 
-            mCastRecyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
-            mCrewRecyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
-            mVideoRecyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
-            mSimilarMovieRecyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
-
-            mCastRecyclerView.setNestedScrollingEnabled(false);
-            mCrewRecyclerView.setNestedScrollingEnabled(false);
-            mVideoRecyclerView.setNestedScrollingEnabled(false);
-            mSimilarMovieRecyclerView.setNestedScrollingEnabled(false);
-            mCastRecyclerView.setHasFixedSize(true);
-            mCrewRecyclerView.setHasFixedSize(true);
-            mSimilarMovieRecyclerView.setHasFixedSize(true);
-            mVideoRecyclerView.setHasFixedSize(true);
-            mCastRecyclerView.setAdapter(mCastAdapter);
-            mCrewRecyclerView.setAdapter(mCrewAdapter);
-            mVideoRecyclerView.setAdapter(mYoutubeAdapter);
-            mSimilarMovieRecyclerView.setAdapter(mSimilarMovieAdapter);
-
-            fetchMovieData(mId);
-
-            mRetryBtn.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    mErrorLayout.setVisibility(View.GONE);
-                    mProgressBar.setVisibility(View.VISIBLE);
-                    mSlidingProgressBar.setVisibility(View.VISIBLE);
-                    fetchMovieData(mId);
+            if (movieDetail.getVideos() != null && movieDetail.getVideos().getResults() != null && !movieDetail.getVideos().getResults().isEmpty()) {
+                mVideoLayout.setVisibility(View.VISIBLE);
+                List<VideoEntry> videoEntries = new ArrayList<>();
+                for (MovieDetailResponse.VideoResponse.Video video : movieDetail.getVideos().getResults()) {
+                    videoEntries.add(new VideoEntry(video.getName(), video.getKey()));
                 }
+                mYoutubeAdapter.addVideoEntries(videoEntries);
+            } else {
+                mVideoLayout.setVisibility(View.GONE);
+            }
+
+            if (movieDetail.getCredits() != null) {
+                if (movieDetail.getCredits().getCast() != null && !movieDetail.getCredits().getCast().isEmpty()) {
+                    mCastLayout.setVisibility(View.VISIBLE);
+                    mCastAdapter.addCredits(movieDetail.getCredits().getCast());
+                } else {
+                    mCastLayout.setVisibility(View.GONE);
+                }
+
+                if (movieDetail.getCredits().getCrew() != null && !movieDetail.getCredits().getCrew().isEmpty()) {
+                    mCrewLayout.setVisibility(View.VISIBLE);
+                    mCrewAdapter.addCredits(movieDetail.getCredits().getCrew());
+                    for (People person : movieDetail.getCredits().getCrew()) {
+                        if ("Director".equals(person.getPeopleCharacter())) {
+                            mDirectorTextView.setText(person.getPeopleName());
+                            break;
+                        }
+                    }
+                } else {
+                    mCrewLayout.setVisibility(View.GONE);
+                }
+            }
+
+            if (movieDetail.getSimilarMovies() != null && movieDetail.getSimilarMovies().getResults() != null && !movieDetail.getSimilarMovies().getResults().isEmpty()) {
+                mSimilarMoviesLayout.setVisibility(View.VISIBLE);
+                mSimilarAdapter.addData(movieDetail.getSimilarMovies().getResults());
+            } else {
+                mSimilarMoviesLayout.setVisibility(View.GONE);
+            }
+
+            List<String> images = new ArrayList<>();
+            if (movieDetail.getImages() != null && movieDetail.getImages().getBackdrops() != null && !movieDetail.getImages().getBackdrops().isEmpty()) {
+                for (MovieDetailResponse.Images.Backdrop backdrop : movieDetail.getImages().getBackdrops()) {
+                    images.add(backdrop.getFilePath());
+                }
+            } else {
+                images.add(movieDetail.getBackdropPath());
+            }
+
+            mSlidingPagerAdapter = new SlidingPagerAdapter(this, images);
+            mViewPager.setAdapter(mSlidingPagerAdapter);
+            mIndicator.setViewPager(mViewPager);
+            mSlidingProgressBar.setVisibility(View.INVISIBLE);
+            if (images.size() <= 1) {
+                mIndicator.setVisibility(View.INVISIBLE);
+            }
+        } else {
+            findViewById(R.id.detail_error_layout).setVisibility(View.VISIBLE);
+            Button retryButton = findViewById(R.id.retry_btn);
+            retryButton.setOnClickListener(v -> {
+                findViewById(R.id.detail_error_layout).setVisibility(View.GONE);
+                mProgressBar.setVisibility(View.VISIBLE);
+                mSlidingProgressBar.setVisibility(View.VISIBLE);
+                mViewModel.getMovieDetail(mId).observe(this, this::setupUI);
             });
         }
     }
 
-    private void fetchMovieData(int id) {
-        final List<VideoEntry> videoList = new ArrayList<>();
-        final List<People> castList = new ArrayList<>();
-        final List<People> crewList = new ArrayList<>();
-        final List<Movie> similarMovieList = new ArrayList<>();
-
-        final JsonObjectRequest movieDetailRequest = new JsonObjectRequest(Request.Method.GET, CineUrl.createMovieDetailUrl(id), null, new Response.Listener<JSONObject>() {
-            @Override
-            public void onResponse(JSONObject response) {
-                try {
-
-                    String backdrop_path = response.getString("backdrop_path");
-                    String overview = response.getString("overview");
-                    String release_date = response.getString("release_date");
-                    String title = response.getString("title");
-                    String voteCount = String.valueOf(response.getInt("vote_count"));
-                    String voteAverage = String.valueOf(response.get("vote_average"));
-                    String runtime = response.getString("runtime");
-                    JSONArray genresArray = response.getJSONArray("genres");
-
-
-
-                    mMainLayout.setVisibility(View.VISIBLE);
-                    mProgressBar.setVisibility(View.GONE);
-                    mErrorLayout.setVisibility(View.GONE);
-                    titleView.setText(title);
-
-                    int voteValue = Integer.parseInt(voteCount);
-
-                    if (voteValue > 10) {
-                        voteAverageView.setText(voteAverage);
-                        voteCountView.setText(String.format("%s votes", voteCount));
-                    } else {
-                        mRatingLayout.setVisibility(View.GONE);
+    private void loadNativeAd() {
+        AdLoader adLoader = new AdLoader.Builder(this, getString(R.string.native_ad_unit_id))
+                .forNativeAd(nativeAd -> {
+                    NativeTemplateStyle styles = new NativeTemplateStyle.Builder()
+                            .withCallToActionBackgroundColor(new ColorDrawable(getResources().getColor(R.color.primary)))
+                            .withMainBackgroundColor(new ColorDrawable(getResources().getColor(R.color.surfaceColor)))
+                            .build();
+                    mAdTemplateView.setStyles(styles);
+                    mAdTemplateView.setNativeAd(nativeAd);
+                })
+                .withAdListener(new AdListener() {
+                    @Override
+                    public void onAdFailedToLoad(@NonNull LoadAdError adError) {
+                        mAdTemplateView.setVisibility(View.GONE);
                     }
 
-                    overView.setText(overview);
-                    releaseDateView.setText(CineDateFormat.formatDate(release_date));
-                    releaseDateView.setVisibility(View.VISIBLE);
-
-                    if (!runtime.equals("null")) {
-                        runtimeView.setText(String.format("%s min", runtime));
-                    } else {
-                        runtimeView.setText(R.string.no_runtime_min);
+                    @Override
+                    public void onAdLoaded() {
+                        super.onAdLoaded();
+                        mAdTemplateView.setVisibility(View.VISIBLE);
                     }
 
-                    StringBuilder builder = new StringBuilder();
-                    for (int j = 0; j < genresArray.length(); j++) {
-                        JSONObject object = genresArray.getJSONObject(j);
-                        builder = builder.append(object.getString("name"));
-                        if (j < genresArray.length() - 1) {
-                            builder.append(", ");
-                        }
+                    @Override
+                    public void onAdClosed() {
+                        super.onAdClosed();
+                        mAdTemplateView.setVisibility(View.GONE);
                     }
-                    genresView.setText(builder.toString());
+                })
+                .build();
 
-                    JSONObject externalIdsObject = response.getJSONObject("external_ids");
-                    mImdbId = externalIdsObject.getString("imdb_id");
-
-                    JSONObject imagesObject = response.getJSONObject("images");
-                    JSONArray backdropArray = imagesObject.getJSONArray("backdrops");
-                    if (backdropArray.length() > 0) {
-                        for (int i = 0; i < backdropArray.length(); i++) {
-                            JSONObject currentBackdropObject = backdropArray.getJSONObject(i);
-                            String imagePath = currentBackdropObject.getString("file_path");
-                            slidingList.add(imagePath);
-                        }
-                        if (slidingList.size() > 0) {
-                            mSlidingAdapter = new SlidingPagerAdapter(getBaseContext(), slidingList);
-                            mSlidingViewPager.setAdapter(mSlidingAdapter);
-                            mPagerIndicator.setViewPager(mSlidingViewPager);
-                            mSlidingProgressBar.setVisibility(View.INVISIBLE);
-                            mSlidingAdapter.notifyDataSetChanged();
-                            if (slidingList.size() == 1) {
-                                mPagerIndicator.setVisibility(View.INVISIBLE);
-                            }
-                        }
-                    } else {
-                        slidingList.add(backdrop_path);
-                        mSlidingAdapter = new SlidingPagerAdapter(getBaseContext(), slidingList);
-                        mSlidingViewPager.setAdapter(mSlidingAdapter);
-                        mPagerIndicator.setViewPager(mSlidingViewPager);
-                        mSlidingProgressBar.setVisibility(View.INVISIBLE);
-                        mSlidingAdapter.notifyDataSetChanged();
-                        mPagerIndicator.setVisibility(View.INVISIBLE);
-                    }
-
-                    JSONObject videosObject = response.getJSONObject("videos");
-                    JSONArray videosArray = videosObject.getJSONArray("results");
-                    if (videosArray.length() > 0) {
-                        for (int i = 0; i < videosArray.length(); i++) {
-                            JSONObject currentObject = videosArray.getJSONObject(i);
-                            String videoKey = currentObject.getString("key");
-                            String videoTitle = currentObject.getString("name");
-                            videoList.add(new VideoEntry(videoTitle, videoKey));
-                        }
-                        if (videoList.size() > 0) {
-                            mVideoLayout.setVisibility(View.VISIBLE);
-                            mYoutubeAdapter.addVideoEntries(videoList);
-                        } else {
-                            mVideoLayout.setVisibility(View.GONE);
-                        }
-                    }
-
-                    JSONObject creditsObjects = response.getJSONObject("credits");
-                    JSONArray castArray = creditsObjects.getJSONArray("cast");
-                    if (castArray.length() > 0) {
-                        for (int i = 0; i < castArray.length(); i++) {
-                            JSONObject currentObject = castArray.getJSONObject(i);
-                            String character = currentObject.getString("character");
-                            int id = currentObject.getInt("id");
-                            String name = currentObject.getString("name");
-                            String profile_path = currentObject.getString("profile_path");
-
-                            castList.add(new People(id, name, profile_path, character, true));
-                        }
-                        if (castList.size() > 0) {
-                            mCastLayout.setVisibility(View.VISIBLE);
-                            mCastAdapter.addCredits(castList);
-                        } else {
-                            mCastLayout.setVisibility(View.GONE);
-                        }
-                    }
-                    JSONArray crewArray = creditsObjects.getJSONArray("crew");
-                    if (crewArray.length() > 0) {
-                        for (int i = 0; i < crewArray.length(); i++) {
-                            JSONObject currentObject = crewArray.getJSONObject(i);
-                            int id = currentObject.getInt("id");
-                            String job = currentObject.getString("job");
-                            String name = currentObject.getString("name");
-                            String profile_path = currentObject.getString("profile_path");
-
-                            crewList.add(new People(id, name, profile_path, job, false));
-                            if (job.equals("Director")) {
-                                directorView.setText(name);
-                            }
-                        }
-                        if (crewList.size() > 0) {
-                            mCrewLayout.setVisibility(View.VISIBLE);
-                            mCrewAdapter.addCredits(crewList);
-                        } else {
-                            mCrewLayout.setVisibility(View.GONE);
-                        }
-
-                        JSONObject similarMoviesObjest = response.getJSONObject("similar_movies");
-                        JSONArray similarMovieArray = similarMoviesObjest.getJSONArray("results");
-
-                        if (similarMovieArray.length() > 0) {
-                            for (int i = 0; i < similarMovieArray.length(); i++) {
-                                JSONObject currentObject = similarMovieArray.getJSONObject(i);
-                                int id = currentObject.getInt("id");
-                                String similarMovieTitle = currentObject.getString("title");
-                                String posterPath = currentObject.getString("poster_path");
-                                String releaseDate = currentObject.getString("release_date");
-
-                                similarMovieList.add(new Movie(id, similarMovieTitle, posterPath, releaseDate, true));
-                            }
-                            mSimilarMovieAdapter.addData(similarMovieList);
-                            mSimilarMovieAdapter.notifyDataSetChanged();
-                            mSimilarMoviesLayout.setVisibility(View.VISIBLE);
-                        } else {
-                            mSimilarMoviesLayout.setVisibility(View.GONE);
-                        }
-                    }
-                } catch (JSONException e) {
-                    e.printStackTrace();
-                }
-            }
-        }, new Response.ErrorListener() {
-            @Override
-            public void onErrorResponse(VolleyError error) {
-                mProgressBar.setVisibility(View.INVISIBLE);
-                mSlidingProgressBar.setVisibility(View.INVISIBLE);
-                mErrorLayout.setVisibility(View.VISIBLE);
-            }
-        });
-        movieDetailRequest.setTag(CineTag.MOVIE_DETAIL_TAG);
-        MySingleton.getInstance(getApplicationContext()).addToRequestQueue(movieDetailRequest);
+        adLoader.loadAd(new AdRequest.Builder().build());
     }
-
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -427,70 +317,85 @@ public class MovieDetailActivity extends AppCompatActivity implements CineListen
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        int itemId = item.getItemId();
-        if (itemId == android.R.id.home) {
+        int id = item.getItemId();
+        if (id == android.R.id.home) {
             onBackPressed();
-        } else if (itemId == R.id.action_go_home) {
+            return true;
+        } else if (id == R.id.action_share) {
+            shareMovie();
+            return true;
+        } else if (id == R.id.action_go_home) {
             Intent intent = new Intent(this, MainActivity.class);
             intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
             startActivity(intent);
-        } else if (itemId == R.id.action_share) {
-            shareMovie();
-        } else if (itemId == R.id.action_view_on_imdb) {
-            Uri imdbUri = CineUrl.createExternalWebUri("IMDb", mImdbId);
-            Intent imdbIntent = new Intent(Intent.ACTION_VIEW, imdbUri);
-            try {
-                startActivity(imdbIntent);
-            } catch (ActivityNotFoundException e) {
-                // Define what your app should do if no activity can handle the intent.
+            return true;
+        } else if (id == R.id.action_view_on_imdb) {
+            if (mImdbId != null) {
+                Uri imdbUri = CineUrl.createExternalWebUri("IMDb", mImdbId);
+                Intent imdbIntent = new Intent(Intent.ACTION_VIEW, imdbUri);
+                try {
+                    startActivity(imdbIntent);
+                } catch (ActivityNotFoundException e) {
+                }
             }
-        } else if (itemId == R.id.action_view_on_tmdb) {
+            return true;
+        } else if (id == R.id.action_view_on_tmdb) {
             Uri tmdbUri = CineUrl.createTMDbWebUri(mId, "movie");
             Intent tmdbIntent = new Intent(Intent.ACTION_VIEW, tmdbUri);
             try {
                 startActivity(tmdbIntent);
             } catch (ActivityNotFoundException e) {
-                // Define what your app should do if no activity can handle the intent.
             }
+            return true;
         }
         return super.onOptionsItemSelected(item);
     }
 
     private void shareMovie() {
         Uri uri = CineUrl.createTMDbWebUri(mId, "movie");
-        String mimeType = "text/plane";
         String textToShare = String.valueOf(uri);
-        String title = "Complete action using";
-
-        ShareCompat.IntentBuilder builder = new ShareCompat.IntentBuilder(MovieDetailActivity.this);
-        builder.setType(mimeType).setChooserTitle(title).setText(textToShare).startChooser();
+        ShareCompat.IntentBuilder.from(this)
+                .setType("text/plain")
+                .setChooserTitle("Complete action using")
+                .setText(textToShare)
+                .startChooser();
     }
 
     @Override
     public void onVideoClick(VideoEntry videoEntry) {
         videoKey = videoEntry.getVideoId();
-        Intent intent;
-        intent = YouTubeStandalonePlayer.createVideoIntent(this, DeveloperKey.DEVELOPER_KEY, videoKey, 0, true, mLightModeBox);
+        Intent intent = YouTubeStandalonePlayer.createVideoIntent(this, DeveloperKey.DEVELOPER_KEY, videoKey, 0, true, mLightModeBox);
         if (intent != null) {
-            someActivityResultLauncher.launch(intent);
+            try {
+                someActivityResultLauncher.launch(intent);
+            } catch (ActivityNotFoundException e) {
+                playVideoInYouTubeAppOrBrowser(videoKey);
+            }
         } else {
             YouTubeInitializationResult.SERVICE_MISSING.getErrorDialog(this, REQ_RESOLVE_SERVICE_MISSING).show();
         }
     }
 
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        MySingleton.getInstance(getApplicationContext()).getRequestQueue().cancelAll(CineTag.MOVIE_DETAIL_TAG);
+    private void playVideoInYouTubeAppOrBrowser(String videoKey) {
+        Intent appIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("vnd.youtube:" + videoKey));
+        Intent webIntent = new Intent(Intent.ACTION_VIEW,
+                Uri.parse("http://www.youtube.com/watch?v=" + videoKey));
+        try {
+            startActivity(appIntent);
+        } catch (ActivityNotFoundException ex) {
+            try {
+                startActivity(webIntent);
+            } catch (ActivityNotFoundException e) {
+                Toast.makeText(this, "No application can handle this request.", Toast.LENGTH_SHORT).show();
+            }
+        }
     }
 
     @Override
     public void onPeopleClick(People people) {
-        int peopleId = people.getPeopleId();
-        String peopleName = people.getPeopleName();
         Intent intent = new Intent(this, PeopleDetailActivity.class);
-        intent.putExtra(Cine.PersonEntry.ID, peopleId);
-        intent.putExtra(Cine.PersonEntry.NAME, peopleName);
+        intent.putExtra(Cine.PersonEntry.ID, people.getPeopleId());
+        intent.putExtra(Cine.PersonEntry.NAME, people.getPeopleName());
         startActivity(intent);
     }
 
@@ -504,21 +409,19 @@ public class MovieDetailActivity extends AppCompatActivity implements CineListen
         startActivity(movieIntent);
     }
 
-    // You can do the assignment inside onAttach or onCreate, i.e, before the activity is displayed
     ActivityResultLauncher<Intent> someActivityResultLauncher = registerForActivityResult(
             new ActivityResultContracts.StartActivityForResult(),
             result -> {
-                if (result.getResultCode() == Activity.RESULT_OK) {
-                    // There are no request codes
-                } else {
+                if (result.getResultCode() != Activity.RESULT_OK) {
                     YouTubeInitializationResult errorReason = YouTubeStandalonePlayer.getReturnedInitializationResult(result.getData());
-                    if (errorReason.isUserRecoverableError()) {
-                        errorReason.getErrorDialog(MovieDetailActivity.this, 0).show();
-                    } else {
-                        String errorMessage = getString(R.string.error_player) + errorReason.toString();
-                        Toast.makeText(MovieDetailActivity.this, errorMessage, Toast.LENGTH_SHORT).show();
+                    if (errorReason != null) {
+                        if (errorReason.isUserRecoverableError()) {
+                            errorReason.getErrorDialog(MovieDetailActivity.this, 0).show();
+                        } else {
+                            String errorMessage = getString(R.string.error_player) + errorReason.toString();
+                            Toast.makeText(MovieDetailActivity.this, errorMessage, Toast.LENGTH_SHORT).show();
+                        }
                     }
                 }
             });
-
 }

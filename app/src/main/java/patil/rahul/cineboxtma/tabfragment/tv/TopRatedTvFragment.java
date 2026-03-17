@@ -12,18 +12,13 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
-import com.android.volley.Request;
-import com.android.volley.toolbox.JsonObjectRequest;
 import com.facebook.shimmer.ShimmerFrameLayout;
 import com.google.android.material.snackbar.Snackbar;
-
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -34,9 +29,8 @@ import patil.rahul.cineboxtma.adapters.TvAdapter;
 import patil.rahul.cineboxtma.models.TvShows;
 import patil.rahul.cineboxtma.preferenceutils.CinePreferences;
 import patil.rahul.cineboxtma.utils.CineListener;
-import patil.rahul.cineboxtma.utils.CineUrl;
 import patil.rahul.cineboxtma.utils.EndlessRecyclerViewScrollListener;
-import patil.rahul.cineboxtma.utils.MySingleton;
+import patil.rahul.cineboxtma.viewmodels.TvViewModel;
 
 public class TopRatedTvFragment extends Fragment implements SwipeRefreshLayout.OnRefreshListener, CineListener.OnTvClickListener {
     public TopRatedTvFragment() {
@@ -49,7 +43,6 @@ public class TopRatedTvFragment extends Fragment implements SwipeRefreshLayout.O
     private LinearLayout mErrorLayout;
     private Button mRetryBtn;
     private SwipeRefreshLayout mSwipeRefreshLayout;
-    private static final String REQUEST_TAG = "top_rated";
 
     private EndlessRecyclerViewScrollListener scrollListener;
     private boolean isFirstLoad = true;
@@ -57,6 +50,7 @@ public class TopRatedTvFragment extends Fragment implements SwipeRefreshLayout.O
     private int currentPage = 1;
     private int totalPages = 1;
     private List<TvShows> mTvShowList = new ArrayList<>();
+    private TvViewModel viewModel;
 
 
     @Override
@@ -65,7 +59,7 @@ public class TopRatedTvFragment extends Fragment implements SwipeRefreshLayout.O
         String imageQuality = CinePreferences.getImageQualityValue(getContext());
 
         mTvAdapter = new TvAdapter(getContext(), this, imageQuality, (AppCompatActivity) getActivity());
-        fetchTvShows();
+        viewModel = new ViewModelProvider(this).get(TvViewModel.class);
     }
 
     private void fetchTvShows() {
@@ -76,82 +70,59 @@ public class TopRatedTvFragment extends Fragment implements SwipeRefreshLayout.O
                 mTvAdapter.notifyItemInserted(mTvShowList.size() - 1);
             }
 
-            String tvListUrl = CineUrl.createTvListUrl("top_rated", currentPage);
+            viewModel.getTvShows("top_rated", currentPage).observe(getViewLifecycleOwner(), response -> {
+                if (response != null && response.getResults() != null) {
+                    totalPages = response.getTotalPages();
+                    int page = response.getPage();
+                    currentPage = page + 1;
 
-            JsonObjectRequest tvShowRequest = new JsonObjectRequest(Request.Method.GET, tvListUrl, null, response -> {
-                try {
-                    totalPages = response.getInt("total_pages");
-                    int page = response.getInt("page");
-
-                    JSONArray tvArray = response.getJSONArray("results");
-                    if (tvArray.length() > 0) {
-                        currentPage = ++page;
-                        if (!isFirstLoad) {
-                            mTvShowList.remove(mTvShowList.size() - 1);
-                            mTvAdapter.notifyItemRemoved(mTvShowList.size());
-                        }
-                        for (int i = 0; i < tvArray.length(); i++) {
-                            JSONObject currentObject = tvArray.getJSONObject(i);
-                            int id = currentObject.getInt("id");
-                            String backdropPath = currentObject.getString("backdrop_path");
-                            String voteAverage = String.valueOf(currentObject.get("vote_average"));
-                            String overview = currentObject.getString("overview");
-                            String firstAirDate = currentObject.getString("first_air_date");
-                            JSONArray genreIds = currentObject.getJSONArray("genre_ids");
-                            String name = currentObject.getString("name");
-
-                            List<Integer> genreList = new ArrayList<>();
-                            for (int j = 0; j < genreIds.length(); j++) {
-                                genreList.add((Integer) genreIds.get(j));
-                            }
-                            mTvShowList.add(new TvShows(id, name, backdropPath, firstAirDate, genreList, overview, voteAverage));
-                        }
-                        stopShimmer();
-                        mSwipeRefreshLayout.setRefreshing(false);
-                        mErrorLayout.setVisibility(View.GONE);
-                        mRecyclerView.setVisibility(View.VISIBLE);
-
-                        int currentSize = mTvAdapter.getItemCount();
-                        mTvAdapter.addData(mTvShowList);
-                        mTvAdapter.notifyItemRangeInserted(currentSize, mTvShowList.size() - 1);
-                        isFirstLoad = false;
-                        isEndOfPage = true;
-                    } else if (mTvShowList.size() > 0 && tvArray.length() == 0) {
-                        mSwipeRefreshLayout.setRefreshing(false);
+                    if (!isFirstLoad) {
                         mTvShowList.remove(mTvShowList.size() - 1);
                         mTvAdapter.notifyItemRemoved(mTvShowList.size());
                     }
-                } catch (JSONException e) {
-                    e.printStackTrace();
-                }
-            }, error -> {
-                stopShimmer();
-                mSwipeRefreshLayout.setRefreshing(false);
-                if (mTvShowList.size() > 0) {
-                    mTvShowList.remove(mTvShowList.size() - 1);
-                    mTvAdapter.notifyItemRemoved(mTvShowList.size());
+
+                    mTvShowList.addAll(response.getResults());
+
+                    stopShimmer();
+                    mSwipeRefreshLayout.setRefreshing(false);
+                    mErrorLayout.setVisibility(View.GONE);
+                    mRecyclerView.setVisibility(View.VISIBLE);
+
+                    int currentSize = mTvAdapter.getItemCount();
+                    mTvAdapter.addData(mTvShowList);
+                    mTvAdapter.notifyItemRangeInserted(currentSize, mTvShowList.size() - 1);
+                    isFirstLoad = false;
                     isEndOfPage = true;
-                    Snackbar.make(mRecyclerView, "Couldn't load, Try Again", Snackbar.LENGTH_LONG).setAction(R.string.retry, new View.OnClickListener() {
-                        @Override
-                        public void onClick(View view) {
-                            retryFetching();
-                        }
-                    });
                 } else {
-                    mErrorLayout.setVisibility(View.VISIBLE);
-                    mRecyclerView.setVisibility(View.INVISIBLE);
+                    handleError();
                 }
             });
-            tvShowRequest.setTag(REQUEST_TAG);
-            MySingleton.getInstance(getContext()).addToRequestQueue(tvShowRequest);
         } else {
             if (!isEndOfPage) {
                 mSwipeRefreshLayout.setRefreshing(false);
             } else if (currentPage > totalPages) {
                 mSwipeRefreshLayout.setRefreshing(false);
+                if (mTvShowList.size() > 0 && mTvShowList.get(mTvShowList.size() - 1) == null) {
+                    mTvShowList.remove(mTvShowList.size() - 1);
+                    mTvAdapter.notifyItemRemoved(mTvShowList.size());
+                }
+            }
+        }
+    }
+
+    private void handleError() {
+        stopShimmer();
+        mSwipeRefreshLayout.setRefreshing(false);
+        if (mTvShowList.size() > 0) {
+            if (mTvShowList.get(mTvShowList.size() - 1) == null) {
                 mTvShowList.remove(mTvShowList.size() - 1);
                 mTvAdapter.notifyItemRemoved(mTvShowList.size());
             }
+            isEndOfPage = true;
+            Snackbar.make(mRecyclerView, "Couldn't load, Try Again", Snackbar.LENGTH_LONG).setAction(R.string.retry, view -> retryFetching()).show();
+        } else {
+            mErrorLayout.setVisibility(View.VISIBLE);
+            mRecyclerView.setVisibility(View.INVISIBLE);
         }
     }
 
@@ -187,14 +158,17 @@ public class TopRatedTvFragment extends Fragment implements SwipeRefreshLayout.O
         };
         mRecyclerView.addOnScrollListener(scrollListener);
         mRetryBtn.setOnClickListener(view1 -> retryFetching());
+
+        fetchTvShows();
     }
 
     private void resetAllState() {
-        MySingleton.getInstance(getContext()).getRequestQueue().cancelAll(REQUEST_TAG);
         scrollListener.resetState();
         currentPage = 1;
         isFirstLoad = true;
         isEndOfPage = true;
+        mTvShowList.clear();
+        mTvAdapter.clearAdapter();
     }
 
     private void retryFetching() {

@@ -2,45 +2,36 @@ package patil.rahul.cineboxtma.bottomnavfragments;
 
 import android.content.Context;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.ProgressBar;
 import android.widget.TextView;
-
-import com.android.volley.Request;
-import com.android.volley.Response;
-import com.android.volley.VolleyError;
-import com.android.volley.toolbox.JsonObjectRequest;
-import com.android.volley.toolbox.Volley;
-import com.facebook.shimmer.ShimmerFrameLayout;
-import com.google.android.material.button.MaterialButton;
-
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
-
-import java.util.ArrayList;
-import java.util.List;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.facebook.shimmer.ShimmerFrameLayout;
+import com.google.android.material.button.MaterialButton;
+
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
+import java.util.Locale;
 
 import patil.rahul.cineboxtma.R;
 import patil.rahul.cineboxtma.adapters.MovieHorizontalAdapter;
 import patil.rahul.cineboxtma.adapters.TvHorizontalAdapter;
 import patil.rahul.cineboxtma.models.Movie;
 import patil.rahul.cineboxtma.models.TvShows;
-import patil.rahul.cineboxtma.utils.CineListener;
 import patil.rahul.cineboxtma.preferenceutils.CinePreferences;
-import patil.rahul.cineboxtma.utils.CineTag;
-import patil.rahul.cineboxtma.utils.CineUrl;
-import patil.rahul.cineboxtma.utils.MySingleton;
+import patil.rahul.cineboxtma.utils.CineListener;
+import patil.rahul.cineboxtma.viewmodels.HomeViewModel;
 
 /**
  * Created by rahul on 1/2/18.
@@ -69,6 +60,8 @@ public class HomeFragment extends Fragment implements
     private CineListener.OnMovieClickListener onMovieClickListener;
     private CineListener.OnTvClickListener onTvClickListener;
 
+    private HomeViewModel viewModel;
+
 
     @Override
     public void onMovieClick(Movie movie) {
@@ -91,10 +84,7 @@ public class HomeFragment extends Fragment implements
         mReleasingTodayAdapter = new MovieHorizontalAdapter(getContext(), this, imageQuality);
         mAiringTodayAdapter = new TvHorizontalAdapter(getContext(), this, imageQuality);
         mUpcomingAdapter = new MovieHorizontalAdapter(getContext(), this, imageQuality);
-
-        fetchReleasingTodayMovies();
-        fetchUpcomingMovies();
-        fetchAiringToday();
+        viewModel = new ViewModelProvider(this).get(HomeViewModel.class);
     }
 
     @Nullable
@@ -111,8 +101,6 @@ public class HomeFragment extends Fragment implements
         startAiringTodayShimmer();
         startReleasingTodayShimmer();
         startUpcomingShimmer();
-
-        shimmerReleasingTodayLayout = view.findViewById(R.id.shimmer_layout_releasing_today);
 
         MaterialButton airingTodayMoreBtn = view.findViewById(R.id.airing_today_more_btn);
         MaterialButton upcomingMovieMoreBtn = view.findViewById(R.id.upcoming_movies_more_btn);
@@ -139,7 +127,6 @@ public class HomeFragment extends Fragment implements
             public void onClick(View view) {
                 mReleasingTodayRetryBtn.setVisibility(View.GONE);
                 startReleasingTodayShimmer();
-                // mReleasingTodayProgressBar.setVisibility(View.VISIBLE);
                 fetchReleasingTodayMovies();
             }
         });
@@ -149,7 +136,6 @@ public class HomeFragment extends Fragment implements
             public void onClick(View view) {
                 mAiringTodayRetryBtn.setVisibility(View.GONE);
                 startAiringTodayShimmer();
-                //   mAiringTodayProgressBar.setVisibility(View.VISIBLE);
                 fetchAiringToday();
             }
         });
@@ -159,140 +145,67 @@ public class HomeFragment extends Fragment implements
             public void onClick(View view) {
                 mUpcomingMoviesRetryBtn.setVisibility(View.GONE);
                 startUpcomingShimmer();
-                //  mUpcomingMoviesProgressBar.setVisibility(View.VISIBLE);
                 fetchUpcomingMovies();
             }
         });
+
+        fetchReleasingTodayMovies();
+        fetchUpcomingMovies();
+        fetchAiringToday();
 
         return view;
     }
 
     private void fetchReleasingTodayMovies() {
-
-        String releasingTodayUrl = CineUrl.createReleasingTodayMovieUrl(1);
-
-        JsonObjectRequest releasingTodayRequest = new JsonObjectRequest(Request.Method.GET, releasingTodayUrl, null, new Response.Listener<JSONObject>() {
-            @Override
-            public void onResponse(JSONObject response) {
-                try {
-                    JSONArray carouselArray = response.getJSONArray("results");
-
-                    if (carouselArray.length() > 0) {
-                        for (int i = 0; i < carouselArray.length(); i++) {
-                            JSONObject currentMovie = carouselArray.getJSONObject(i);
-                            int id = currentMovie.getInt("id");
-                            String posterPath = currentMovie.getString("poster_path");
-                            Log.d("POSTERPATH", posterPath);
-                            String title = currentMovie.getString("title");
-                            String release_date = currentMovie.getString("release_date");
-                            releasingTodayList.add(new Movie(id, title, posterPath, release_date, false));
-                        }
-
-                        mReleasingTodayAdapter.addData(releasingTodayList);
-                        stopRealisingTodayShimmer();
-                        //mReleasingTodayProgressBar.setVisibility(View.INVISIBLE);
-                        mReleasingTodayAdapter.notifyDataSetChanged();
-                    } else {
-                        mReleasingTodayTitle.setVisibility(View.GONE);
-                        stopRealisingTodayShimmer();
-                        mReleasingTodayRecyclerView.setVisibility(View.GONE);
-                        //  mReleasingTodayProgressBar.setVisibility(View.GONE);
-                        mReleasingTodayRetryBtn.setVisibility(View.GONE);
-                    }
-                } catch (JSONException e) {
-                    e.printStackTrace();
+        viewModel.getReleasingTodayMovies().observe(getViewLifecycleOwner(), response -> {
+            if (response != null && response.getResults() != null) {
+                if (response.getResults().size() > 0) {
+                    releasingTodayList.clear();
+                    releasingTodayList.addAll(response.getResults());
+                    mReleasingTodayAdapter.addData(releasingTodayList);
+                    stopRealisingTodayShimmer();
+                    mReleasingTodayAdapter.notifyDataSetChanged();
+                } else {
+                    mReleasingTodayTitle.setVisibility(View.GONE);
+                    stopRealisingTodayShimmer();
+                    mReleasingTodayRecyclerView.setVisibility(View.GONE);
+                    mReleasingTodayRetryBtn.setVisibility(View.GONE);
                 }
-            }
-        }, new Response.ErrorListener() {
-            @Override
-            public void onErrorResponse(VolleyError error) {
-                // mReleasingTodayProgressBar.setVisibility(View.INVISIBLE);
+            } else {
                 mReleasingTodayRetryBtn.setVisibility(View.VISIBLE);
                 stopRealisingTodayShimmer();
             }
         });
-        releasingTodayRequest.setTag(CineTag.RELEASING_TODAY);
-        Volley.newRequestQueue(getActivity().getApplicationContext()).add(releasingTodayRequest);
     }
 
     private void fetchAiringToday() {
-        String airingTodayUrl = CineUrl.createTvListUrl("airing_today", 1);
-        JsonObjectRequest airingTodayRequest = new JsonObjectRequest(Request.Method.GET, airingTodayUrl, null, new Response.Listener<JSONObject>() {
-            @Override
-            public void onResponse(JSONObject response) {
-                try {
-                    JSONArray tvShowsArray = response.getJSONArray("results");
-
-                    for (int i = 0; i < tvShowsArray.length(); i++) {
-                        JSONObject currentShow = tvShowsArray.getJSONObject(i);
-                        int id = currentShow.getInt("id");
-                        String posterPath = currentShow.getString("poster_path");
-                        String name = currentShow.getString("name");
-                        String firstAirDate = currentShow.getString("first_air_date");
-                        mTvShowList.add(new TvShows(id, name, posterPath, firstAirDate));
-                    }
-                    mAiringTodayAdapter.addData(mTvShowList);
-                    // mAiringTodayProgressBar.setVisibility(View.INVISIBLE);
-                    stopAiringTodayShimmer();
-                    mAiringTodayAdapter.notifyDataSetChanged();
-                } catch (JSONException e) {
-                    e.printStackTrace();
-                }
-            }
-        }, new Response.ErrorListener() {
-            @Override
-            public void onErrorResponse(VolleyError error) {
-                // mAiringTodayProgressBar.setVisibility(View.INVISIBLE);
+        viewModel.getAiringTodayTvShows().observe(getViewLifecycleOwner(), response -> {
+            if (response != null && response.getResults() != null) {
+                mTvShowList.clear();
+                mTvShowList.addAll(response.getResults());
+                mAiringTodayAdapter.addData(mTvShowList);
+                stopAiringTodayShimmer();
+                mAiringTodayAdapter.notifyDataSetChanged();
+            } else {
                 stopAiringTodayShimmer();
                 mAiringTodayRetryBtn.setVisibility(View.VISIBLE);
             }
         });
-        airingTodayRequest.setTag(CineTag.TV_AIRING_TODAY_TAG);
-        MySingleton.getInstance(getContext()).addToRequestQueue(airingTodayRequest);
     }
 
     private void fetchUpcomingMovies() {
-        String upcomingMovieUrl = CineUrl.createUpcomingMovieUrl(1);
-        JsonObjectRequest upcomingMoviesRequest = new JsonObjectRequest(Request.Method.GET, upcomingMovieUrl, null, new Response.Listener<JSONObject>() {
-            @Override
-            public void onResponse(JSONObject response) {
-                try {
-                    JSONArray topRatedArray = response.getJSONArray("results");
-                    for (int i = 0; i < topRatedArray.length(); i++) {
-                        JSONObject currentMovie = topRatedArray.getJSONObject(i);
-                        int id = currentMovie.getInt("id");
-                        String posterPath = currentMovie.getString("poster_path");
-                        String movieTitle = currentMovie.getString("title");
-                        String releaseDate = currentMovie.getString("release_date");
-                        mUpcomingMovieList.add(new Movie(id, movieTitle, posterPath, releaseDate, true));
-                    }
-                    // mUpcomingMoviesProgressBar.setVisibility(View.INVISIBLE);
-                    stopUpcomingShimmer();
-                    mUpcomingAdapter.addData(mUpcomingMovieList);
-                    mUpcomingAdapter.notifyDataSetChanged();
-
-                } catch (JSONException e) {
-                    e.printStackTrace();
-                }
-            }
-        }, new Response.ErrorListener() {
-            @Override
-            public void onErrorResponse(VolleyError error) {
+        viewModel.getUpcomingMovies().observe(getViewLifecycleOwner(), response -> {
+            if (response != null && response.getResults() != null) {
+                mUpcomingMovieList.clear();
+                mUpcomingMovieList.addAll(response.getResults());
                 stopUpcomingShimmer();
-                //   mUpcomingMoviesProgressBar.setVisibility(View.INVISIBLE);
+                mUpcomingAdapter.addData(mUpcomingMovieList);
+                mUpcomingAdapter.notifyDataSetChanged();
+            } else {
+                stopUpcomingShimmer();
                 mUpcomingMoviesRetryBtn.setVisibility(View.VISIBLE);
             }
         });
-        upcomingMoviesRequest.setTag(CineTag.MOVIE_UPCOMING_TAG);
-        MySingleton.getInstance(getActivity().getApplicationContext()).addToRequestQueue(upcomingMoviesRequest);
-    }
-
-    @Override
-    public void onDestroyView() {
-        super.onDestroyView();
-        MySingleton.getInstance(getContext()).getRequestQueue().cancelAll(CineTag.RELEASING_TODAY);
-        MySingleton.getInstance(getContext()).getRequestQueue().cancelAll(CineTag.TV_AIRING_TODAY_TAG);
-        MySingleton.getInstance(getContext()).getRequestQueue().cancelAll(CineTag.MOVIE_UPCOMING_TAG);
     }
 
     @Override
@@ -324,11 +237,6 @@ public class HomeFragment extends Fragment implements
         mReleasingTodayRecyclerView.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false));
         mUpcomingMoviesRecyclerView.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false));
         mAiringTodayRecyclerView.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false));
-
-        mReleasingTodayRecyclerView.setNestedScrollingEnabled(false);
-        mUpcomingMoviesRecyclerView.setNestedScrollingEnabled(false);
-        mAiringTodayRecyclerView.setNestedScrollingEnabled(false);
-
     }
 
     private void startReleasingTodayShimmer(){

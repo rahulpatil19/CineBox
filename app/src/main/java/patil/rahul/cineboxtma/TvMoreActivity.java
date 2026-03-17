@@ -9,6 +9,16 @@ import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
+import androidx.activity.EdgeToEdge;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+import androidx.core.graphics.Insets;
+import androidx.core.view.ViewCompat;
+import androidx.core.view.WindowInsetsCompat;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
+
 import com.android.volley.Request;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
@@ -22,15 +32,10 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.List;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 import patil.rahul.cineboxtma.adapters.TvAdapter;
 import patil.rahul.cineboxtma.models.TvShows;
-import patil.rahul.cineboxtma.utils.CineListener;
 import patil.rahul.cineboxtma.preferenceutils.CinePreferences;
+import patil.rahul.cineboxtma.utils.CineListener;
 import patil.rahul.cineboxtma.utils.CineTag;
 import patil.rahul.cineboxtma.utils.CineUrl;
 import patil.rahul.cineboxtma.utils.EndlessRecyclerViewScrollListener;
@@ -54,10 +59,17 @@ public class TvMoreActivity extends AppCompatActivity implements SwipeRefreshLay
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        EdgeToEdge.enable(this);
         setContentView(R.layout.activity_more);
 
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.root_more), (v, insets) -> {
+            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
+            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
+            return insets;
+        });
 
         mProgressBar = findViewById(R.id.progress_bar);
         mSwipeRefreshLayout = findViewById(R.id.swipe_refresh);

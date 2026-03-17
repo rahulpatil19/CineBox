@@ -7,40 +7,30 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.LinearLayout;
-import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-
-import com.android.volley.Request;
-import com.android.volley.Response;
-import com.android.volley.VolleyError;
-import com.android.volley.toolbox.JsonObjectRequest;
-import com.facebook.shimmer.ShimmerFrameLayout;
-import com.google.android.material.snackbar.Snackbar;
-
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
-
-import java.util.ArrayList;
-import java.util.List;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.widget.SearchView;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
+
+import com.facebook.shimmer.ShimmerFrameLayout;
+import com.google.android.material.snackbar.Snackbar;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import patil.rahul.cineboxtma.R;
 import patil.rahul.cineboxtma.adapters.PeopleAdapter;
 import patil.rahul.cineboxtma.models.People;
 import patil.rahul.cineboxtma.utils.CineListener;
-import patil.rahul.cineboxtma.utils.CineTag;
-import patil.rahul.cineboxtma.utils.CineUrl;
 import patil.rahul.cineboxtma.utils.EndlessRecyclerViewScrollListener;
-import patil.rahul.cineboxtma.utils.MySingleton;
+import patil.rahul.cineboxtma.viewmodels.PeopleViewModel;
 
 /**
  * Created by rahul on 29/1/18.
@@ -70,6 +60,7 @@ public class PeopleFragment extends Fragment implements CineListener.OnPeopleCli
 
     public int mQueryLength;
     private CineListener.OnPeopleClickListener onPeopleClickListener;
+    private PeopleViewModel viewModel;
 
     public PeopleFragment() {
     }
@@ -78,6 +69,7 @@ public class PeopleFragment extends Fragment implements CineListener.OnPeopleCli
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         mPeopleAdapter = new PeopleAdapter(getContext(), this);
+        viewModel = new ViewModelProvider(this).get(PeopleViewModel.class);
     }
 
     @Nullable
@@ -143,75 +135,32 @@ public class PeopleFragment extends Fragment implements CineListener.OnPeopleCli
                 mPeopleAdapter.notifyItemInserted(mPeopleList.size() - 1);
             }
 
-            String completePeopleUrl = buildPeopleUrl(currentPage);
-            final JsonObjectRequest peopleRequest = new JsonObjectRequest(Request.Method.GET, completePeopleUrl, null, new Response.Listener<JSONObject>() {
-                @Override
-                public void onResponse(JSONObject response) {
-                    try {
+            viewModel.getPopularPeople(currentPage).observe(getViewLifecycleOwner(), response -> {
+                if (response != null && response.getResults() != null) {
+                    totalApiPages = response.getTotalPages();
+                    int page = response.getPage();
+                    currentPage = page + 1;
 
-                        totalApiPages = response.getInt("total_pages");
-                        int page = response.getInt("page");
-                        JSONArray peopleArray = response.getJSONArray("results");
-
-                        /* if peopleArray length is greater than 0 then we increment current page value + 1
-                        & if it is not first load then remove the already inserted progress bar from the bottom
-                        & adds the people array data to the people array list*/
-                        if (peopleArray.length() > 0) {
-                            currentPage = page + 1;
-                            if (!isFirstLoad) {
-                                mPeopleList.remove(mPeopleList.size() - 1);
-                                mPeopleAdapter.notifyItemRemoved(mPeopleList.size());
-                            }
-                            for (int i = 0; i < peopleArray.length(); i++) {
-                                JSONObject currentObject = peopleArray.getJSONObject(i);
-                                int id = currentObject.getInt("id");
-                                String profile_path = currentObject.getString("profile_path");
-                                String name = currentObject.getString("name");
-
-                                mPeopleList.add(new People(id, name, profile_path));
-                            }
-                            mErrorLayout.setVisibility(View.GONE);
-                            stopShimmer();
-                            mPeopleAdapter.addData(mPeopleList);
-                            mPeopleRecyclerView.setVisibility(View.VISIBLE);
-                            mSwipeRefreshLayout.setRefreshing(false);
-                            int currentSize = mPeopleAdapter.getItemCount();
-                            mPeopleAdapter.notifyItemRangeInserted(currentSize, mPeopleList.size() - 1);
-                            isFirstLoad = false;
-                            isEndOfPage = true;
-                        } else if (peopleArray.length() == 0 && mPeopleList.size() > 0) {
-                            mPeopleList.remove(mPeopleList.size() - 1);
-                            mPeopleAdapter.notifyItemRemoved(mPeopleList.size());
-                            isEndOfPage = true;
-                        }
-                    } catch (JSONException e) {
-                        e.printStackTrace();
-                    }
-                }
-            }, new Response.ErrorListener() {
-                @Override
-                public void onErrorResponse(VolleyError error) {
-                    stopShimmer();
-                    mSwipeRefreshLayout.setRefreshing(false);
-
-                    if (mPeopleList.size() > 0) {
+                    if (!isFirstLoad) {
                         mPeopleList.remove(mPeopleList.size() - 1);
                         mPeopleAdapter.notifyItemRemoved(mPeopleList.size());
-                        isEndOfPage = true;
-                        Snackbar.make(mPlaceSnackBar, "Couldn't load", Snackbar.LENGTH_LONG).setAction(R.string.retry, new View.OnClickListener() {
-                            @Override
-                            public void onClick(View view) {
-                                retryFetching();
-                            }
-                        }).show();
-                    } else {
-                        mErrorLayout.setVisibility(View.VISIBLE);
-                        mPeopleRecyclerView.setVisibility(View.INVISIBLE);
                     }
+
+                    mPeopleList.addAll(response.getResults());
+                    
+                    mErrorLayout.setVisibility(View.GONE);
+                    stopShimmer();
+                    mPeopleAdapter.addData(mPeopleList);
+                    mPeopleRecyclerView.setVisibility(View.VISIBLE);
+                    mSwipeRefreshLayout.setRefreshing(false);
+                    int currentSize = mPeopleAdapter.getItemCount();
+                    mPeopleAdapter.notifyItemRangeInserted(currentSize, mPeopleList.size() - 1);
+                    isFirstLoad = false;
+                    isEndOfPage = true;
+                } else {
+                    handleError();
                 }
             });
-            peopleRequest.setTag(CineTag.PEOPLE_REQUEST);
-            MySingleton.getInstance(getContext()).addToRequestQueue(peopleRequest);
         } else {
             if (!isEndOfPage) {
                 mSwipeRefreshLayout.setRefreshing(false);
@@ -219,60 +168,59 @@ public class PeopleFragment extends Fragment implements CineListener.OnPeopleCli
         }
     }
 
+    private void handleError() {
+        stopShimmer();
+        mSwipeRefreshLayout.setRefreshing(false);
+
+        if (mPeopleList.size() > 0) {
+            if (mPeopleList.get(mPeopleList.size() - 1) == null) {
+                mPeopleList.remove(mPeopleList.size() - 1);
+                mPeopleAdapter.notifyItemRemoved(mPeopleList.size());
+            }
+            isEndOfPage = true;
+            Snackbar.make(mPlaceSnackBar, "Couldn't load", Snackbar.LENGTH_LONG).setAction(R.string.retry, new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    retryFetching();
+                }
+            }).show();
+        } else {
+            mErrorLayout.setVisibility(View.VISIBLE);
+            mPeopleRecyclerView.setVisibility(View.INVISIBLE);
+        }
+    }
+
     private void searchPeople(String query) {
-        final List<String> knownForList = new ArrayList<>();
         mSearchErrorTextView.setVisibility(View.INVISIBLE);
         startShimmer();
-        String url = createSearchUrl(query);
-        final JsonObjectRequest peopleSearchRequest = new JsonObjectRequest(Request.Method.GET, url, null, new Response.Listener<JSONObject>() {
-            @Override
-            public void onResponse(JSONObject response) {
-                try {
-                    JSONArray movieResultsArray = response.getJSONArray("results");
-
-                    if (movieResultsArray.length() > 0) {
-
-                        for (int i = 0; i < movieResultsArray.length(); i++) {
-                            JSONObject currentObject = movieResultsArray.getJSONObject(i);
-
-                            int id = currentObject.getInt("id");
-                            String name = currentObject.getString("name");
-                            String poster_path = currentObject.getString("profile_path");
-
-                            mSearchList.add(new People(id, name, poster_path));
-                        }
-                        stopShimmer();
-                        mSearchRecyclerView.setVisibility(View.VISIBLE);
-                        mSearchAdapter.addData(mSearchList);
-                        mSearchAdapter.notifyDataSetChanged();
-                    } else {
-                        stopShimmer();
-                        mSearchRecyclerView.setVisibility(View.INVISIBLE);
-                        mSearchErrorTextView.setText(R.string.no_results_found);
-                        mSearchErrorTextView.setVisibility(View.VISIBLE);
-                    }
-                } catch (JSONException e) {
-                    e.printStackTrace();
+        viewModel.searchPeople(query).observe(getViewLifecycleOwner(), response -> {
+            if (response != null && response.getResults() != null) {
+                if (response.getResults().size() > 0) {
+                    mSearchList.addAll(response.getResults());
+                    stopShimmer();
+                    mSearchRecyclerView.setVisibility(View.VISIBLE);
+                    mSearchAdapter.addData(mSearchList);
+                    mSearchAdapter.notifyDataSetChanged();
+                } else {
+                    stopShimmer();
+                    mSearchRecyclerView.setVisibility(View.INVISIBLE);
+                    mSearchErrorTextView.setText(R.string.no_results_found);
+                    mSearchErrorTextView.setVisibility(View.VISIBLE);
                 }
-            }
-        }, new Response.ErrorListener() {
-            @Override
-            public void onErrorResponse(VolleyError error) {
+            } else {
                 stopShimmer();
                 mSearchErrorTextView.setVisibility(View.VISIBLE);
                 mSearchRecyclerView.setVisibility(View.INVISIBLE);
                 mSearchErrorTextView.setText(getString(R.string.no_connection));
             }
         });
-        peopleSearchRequest.setTag(CineTag.SEARCH_PEOPLE_TAG);
-        MySingleton.getInstance(getActivity().getApplicationContext()).getRequestQueue().add(peopleSearchRequest);
     }
 
     @Override
     public boolean onQueryTextSubmit(String query) {
-        MySingleton.getInstance(getContext()).getRequestQueue().cancelAll(CineTag.SEARCH_PEOPLE_TAG);
         if (mSearchList.size() > 0) {
             mSearchAdapter.clearAdapter();
+            mSearchList.clear();
         }
         hidePeopleRecyclerView();
         searchPeople(query.trim());
@@ -282,7 +230,6 @@ public class PeopleFragment extends Fragment implements CineListener.OnPeopleCli
 
     @Override
     public boolean onQueryTextChange(String newText) {
-        MySingleton.getInstance(getContext()).getRequestQueue().cancelAll(CineTag.SEARCH_PEOPLE_TAG);
         mQueryLength = newText.trim().length();
 
         if (mSearchList.size() > 0) {
@@ -356,20 +303,18 @@ public class PeopleFragment extends Fragment implements CineListener.OnPeopleCli
     }
 
     private void resetAllState() {
-        MySingleton.getInstance(getContext()).getRequestQueue().cancelAll(CineTag.PEOPLE_REQUEST);
         scrollListener.resetState();
         currentPage = 1;
         isFirstLoad = true;
         isEndOfPage = true;
+        mPeopleList.clear();
+        mPeopleAdapter.clearAdapter();
     }
 
     @Override
     public void onDestroyView() {
         super.onDestroyView();
         resetAllState();
-        if (mPeopleList.size() > 0) {
-            mPeopleList.clear();
-        }
     }
 
     @Override
@@ -380,14 +325,6 @@ public class PeopleFragment extends Fragment implements CineListener.OnPeopleCli
         } catch (ClassCastException e) {
             throw new ClassCastException(context.toString() + "Must implement OnPeopleClickListener");
         }
-    }
-
-    private String buildPeopleUrl(int currentPage) {
-        return CineUrl.createPersonListUrl(currentPage);
-    }
-
-    private String createSearchUrl(String query) {
-        return CineUrl.createSearchUrl("person", query);
     }
 
     public void refreshPeopleList() {

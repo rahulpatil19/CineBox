@@ -9,7 +9,6 @@ import android.os.Handler;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.WindowInsets;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
@@ -17,7 +16,6 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.coordinatorlayout.widget.CoordinatorLayout;
 import androidx.core.graphics.Insets;
-import androidx.core.view.OnApplyWindowInsetsListener;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 import androidx.fragment.app.FragmentTransaction;
@@ -60,24 +58,27 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
         setContentView(R.layout.activity_main);
 
         root = findViewById(R.id.root);
-        // 2. Listen for window insets to apply padding
-        ViewCompat.setOnApplyWindowInsetsListener(root, (v, windowInsets) -> {
-            Insets insets = windowInsets.getInsets(WindowInsetsCompat.Type.systemBars());
-
-            // 3. Apply the insets correctly using the Insets object 'insets'
-            v.setPadding(
-                    insets.left,
-                    insets.top,
-                    insets.right,
-                    insets.bottom
-            );
-
-            // Return CONSUMED to stop the insets from propagating further
-            return WindowInsetsCompat.CONSUMED;
-        });
-
         BottomNavigationView mBottomNav = findViewById(R.id.bottom_navigation);
         mAppBarLayout = findViewById(R.id.appbar);
+
+        ViewCompat.setOnApplyWindowInsetsListener(root, (v, windowInsets) -> {
+            Insets insets = windowInsets.getInsets(WindowInsetsCompat.Type.systemBars());
+            v.setPadding(insets.left, 0, insets.right, 0);
+            return windowInsets;
+        });
+
+        ViewCompat.setOnApplyWindowInsetsListener(mAppBarLayout, (v, insets) -> {
+            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
+            v.setPadding(systemBars.left, systemBars.top, systemBars.right, 0);
+            return insets;
+        });
+
+        ViewCompat.setOnApplyWindowInsetsListener(mBottomNav, (v, insets) -> {
+            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
+            v.setPadding(systemBars.left, 0, systemBars.right, systemBars.bottom);
+            return insets;
+        });
+
         mAppBarLayout.setElevation(4);
         MaterialToolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);

@@ -1,5 +1,6 @@
 package patil.rahul.cineboxtma.models;
 
+import com.google.gson.annotations.SerializedName;
 import java.util.List;
 
 /**
@@ -8,16 +9,27 @@ import java.util.List;
 
 public class Movie {
 
+    @SerializedName("id")
     private int id;
+    @SerializedName("title")
     private String title;
+    @SerializedName("character")
     private String character;
+    @SerializedName("poster_path")
     private String posterPath;
+    @SerializedName("backdrop_path")
     private String backdropPath;
+    @SerializedName("release_date")
     private String releaseDate;
+    @SerializedName("overview")
     private String overview;
+    @SerializedName("vote_average")
     private String voteAverage;
+    @SerializedName("vote_count")
     private String voteCount;
+    @SerializedName("popularity")
     private String popularity;
+    @SerializedName("genre_ids")
     private List<Integer> genre;
     private boolean hasCharacter;
     private boolean showReleaseDate;
@@ -104,4 +116,3 @@ public class Movie {
         return showReleaseDate;
     }
 }
-

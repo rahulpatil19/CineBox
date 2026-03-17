@@ -1,5 +1,6 @@
 package patil.rahul.cineboxtma.models;
 
+import com.google.gson.annotations.SerializedName;
 import java.util.List;
 
 /**
@@ -8,9 +9,13 @@ import java.util.List;
 
 public class People {
 
+    @SerializedName("id")
     private int peopleId;
+    @SerializedName("name")
     private String peopleName;
+    @SerializedName("profile_path")
     private String peopleImage;
+    @SerializedName(value = "character", alternate = {"job"})
     private String peopleCharacter;
     private List<String> peopleKnownFor;
     private boolean isCharacter;
@@ -53,4 +58,3 @@ public class People {
         return isCharacter;
     }
 }
-

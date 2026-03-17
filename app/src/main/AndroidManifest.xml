@@ -70,11 +70,13 @@
         <intent>
             <action android:name="com.google.android.youtube.api.service.START" />
         </intent>
-
+        <intent>
+            <action android:name="com.google.android.youtube.api.StandalonePlayerActivity.START" />
+        </intent>
         <intent>
             <action android:name="android.intent.action.VIEW" />
         </intent>
-
+        <package android:name="com.google.android.youtube" />
     </queries>
 
 </manifest>

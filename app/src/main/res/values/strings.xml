@@ -105,6 +105,7 @@
     <string name="title_tv_credits">Tv Credits</string>
     <string name="icon_expand">Expand</string>
     <string name="no_runtime_min">N/A</string>
+    <string name="runtime_format">%1$s min</string>
     <string name="title_season">Seasons</string>
     <string name="title_similar_tvShows">Similar TvShows</string>
     <string name="title_image">Images</string>
@@ -137,4 +138,5 @@
     <string name="library_circleIndicator"><a href="https://github.com/ongakuer/CircleIndicator">Circle Indicator</a></string>
     <string name="library_used">Library Used</string>
 
+    <string name="native_ad_unit_id">ca-app-pub-3940256099942544/2247696110</string>
 </resources>
