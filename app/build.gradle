@@ -1,15 +1,17 @@
-apply plugin: 'com.android.application'
-apply plugin: 'kotlin-android'
-apply plugin: 'com.google.gms.google-services'
-
+plugins {
+    alias(libs.plugins.android.application)
+    alias(libs.plugins.kotlin.android)
+    alias(libs.plugins.google.services)
+    alias(libs.plugins.compose.compiler)
+}
 
 android {
-    compileSdkVersion 36
+    compileSdkVersion libs.versions.compileSdk.get().toInteger()
     namespace "patil.rahul.cineboxtma"
     defaultConfig {
         applicationId "patil.rahul.cineboxtma"
-        minSdkVersion 28
-        targetSdkVersion 36
+        minSdk libs.versions.minSdk.get().toInteger()
+        targetSdk libs.versions.targetSdk.get().toInteger()
         versionCode 6
         versionName "1.6"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
@@ -30,6 +32,7 @@ android {
     }
     buildFeatures {
         buildConfig = true
+        compose true
     }
 }
 
@@ -37,55 +40,63 @@ android {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation files('libs/YouTubeAndroidPlayerApi.jar')
-    implementation 'androidx.appcompat:appcompat:1.7.1'
-    implementation 'com.google.android.material:material:1.4.0'
-    implementation 'androidx.recyclerview:recyclerview:1.2.1'
-    implementation 'androidx.cardview:cardview:1.0.0'
-    implementation 'androidx.vectordrawable:vectordrawable:1.1.0'
-    implementation 'androidx.preference:preference:1.1.1'
-    implementation 'com.android.volley:volley:1.2.1'
 
-    // activity ktx for edgeToEdge
-    implementation 'androidx.activity:activity:1.10.1'
+    implementation libs.androidx.appcompat
+    implementation libs.material
+    implementation libs.androidx.recyclerview
+    implementation libs.androidx.cardview
+    implementation libs.androidx.vectordrawable
+    implementation libs.androidx.preference
+    implementation libs.volley
 
-    // image loading
-    implementation 'com.facebook.fresco:fresco:3.6.0'
+    // Core KTX
+    implementation libs.android.core.ktx
 
-    implementation 'com.facebook.fresco:imagepipeline-okhttp3:3.6.0'
-    implementation 'com.squareup.okhttp3:okhttp:5.3.2'
+    // Compose
+    implementation platform(libs.compose.bom)
+    androidTestImplementation platform(libs.compose.bom)
 
-    implementation 'com.ms-square:expandableTextView:0.1.4'
-    implementation 'me.relex:circleindicator:1.2.2@aar'
-    implementation 'androidx.constraintlayout:constraintlayout:2.1.0'
-    implementation 'androidx.swiperefreshlayout:swiperefreshlayout:1.1.0'
+    implementation libs.compose.ui
+    implementation libs.compose.material3
+    implementation libs.compose.ui.preview
+    debugImplementation libs.compose.ui.tooling
 
-    // shimmer effect for loading
-    implementation 'com.facebook.shimmer:shimmer:0.5.0'
-    implementation "androidx.core:core-ktx:1.15.0"
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation libs.activity.compose
+    implementation libs.activity
+
+    // Fresco
+    implementation libs.fresco
+    implementation libs.fresco.okhttp
+
+    implementation libs.okhttp
+
+    implementation libs.expandable.text
+    implementation (libs.circle.indicator){
+        artifact {
+            type = "aar"
+        }
+    }
+    implementation libs.constraintlayout
+    implementation libs.swiperefreshlayout
+
+    implementation libs.shimmer
 
     // Retrofit
-    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
-    implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
+    implementation libs.retrofit
+    implementation libs.retrofit.gson
 
-    // Lifecycle (ViewModel & LiveData)
-    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.1'
-    implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.6.1'
+    // Lifecycle
+    implementation libs.lifecycle.viewmodel
+    implementation libs.lifecycle.livedata
 
-    //firebase SDK
-//    implementation platform('com.google.firebase:firebase-bom:28.4.1')
-    implementation platform('com.google.firebase:firebase-bom:33.7.0')
-    implementation 'com.google.firebase:firebase-analytics'
+    // Firebase
+    implementation platform(libs.firebase.bom)
+    implementation libs.firebase.analytics
 
-    // admob
-    implementation 'com.google.android.gms:play-services-ads:24.9.0'
+    // AdMob
+    implementation libs.play.services.ads
 
     implementation project(':nativetemplates')
 
-    //multidex
-    implementation 'androidx.multidex:multidex:2.0.1'  //with androidx libraries
-
-}
-repositories {
-    mavenCentral()
+    implementation libs.multidex
 }

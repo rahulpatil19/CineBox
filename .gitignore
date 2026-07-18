@@ -3,30 +3,50 @@
 build/
 **/build/
 
-# Local config
+# Local configuration
 local.properties
 
-# Keystore files
-*.jks
-*.keystore
-
-# Logs
+.kotlin/
+# Log files
 *.log
 
-# Mac
-.DS_Store
+# Android Studio
+.idea/caches/
+.idea/libraries/
+.idea/modules.xml
+.idea/workspace.xml
+.idea/navEditor.xml
+.idea/assetWizardSettings.xml
+.idea/compiler.xml
+.idea/deploymentTargetSelector.xml
+.idea/deviceManager.xml
+.idea/artifacts/
+
+# IntelliJ
+*.iml
 
 # Native build
 .externalNativeBuild/
 .cxx/
 
-# Android Studio user-specific files
-.idea/workspace.xml
-.idea/caches/
-.idea/libraries/
-.idea/modules.xml
-.idea/navEditor.xml
-.idea/assetWizardSettings.xml
+# APKs / Bundles
+*.apk
+*.aab
+*.ap_
 
-# IntelliJ
-*.iml
+# Dex files
+*.dex
+
+# Generated files
+captures/
+
+# Keystore files
+*.jks
+*.keystore
+*.pem
+
+# OS files
+.DS_Store
+Thumbs.db
+
+.idea/misc.xml
