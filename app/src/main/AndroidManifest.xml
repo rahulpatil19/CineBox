@@ -5,15 +5,34 @@
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
+    <queries>
+        <intent>
+            <action android:name="com.google.android.youtube.api.service.START" />
+        </intent>
+        <intent>
+            <action android:name="com.google.android.youtube.api.StandalonePlayerActivity.START" />
+        </intent>
+        <intent>
+            <action android:name="android.intent.action.VIEW" />
+        </intent>
+
+        <package android:name="com.google.android.youtube" />
+    </queries>
+
     <application
         android:name=".MyApplication"
         android:allowBackup="true"
+        android:hardwareAccelerated="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:largeHeap="true"
-        android:hardwareAccelerated="true"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true">
+        <activity
+            android:name=".compose.ContentDetailActivity"
+            android:exported="false"
+            android:label="@string/title_activity_content_detail"
+            android:theme="@style/Theme.CineBox.Compose" />
         <activity
             android:name=".MainActivity"
             android:exported="true"
@@ -57,26 +76,10 @@
 
         <meta-data
             android:name="preloaded_fonts"
-            android:resource="@array/preloaded_fonts" />
-
-        <!-- Sample AdMob App ID: ca-app-pub-3940256099942544~3347511713 -->
+            android:resource="@array/preloaded_fonts" /> <!-- Sample AdMob App ID: ca-app-pub-3940256099942544~3347511713 -->
         <meta-data
             android:name="com.google.android.gms.ads.APPLICATION_ID"
             android:value="ca-app-pub-9660112888704846~8600336400" />
-
     </application>
-
-    <queries>
-        <intent>
-            <action android:name="com.google.android.youtube.api.service.START" />
-        </intent>
-        <intent>
-            <action android:name="com.google.android.youtube.api.StandalonePlayerActivity.START" />
-        </intent>
-        <intent>
-            <action android:name="android.intent.action.VIEW" />
-        </intent>
-        <package android:name="com.google.android.youtube" />
-    </queries>
 
 </manifest>
